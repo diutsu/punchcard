@@ -72,5 +72,5 @@ Updated: 2026-10-11 (split code commenting & prose templates out to `code-discip
 
 Re-verification commands:
 ```bash
-ls skills/code-discipline/SKILL.md skills/write-docs/SKILL.md
+ls docs/architecture.md docs/tasks.md
 ```

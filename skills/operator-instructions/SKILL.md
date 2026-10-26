@@ -104,5 +104,5 @@ Authored/updated: 2026-10-11 (v2 with `Run queue` + `Decision gates` split and B
 Re-verification commands:
 ```bash
 # Confirm no more than 2 H2 sections exist in template
-grep -n '^## ' doc-templates/docs/operator-instructions.md
+grep -n '^## ' docs/operator-instructions.md
 ```

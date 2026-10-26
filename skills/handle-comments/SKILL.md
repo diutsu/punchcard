@@ -92,5 +92,5 @@ Updated: 2026-10-11 (v2: routes unresolved follow-ups to `docs/operator-instruct
 
 Re-verification commands:
 ```bash
-ls skills/operator-instructions/SKILL.md
+grep -rn "\[COMMENT\]" docs/
 ```

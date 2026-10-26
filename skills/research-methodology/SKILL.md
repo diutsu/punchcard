@@ -73,5 +73,5 @@ Updated: 2026-10-11 (v2: added `tier: reference`, wired null-result handling to 
 
 Re-verification commands:
 ```bash
-ls skills/research-to-plan/SKILL.md skills/operator-instructions/SKILL.md
+ls docs/investigations/ docs/operator-instructions.md
 ```

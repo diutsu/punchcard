@@ -71,5 +71,5 @@ Updated: 2026-10-11 (v2: added `tier: reference`, updated doc paths to `docs/pla
 
 Re-verification commands:
 ```bash
-ls skills/validation-and-qa/SKILL.md skills/data-integrity/SKILL.md
+ls docs/requirements/
 ```

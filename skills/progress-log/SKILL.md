@@ -65,5 +65,5 @@ Updated: 2026-10-11 (v2: removed retired `executed-<slug>.md` references in favo
 
 Re-verification commands:
 ```bash
-ls doc-templates/docs/progress-log.md
+ls docs/progress-log.md
 ```

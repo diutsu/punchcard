@@ -81,5 +81,5 @@ Updated: 2026-10-11 (v2: added `tier: reference`, updated doc pointers to `docs/
 
 Re-verification commands:
 ```bash
-ls skills/do-task/SKILL.md skills/code-discipline/SKILL.md
+ls docs/requirements/ docs/logic/
 ```

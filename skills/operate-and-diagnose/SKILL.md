@@ -79,5 +79,5 @@ Updated: 2026-10-11 (v2: added `tier: leaf`, aligned operational doc boundaries 
 
 Re-verification commands:
 ```bash
-ls doc-templates/docs/usage.md doc-templates/docs/operator-instructions.md
+ls docs/usage.md docs/operator-instructions.md
 ```

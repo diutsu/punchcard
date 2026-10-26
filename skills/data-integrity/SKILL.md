@@ -67,5 +67,5 @@ Updated: 2026-10-11 (v2: added `tier: reference` and aligned doc paths with `doc
 
 Re-verification commands:
 ```bash
-grep -n 'immutability class' doc-templates/docs/architecture.md
+grep -n 'immutability class' docs/architecture.md
 ```

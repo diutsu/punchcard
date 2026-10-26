@@ -83,5 +83,5 @@ Updated: 2026-10-11 (v2: added `tier: leaf` and wired persistent output to `docs
 
 Re-verification commands:
 ```bash
-ls doc-templates/docs/investigations/_template.md
+ls docs/investigations/_template.md
 ```

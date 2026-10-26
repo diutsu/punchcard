@@ -98,5 +98,5 @@ Updated: 2026-10-11 (v2: added `tier: leaf`, replaced `executed-*.md` lookups wi
 
 Re-verification commands:
 ```bash
-ls skills/docs-management/SKILL.md doc-templates/docs/investigations/_template.md
+ls docs/done.md docs/investigations/
 ```

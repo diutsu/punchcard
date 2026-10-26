@@ -3,7 +3,7 @@ name: skill-maintenance
 tier: leaf
 description: >
   The meta-skill governing how the Frank skill library (skills/*/SKILL.md) and
-  doc-templates/ are organized, extended, and kept drift-free. Load when
+  skills/migrate-project-docs/templates/ are organized, extended, and kept drift-free. Load when
   authoring a new skill, editing an existing SKILL.md, auditing skills/ for
   overlap or stale paths, or deciding whether a rule belongs in CLAUDE.md, a
   skill, or a project's docs/. Trigger on /skill-maintenance, "add a skill for
@@ -31,7 +31,7 @@ This library (`https://github.com/diutsu/Frank`, under `skills/`) is a cohesive 
 | **Always-on conduct** | Global `~/.claude/CLAUDE.md` + repo `CLAUDE.md` | Non-negotiables, gate commands, lifecycle stage (`prototype` vs `structured`). Loaded every turn. |
 | **Workflow & leaf skills** | `Frank/skills/<name>/SKILL.md` | Triggered procedures (`do-task`, `debugging-method`, `docs-management`, `operator-instructions`, `migrate-project-docs`, etc.). Project-agnostic. |
 | **Reference guides** | `Frank/skills/<name>/SKILL.md` (`tier: reference`) | Consulted cheat sheets (`code-discipline`, `validation-and-qa`, `data-integrity`, `research-methodology`, `ui-ux-discipline`). |
-| **Project facts** | Each repo's `CLAUDE.md` + `docs/` (scaffolded from `doc-templates/`) | Module map (`architecture.md`), behavioral contracts (`docs/requirements/`), domain formulas (`docs/logic/`), spikes (`docs/investigations/`), open backlog (`tasks.md`). |
+| **Project facts** | Each repo's `CLAUDE.md` + `docs/` (scaffolded from `skills/migrate-project-docs/templates/`) | Module map (`architecture.md`), behavioral contracts (`docs/requirements/`), domain formulas (`docs/logic/`), spikes (`docs/investigations/`), open backlog (`tasks.md`). |
 
 ## 2. Canonical `Frank/skills/` inventory (one fact, one home)
 
@@ -70,7 +70,7 @@ Every `skills/<name>/SKILL.md` ships all five sections:
 
 - **Split** when a skill's description requires two unrelated trigger families or mixes workflow/execution mechanics with reference standards (as when `code-discipline` and `write-docs` templates were split out of `code-task`).
 - **Merge** when a skill shrinks to a single paragraph that fits cleanly inside a sibling.
-- **Sync with `doc-templates/`:** Whenever a documentation rule changes in `docs-management` or `operator-instructions`, update `doc-templates/` in the same pass.
+- **Sync with `skills/migrate-project-docs/templates/`:** Whenever a documentation rule changes in `docs-management` or `operator-instructions`, update `skills/migrate-project-docs/templates/` in the same pass.
 
 ## Hard rules
 
@@ -78,7 +78,7 @@ Every `skills/<name>/SKILL.md` ships all five sections:
 - Every `skills/<name>/SKILL.md` must include `name`, `tier`, `description`, `trigger`, `When NOT to use`, `Hard rules`, and `Provenance and maintenance`.
 - Never embed unquoted `<placeholder>` angle brackets in prose outside code fences or YAML frontmatter.
 - Never reference retired `executed-*.md` files or root-level `REQUIREMENTS-*` / `BUSINESS_LOGIC-*` / `plan-*` paths — use the v2 subfolder contract (`docs/{requirements,logic,investigations,plans}/`).
-- Keep `doc-templates/` and `Frank/docs/` 100% compliant with `docs-management` at all times.
+- Keep `skills/migrate-project-docs/templates/` and `Frank/docs/` 100% compliant with `docs-management` at all times.
 
 ## Provenance and maintenance
 
@@ -93,6 +93,6 @@ grep -L '^tier:' skills/*/SKILL.md
 # 2. Confirm zero stray references to retired executed-*.md outside migration/ban rules
 grep -rn 'executed-' skills/ | grep -v -E '(docs-management|migrate-project-docs|do-task|skill-maintenance)'
 
-# 3. Confirm all docs in Frank/docs/ and Frank/doc-templates/docs/ have valid frontmatter
-grep -rL '^type:' docs/ doc-templates/docs/
+# 3. Confirm all docs in Frank/docs/ and Frank/skills/migrate-project-docs/templates/docs/ have valid frontmatter
+grep -rL '^type:' docs/ skills/migrate-project-docs/templates/docs/
 ```

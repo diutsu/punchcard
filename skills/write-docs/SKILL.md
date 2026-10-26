@@ -38,7 +38,7 @@ Write technical documentation for an experienced developer who is **skimming, no
 
 ## 2. Document templates
 
-For `docs/requirements/<module>.md`, `docs/logic/<module>-<concern>.md`, `docs/investigations/<slug>.md`, and `docs/plans/<id>-<slug>.md`, use the canonical templates in `doc-templates/docs/` and follow `docs-management`. Use the shapes below for `README.md`, API endpoints, ADRs, and external changelogs.
+For `docs/requirements/<module>.md`, `docs/logic/<module>-<concern>.md`, `docs/investigations/<slug>.md`, and `docs/plans/<id>-<slug>.md`, use the `_template.md` file inside each `docs/` subfolder (or `migrate-project-docs/templates/docs/`) and follow `docs-management`. Use the shapes below for `README.md`, API endpoints, ADRs, and external changelogs.
 
 ### (a) `README.md`
 Target reader: a developer discovering the repo or getting it running for the first time.
@@ -102,5 +102,5 @@ Updated: 2026-10-11 (merged README, API Doc, and Changelog templates from retire
 
 Re-verification commands:
 ```bash
-grep -n '^name: write-docs' skills/write-docs/SKILL.md
+grep -rL '^type:' docs/
 ```

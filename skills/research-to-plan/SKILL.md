@@ -92,5 +92,5 @@ Updated: 2026-10-11 (v2 subfolder path `docs/plans/`, 150-line cap, phase roll-f
 
 Re-verification commands:
 ```bash
-ls doc-templates/docs/plans/_template.md
+ls docs/plans/_template.md
 ```

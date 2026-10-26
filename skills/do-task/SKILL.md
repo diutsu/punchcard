@@ -34,7 +34,7 @@ Drive a task to completion through two quality gates: a **plan gate** and an **i
 
 ## The task registry — read and write exclusively through `ctask`
 
-Never read `docs/tasks.md` raw when `ctask` can answer the query, and never hand-edit `docs/tasks.md` or `docs/done.md`:
+Never read `docs/tasks.md` raw when `ctask` can answer the query, and never hand-edit `docs/tasks.md` or `docs/done.md` (if `ctask` is not yet on `PATH`, run via `uvx --from git+https://github.com/diutsu/ctask ctask <cmd>` or install with `uv tool install git+https://github.com/diutsu/ctask`):
 
 ```bash
 ctask list --prio high
@@ -81,5 +81,5 @@ Updated: 2026-10-11 (v2 subfolder paths, 150-line plan cap with phase roll-forwa
 Re-verification commands:
 ```bash
 command -v ctask
-ls doc-templates/docs/plans/_template.md
+ls docs/plans/_template.md
 ```

@@ -154,6 +154,6 @@ Authored/updated: 2026-10-11 (v2 subfolder & anti-accretion contract).
 
 Re-verification commands:
 ```bash
-grep -rL '^type:' doc-templates/docs/
-wc -l doc-templates/docs/next-session-prompt.md doc-templates/docs/plans/_template.md
+grep -rL '^type:' docs/
+wc -l docs/next-session-prompt.md docs/plans/_template.md
 ```

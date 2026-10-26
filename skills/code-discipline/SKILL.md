@@ -77,5 +77,5 @@ Authored: 2026-10-11 (extracted and expanded from `code-task` + `code-task/refer
 
 Re-verification commands:
 ```bash
-ls skills/code-task/SKILL.md doc-templates/docs/architecture.md
+ls docs/architecture.md
 ```

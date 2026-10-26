@@ -108,5 +108,5 @@ Updated: 2026-10-11 (v2: added `tier: leaf`, updated read order to `docs/require
 
 Re-verification commands:
 ```bash
-ls doc-templates/docs/requirements/_index.md doc-templates/docs/logic/_index.md
+ls docs/requirements/_index.md docs/logic/_index.md
 ```

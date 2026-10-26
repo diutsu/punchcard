@@ -2,11 +2,11 @@
 type: requirement
 state: done
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-26
 cross-file-references: [docs/tasks.md, docs/usage.md, docs/requirements/_index.md, docs/logic/_index.md, CLAUDE.md, README.md]
 ---
 # Architecture — Frank
-High-level architecture of the `Frank` repository (`https://github.com/diutsu/Frank`): the distributable `skills/` catalog, the `doc-templates/` starter tree, and the `docs/` meta-documentation.
+High-level architecture of the `Frank` repository (`https://github.com/diutsu/Frank`): the distributable `skills/` catalog, the `skills/migrate-project-docs/templates/` starter tree, and the `docs/` meta-documentation.
 
 ## TOC
 - [Module map](#module-map)
@@ -26,7 +26,8 @@ High-level architecture of the `Frank` repository (`https://github.com/diutsu/Fr
           │                                  │                              │
           ▼                                  ▼                              ▼
 ┌───────────────────────────┐  ┌───────────────────────────┐  ┌────────────────────────┐
-│          skills/          │  │      doc-templates/       │  │         docs/          │
+│          skills/          │  │   migrate-project-docs/   │  │         docs/          │
+│                           │  │       └─ templates/       │  │                        │
 │  npx skills package root  │  │  downstream repo starter  │  │  meta-docs for Frank   │
 │  skills/<name>/SKILL.md   │  │  CLAUDE.md + v2 docs/     │  │  tracks Frank's work   │
 └───────────────────────────┘  └───────────────────────────┘  └────────────────────────┘
@@ -43,29 +44,29 @@ Distributable library of process, workflow, and reference skills for AI coding a
 - Each skill lives in `skills/<name>/SKILL.md` with optional `flows/` or `references/` subdirectories.
 - Self-contained and project-agnostic: skills teach discovery methods and contracts, never hardcoded paths to one consumer project.
 
-### `doc-templates` (`doc-templates/`)
+### `doc-templates` (`skills/migrate-project-docs/templates/`)
 Canonical v2 documentation skeleton for side projects.
 
-- Contains `doc-templates/CLAUDE.md` and `doc-templates/docs/` (`tasks.md`, `done.md`, `next-session-prompt.md`, `operator-instructions.md`, `architecture.md`, `usage.md`, `progress-log.md`, and `requirements/`, `logic/`, `investigations/`, `plans/`).
+- Contains `skills/migrate-project-docs/templates/CLAUDE.md` and `skills/migrate-project-docs/templates/docs/` (`tasks.md`, `done.md`, `next-session-prompt.md`, `operator-instructions.md`, `architecture.md`, `usage.md`, `progress-log.md`, and `requirements/`, `logic/`, `investigations/`, `plans/`).
 - Consumed when bootstrapping a new project or running `/migrate-project-docs`.
 
 ### `docs` (`docs/`)
-Meta-documentation for `Frank` itself, dogfooding the exact v2 documentation contract defined in `doc-templates/`.
+Meta-documentation for `Frank` itself, dogfooding the exact v2 documentation contract defined in `skills/migrate-project-docs/templates/`.
 
 ---
 
 ## Allowed dependencies
 
 ```
-skills/migrate-project-docs  ──►  doc-templates/ (template shapes)
+skills/migrate-project-docs  ──►  skills/migrate-project-docs/templates/ (template shapes)
 skills/ (workflow tier)      ──►  skills/ (leaf & reference tiers, by name only)
 skills/ (leaf tier)          ──►  skills/ (reference tier only)
-doc-templates/               ──►  (zero dependencies; standalone starter files)
+skills/migrate-project-docs/templates/  ──►  (zero dependencies; standalone starter files)
 ```
 
 Rules:
 - **One fact, one home across `skills/`:** A `workflow` skill composes `leaf` skills by name and never restates their mechanics.
-- **Template parity:** `doc-templates/` must always pass the validation rules stated in `skills/docs-management/SKILL.md` and `skills/operator-instructions/SKILL.md`.
+- **Template parity:** `skills/migrate-project-docs/templates/` must always pass the validation rules stated in `skills/docs-management/SKILL.md` and `skills/operator-instructions/SKILL.md`.
 
 ---
 

@@ -106,7 +106,7 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 2. **Lock `docs/architecture.md`:** Fill `Module map`, `Module responsibilities`, and `Allowed dependencies` from the discovered modules.
 3. **Create an automated boundary test (`tests/test_architecture_boundaries.py` or equivalent):** Write a fast static/AST import test asserting that no module imports forbidden siblings or leaks third-party SDKs outside their owning module. Wire it into the project's verification gate command.
 4. **Scaffold `docs/{requirements,logic,investigations,plans}/`:**
-   - Copy `_index.md` and `_template.md` from `doc-templates/docs/`.
+   - Copy `_index.md` and `_template.md` from `./templates/docs/` bundled inside this skill's directory (next to this `SKILL.md`), or write them using the `docs-management` frontmatter contract. Never search outside the active project workspace or this skill directory.
    - Generate a concise initial `docs/requirements/<module>.md` ($\le 150$ lines) for each core module documenting its current inputs, outputs, and invariants.
 5. **Flip stage:** Change `Lifecycle stage: prototype` to `Lifecycle stage: structured` in `CLAUDE.md` and run `ctask validate`.
 
@@ -114,6 +114,7 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 
 ## Hard rules
 
+- Never read or search outside the active project workspace (except reading `./templates/` bundled inside this skill's own directory when scaffolding new files).
 - Never delete an `executed-*.md` or `plan-*.md` file without first verifying its durable behavior is recorded in `docs/requirements/` or `docs/logic/` (or its task is still open, for plans).
 - Never leave broken relative links or dangling `cross-file-references` after moving files into subfolders.
 - Never move `tasks.md`, `done.md`, `next-session-prompt.md`, `operator-instructions.md`, `architecture.md`, `usage.md`, or `progress-log.md` out of the `docs/` root.
@@ -125,5 +126,6 @@ Authored: 2026-10-11.
 
 Re-verification commands:
 ```bash
-ls -d doc-templates/docs/requirements doc-templates/docs/logic doc-templates/docs/investigations doc-templates/docs/plans
+ls -d docs/requirements docs/logic docs/investigations docs/plans
+grep -rL '^type:' docs/
 ```
