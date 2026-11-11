@@ -13,6 +13,8 @@ This repository has three distinct top-level directories — **never confuse `pl
 | `plugins/local-project-manager/skills/migrate-project-docs/templates/` | Starter skeleton (`CLAUDE.md` + `docs/`) copied into *other* side projects | When changing the template contract that downstream projects inherit |
 | `docs/` | Meta-documentation for **this** repository (`claude-plugin-marketplace` itself) | When tracking `claude-plugin-marketplace`'s own architecture, tasks (`tasks.md`), or session state |
 
+**Exception:** projects that adopt the v2 framework keep `docs/` local-only (gitignored, own repo). This repository tracks its own `docs/` on purpose, as a readable example of the contract.
+
 ## 2. Verification Gate Commands
 
 Run these checks before completing any task in this repository:

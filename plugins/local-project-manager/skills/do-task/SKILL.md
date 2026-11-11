@@ -55,6 +55,8 @@ ctask validate
    - **Multi-phase tasks (Phase Roll-Forward Rule):** Never write step-by-step details for 5 future phases into a 6,000-line file. Detail **only the current active phase**; list future phases as 1-line stubs, and collapse any already-landed phase into `- [x] Phase N: <1-line summary> (<commit-hash>)`.
 3. **Plan gate.** Spawn `fresh-reviewer` with the plan path, task ID, and relevant `docs/requirements/` or `docs/architecture.md` paths. Pass at $\ge 9$ (max 3 iterations).
 4. **Execute.** Run `sonnet-executor` agents **sequentially** on the current branch. Each step runs its targeted tests and commits (`wip(<slug>): step N — <summary>`).
+   - **Docs are off-limits to executors.** `docs/` is local-only and outside the project's git history. Executors never edit it or mark tasks done; the orchestrator passes everything they need in the step text.
+   - **Isolation uses sister folders.** When a step needs a worktree, create it at `<repo>.worktrees/<slug>` next to the repo (`git worktree add ../<repo>.worktrees/<slug>`), never inside the repo or under `.claude/worktrees`. It contains no `docs/`.
    - **Plan invalidation:** If an executor hits a false assumption, it stops immediately and returns to step 2.
    - **Operator / Decision Gate block (Binary Exit Rule):** If execution reaches a step that only the human operator can run (e.g. remote production/Mimir run) or produces a null/ambiguous experimental result requiring a scope judgment call, write the entry into `docs/operator-instructions.md` (`## Run queue` or `## Decision gates` per the `operator-instructions` skill), set `ctask edit <ID> --blocked-by "operator-instructions#<ID>"`, roll forward any landed phases in `docs/plans/<id>-<slug>.md`, and **stop working on `<ID>` immediately**.
 5. **Post-execution suite verify.** Spawn `suite-runner` with the full verification gate and compare against baseline.
@@ -65,10 +67,12 @@ ctask validate
    - **Delete `docs/plans/<id>-<slug>.md`** (do NOT create an `executed-<slug>.md` file).
    - Run `ctask close <ID>`, clear any stale `blocked-by::` reported by `ctask`, and run `ctask validate`.
    - If the task clears the high significance bar in `progress-log`, append one $\le 250$-char line to `docs/progress-log.md`.
-8. **Final commit and push.**
+   - Snapshot the docs pass: `git -C docs add -A` and commit. Never push the docs repo.
+8. **Final commit and push** of code only. `docs/` is not part of the project repo.
 
 ## Hard rules
 
+- Never let an executor touch `docs/`, and never commit `docs/` to the project repo.
 - Never create `executed-<slug>.md` files — shipped truth lives in `docs/requirements/` and `docs/logic/`, commit/task history lives in `docs/done.md` and `git log`.
 - Never allow `docs/plans/<id>-<slug>.md` to exceed 150 lines — roll completed phases into 1-line checkmarks and delete the plan file when the task closes.
 - Never append historical `Problem / Fix / Decision` blocks or dated verification notes into `docs/requirements/` or `docs/logic/`.

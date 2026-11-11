@@ -24,14 +24,20 @@
 - **Ephemeral plans:** Multi-step plans live at `docs/plans/<id>-<slug>.md` (capped at 150 lines). Completed phases collapse to a single checked line. Delete the plan file when closing the task with `ctask close <ID>`. Never create `executed-*.md` files.
 - **Binary operator handoff:** If a step requires human execution, credentials, or a judgment call on a null/ambiguous result, add an exact command (`## Run queue`) or a $\le 6$-line choice (`## Decision gates`) in `docs/operator-instructions.md`, mark the task blocked in `ctask`, and **stop working on that task immediately**. Never write status essays or hunt for nitpicks to stay busy.
 
-## 3. Code Quality Non-Negotiables
+## 3. Local-Only Docs & Worktrees
+
+- **`docs/` is local-only.** It is gitignored (`/docs`), may be a symlink into an Obsidian vault, and has its own git repo (`git -C docs log`) for undo. Never commit it to the project repo.
+- **Only the orchestrator edits `docs/`.** Sub-agents implementing a task never edit `docs/` or mark tasks done. They receive step text in their prompt; the orchestrator updates docs via `ctask` and commits them with `git -C docs`.
+- **Worktrees are sister folders.** Create them at `<repo>.worktrees/<slug>` next to the repo (`git worktree add ../<repo>.worktrees/<slug>`), never inside the repo or under `.claude/worktrees`. Worktrees get no `docs/`; do not symlink it in.
+
+## 4. Code Quality Non-Negotiables
 
 - **Respect module ownership:** External SDKs and libraries live exclusively inside the module that owns them (see `docs/architecture.md`).
 - **Fail fast, no silent fallbacks:** Do not swallow exceptions or invent undocumented fallback values.
 - **No unflagged stubs:** Any stub must be named with a `_stub_` prefix, return an honest empty state, and cite an open `tasks.md` ID (per `validation-and-qa`).
 - **Keep functions and files small:** Prefer pure transforms and explicit data contracts at module boundaries.
 
-## 4. Documentation Map
+## 5. Documentation Map
 
 | Path | Role | Who reads/writes |
 |---|---|---|

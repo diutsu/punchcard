@@ -96,6 +96,9 @@ For each hit:
 2. Update `docs/architecture.md` ("Documentation rules" section) to match the v2 subfolder contract.
 3. Run `ctask validate` and the `docs-management` validation suite.
 
+### Step 8 — Make `docs/` local-only
+Run the shared procedure in "Local-only docs" below.
+
 ---
 
 ## Mode B — Promote a prototype to structured docs (`stabilize-prototype`)
@@ -108,7 +111,20 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 4. **Scaffold `docs/{requirements,logic,investigations,plans}/`:**
    - Copy `_index.md` and `_template.md` from `./templates/docs/` bundled inside this skill's directory (next to this `SKILL.md`), or write them using the `docs-management` frontmatter contract. Never search outside the active project workspace or this skill directory.
    - Generate a concise initial `docs/requirements/<module>.md` ($\le 150$ lines) for each core module documenting its current inputs, outputs, and invariants.
-5. **Flip stage:** Change `Lifecycle stage: prototype` to `Lifecycle stage: structured` in `CLAUDE.md` and run `ctask validate`.
+5. **Make `docs/` local-only:** run the shared procedure in "Local-only docs" below.
+6. **Flip stage:** Change `Lifecycle stage: prototype` to `Lifecycle stage: structured` in `CLAUDE.md` and run `ctask validate`.
+
+---
+
+## Local-only docs (both modes)
+
+`docs/` never enters the project's git history. It may be a real directory or a symlink into an Obsidian vault.
+
+1. **Ignore it with a pattern that matches both.** Add `/docs` (no trailing slash) to the project's `.gitignore`. A pattern ending in `docs/` matches only real directories, so it would miss a symlink.
+2. **Untrack existing docs.** If `git ls-files docs` is non-empty, ask the user, then run `git rm -r --cached docs` and commit. Never rewrite history.
+3. **Give `docs/` its own repo for snapshots and undo.** If `git -C docs rev-parse --git-dir` fails, run `git -C docs init` and make a first commit. `git -C` follows a symlink, so the repo lives in the vault folder. Never push this repo unless the user asks.
+4. **Commit docs passes there.** After each legitimate docs change, run `git -C docs add -A` and commit. Uncommitted changes in `docs/` after a sub-agent run are unauthorized edits: inspect with `git -C docs status`, then revert.
+5. **Record it in the project `CLAUDE.md`.** The template already states the rule.
 
 ---
 
@@ -118,6 +134,7 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 - Never delete an `executed-*.md` or `plan-*.md` file without first verifying its durable behavior is recorded in `docs/requirements/` or `docs/logic/` (or its task is still open, for plans).
 - Never leave broken relative links or dangling `cross-file-references` after moving files into subfolders.
 - Never move `tasks.md`, `done.md`, `next-session-prompt.md`, `operator-instructions.md`, `architecture.md`, `usage.md`, or `progress-log.md` out of the `docs/` root.
+- Never leave `docs/` tracked by the project repo, and never ignore it with a trailing-slash pattern.
 - Always run `ctask validate` and `grep -rL '^type:' docs/` before concluding a migration.
 
 ## Provenance and maintenance
