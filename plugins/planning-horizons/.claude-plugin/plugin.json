@@ -1,0 +1,6 @@
+{
+  "name": "planning-horizons",
+  "version": "0.1.0",
+  "description": "Write, review and edit planning documents with the Planning Horizons model: templates per horizon, horizon and constraint checks, editorial review and a technical-prose style guide.",
+  "author": { "name": "Gonçalo" }
+}

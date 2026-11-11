@@ -13,9 +13,10 @@ claude-plugin-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json              # Marketplace catalog
 ├── plugins/
-│   └── local-project-manager/        # Plugin: skills for managing local projects
-│       ├── .claude-plugin/plugin.json
-│       └── skills/                   # 19 skills (see below)
+│   ├── local-project-manager/        # Plugin: skills for managing local projects
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/                   # 19 skills (see below)
+│   └── planning-horizons/            # Plugin: planning documents + technical writing (5 skills)
 └── docs/                             # Meta-documentation for this repository itself
 ```
 
@@ -28,6 +29,7 @@ Skills in `local-project-manager`: `code-discipline`, `code-task`, `data-integri
 ```bash
 /plugin marketplace add diutsu/claude-plugin-marketplace
 /plugin install local-project-manager@claude-plugin-marketplace
+/plugin install planning-horizons@claude-plugin-marketplace
 ```
 
 **Adding your own skills:**

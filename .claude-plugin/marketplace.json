@@ -12,7 +12,26 @@
       "description": "Skills for managing local projects: code discipline, task execution, v2 docs framework, research, QA, and project-docs migration.",
       "version": "1.0.0",
       "category": "development",
-      "keywords": ["skills", "docs", "workflow", "ctask"]
+      "keywords": [
+        "skills",
+        "docs",
+        "workflow",
+        "ctask"
+      ]
+    },
+    {
+      "name": "planning-horizons",
+      "source": "./plugins/planning-horizons",
+      "description": "Write, review and edit planning documents with the Planning Horizons model, plus a technical-prose style guide.",
+      "version": "0.1.0",
+      "category": "documentation",
+      "keywords": [
+        "docs",
+        "planning",
+        "architecture",
+        "writing",
+        "review"
+      ]
     }
   ]
 }
