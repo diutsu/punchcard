@@ -122,9 +122,8 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 
 1. **Ignore it with a pattern that matches both.** Add `/docs` (no trailing slash) to the project's `.gitignore`. A pattern ending in `docs/` matches only real directories, so it would miss a symlink.
 2. **Untrack existing docs.** If `git ls-files docs` is non-empty, ask the user, then run `git rm -r --cached docs` and commit. Never rewrite history.
-3. **Give `docs/` its own repo for snapshots and undo.** If `git -C docs rev-parse --git-dir` fails, run `git -C docs init` and make a first commit. `git -C` follows a symlink, so the repo lives in the vault folder. Never push this repo unless the user asks.
-4. **Commit docs passes there.** After each legitimate docs change, run `git -C docs add -A` and commit. Uncommitted changes in `docs/` after a sub-agent run are unauthorized edits: inspect with `git -C docs status`, then revert.
-5. **Record it in the project `CLAUDE.md`.** The template already states the rule.
+3. **Add no VCS to `docs/`.** Do not `git init` inside it. Backups are the vault's job, and `ctask` is the guard against bad task edits.
+4. **Record it in the project `CLAUDE.md`.** The template already states the rule.
 
 ---
 
@@ -134,7 +133,7 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 - Never delete an `executed-*.md` or `plan-*.md` file without first verifying its durable behavior is recorded in `docs/requirements/` or `docs/logic/` (or its task is still open, for plans).
 - Never leave broken relative links or dangling `cross-file-references` after moving files into subfolders.
 - Never move `tasks.md`, `done.md`, `next-session-prompt.md`, `operator-instructions.md`, `architecture.md`, `usage.md`, or `progress-log.md` out of the `docs/` root.
-- Never leave `docs/` tracked by the project repo, and never ignore it with a trailing-slash pattern.
+- Never leave `docs/` tracked by the project repo, and never ignore it with a trailing-slash pattern, and never create a git repo inside it.
 - Always run `ctask validate` and `grep -rL '^type:' docs/` before concluding a migration.
 
 ## Provenance and maintenance

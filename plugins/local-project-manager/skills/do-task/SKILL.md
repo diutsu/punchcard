@@ -67,7 +67,6 @@ ctask validate
    - **Delete `docs/plans/<id>-<slug>.md`** (do NOT create an `executed-<slug>.md` file).
    - Run `ctask close <ID>`, clear any stale `blocked-by::` reported by `ctask`, and run `ctask validate`.
    - If the task clears the high significance bar in `progress-log`, append one $\le 250$-char line to `docs/progress-log.md`.
-   - Snapshot the docs pass: `git -C docs add -A` and commit. Never push the docs repo.
 8. **Final commit and push** of code only. `docs/` is not part of the project repo.
 
 ## Hard rules

@@ -26,8 +26,8 @@
 
 ## 3. Local-Only Docs & Worktrees
 
-- **`docs/` is local-only.** It is gitignored (`/docs`), may be a symlink into an Obsidian vault, and has its own git repo (`git -C docs log`) for undo. Never commit it to the project repo.
-- **Only the orchestrator edits `docs/`.** Sub-agents implementing a task never edit `docs/` or mark tasks done. They receive step text in their prompt; the orchestrator updates docs via `ctask` and commits them with `git -C docs`.
+- **`docs/` is local-only.** It is gitignored (`/docs`), and may be a symlink into an Obsidian vault (backed up there). Never commit it to the project repo and never `git init` inside it.
+- **Only the orchestrator edits `docs/`.** Sub-agents implementing a task never edit `docs/` or mark tasks done. They receive step text in their prompt; the orchestrator updates docs via `ctask`, which is the guard on task state.
 - **Worktrees are sister folders.** Create them at `<repo>.worktrees/<slug>` next to the repo (`git worktree add ../<repo>.worktrees/<slug>`), never inside the repo or under `.claude/worktrees`. Worktrees get no `docs/`; do not symlink it in.
 
 ## 4. Code Quality Non-Negotiables
