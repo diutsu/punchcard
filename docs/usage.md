@@ -5,14 +5,14 @@ created: 2026-10-11
 updated: 2026-10-26
 cross-file-references: [docs/architecture.md, docs/operator-instructions.md, README.md]
 ---
-# Usage — claude-plugin-marketplace
-Commands for installing skills from `claude-plugin-marketplace`, running `ctask` via `uvx`, bootstrapping side-project documentation, and running validation checks.
+# Usage — punchcard
+Commands for installing skills from `punchcard`, running `ctask` via `uvx`, bootstrapping side-project documentation, and running validation checks.
 
 ## TOC
 - [Installing skills via `npx skills`](#installing-skills-via-npx-skills)
 - [Running & installing `ctask` via `uvx` / `uv`](#running--installing-ctask-via-uvx--uv)
 - [Bootstrapping or migrating a project](#bootstrapping-or-migrating-a-project)
-- [Validating `claude-plugin-marketplace`](#validating-claude-plugin-marketplace)
+- [Validating `punchcard`](#validating-punchcard)
 
 ---
 
@@ -20,13 +20,13 @@ Commands for installing skills from `claude-plugin-marketplace`, running `ctask`
 
 ```bash
 # Install all skills from GitHub
-npx skills add https://github.com/diutsu/claude-plugin-marketplace
+npx skills add https://github.com/diutsu/punchcard
 
 # Install a single skill
-npx skills add https://github.com/diutsu/claude-plugin-marketplace --skill docs-management
+npx skills add https://github.com/diutsu/punchcard --skill docs-management
 
 # Install from local checkout
-npx skills add /path/to/claude-plugin-marketplace
+npx skills add /path/to/punchcard
 ```
 
 ---
@@ -55,10 +55,10 @@ Or invoke `/migrate-project-docs` inside the target repository (`Mode A: convert
 
 ---
 
-## Validating `claude-plugin-marketplace`
+## Validating `punchcard`
 
 ```bash
-# 1. Validate claude-plugin-marketplace's own task registry
+# 1. Validate punchcard's own task registry
 ctask validate
 
 # 2. Verify all docs in docs/ and plugins/local-project-manager/skills/migrate-project-docs/templates/docs/ have frontmatter

@@ -2,7 +2,7 @@
 name: skill-maintenance
 tier: leaf
 description: >
-  The meta-skill governing how the claude-plugin-marketplace skill library (plugins/local-project-manager/skills/*/SKILL.md) and
+  The meta-skill governing how the punchcard skill library (plugins/local-project-manager/skills/*/SKILL.md) and
   plugins/local-project-manager/skills/migrate-project-docs/templates/ are organized, extended, and kept drift-free. Load when
   authoring a new skill, editing an existing SKILL.md, auditing plugins/local-project-manager/skills/ for
   overlap or stale paths, or deciding whether a rule belongs in CLAUDE.md, a
@@ -14,7 +14,7 @@ trigger: /skill-maintenance
 
 # /skill-maintenance
 
-This library (`https://github.com/diutsu/claude-plugin-marketplace`, under `plugins/local-project-manager/skills/`) is a cohesive system of **process, workflow, and reference skills** distributed via `npx skills`. Every skill must earn its context budget: one fact lives in one home, siblings cross-reference by name without restating mechanics, and project-specific facts stay out of global skills.
+This library (`https://github.com/diutsu/punchcard`, under `plugins/local-project-manager/skills/`) is a cohesive system of **process, workflow, and reference skills** distributed via `npx skills`. Every skill must earn its context budget: one fact lives in one home, siblings cross-reference by name without restating mechanics, and project-specific facts stay out of global skills.
 
 ## When NOT to use this skill
 
@@ -78,7 +78,7 @@ Every `plugins/local-project-manager/skills/<name>/SKILL.md` ships all five sect
 - Every `plugins/local-project-manager/skills/<name>/SKILL.md` must include `name`, `tier`, `description`, `trigger`, `When NOT to use`, `Hard rules`, and `Provenance and maintenance`.
 - Never embed unquoted `<placeholder>` angle brackets in prose outside code fences or YAML frontmatter.
 - Never reference retired `executed-*.md` files or root-level `REQUIREMENTS-*` / `BUSINESS_LOGIC-*` / `plan-*` paths — use the v2 subfolder contract (`docs/{requirements,logic,investigations,plans}/`).
-- Keep `plugins/local-project-manager/skills/migrate-project-docs/templates/` and `claude-plugin-marketplace/docs/` 100% compliant with `docs-management` at all times.
+- Keep `plugins/local-project-manager/skills/migrate-project-docs/templates/` and `punchcard/docs/` 100% compliant with `docs-management` at all times.
 
 ## Provenance and maintenance
 
@@ -93,6 +93,6 @@ grep -L '^tier:' plugins/local-project-manager/skills/*/SKILL.md
 # 2. Confirm zero stray references to retired executed-*.md outside migration/ban rules
 grep -rn 'executed-' plugins/local-project-manager/skills/ | grep -v -E '(docs-management|migrate-project-docs|do-task|skill-maintenance)'
 
-# 3. Confirm all docs in claude-plugin-marketplace/docs/ and plugins/local-project-manager/skills/migrate-project-docs/templates/docs/ have valid frontmatter
+# 3. Confirm all docs in punchcard/docs/ and plugins/local-project-manager/skills/migrate-project-docs/templates/docs/ have valid frontmatter
 grep -rL '^type:' docs/ plugins/local-project-manager/skills/migrate-project-docs/templates/docs/
 ```

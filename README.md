@@ -1,15 +1,15 @@
-# claude-plugin-marketplace
+# punchcard
 
 Personal **Claude Code plugin marketplace** by `diutsu`. Plugins bundle agent skills and are installable as Claude Code plugins or, skill by skill, via `npx skills`.
 
-Repository: `https://github.com/diutsu/claude-plugin-marketplace`
+Repository: `https://github.com/diutsu/punchcard`
 
 ---
 
 ## Repository Structure
 
 ```text
-claude-plugin-marketplace/
+punchcard/
 ├── .claude-plugin/
 │   └── marketplace.json              # Marketplace catalog
 ├── plugins/
@@ -27,16 +27,16 @@ Skills in `local-project-manager`: `code-discipline`, `code-task`, `data-integri
 ## 0. Plugin Marketplace (Claude Code)
 
 ```bash
-/plugin marketplace add diutsu/claude-plugin-marketplace
-/plugin install local-project-manager@claude-plugin-marketplace
-/plugin install planning-horizons@claude-plugin-marketplace
+/plugin marketplace add diutsu/punchcard
+/plugin install local-project-manager@punchcard
+/plugin install planning-horizons@punchcard
 ```
 
 **Adding your own skills:**
 
 - To extend an existing plugin: add `plugins/<plugin>/skills/<name>/SKILL.md` (auto-discovered).
 - For a new plugin: create `plugins/<name>/` with `.claude-plugin/plugin.json` and `skills/`, then add an entry with `"source": "./plugins/<name>"` to `.claude-plugin/marketplace.json`.
-- Commit, push, then run `/plugin marketplace update claude-plugin-marketplace`.
+- Commit, push, then run `/plugin marketplace update punchcard`.
 
 Validate locally with `claude plugin validate .`.
 
@@ -48,13 +48,13 @@ Works with every skill in every plugin under `plugins/`. Install all 19 current 
 
 ```bash
 # Install all skills from GitHub
-npx skills add https://github.com/diutsu/claude-plugin-marketplace
+npx skills add https://github.com/diutsu/punchcard
 
 # Install a single skill
-npx skills add https://github.com/diutsu/claude-plugin-marketplace --skill migrate-project-docs
+npx skills add https://github.com/diutsu/punchcard --skill migrate-project-docs
 
 # Install from a local clone
-npx skills add /path/to/claude-plugin-marketplace
+npx skills add /path/to/punchcard
 ```
 
 ---

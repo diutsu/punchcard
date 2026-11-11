@@ -5,8 +5,8 @@ created: 2026-10-11
 updated: 2026-10-11
 cross-file-references: [docs/architecture.md, docs/requirements/_index.md]
 ---
-# Business Logic — Index (claude-plugin-marketplace)
-Index of design rationales and composition rules for `claude-plugin-marketplace`.
+# Business Logic — Index (punchcard)
+Index of design rationales and composition rules for `punchcard`.
 
 ## By module
 

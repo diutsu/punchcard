@@ -6,7 +6,7 @@ updated: 2026-10-11
 cross-file-references: [docs/architecture.md, docs/requirements/_index.md, plugins/local-project-manager/skills/docs-management/SKILL.md]
 ---
 # Requirements — `skills`
-Contract for distributable agent skills stored under `plugins/local-project-manager/skills/<name>/SKILL.md` and installed via `npx skills add https://github.com/diutsu/claude-plugin-marketplace`.
+Contract for distributable agent skills stored under `plugins/local-project-manager/skills/<name>/SKILL.md` and installed via `npx skills add https://github.com/diutsu/punchcard`.
 
 ## Responsibilities & boundaries
 

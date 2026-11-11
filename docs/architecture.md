@@ -5,8 +5,8 @@ created: 2026-10-11
 updated: 2026-10-26
 cross-file-references: [docs/tasks.md, docs/usage.md, docs/requirements/_index.md, docs/logic/_index.md, CLAUDE.md, README.md]
 ---
-# Architecture — claude-plugin-marketplace
-High-level architecture of the `claude-plugin-marketplace` repository (`https://github.com/diutsu/claude-plugin-marketplace`): the distributable `plugins/local-project-manager/skills/` catalog, the `plugins/local-project-manager/skills/migrate-project-docs/templates/` starter tree, and the `docs/` meta-documentation.
+# Architecture — punchcard
+High-level architecture of the `punchcard` repository (`https://github.com/diutsu/punchcard`): the distributable `plugins/local-project-manager/skills/` catalog, the `plugins/local-project-manager/skills/migrate-project-docs/templates/` starter tree, and the `docs/` meta-documentation.
 
 ## TOC
 - [Module map](#module-map)
@@ -21,15 +21,15 @@ High-level architecture of the `claude-plugin-marketplace` repository (`https://
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                     https://github.com/diutsu/claude-plugin-marketplace                          │
+│                     https://github.com/diutsu/punchcard                          │
 └──────────────────────────────────────────────────────────────────────────────┘
           │                                  │                              │
           ▼                                  ▼                              ▼
 ┌───────────────────────────┐  ┌───────────────────────────┐  ┌────────────────────────┐
 │          plugins/local-project-manager/skills/          │  │   migrate-project-docs/   │  │         docs/          │
 │                           │  │       └─ templates/       │  │                        │
-│  npx skills package root  │  │  downstream repo starter  │  │  meta-docs for claude-plugin-marketplace   │
-│  plugins/local-project-manager/skills/<name>/SKILL.md   │  │  CLAUDE.md + v2 docs/     │  │  tracks claude-plugin-marketplace's work   │
+│  npx skills package root  │  │  downstream repo starter  │  │  meta-docs for punchcard   │
+│  plugins/local-project-manager/skills/<name>/SKILL.md   │  │  CLAUDE.md + v2 docs/     │  │  tracks punchcard's work   │
 └───────────────────────────┘  └───────────────────────────┘  └────────────────────────┘
 ```
 
@@ -40,7 +40,7 @@ High-level architecture of the `claude-plugin-marketplace` repository (`https://
 ### `skills` (`plugins/local-project-manager/skills/<name>/SKILL.md`)
 Distributable library of process, workflow, and reference skills for AI coding agents.
 
-- Discoverable directly by `npx skills add https://github.com/diutsu/claude-plugin-marketplace`.
+- Discoverable directly by `npx skills add https://github.com/diutsu/punchcard`.
 - Each skill lives in `plugins/local-project-manager/skills/<name>/SKILL.md` with optional `flows/` or `references/` subdirectories.
 - Self-contained and project-agnostic: skills teach discovery methods and contracts, never hardcoded paths to one consumer project.
 
@@ -51,7 +51,7 @@ Canonical v2 documentation skeleton for side projects.
 - Consumed when bootstrapping a new project or running `/migrate-project-docs`.
 
 ### `docs` (`docs/`)
-Meta-documentation for `claude-plugin-marketplace` itself, dogfooding the exact v2 documentation contract defined in `plugins/local-project-manager/skills/migrate-project-docs/templates/`.
+Meta-documentation for `punchcard` itself, dogfooding the exact v2 documentation contract defined in `plugins/local-project-manager/skills/migrate-project-docs/templates/`.
 
 ---
 
@@ -84,4 +84,4 @@ Every skill in `plugins/local-project-manager/skills/<name>/SKILL.md` declares a
 
 ## Documentation rules
 
-`claude-plugin-marketplace`'s own `docs/` directory follows the v2 documentation contract defined in [`plugins/local-project-manager/skills/docs-management/SKILL.md`](../plugins/local-project-manager/skills/docs-management/SKILL.md).
+`punchcard`'s own `docs/` directory follows the v2 documentation contract defined in [`plugins/local-project-manager/skills/docs-management/SKILL.md`](../plugins/local-project-manager/skills/docs-management/SKILL.md).

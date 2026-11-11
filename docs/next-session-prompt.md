@@ -10,9 +10,9 @@ Rewritten at the end of every session ($\le 40$ lines). Live snapshot only.
 
 ## Live state
 
-- **Repository layout complete:** `plugins/local-project-manager/skills/` (all 19 general-purpose v2 skills ported and aligned), `plugins/local-project-manager/skills/migrate-project-docs/templates/` (starter `CLAUDE.md` + v2 `docs/` skeleton), and `docs/` (meta-docs for `claude-plugin-marketplace` itself).
+- **Repository layout complete:** `plugins/local-project-manager/skills/` (all 19 general-purpose v2 skills ported and aligned), `plugins/local-project-manager/skills/migrate-project-docs/templates/` (starter `CLAUDE.md` + v2 `docs/` skeleton), and `docs/` (meta-docs for `punchcard` itself).
 - **Next open task:** `TPL-01` — Trial `/migrate-project-docs` on an existing project (e.g., `repit`) or prototype and fold any edge cases back into `plugins/local-project-manager/skills/migrate-project-docs/templates/`.
 - **Blocked on `operator-instructions.md`:**
   - `META-02` — `ctask` source is missing (`https://github.com/diutsu/ctask` is empty), so `ctask validate` cannot run (see [operator-instructions.md](operator-instructions.md)).
-- **Open question:** once the `ctask` source is recovered, decide whether it stays in its own repo or moves into `claude-plugin-marketplace/ctask/` (shares the `tasks.md` format contract with `plugins/local-project-manager/skills/`).
+- **Open question:** once the `ctask` source is recovered, decide whether it stays in its own repo or moves into `punchcard/ctask/` (shares the `tasks.md` format contract with `plugins/local-project-manager/skills/`).
 

@@ -1,6 +1,6 @@
-# claude-plugin-marketplace — Agent Instructions
+# punchcard — Agent Instructions
 
-> **One-liner:** Central repository (`https://github.com/diutsu/claude-plugin-marketplace`) for `diutsu`'s AI agent skills (`plugins/local-project-manager/skills/`) and project documentation templates (`plugins/local-project-manager/skills/migrate-project-docs/templates/`), installable via `npx skills`.
+> **One-liner:** Central repository (`https://github.com/diutsu/punchcard`) for `diutsu`'s AI agent skills (`plugins/local-project-manager/skills/`) and project documentation templates (`plugins/local-project-manager/skills/migrate-project-docs/templates/`), installable via `npx skills`.
 > **Lifecycle stage:** `structured`
 
 ## 1. Repository Layout & Ownership Boundaries
@@ -9,9 +9,9 @@ This repository has three distinct top-level directories — **never confuse `pl
 
 | Directory | What it is | When to edit |
 |---|---|---|
-| `plugins/local-project-manager/skills/<name>/SKILL.md` | Distributable agent skills installed via `npx skills add https://github.com/diutsu/claude-plugin-marketplace` | When authoring, updating, or auditing reusable agent skills |
+| `plugins/local-project-manager/skills/<name>/SKILL.md` | Distributable agent skills installed via `npx skills add https://github.com/diutsu/punchcard` | When authoring, updating, or auditing reusable agent skills |
 | `plugins/local-project-manager/skills/migrate-project-docs/templates/` | Starter skeleton (`CLAUDE.md` + `docs/`) copied into *other* side projects | When changing the template contract that downstream projects inherit |
-| `docs/` | Meta-documentation for **this** repository (`claude-plugin-marketplace` itself) | When tracking `claude-plugin-marketplace`'s own architecture, tasks (`tasks.md`), or session state |
+| `docs/` | Meta-documentation for **this** repository (`punchcard` itself) | When tracking `punchcard`'s own architecture, tasks (`tasks.md`), or session state |
 
 **Exception:** projects that adopt the v2 framework keep `docs/` local-only (gitignored, own repo). This repository tracks its own `docs/` on purpose, as a readable example of the contract.
 
@@ -20,7 +20,7 @@ This repository has three distinct top-level directories — **never confuse `pl
 Run these checks before completing any task in this repository:
 
 ```bash
-# 1. Validate claude-plugin-marketplace's own task registry
+# 1. Validate punchcard's own task registry
 ctask validate
 
 # 2. Verify every skill has required frontmatter (name, tier, description, trigger)
