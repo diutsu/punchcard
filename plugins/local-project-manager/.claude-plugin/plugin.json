@@ -1,0 +1,8 @@
+{
+  "name": "local-project-manager",
+  "description": "Skills for managing local projects: code discipline, task execution, v2 docs framework, research, QA, and project-docs migration.",
+  "version": "1.0.0",
+  "author": { "name": "diutsu" },
+  "repository": "https://github.com/diutsu/claude-plugin-marketplace",
+  "skills": "./skills"
+}

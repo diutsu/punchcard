@@ -5,14 +5,14 @@ created: 2026-10-11
 updated: 2026-10-26
 cross-file-references: [docs/architecture.md, docs/operator-instructions.md, README.md]
 ---
-# Usage — Frank
-Commands for installing skills from `Frank`, running `ctask` via `uvx`, bootstrapping side-project documentation, and running validation checks.
+# Usage — claude-plugin-marketplace
+Commands for installing skills from `claude-plugin-marketplace`, running `ctask` via `uvx`, bootstrapping side-project documentation, and running validation checks.
 
 ## TOC
 - [Installing skills via `npx skills`](#installing-skills-via-npx-skills)
 - [Running & installing `ctask` via `uvx` / `uv`](#running--installing-ctask-via-uvx--uv)
 - [Bootstrapping or migrating a project](#bootstrapping-or-migrating-a-project)
-- [Validating `Frank`](#validating-frank)
+- [Validating `claude-plugin-marketplace`](#validating-claude-plugin-marketplace)
 
 ---
 
@@ -20,13 +20,13 @@ Commands for installing skills from `Frank`, running `ctask` via `uvx`, bootstra
 
 ```bash
 # Install all skills from GitHub
-npx skills add https://github.com/diutsu/Frank
+npx skills add https://github.com/diutsu/claude-plugin-marketplace
 
 # Install a single skill
-npx skills add https://github.com/diutsu/Frank --skill docs-management
+npx skills add https://github.com/diutsu/claude-plugin-marketplace --skill docs-management
 
 # Install from local checkout
-npx skills add /path/to/Frank
+npx skills add /path/to/claude-plugin-marketplace
 ```
 
 ---
@@ -48,23 +48,23 @@ ctask validate
 
 ```bash
 # Copy starter CLAUDE.md and v2 docs/ skeleton into a new repository
-cp -rn skills/migrate-project-docs/templates/* /path/to/target-repo/
+cp -rn plugins/local-project-manager/skills/migrate-project-docs/templates/* /path/to/target-repo/
 ```
 
 Or invoke `/migrate-project-docs` inside the target repository (`Mode A: convert-existing` or `Mode B: stabilize-prototype`).
 
 ---
 
-## Validating `Frank`
+## Validating `claude-plugin-marketplace`
 
 ```bash
-# 1. Validate Frank's own task registry
+# 1. Validate claude-plugin-marketplace's own task registry
 ctask validate
 
-# 2. Verify all docs in docs/ and skills/migrate-project-docs/templates/docs/ have frontmatter
-grep -rL '^type:' docs/ skills/migrate-project-docs/templates/docs/
+# 2. Verify all docs in docs/ and plugins/local-project-manager/skills/migrate-project-docs/templates/docs/ have frontmatter
+grep -rL '^type:' docs/ plugins/local-project-manager/skills/migrate-project-docs/templates/docs/
 
 # 3. Verify all skills have required frontmatter fields
-grep -L '^name:' skills/*/SKILL.md
-grep -L '^tier:' skills/*/SKILL.md
+grep -L '^name:' plugins/local-project-manager/skills/*/SKILL.md
+grep -L '^tier:' plugins/local-project-manager/skills/*/SKILL.md
 ```

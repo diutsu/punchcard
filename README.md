@@ -1,55 +1,58 @@
-# Frank
+# claude-plugin-marketplace
 
-Personal AI agent **skills library** and **v2 project documentation templates**, packaged for distribution via `npx skills`. The skills rely on the companion **`ctask`** task-registry CLI, which lives in its own repository and runs via `uvx`.
+Personal **Claude Code plugin marketplace** by `diutsu`. Plugins bundle agent skills and are installable as Claude Code plugins or, skill by skill, via `npx skills`.
 
-Repository: `https://github.com/diutsu/Frank`
+Repository: `https://github.com/diutsu/claude-plugin-marketplace`
 
 ---
 
 ## Repository Structure
 
 ```text
-Frank/
-├── skills/                   # Distributable agent skills (discovered by npx skills)
-│   ├── code-discipline/      # Anti-slop code rules, module boundaries, & comment rules
-│   ├── code-task/            # Sub-agent code step execution & structured report contract
-│   ├── data-integrity/       # Idempotency, safe migrations, & financial/domain math rules
-│   ├── debugging-method/     # Root-cause-first debugging protocol (reproduce -> isolate -> fix)
-│   ├── do-task/              # Two-gate task execution workflow (v2 doc paths)
-│   ├── docs-management/      # v2 frontmatter, subfolder taxonomy, & anti-accretion rules
-│   ├── external-research/    # Web/vendor research protocol producing docs/investigations/
-│   ├── handle-comments/      # [COMMENT] handler routing open doubts to Decision gates
-│   ├── internal-research/    # Codebase/DB investigation protocol producing docs/investigations/
-│   ├── migrate-project-docs/ # Convert flat legacy docs/ or stabilize a prototype
-│   │   ├── SKILL.md
-│   │   └── templates/        # Bundled starter CLAUDE.md + v2 docs/ skeleton
-│   ├── operate-and-diagnose/ # CLI/server run & diagnose protocol
-│   ├── operator-instructions/# Run queue + Decision gates + Binary Exit Rule
-│   ├── progress-log/         # Curated 1-line project milestone log
-│   ├── research-methodology/ # Epistemic hygiene, source tiers, & numerical discipline
-│   ├── research-to-plan/     # 150-line capped plans with phase roll-forward
-│   ├── skill-maintenance/    # Authoring, splitting, & auditing skills (tier DAG + CommonMark)
-│   ├── ui-ux-discipline/     # Intentional UI states, hierarchy, & accessibility baseline
-│   ├── validation-and-qa/    # Test pyramid, real-behavior verification, & pre-done checklist
-│   └── write-docs/           # Technical prose, README/API/Changelog templates, & ADR shapes
-└── docs/                     # Meta-documentation for the Frank repository itself
+claude-plugin-marketplace/
+├── .claude-plugin/
+│   └── marketplace.json              # Marketplace catalog
+├── plugins/
+│   └── local-project-manager/        # Plugin: skills for managing local projects
+│       ├── .claude-plugin/plugin.json
+│       └── skills/                   # 19 skills (see below)
+└── docs/                             # Meta-documentation for this repository itself
 ```
+
+Skills in `local-project-manager`: `code-discipline`, `code-task`, `data-integrity`, `debugging-method`, `do-task`, `docs-management`, `external-research`, `handle-comments`, `internal-research`, `migrate-project-docs` (bundles `templates/`: starter `CLAUDE.md` + v2 `docs/` skeleton), `operate-and-diagnose`, `operator-instructions`, `progress-log`, `research-methodology`, `research-to-plan`, `skill-maintenance`, `ui-ux-discipline`, `validation-and-qa`, `write-docs`. The skills rely on the companion **`ctask`** task-registry CLI (own repository, runs via `uvx`).
+
+---
+
+## 0. Plugin Marketplace (Claude Code)
+
+```bash
+/plugin marketplace add diutsu/claude-plugin-marketplace
+/plugin install local-project-manager@claude-plugin-marketplace
+```
+
+**Adding your own skills:**
+
+- To extend an existing plugin: add `plugins/<plugin>/skills/<name>/SKILL.md` (auto-discovered).
+- For a new plugin: create `plugins/<name>/` with `.claude-plugin/plugin.json` and `skills/`, then add an entry with `"source": "./plugins/<name>"` to `.claude-plugin/marketplace.json`.
+- Commit, push, then run `/plugin marketplace update claude-plugin-marketplace`.
+
+Validate locally with `claude plugin validate .`.
 
 ---
 
 ## 1. Installing Skills (`npx skills`)
 
-Install all 19 skills (or individual skills) into any agent environment:
+Works with every skill in every plugin under `plugins/`. Install all 19 current skills (or individual skills) into any agent environment:
 
 ```bash
 # Install all skills from GitHub
-npx skills add https://github.com/diutsu/Frank
+npx skills add https://github.com/diutsu/claude-plugin-marketplace
 
 # Install a single skill
-npx skills add https://github.com/diutsu/Frank --skill migrate-project-docs
+npx skills add https://github.com/diutsu/claude-plugin-marketplace --skill migrate-project-docs
 
 # Install from a local clone
-npx skills add /path/to/Frank
+npx skills add /path/to/claude-plugin-marketplace
 ```
 
 ---
@@ -100,8 +103,8 @@ Split the migration into two passes so mechanical file moves are separated from 
 
 ### Option B — Bootstrap a Brand-New Project (`Mode B: stabilize-prototype`)
 
-1. **Day 1 (`Stage A: prototype`):** Copy the starter skeleton from [`skills/migrate-project-docs/templates/`](skills/migrate-project-docs/templates) into your new project root:
+1. **Day 1 (`Stage A: prototype`):** Copy the starter skeleton from [`plugins/local-project-manager/skills/migrate-project-docs/templates/`](plugins/local-project-manager/skills/migrate-project-docs/templates) into your new project root:
    ```bash
-   cp -rn skills/migrate-project-docs/templates/* /path/to/your-project/
+   cp -rn plugins/local-project-manager/skills/migrate-project-docs/templates/* /path/to/your-project/
    ```
 2. **Week 2 (`Stage B: structured`):** Once the prototype's module boundaries solidify, run `/migrate-project-docs` (`Mode B: stabilize-prototype`) to lock `docs/architecture.md`, generate `tests/test_architecture_boundaries.py`, and populate `docs/requirements/<module>.md`.

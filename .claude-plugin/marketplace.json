@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-plugin-marketplace",
+  "description": "diutsu's personal Claude Code plugin marketplace.",
+  "owner": {
+    "name": "diutsu"
+  },
+  "plugins": [
+    {
+      "name": "local-project-manager",
+      "source": "./plugins/local-project-manager",
+      "description": "Skills for managing local projects: code discipline, task execution, v2 docs framework, research, QA, and project-docs migration.",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["skills", "docs", "workflow", "ctask"]
+    }
+  ]
+}

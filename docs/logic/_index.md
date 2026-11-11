@@ -5,8 +5,8 @@ created: 2026-10-11
 updated: 2026-10-11
 cross-file-references: [docs/architecture.md, docs/requirements/_index.md]
 ---
-# Business Logic — Index (Frank)
-Index of design rationales and composition rules for `Frank`.
+# Business Logic — Index (claude-plugin-marketplace)
+Index of design rationales and composition rules for `claude-plugin-marketplace`.
 
 ## By module
 
