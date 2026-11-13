@@ -7,31 +7,46 @@
   },
   "plugins": [
     {
-      "name": "local-project-manager",
-      "source": "./plugins/local-project-manager",
-      "description": "Skills for managing local projects: code discipline, task execution, v2 docs framework, research, QA, and project-docs migration.",
-      "version": "1.0.0",
-      "category": "development",
-      "keywords": [
-        "skills",
-        "docs",
-        "workflow",
-        "ctask"
-      ]
+      "name": "claude",
+      "source": "./plugins/claude",
+      "description": "Always-on base: output style, project map, question and briefing skills, operator queue, and skill upkeep.",
+      "category": "productivity",
+      "keywords": ["skills", "workflow", "output-style"]
     },
     {
-      "name": "planning-horizons",
-      "source": "./plugins/planning-horizons",
-      "description": "Write, review and edit planning documents with the Planning Horizons model, plus a technical-prose style guide.",
-      "version": "0.1.0",
+      "name": "coding",
+      "source": "./plugins/coding",
+      "description": "Write, review, investigate and operate code: a gated work loop, per-work-type leaf skills, project evaluation and forensics.",
+      "category": "development",
+      "keywords": ["code", "review", "debugging", "qa"]
+    },
+    {
+      "name": "techdocs",
+      "source": "./plugins/techdocs",
+      "description": "Write technical docs from ideas and plan them into viable designs: shared writing style, templates, Diataxis layout, sourced research.",
       "category": "documentation",
-      "keywords": [
-        "docs",
-        "planning",
-        "architecture",
-        "writing",
-        "review"
-      ]
+      "keywords": ["docs", "writing", "architecture", "research"]
+    },
+    {
+      "name": "project-management",
+      "source": "./plugins/project-management",
+      "description": "Own the backlog: prioritise, triage, plan and close tasks through the project's task tool (ctask adapter).",
+      "category": "productivity",
+      "keywords": ["tasks", "backlog", "ctask", "planning"]
+    },
+    {
+      "name": "wip",
+      "source": "./plugins/wip",
+      "description": "Draft skills proposed by skill-reviewer, held here until promoted into another plugin.",
+      "category": "development",
+      "keywords": ["drafts"]
+    },
+    {
+      "name": "local-project-manager",
+      "source": "./plugins/local-project-manager",
+      "description": "Temporary: holds only migrate-project-docs until the remaining project migrations finish.",
+      "category": "development",
+      "keywords": ["migration"]
     }
   ]
 }

@@ -1,38 +1,64 @@
 # punchcard — Agent Instructions
 
-> **One-liner:** Central repository (`https://github.com/diutsu/punchcard`) for `diutsu`'s AI agent skills (`plugins/local-project-manager/skills/`) and project documentation templates (`plugins/local-project-manager/skills/migrate-project-docs/templates/`), installable via `npx skills`.
+> **One-liner:** `diutsu`'s shared Claude setup as a plugin marketplace (`https://github.com/diutsu/punchcard`): house rules, skills and agents that would otherwise live in a personal `~/.claude`.
 > **Lifecycle stage:** `structured`
 
-## 1. Repository Layout & Ownership Boundaries
+## Project map
 
-This repository has three distinct top-level directories — **never confuse `plugins/local-project-manager/skills/migrate-project-docs/templates/docs/` with `docs/`**:
+- tasks:: ctask
+- docs:: docs/
+- investigations:: docs/investigations/
+- prd:: docs/prd/
+- design:: docs/design/
+- scripts:: ops/scripts/
+- changelog:: CHANGELOG.md
+- worktrees:: ../punchcard.worktrees/
+- operator-queue:: ops/local/operator-queue.md
+- handoff:: ops/local/handoff.md
+- verify:: the commands in section 2
 
-| Directory | What it is | When to edit |
+## 1. Repository layout
+
+| Path | What it is | When to edit |
 |---|---|---|
-| `plugins/local-project-manager/skills/<name>/SKILL.md` | Distributable agent skills installed via `npx skills add https://github.com/diutsu/punchcard` | When authoring, updating, or auditing reusable agent skills |
-| `plugins/local-project-manager/skills/migrate-project-docs/templates/` | Starter skeleton (`CLAUDE.md` + `docs/`) copied into *other* side projects | When changing the template contract that downstream projects inherit |
-| `docs/` | Meta-documentation for **this** repository (`punchcard` itself) | When tracking `punchcard`'s own architecture, tasks (`tasks.md`), or session state |
+| `.claude-plugin/marketplace.json` | The marketplace manifest | When adding, renaming or removing a plugin |
+| `plugins/claude/` | Always-on base: output style, session card, question, briefing, operator-queue and skill-upkeep skills, watchlist | When changing how Claude behaves in every session |
+| `plugins/coding/` | The work loop (`do-work`), its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
+| `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
+| `plugins/project-management/` | Backlog, prioritisation, triage, plans; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
+| `plugins/wip/` | Draft skills from `skill-reviewer`, awaiting promotion | Drafts only |
+| `plugins/local-project-manager/` | Temporary: holds only `migrate-project-docs` | Do not edit; it is removed when the remaining migrations finish |
+| `docs/` | This repository's own docs, committed, in the Diataxis layout | When the structure or a contract changes |
 
-**Exception:** projects that adopt the v2 framework keep `docs/` local-only (gitignored, own repo). This repository tracks its own `docs/` on purpose, as a readable example of the contract.
+## 2. Verification gate commands
 
-## 2. Verification Gate Commands
-
-Run these checks before completing any task in this repository:
+Run these before completing any task in this repository:
 
 ```bash
-# 1. Validate punchcard's own task registry
+# 1. The marketplace and every plugin manifest are valid
+claude plugin validate .
+
+# 2. Every skill has the required frontmatter and sections (no output = pass)
+grep -L '^name:' plugins/{claude,coding,techdocs,project-management,wip}/skills/*/SKILL.md
+grep -L '^tier:' plugins/{claude,coding,techdocs,project-management,wip}/skills/*/SKILL.md
+grep -L '^trigger:' plugins/{claude,coding,techdocs,project-management,wip}/skills/*/SKILL.md
+grep -L '^## Hard rules' plugins/{claude,coding,techdocs,project-management,wip}/skills/*/SKILL.md
+
+# 3. The task tool is named only inside project-management (no output = pass)
+grep -rln 'ctask' plugins/claude/skills plugins/coding plugins/techdocs | grep -v -e project-map -e skill-maintenance -e project-doctor
+
+# 4. Every doc carries the frontmatter contract (no output = pass)
+grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials docs/investigations docs/prd docs/design 2>/dev/null
+
+# 5. The task registry is valid
 ctask validate
-
-# 2. Verify every skill has required frontmatter (name, tier, description, trigger)
-grep -L '^name:' plugins/local-project-manager/skills/*/SKILL.md
-grep -L '^tier:' plugins/local-project-manager/skills/*/SKILL.md
-
-# 3. Verify all docs in both docs/ and plugins/local-project-manager/skills/migrate-project-docs/templates/docs/ satisfy the v2 frontmatter contract
-grep -rL '^type:' docs/ plugins/local-project-manager/skills/migrate-project-docs/templates/docs/
 ```
 
-## 3. Authoring Non-Negotiables
+## 3. Authoring non-negotiables
 
-- **Skill authoring contract:** Every `plugins/local-project-manager/skills/<name>/SKILL.md` must include YAML frontmatter (`name`, `tier: leaf | workflow | reference`, `description`, `trigger`), `## When NOT to use this skill`, `## Hard rules`, and `## Provenance and maintenance`.
-- **Backtick angle-bracket placeholders:** Any `<placeholder>` in prose outside code fences or YAML frontmatter must be wrapped in backticks (`` `<placeholder>` ``) so CommonMark/Obsidian never eats it as raw HTML.
-- **Sync `plugins/local-project-manager/skills/` and `plugins/local-project-manager/skills/migrate-project-docs/templates/`:** Any change to the v2 documentation contract in `plugins/local-project-manager/skills/docs-management/SKILL.md` or `plugins/local-project-manager/skills/operator-instructions/SKILL.md` must be reflected in `plugins/local-project-manager/skills/migrate-project-docs/templates/` in the same commit.
+- **Skill contract:** every `plugins/<plugin>/skills/<name>/SKILL.md` has YAML frontmatter (`name`, `tier: leaf | workflow | reference`, `description`, `trigger`), `## When NOT to use this skill`, `## Hard rules`, and `## Provenance and maintenance`. `skill-maintenance` holds the full contract.
+- **No hardcoded locations or tools:** a skill names a project-map key or says "via `backlog`". Only `project-management` names the task tool.
+- **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
+- **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
+- **New skills start in `wip`:** drafts from `skill-reviewer` land in `plugins/wip/` and move to another plugin only after review.
+- **Third-party plugins are never vendored:** they are entries in `plugins/claude/skills/watchlist/references/watchlist.md`.

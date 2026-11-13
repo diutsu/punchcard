@@ -1,0 +1,7 @@
+{
+  "name": "wip",
+  "version": "0.1.0",
+  "description": "Draft skills proposed by skill-reviewer, held here until promoted into another plugin.",
+  "author": { "name": "diutsu" },
+  "repository": "https://github.com/diutsu/punchcard"
+}

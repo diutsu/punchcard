@@ -1,6 +1,6 @@
 # plugins/
 
-One folder per plugin. To add your own:
+One folder per plugin: `claude`, `coding`, `techdocs`, `project-management`, `wip`, and the temporary `local-project-manager`. To add your own:
 
 ```text
 plugins/<name>/
@@ -8,5 +8,6 @@ plugins/<name>/
 └── skills/<skill-name>/SKILL.md
 ```
 
-Then register it in `.claude-plugin/marketplace.json` with `"source": "./plugins/<name>"`.
-Skills under any `plugins/*/skills/` are also picked up by `npx skills add`.
+A plugin may also ship `agents/`, `hooks/`, `output-styles/` and `scripts/`, as `coding` and `claude` do. Register the plugin in `.claude-plugin/marketplace.json` with `"source": "./plugins/<name>"`.
+
+Skills under any `plugins/*/skills/` are also picked up by `npx skills add`. Draft skills go in `wip` until promoted; see `docs/how-to/promote-a-skill.md`.
