@@ -49,7 +49,7 @@ Put each real decision to the user and wait for the answer.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Adapted from the `grilling` skill in https://github.com/mattpocock/skills (MIT): the design-tree and frontier mechanism and the facts-versus-decisions split come from there. Question delivery changed to the question interface. Upstream is tracked in `watchlist`.
+Updated: 2026-11-14. Source: the `grilling` skill in https://github.com/mattpocock/skills (MIT), tracked in `watchlist`.
 
 Re-verification commands:
 ```bash

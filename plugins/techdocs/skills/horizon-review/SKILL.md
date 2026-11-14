@@ -73,7 +73,7 @@ Findings, not lectures. Each finding names the statement, says why it's at the w
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. From the former planning-horizons plugin, which copied the model from the Planning Horizons paper on 2026-11-11.
+Updated: 2026-11-14. Source: the Planning Horizons paper.
 
 Re-verification commands:
 ```bash

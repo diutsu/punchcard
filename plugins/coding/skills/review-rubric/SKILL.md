@@ -39,7 +39,7 @@ One rubric scores both plans and implementations. The author self-scores small w
 - **Faithfulness.** The diff matches the plan and meets every acceptance criterion, with no scope creep. A deviation passes only when documented and justified.
 - **Style.** The diff matches project style, architecture and framework use.
 - **Tests.** New behaviour and edge cases have tests. The suite shows no regression against the baseline.
-- **Cleanliness.** No dead or duplicated code, leftover scaffolding or commented-out blocks.
+- **Cleanliness.** No dead or duplicated code, leftover scaffolding or commented-out blocks. No reference from code to a task, plan, doc or step number (`backend-code` states the rule and the check).
 - **Docs.** Docs that describe changed behaviour are updated in the same pass, and the changelog line exists when the change is user-visible.
 
 ## Mechanics
@@ -49,6 +49,7 @@ One rubric scores both plans and implementations. The author self-scores small w
 - Pass at 9 or above.
 - Tag every issue `blocking`, `major` or `minor`.
 - A stub, mock or fabricated value presented as done is always blocking.
+- A reference from code to a task, plan or doc is `major`. Removing it is a quick fix.
 - An empty issue list with a low score, or a blocking issue with a 9, is an invalid review. Redo it.
 - Score against the rubric, not against effort.
 
@@ -114,7 +115,7 @@ The self-score uses the same verdict format and the same pass bar. A self-score 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (rubric, quick-fix and second-look rules merged from the earlier reviewer agent and the work loop).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

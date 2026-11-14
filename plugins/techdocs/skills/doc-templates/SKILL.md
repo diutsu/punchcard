@@ -70,7 +70,7 @@ If a draft mixes horizons (a vision that names a broker, a discovery that "decid
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. The vision, target-architecture and discovery templates and `model.md` come from the former planning-horizons plugin (copied 2026-11-11 from the Planning Horizons paper; the paper wins on disagreement). The ADR shape comes from the former write-docs skill.
+Updated: 2026-11-14. Source for the horizon templates and `model.md`: the Planning Horizons paper; the paper wins on disagreement.
 
 Re-verification commands:
 ```bash

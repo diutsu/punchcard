@@ -38,5 +38,6 @@ House rules for every session. Mechanics live in skills; these are the rules.
 
 ## Writing guidance
 
+- **State how it is, never how it was.** No past behaviour, old names or change notes in code, comments, docs or skills. History lives only in the changelog, git and tools made for migration.
 - **Write the rule, not the incident.** State what to do next time, in imperative form. History belongs in the commit message.
 - Stage files explicitly. Never `git add -A` or `git commit -a`.

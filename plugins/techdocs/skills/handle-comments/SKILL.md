@@ -66,7 +66,7 @@ For each marker: `file:line`, classification, and the action taken or the queue 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Carried over from the earlier handle-comments skill; routing now targets `operator-queue` and `backlog`.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

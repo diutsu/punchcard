@@ -51,7 +51,7 @@ Turn repeated friction in past sessions into draft skills. The user reviews ever
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Chosen over the heavier Task Observer plugin tracked in `watchlist`.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

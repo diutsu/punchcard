@@ -91,7 +91,7 @@ Use it when the user names several tasks.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (low-agent loop; batch mode and right-sizing restored).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

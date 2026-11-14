@@ -127,6 +127,10 @@ Use when a new side project starts in `Stage A: prototype` (with only `CLAUDE.md
 
 ---
 
+## After either mode
+
+Convert the result to the current layout with `${CLAUDE_SKILL_DIR}/references/to-current-layout.md`.
+
 ## Hard rules
 
 - Never read or search outside the active project workspace (except reading `./templates/` bundled inside this skill's own directory when scaffolding new files).

@@ -69,7 +69,7 @@ Raise a reviewer a tier only when the change crosses module boundaries.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Report formats derive from the researcher, executor and fresh-reviewer agents of the earlier setup.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

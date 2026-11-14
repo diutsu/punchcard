@@ -82,7 +82,7 @@ File each finding via `backlog` and offer `do-work` for the fixes. Do not change
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (migrated and adapted from the earlier standalone skill).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

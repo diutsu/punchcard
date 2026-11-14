@@ -77,7 +77,7 @@ Run `writing-style` and `editorial-review` on the doc. Re-open every link and co
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Multi-source rule, privacy wall, proof-of-concept bar and wide-sweep guidance carry over from the earlier external-research skill; the quote and fact-or-inference rules are new.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

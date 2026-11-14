@@ -2,8 +2,8 @@
 type: explanation
 state: done
 created: 2026-10-11
-updated: 2026-11-13
-cross-file-references: [.claude-plugin/marketplace.json, plugins/claude/session-card.md, plugins/claude/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/claude/skills/watchlist/SKILL.md, plugins/claude/skills/skill-maintenance/SKILL.md, docs/explanation/restructure-decisions.md]
+updated: 2026-11-14
+cross-file-references: [.claude-plugin/marketplace.json, plugins/claude/session-card.md, plugins/claude/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/claude/skills/watchlist/SKILL.md, plugins/claude/skills/skill-maintenance/SKILL.md]
 ---
 
 # Architecture
@@ -57,4 +57,3 @@ Third-party plugins are tracked, not copied. The `watchlist` skill keeps a table
 
 This repository tracks its own `docs/` in the Diataxis layout defined by `docs-management`, as a readable example of the contract. Doc skeletons for new documents live in `techdocs`. The starter tree for the older flat layout stays in `local-project-manager` until the last migration finishes.
 
-> The reasoning behind each choice, with alternatives and how to reverse it, is in [restructure-decisions.md](restructure-decisions.md).

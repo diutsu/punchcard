@@ -12,6 +12,8 @@ One line per user-visible change or project milestone, newest first.
 - A watchlist tracks third-party plugins under trial, with install and remove actions.
 - `away-mode` and `run-report` cover unattended runs and their outcome reports.
 - A handoff note carries one long task across sessions; it is local and exists only while that task is in flight.
+- `backend-code` bans references from code to tasks, plans and docs, with a diff check; the reviewer flags them and may remove them as a quick fix.
+- `migrate-project-docs` maps its output to the current docs layout.
 
 ### Changed
 

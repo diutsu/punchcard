@@ -21,7 +21,7 @@ The structure every `plugins/<plugin>/skills/<name>/SKILL.md` must follow. The f
 
 ## Sections
 
-In order: a `## When NOT to use this skill` table naming the sibling that owns adjacent work, an imperative body, `## Hard rules` as flat imperatives, and `## Provenance and maintenance` with a date and runnable check commands.
+In order: a `## When NOT to use this skill` table naming the sibling that owns adjacent work, an imperative body, `## Hard rules` as flat imperatives, and `## Provenance and maintenance` with a date, any external source, no history, and runnable check commands.
 
 ## Tiers
 

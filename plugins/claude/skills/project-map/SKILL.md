@@ -75,7 +75,7 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14 (`handoff` key added; progress log and next-session note left the `tasks` key).
+Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash

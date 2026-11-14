@@ -71,7 +71,7 @@ Write none of these; the catalogue gives the pattern and the rewrite for each.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Base: the planning-horizons writing guide. Added from the former write-docs skill: active voice, no nominalizations, no filler, backticked placeholders. LLM-tells rules paraphrase Wikipedia, "Signs of AI writing" (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), full wikitext read 2026-11-14.
+Updated: 2026-11-14. Source for the LLM-tells rules: Wikipedia, "Signs of AI writing" (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
 
 Re-verification commands:
 ```bash

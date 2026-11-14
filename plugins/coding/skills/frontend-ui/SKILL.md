@@ -78,7 +78,7 @@ Produce a mockup as HTML or SVG. Iterate with the user until the layout and the 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (renamed from the earlier ui-ux-discipline skill; consistency section restored; mockup rule added).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

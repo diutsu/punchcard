@@ -52,7 +52,7 @@ Every `SKILL.md` has:
 2. `## When NOT to use this skill`, a table naming the sibling that owns adjacent work.
 3. An imperative body. Prefer tables and numbered steps. Wrap every `<placeholder>` in prose in backticks.
 4. `## Hard rules`, flat imperatives.
-5. `## Provenance and maintenance`, with a date and runnable check commands.
+5. `## Provenance and maintenance`: the date, any external source, and runnable check commands. No history.
 
 Tiers: a **leaf** runs one intent and loads no sibling to orchestrate. A **workflow** composes leaves and agents by name and never restates their mechanics. A **reference** is consulted, not stepped through.
 
@@ -63,7 +63,8 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 - **Name capabilities and map keys, never paths or tools.** Resolve locations through `project-map`. A hardcoded path or tool name is a fork waiting to drift.
 - **Never restate a sibling's mechanics.** Write "per `<skill>`" and stop. A skill that copies another skill's steps goes stale silently when the original changes.
 - **Split by trigger family, not by mechanical step.** Commit, describe, push is one intent. Replying to review comments days later is another.
-- **Treat skill names as a public interface.** When renaming, leave a one-line stub under the old name that points at the new one, then remove it after one release.
+- **Treat skill names as a public interface.** Rename in one pass: the folder, `name`, `trigger` and every reference. Leave no stub or note under the old name.
+- **State how it is.** A skill describes current behaviour only. What it replaced, was renamed from or used to do goes in the changelog and git history.
 - **Third-party skills run with your permissions.** Read the full text before installing. Track them in `watchlist`, never copy them in without review.
 
 ## 5. Split, merge, retire
@@ -89,7 +90,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Composition rules adapted from the earlier note on composing workflow skills over central skills.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

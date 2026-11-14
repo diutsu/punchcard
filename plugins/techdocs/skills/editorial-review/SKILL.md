@@ -88,7 +88,7 @@ End each pass with what changed and what is still open, in a few lines. Do not r
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Two-pass flow and reference check come from the former planning-horizons plugin. The lint step is new.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

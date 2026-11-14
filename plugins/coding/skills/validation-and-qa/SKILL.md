@@ -72,7 +72,7 @@ Fails everywhere: a real failure. Fails only in the full suite: order or shared-
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (gate from the `verify` key; thresholds moved to `validate-run-results`).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

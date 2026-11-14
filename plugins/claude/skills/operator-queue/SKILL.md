@@ -30,7 +30,7 @@ The file lives at the `operator-queue` key of the project map (see `project-map`
 
 ## File shape
 
-Exactly two H2 sections: `## Run queue` and `## Decision gates`.
+Exactly two H2 sections: `## Run queue` and `## Decision gates`. Create the file from `${CLAUDE_SKILL_DIR}/templates/operator-queue.md`. It is a worklist, not a doc: no frontmatter, and no links to other files beyond the task each entry names.
 
 ### Run queue
 
@@ -82,7 +82,6 @@ When the human pastes output or checks an option:
 
 1. Ingest the result. A passed gate or option (a): update the permanent docs in place (per `docs-management`) and close the task via `backlog`. A new finding or option (b): file or edit the follow-up via `backlog`.
 2. Delete the whole entry.
-3. Bump `updated` in the file's frontmatter if it has one.
 
 ## Handoff note
 
@@ -114,10 +113,9 @@ The handoff note carries one task across sessions or between independent agents.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14 (handoff note added). Renamed from `operator-instructions`. Command-first, success-signal and group-by-task rules restored from the earlier copy.
+Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
 grep -n '^## ' "$(sed -n 's/^- operator-queue:: //p' CLAUDE.md)"
-grep -rn 'operator-instructions' plugins/
 ```

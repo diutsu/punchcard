@@ -39,7 +39,6 @@ In `plugins/local-project-manager/skills/migrate-project-docs/templates/`, used 
 | `docs/investigations/_template.md` | Investigation skeleton |
 | `docs/plans/_template.md` | Plan skeleton, at most 150 lines with phase roll-forward |
 
-This tree follows the older flat layout. It changes when `migrate-project-docs` moves to the Diataxis layout.
 
 ## Contract
 

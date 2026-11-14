@@ -85,16 +85,16 @@ File names are lowercase `kebab-case.md`. A leading `_` is reserved for `_index.
 - Keep the rejected alternatives and the derivation in an ADR or an investigation, and leave a one-line blockquote pointer next to the rule that looks counter-intuitive.
 - Open an investigation with a verdict block of at most 10 lines: the conclusion, the docs it changed, and the options dropped with one-line reasons.
 - Bump `updated` on every content edit: `sed -i "s/^updated:.*/updated: $(date +%Y-%m-%d)/" <file>`.
-- Reference docs, not individual code lines; link to modules and files that exist.
+- Reference docs, not individual code lines; link to modules and files that exist. Code never links back to a doc (`backend-code` states the rule).
 
 ## Procedure: add frontmatter to a doc that lacks it
 
 1. Choose `type` from the decision table. If two answers fit, split the doc or ask.
 2. Choose `state`: complete and maintained `done`; actively changing `wip`; stub `planned`; superseded or concluded `archived`.
-3. Set `created` from the first-commit command above; fall back to an old "Last Change" line or the file's modification time.
-4. Set `updated` to the old "Last Change" value if present, else `created`.
+3. Set `created` from the first-commit command above; fall back to the file's modification time.
+4. Set `updated` to the date of the last content commit, else `created`.
 5. Set `cross-file-references` to the real paths the body links or names, else `[]`.
-6. Insert the block at the top, then a blank line, then the existing title. Delete any old "Last Change" line.
+6. Insert the block at the top, then a blank line, then the existing title.
 7. Move the file to the folder its `type` names.
 
 ## Validation procedure
@@ -105,7 +105,6 @@ Callable by `project-doctor`. Run from the repo root, with `DOCS` as the resolve
 DOCS=docs
 grep -rL '^type:' "$DOCS"                                     # docs missing frontmatter
 grep -rLE '^type: (tutorial|how-to|reference|explanation|investigation|prd|design)$' "$DOCS"   # invalid type
-grep -rn '^Last Change:' "$DOCS"                              # residue of the old convention
 find "$DOCS" -name '*[A-Z]*.md'                               # non-kebab-case names
 grep -rn '\[COMMENT\]' "$DOCS"                                # unprocessed comments
 grep -rnE '^(\*\*Problem\.\*\*|### (Update|Amendment))|(Confirmed|Verified) (on )?20[0-9]{2}' "$DOCS"/reference "$DOCS"/explanation   # fix-history in timeless docs
@@ -123,7 +122,7 @@ A doc is valid when frontmatter is the first thing in the file, all five fields 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. Diataxis from https://diataxis.fr (four kinds, compass). Frontmatter contract and the add-frontmatter procedure carry over from the earlier docs-management skill.
+Updated: 2026-11-14. Source: Diataxis, https://diataxis.fr.
 
 Re-verification commands:
 ```bash

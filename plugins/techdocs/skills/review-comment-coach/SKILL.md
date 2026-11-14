@@ -56,7 +56,7 @@ Draft the replies in the author's voice: short, direct, no defensiveness. Follow
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13. From the former planning-horizons plugin.
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash

@@ -48,6 +48,7 @@ Assess a project or module for maintainability and refactorability, with evidenc
 | Error handling | One policy or several; swallowed errors, silent fallbacks | grep of catch and except blocks, return conventions |
 | Dead code | Unreferenced exports, files, flags | reference search, coverage output |
 | Doc-versus-code drift | `FRESH`, `STALE`, `CONTRADICTED` verdicts | method in `codebase-search` |
+| Links from code to project work | Task IDs, plan and doc names, step numbers in code and comments; how many point at files that no longer exist | grep recipe in `backend-code` |
 | Third-party SDK leakage | SDK types or calls outside their wrapper module | grep of SDK imports outside the boundary (`backend-code` states the rule) |
 
 Recipes for co-change and churn-times-size are in `${CLAUDE_SKILL_DIR}/references/commands.md`.

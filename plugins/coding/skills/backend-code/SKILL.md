@@ -57,24 +57,42 @@ Before adding an import or a file, read the architecture doc under the `docs` ke
 A comment explains why, never what.
 
 - Delete a comment that restates the next line.
-- Never write a ticket or task ID in a comment.
 - Never write history, such as "added after X", "fixed for Y" or "phase 2".
 - Do comment a non-obvious constraint: why this algorithm, threshold or ordering; an external API quirk; a hardware or memory bound; a deliberate duplication across a boundary and the test that keeps the copies identical.
 - Use docstrings for public module contracts and inline comments for local hazards.
+
+## 6. No links from code to project work
+
+Code outlives the tasks, plans and docs that produced it. Those get closed, renamed and deleted, and the reference left in the code then points at nothing.
+
+- Never name a task or ticket ID, a plan, an investigation, a design or requirement doc, a doc path, or a plan step or phase number in code. This covers comments, docstrings, identifiers, test names, log and error messages.
+- When the reason matters, write the reason itself: "retry three times because the provider drops the first connection after idle", not "see the retry investigation".
+- The link runs the other way. Docs name the modules they describe (see `docs-management`), and tasks name the files they touch (via `backlog`).
+- A URL to an external spec or upstream bug is allowed: it is not project work and it does not move.
+- When you edit a file that already holds such a reference, replace it with the reason or delete it in the same pass.
+
+Check a diff before handing it over. Adapt the docs folder name and file extensions to the project:
+
+```bash
+git diff -U0 <base>..HEAD -- . ':!docs' ':!*.md' | grep -nE '^\+.*(\b[A-Z]{2,}-[0-9]+\b|docs/|\b(plan|executed|investigation|requirements?)-[a-z0-9-]+|\b(phase|step) [0-9]+)'
+```
+
+Review each hit; an external standard such as `RFC-9110` or `UTF-8` is not a finding.
 
 ## Hard rules
 
 - Never import a third-party library outside its owning module.
 - Never swallow an exception or invent an undocumented default.
 - Never write a helper without searching the module for an existing one.
-- Never leave a ticket ID, step number or history note in a comment.
+- Never leave a history note in a comment.
+- Never reference a task, plan, doc or step number anywhere in code.
 - Never add a single-implementation abstraction.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (renamed from the earlier code-discipline skill; comment rules extended).
+Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
-grep -rnE "(TODO|FIXME)?.*[A-Z]{2,}-[0-9]+" --include=*.py --include=*.ts src | head
+grep -rnE '\b[A-Z]{2,}-[0-9]+\b|docs/|\b(plan|executed|investigation)-[a-z0-9-]+' --include=*.py --include=*.ts src | head
 ```

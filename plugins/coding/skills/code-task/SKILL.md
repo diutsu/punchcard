@@ -21,7 +21,7 @@ You implement the change in your brief, check it with the targeted test command,
 | Situation | Use instead |
 |---|---|
 | Scoping, planning, gating a task | `do-work` |
-| Code quality, module boundaries, comment rules | `backend-code` (load alongside) |
+| Code quality, module boundaries, comment rules, no task or doc references in code | `backend-code` (load alongside) |
 | Front-end view rules | `frontend-ui` |
 | What counts as done | `validation-and-qa` |
 
@@ -69,7 +69,7 @@ ISSUES SPOTTED:
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13 (docs rules removed; docs are committed and the brief says who edits them).
+Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
