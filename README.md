@@ -79,6 +79,8 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 | `triage-close` | Close tasks whose done-when is met, with evidence |
 | `plan` | Turn accepted research into an execution plan |
 | `product-direction` | Bring requirements, PRDs and vision in line with what the user now wants, settle conflicts, decide when each change is built |
+| `bug-report` | File a new issue reported outside the current task: settle the expected behaviour with the user and name the docs that change |
+| `close-task` | Before closing a task, decide which leftovers belong to its intention (do now) and which are separate concerns (new task), without asking the user |
 
 ### local-project-manager (temporary)
 

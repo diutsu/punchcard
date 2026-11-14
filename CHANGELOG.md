@@ -12,6 +12,7 @@ One line per user-visible change or project milestone, newest first.
 
 ### Added
 
+- `bug-report` and `close-task` in `project-management`: the first files a new issue with its expected behaviour confirmed and its doc impact named; the second makes the agent decide, before closing, which leftovers are part of the task's intention and which become new tasks. `do-work` closes through `close-task`; `capability-check` routes defect reports to `bug-report`.
 - `product-direction` in `project-management`: a session that updates requirements, PRDs and vision to match what the user now wants, settles conflicts and blockers, and decides when each change is built. `capability-check` routes requirements, roadmap and vision requests to it.
 - Four product and requirements skill collections join the list of third-party plugins under trial, all untested.
 - Four plugins replace the single one: `claude` (always-on base), `coding`, `techdocs` and `project-management`, plus `wip` for draft skills.

@@ -44,7 +44,7 @@ Typical run: executor agents for the steps, plus one `reviewer`, plus one grader
 | Several tasks | Batch mode below. |
 | Proof of concept | Proof-of-concept flow below. |
 
-Work without a task ID follows the same loop. Skip the close step and report the outcome to the user.
+Work without a task ID follows the same loop. Skip only the `backlog` close; still run `close-task` with the user's request as the intention, and report the outcome and any filed follow-ups to the user.
 
 ## Loop
 
@@ -60,13 +60,14 @@ Work without a task ID follows the same loop. Skip the close step and report the
 5. **Execute.** Launch independent steps in parallel and dependent steps in order, from the briefs already written. Each executor follows `code-task`, runs its targeted tests and commits its step. Worktrees follow `repo-infra`.
    - Executors may edit docs and the changelog when their step says so.
    - **Plan invalidation.** An executor that hits a false assumption stops. Return to step 3.
+   - **Leftovers.** After the last step, run `close-task` pass 1: in-scope leftovers become plan steps in this loop, so the one verify and the one review cover them; separate concerns are filed as tasks.
    - **Binary Exit Rule.** A step only the human can run, or a null result needing a decision, goes to `operator-queue`. Record the blocker through `backlog` and stop working on that task.
 6. **Verify.** Run the full suite once, with the `verify` commands, per `validation-and-qa`. Delegate to `suite-runner` only when the output is large.
 7. **Implementation gate.** Send one `reviewer` the diff range, acceptance criteria and test output, scored with `review-rubric`.
    - The reviewer applies quick fixes itself. If it changed code, one fresh `reviewer` instance grades only that fix diff.
    - Executor fixes made after review get a delta review from the original reviewer. Allow at most 3 iterations; then report to the user.
 8. **Docs.** Update docs in the same pass, per `docs-management`: in place, timeless, `updated` bumped. Docs are committed. Add the changelog line per `changelog`; a milestone goes there too.
-9. **Close.** Close the task through `backlog`. Commit per `repo-infra`; push only when asked.
+9. **Close.** Run `close-task` pass 2 over what verify, review and docs exposed: targeted tests and a delta review for any item it adds, no second full suite. Then close the task through `backlog`. Commit per `repo-infra`; push only when asked.
 
 ## Proof-of-concept flow
 
@@ -99,6 +100,7 @@ Use it when the user names several tasks.
 - Never run the full suite more than once per task, plus the baseline when no recent green record exists.
 - Never write a path or tool name for plans or tasks here; go through `plan` and `backlog`.
 - Never keep working on a task that needs a human; queue it and stop.
+- Never defer part of a task's intention because it touches other files, and never ask the user about a leftover; `close-task` decides.
 - Never push unless asked.
 - Never merge proof-of-concept code, and never end a proof of concept without its result and cleanup.
 - Never end a session mid-task without a handoff note when the task needs another session (see `operator-queue`).

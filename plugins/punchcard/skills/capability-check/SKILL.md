@@ -50,6 +50,7 @@ Starting in the wrong mode costs more than the check: code written before the de
    | Artifact (report, page, diagram) | `writing-style`, plus the visual skill that fits; `run-report` for an outcome report |
    | Doc | `doc-templates` and `writing-style`; `external-research` first when it needs sources |
    | Failure to explain | `forensics` before any fix |
+   | A new defect reported outside the current task | `bug-report` |
    | "What next" | `prioritise` |
    | Requirements, product direction, roadmap or vision | `product-direction` |
 

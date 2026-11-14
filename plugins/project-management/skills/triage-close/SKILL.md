@@ -7,7 +7,7 @@ description: >
   open, and close the confirmed ones with evidence. Load when the user asks
   to "clean up the backlog", "what can we close", or after a large change
   landed. Do NOT load to rank work (see prioritise), to close the task you
-  just finished in do-work (that close goes through backlog directly), or to
+  just finished in do-work (see close-task), or to
   add tasks (see backlog).
 trigger: /triage-close
 ---
@@ -21,7 +21,7 @@ Close tasks only with evidence. This skill reads tasks, code and git history, pr
 | Situation | Use instead |
 |---|---|
 | Choosing the next task | `prioritise` |
-| Closing the one task a work session just finished | `backlog` `close`, after `validation-and-qa` evidence |
+| Closing the one task a work session just finished | `close-task` |
 | Creating or editing a task | `backlog` |
 | Recording a milestone for a closed task | `changelog` |
 

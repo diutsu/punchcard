@@ -21,6 +21,8 @@ Every task operation in the marketplace goes through this skill. It names the ne
 |---|---|
 | Choosing what to work on next | `prioritise` |
 | Deciding which tasks are finished | `triage-close` |
+| Judging leftovers before closing the task just finished | `close-task` |
+| Filing a newly reported defect | `bug-report` |
 | Writing or rolling an execution plan | `plan` |
 | Recording a significant milestone | `changelog` |
 | Carrying a long task across sessions | the handoff note (`operator-queue`) |
@@ -71,7 +73,7 @@ Every task has: a stable id, a title, a priority, a module, optional blocked-by 
 - Never name the tool or a registry path outside the adapter file.
 - Never close a task without evidence in the close note or the confirmed batch.
 - Always validate after a batch of changes.
-- Never add a task that an open or closed task already covers; extend that one.
+- Never add a task that an open or closed task already covers; extend that one. A failure that returns after a closed task's fix is the exception: add a regression task that links the closed one.
 
 ## Provenance and maintenance
 

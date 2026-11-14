@@ -5,7 +5,7 @@ description: >
   Find why a failure, bug, wrong number or surprising behaviour happens, and
   establish the root cause before any fix. Load BEFORE writing a fix or
   forming a theory: "why is this wrong", "this used to work", "flaky test",
-  "debug this", "investigate why", and when the user asks for a bug report.
+  "debug this", "investigate why", and when the user asks for a written bug report document.
   Covers reproduction, the was-this-closed-before check, hypotheses with one
   discriminating experiment each, the root-cause acceptance bar, and bug
   reports. Do NOT load for reading how code works with no failure in hand (see
@@ -27,6 +27,7 @@ An investigation is an experiment-design problem. Reproduce, check history, enum
 | Proving a change made something better | `validate-run-results` |
 | Deciding whether to replace or report a third-party library | `external-research` |
 | Fixing the confirmed cause | `do-work` |
+| Filing a newly reported defect with its expected behaviour | `bug-report` |
 | Raw-versus-derived reconciliation mechanics | `data-integrity` |
 
 ## Procedure
@@ -57,7 +58,7 @@ Check these classes first: stale values (who invalidates this store, and did tha
 
 ## Bug report
 
-When the user asks for a bug report, write it from `${CLAUDE_SKILL_DIR}/templates/bug-report.md` into the `investigations` key. Fill every section: title, environment and versions, reproduction steps someone else can run verbatim, expected versus actual with exact output, frequency, root cause with evidence (or "not yet established" plus the hypotheses ruled out), scope of impact, workaround, suggested fix. Frontmatter follows `docs-management`.
+When the user asks for a written bug report document with the root cause, write it from `${CLAUDE_SKILL_DIR}/templates/bug-report.md` into the `investigations` key. Fill every section: title, environment and versions, reproduction steps someone else can run verbatim, expected versus actual with exact output, frequency, root cause with evidence (or "not yet established" plus the hypotheses ruled out), scope of impact, workaround, suggested fix. Frontmatter follows `docs-management`.
 
 ## Hard rules
 
