@@ -3,7 +3,7 @@ type: how-to
 state: done
 created: 2026-11-13
 updated: 2026-11-13
-cross-file-references: [plugins/claude/skills/skill-maintenance/SKILL.md, plugins/wip, docs/reference/skill-contract.md]
+cross-file-references: [plugins/punchcard/skills/skill-maintenance/SKILL.md, plugins/wip, docs/reference/skill-contract.md]
 ---
 
 # Promote a skill from `wip`

@@ -3,7 +3,7 @@ type: how-to
 state: done
 created: 2026-11-13
 updated: 2026-11-13
-cross-file-references: [docs/reference/skill-contract.md, plugins/claude/skills/skill-maintenance/SKILL.md, plugins/README.md]
+cross-file-references: [docs/reference/skill-contract.md, plugins/punchcard/skills/skill-maintenance/SKILL.md, plugins/README.md]
 ---
 
 # Add a skill

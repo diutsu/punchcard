@@ -1,6 +1,6 @@
 {
-  "name": "claude",
-  "version": "0.1.2",
+  "name": "punchcard",
+  "version": "0.2.1",
   "description": "Always-on base: output style, project map, question and briefing skills, operator queue, and skill upkeep.",
   "author": { "name": "diutsu" },
   "repository": "https://github.com/diutsu/punchcard"

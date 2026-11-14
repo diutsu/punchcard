@@ -58,6 +58,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-ls plugins/claude/skills/run-report/templates
-grep -c '^## ' plugins/claude/skills/run-report/templates/run-report.md
+ls plugins/punchcard/skills/run-report/templates
+grep -c '^## ' plugins/punchcard/skills/run-report/templates/run-report.md
 ```

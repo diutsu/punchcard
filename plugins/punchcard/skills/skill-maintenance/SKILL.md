@@ -30,7 +30,7 @@ Decide where a rule goes before writing it.
 
 | Layer | Home | Holds |
 |---|---|---|
-| Always on | Output style and session card in the `claude` plugin | Response style and the short house rules loaded every session |
+| Always on | Output style and session card in the `punchcard` plugin | Response style and the short house rules loaded every session |
 | Triggered procedures | `plugins/<plugin>/skills/<name>/SKILL.md` | Workflows, leaf procedures and reference sheets, project-agnostic |
 | Project facts | The repo `CLAUDE.md` with its Project map, plus the repo docs | Locations, tools, module boundaries, project-specific rules |
 
@@ -97,5 +97,5 @@ Re-verification commands:
 grep -L '^name:' plugins/*/skills/*/SKILL.md
 grep -L '^tier:' plugins/*/skills/*/SKILL.md
 grep -L '^## Hard rules' plugins/*/skills/*/SKILL.md
-grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/claude
+grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/punchcard
 ```

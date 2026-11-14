@@ -19,7 +19,7 @@ Add the marketplace to Claude Code and enable the plugins a project needs.
 2. Install each plugin you want. `claude` is the always-on base; add the others as the project needs them:
 
    ```bash
-   /plugin install claude@punchcard
+   /plugin install punchcard@punchcard
    /plugin install coding@punchcard
    /plugin install techdocs@punchcard
    /plugin install project-management@punchcard
@@ -33,7 +33,7 @@ Add the marketplace to Claude Code and enable the plugins a project needs.
    ```
 
 5. Add a `## Project map` block to the project's `CLAUDE.md`, or run `project-doctor` to check what is missing. The `tasks` and `verify` keys have no default.
-6. Optional: enable the status line by adding the `statusLine` entry shown in `plugins/claude/README.md` to `~/.claude/settings.json`. A plugin cannot set it for you.
+6. Optional: enable the status line by adding the `statusLine` entry shown in `plugins/punchcard/README.md` to `~/.claude/settings.json`. A plugin cannot set it for you.
 
 To install a single skill without the plugin system, run `npx skills add https://github.com/diutsu/punchcard --skill <name>`.
 

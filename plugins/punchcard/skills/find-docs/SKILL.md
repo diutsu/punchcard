@@ -57,5 +57,5 @@ Updated: 2026-11-13.
 Re-verification commands:
 ```bash
 grep -n '^- docs::\|^- investigations::\|^- prd::' CLAUDE.md
-grep -c 'project-map' plugins/claude/skills/find-docs/SKILL.md
+grep -c 'project-map' plugins/punchcard/skills/find-docs/SKILL.md
 ```

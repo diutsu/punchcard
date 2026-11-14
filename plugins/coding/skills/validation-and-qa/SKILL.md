@@ -76,6 +76,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-grep -n "verify" plugins/claude/skills/project-map/SKILL.md
+grep -n "verify" plugins/punchcard/skills/project-map/SKILL.md
 ls plugins/coding/skills/validate-run-results/SKILL.md
 ```

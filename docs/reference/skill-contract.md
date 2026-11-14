@@ -3,7 +3,7 @@ type: reference
 state: done
 created: 2026-10-11
 updated: 2026-11-13
-cross-file-references: [plugins/claude/skills/skill-maintenance/SKILL.md, .claude-plugin/marketplace.json, plugins/claude/skills/project-map/SKILL.md]
+cross-file-references: [plugins/punchcard/skills/skill-maintenance/SKILL.md, .claude-plugin/marketplace.json, plugins/punchcard/skills/project-map/SKILL.md]
 ---
 
 # Skill authoring contract

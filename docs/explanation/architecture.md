@@ -3,7 +3,7 @@ type: explanation
 state: done
 created: 2026-10-11
 updated: 2026-11-14
-cross-file-references: [.claude-plugin/marketplace.json, plugins/claude/session-card.md, plugins/claude/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/claude/skills/capability-check/SKILL.md, plugins/claude/skills/skill-maintenance/SKILL.md]
+cross-file-references: [.claude-plugin/marketplace.json, plugins/punchcard/session-card.md, plugins/punchcard/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/punchcard/skills/capability-check/SKILL.md, plugins/punchcard/skills/skill-maintenance/SKILL.md]
 ---
 
 # Architecture

@@ -17,3 +17,6 @@ Statuses: `required`, `trial`, `untested`, `dropped`. Dates are the last review.
 | frontend-design | anthropics/claude-plugins-official | not checked | Frontend design skill. | untested | 2026-11-13 |
 | hallmark | Nutlope/hallmark | `hallmark@hallmark` | Page design skill with fifty themes and a browser lint against machine-made design tells; `redesign` and `audit` commands. MIT. Browser checks need Node 18 and `puppeteer-core`. Overlaps `frontend-design` and `ui-ux-pro-max-skill`. | untested | 2026-11-14 |
 | lemo-opuscar | lemomo-ai/lemo-opuscar | `lemo-opuscar@lemolab` | Makes short films in code from 99 film styles. On first use it downloads its library to `~/lemo-opuscar`; delete that folder after uninstalling. Licence not identified by GitHub; read `LICENSES/` before use. | untested | 2026-11-14 |
+| find-skills | vercel-labs/skills | not checked | Discovers and installs skills from the open skills ecosystem. | untested | 2026-11-14 |
+| taste-skill | Leonxlnx/taste-skill | not checked | Frontend design taste (`design-taste-frontend`). | untested | 2026-11-14 |
+| emil-design-eng | emilkowalski/skill | not checked | Design engineering skill. | untested | 2026-11-14 |

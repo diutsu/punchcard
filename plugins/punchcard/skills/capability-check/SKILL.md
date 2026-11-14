@@ -96,6 +96,6 @@ Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
-ls plugins/claude/skills/capability-check/references/watchlist.md plugins/claude/skills/grilling
-grep -n 'capability-check' plugins/claude/session-card.md
+ls plugins/punchcard/skills/capability-check/references/watchlist.md plugins/punchcard/skills/grilling
+grep -n 'capability-check' plugins/punchcard/session-card.md
 ```
