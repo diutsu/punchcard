@@ -23,7 +23,7 @@ The only owner of task management in this marketplace. Once enabled, every other
 
 ## Adapters
 
-One file per tool in `skills/backlog/references/adapters/`. Present: `ctask` (local CLI; registry, done log and plans under `docs/`). The `ctask` adapter also ships seed files in `skills/backlog/templates/`.
+One file per tool in `skills/backlog/references/adapters/`. Present: `ctask` (local CLI; registry, done log and plans under `ops/local/`, never committed). The `ctask` adapter also ships seed files in `skills/backlog/templates/`.
 
 To add an adapter:
 

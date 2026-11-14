@@ -43,6 +43,7 @@ Run three checks, report each as pass or fail with the one-line fix, and change 
 1. The `tasks` key is set.
 2. The tool named there responds (run its help or list command).
 3. Its registry validates. The validate command and the validity rules belong to `backlog`.
+4. No registry, done-log or plan file is tracked by git.
 
 ## Report
 

@@ -45,7 +45,7 @@ Each project `CLAUDE.md` carries one `## Project map` section of `key:: value` l
 
 | Key | Meaning | Default | Owner |
 |---|---|---|---|
-| `tasks` | Task tool. Tasks, plans and the done log belong to it, wherever it stores them. | none; ask the user | `project-management` |
+| `tasks` | Task tool. Tasks, plans and the done log belong to it, wherever it stores them. They are local work: never committed. | none; ask the user | `project-management` |
 | `docs` | Root of committed technical docs, laid out as `tutorials/`, `how-to/`, `reference/`, `explanation/`. | `docs/` | `docs-management` |
 | `investigations` | Forward-looking research and forensic reports. | `docs/investigations/` | `techdocs`, `coding` |
 | `prd` | Product and logic requirements. | `docs/prd/` | `techdocs` |
@@ -80,5 +80,5 @@ Updated: 2026-11-14.
 Re-verification commands:
 ```bash
 grep -n '^## Project map' CLAUDE.md
-grep -rn 'docs/tasks.md\|ctask ' plugins/coding plugins/techdocs plugins/claude
+grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/claude
 ```

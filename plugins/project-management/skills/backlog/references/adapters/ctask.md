@@ -4,20 +4,22 @@
 
 Install hint when `command -v ctask` fails: `uv tool install git+https://github.com/diutsu/ctask`, or run once with `uvx --from git+https://github.com/diutsu/ctask ctask <cmd>`.
 
-## Locations (defaults)
+## Locations
+
+The registry is local work. It is never committed; its folder is ignored by git.
 
 | Item | Path |
 |---|---|
-| Registry (open tasks) | `docs/tasks.md` (`docs/TASKS.md` also accepted) |
-| Done log | `docs/done.md`, written by `close` |
-| Plans | `docs/plans/<ID>-<slug>.md` |
-| Module prefixes | optional `docs/.ctask`: `{"modules": {"<module>": {"prefix": "<PFX>", "section": "## <name>"}}}` |
+| Registry (open tasks) | `ops/local/tasks.md` |
+| Done log | `ops/local/done.md`, written by `close` |
+| Plans | `ops/local/plans/<ID>-<slug>.md` |
+| Module prefixes | optional `.ctask` next to the registry: `{"modules": {"<module>": {"prefix": "<PFX>", "section": "## <name>"}}}` |
 
-`--file` and `--done-file` override the registry and done paths. If the `docs` map key points elsewhere, the registry still sits at `<docs>/tasks.md`.
+If `ctask` does not find the registry on its own, pass the paths on every call: `ctask --file ops/local/tasks.md --done-file ops/local/done.md <subcommand>`.
 
 ## Seed files
 
-ctask needs `docs/tasks.md` and `docs/done.md` to exist. For a project without them, copy `${CLAUDE_SKILL_DIR}/templates/tasks.md` and `done.md` into the `docs` folder, then `ctask validate`. Plans are created on first use (`plan`).
+ctask needs the registry and the done log to exist. For a project without them, copy `${CLAUDE_SKILL_DIR}/templates/tasks.md` and `done.md` to the paths above, add `ops/local/` to `.gitignore`, then validate. Plans are created on first use (`plan`).
 
 ## Operation map
 
@@ -63,8 +65,9 @@ Tasks sit under a `## <module>` section. `close` appends two metadata bullets to
 
 ## Rules specific to ctask
 
-- Never read `docs/tasks.md` raw when a query answers the question. The file is many KB.
-- Never hand-edit a task span, `docs/done.md`, or the module map by hand when a subcommand does it.
+- Never read the registry raw when a query answers the question. The file is many KB.
+- Never hand-edit a task span, the done log, or the module map when a subcommand does it.
+- Never commit the registry, the done log or a plan.
 - Run `ctask validate` after any batch of changes.
 - The registry's table of contents and prose outside task spans are not tool-protected; edit them directly when a section reorg makes them stale.
 - If an operation is missing, extend `ctask` in its own repo (it has a test suite) instead of editing around it.

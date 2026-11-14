@@ -67,6 +67,7 @@ Every task has: a stable id, a title, a priority, a module, optional blocked-by 
 
 - Never read the registry file raw when a query answers the question.
 - Never hand-edit a task, the done log, or any file the tool owns.
+- Never commit a file the tool owns. Tasks, the done log and plans are local work.
 - Never name the tool or a registry path outside the adapter file.
 - Never close a task without evidence in the close note or the confirmed batch.
 - Always validate after a batch of changes.
