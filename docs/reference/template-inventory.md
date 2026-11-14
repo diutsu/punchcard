@@ -2,7 +2,7 @@
 type: reference
 state: done
 created: 2026-10-11
-updated: 2026-11-13
+updated: 2026-11-14
 cross-file-references: [plugins/techdocs/skills/doc-templates/SKILL.md, plugins/techdocs/skills/docs-management/SKILL.md, plugins/local-project-manager/skills/migrate-project-docs/SKILL.md]
 ---
 
@@ -40,6 +40,13 @@ In `plugins/local-project-manager/skills/migrate-project-docs/templates/`, used 
 | `docs/investigations/_template.md` | Investigation skeleton |
 | `docs/plans/_template.md` | Plan skeleton, at most 150 lines with phase roll-forward |
 
+## Session read-back (`wip`, draft)
+
+In `plugins/wip/skills/product-direction/templates/`, used by `product-direction`.
+
+| Path | Purpose |
+|---|---|
+| `read-back.md` | The closing summary shown in the conversation: what changed, conflicts settled, when each change is built. Never saved as a file |
 
 ## Contract
 

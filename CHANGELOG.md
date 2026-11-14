@@ -11,6 +11,8 @@ One line per user-visible change or project milestone, newest first.
 
 ### Added
 
+- `product-direction` (draft in `wip`): a session that updates requirements, PRDs and vision to match what the user now wants, settles conflicts and blockers, and decides when each change is built. `capability-check` routes requirements, roadmap and vision requests to it.
+- Four product and requirements skill collections join the list of third-party plugins under trial, all untested.
 - Four plugins replace the single one: `claude` (always-on base), `coding`, `techdocs` and `project-management`, plus `wip` for draft skills.
 - A project map in each project's `CLAUDE.md` tells every skill where files live and which task tool to use.
 - `do-work` runs a low-agent work loop: every changed line is seen by its author and one clean reviewer.

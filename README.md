@@ -79,6 +79,12 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 | `triage-close` | Close tasks whose done-when is met, with evidence |
 | `plan` | Turn accepted research into an execution plan |
 
+### wip (drafts)
+
+| Skill | Purpose |
+|---|---|
+| `product-direction` | A session that brings requirements, PRDs and vision in line with what the user now wants, settles conflicts and decides when each change is built |
+
 ### local-project-manager (temporary)
 
 | Skill | Purpose |

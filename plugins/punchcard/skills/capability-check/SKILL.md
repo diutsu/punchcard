@@ -51,6 +51,7 @@ Starting in the wrong mode costs more than the check: code written before the de
    | Doc | `doc-templates` and `writing-style`; `external-research` first when it needs sources |
    | Failure to explain | `forensics` before any fix |
    | "What next" | `prioritise` |
+   | Requirements, product direction, roadmap or vision | `product-direction` (a draft in `wip` until promoted) |
 
    A skill named here that is not installed: say which plugin holds it and continue with what is installed.
 
