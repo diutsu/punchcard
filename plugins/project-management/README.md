@@ -16,6 +16,7 @@ The only owner of task management in this marketplace. Once enabled, every other
 | `prioritise` | Rank open tasks: unblock first, then value, effort and risk, grouped by module |
 | `triage-close` | Check done-when criteria against code and git history and close tasks with evidence |
 | `plan` | Turn accepted research into a plan of 150 lines or fewer with phase roll-forward |
+| `product-direction` | Run a session that brings requirements, PRDs and vision in line with what the user now wants, settles conflicts and blockers, decides when each change is built, then files the agreed tasks |
 
 ## Neutral operations
 

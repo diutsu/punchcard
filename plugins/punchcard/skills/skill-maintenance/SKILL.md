@@ -41,7 +41,7 @@ A rule that applies to every session and fits in two lines goes on the session c
 - `claude`: how Claude works with this user: style, house rules, asking, briefing, queues, away runs, reports and skill upkeep.
 - `coding`: doing and reviewing code work, tests, scripts, ops, data and experiment discipline.
 - `techdocs`: writing, structuring and reviewing technical documents.
-- `project-management`: tasks, plans, priorities, closing and progress.
+- `project-management`: tasks, plans, priorities, closing and progress, and the session that sets product direction.
 - `wip`: drafts only, never relied on.
 
 ## 3. Skill anatomy
@@ -75,7 +75,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## 6. Promotion from `wip`
 
-1. The user approves the draft.
+1. The draft has had one real use and the user approves it. Name that session or task in the promotion commit.
 2. Move it to the owning plugin's `skills/` folder with `git mv`.
 3. Check the anatomy, run the commands below, and remove the evidence block's private detail if any slipped in.
 4. Delete the draft folder from `wip`.
@@ -90,7 +90,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash

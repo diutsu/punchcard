@@ -40,9 +40,9 @@ In `plugins/local-project-manager/skills/migrate-project-docs/templates/`, used 
 | `docs/investigations/_template.md` | Investigation skeleton |
 | `docs/plans/_template.md` | Plan skeleton, at most 150 lines with phase roll-forward |
 
-## Session read-back (`wip`, draft)
+## Session read-back (`project-management`)
 
-In `plugins/wip/skills/product-direction/templates/`, used by `product-direction`.
+In `plugins/project-management/skills/product-direction/templates/`, used by `product-direction`.
 
 | Path | Purpose |
 |---|---|

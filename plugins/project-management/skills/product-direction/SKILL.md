@@ -66,7 +66,7 @@ Updated or new docs, and the tasks the user agreed to. No decision log and no op
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Draft in `wip`; its home after review is `project-management`. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `capability-check`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
+Updated: 2026-11-14. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `capability-check`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
 
 Re-verification commands:
 ```bash

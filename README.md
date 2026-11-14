@@ -11,7 +11,7 @@ Repository: `https://github.com/diutsu/punchcard`
 | `punchcard` | The always-on base: output style, session card, project map, questions, briefing, operator queue, skill upkeep |
 | `coding` | The work loop and the per-work-type skills for writing, reviewing, investigating and operating code, plus two agents |
 | `techdocs` | Writing technical docs: one prose style, doc templates, the Diataxis layout, sourced research |
-| `project-management` | The backlog, plans and logs, through the project's task tool |
+| `project-management` | The backlog, plans and logs, through the project's task tool, and the product-direction session |
 | `wip` | Draft skills proposed by `skill-reviewer` and draft agents, held until promoted |
 | `local-project-manager` | Temporary. Holds only `migrate-project-docs` until the remaining project migrations finish |
 
@@ -78,12 +78,7 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 | `prioritise` | Rank open tasks |
 | `triage-close` | Close tasks whose done-when is met, with evidence |
 | `plan` | Turn accepted research into an execution plan |
-
-### wip (drafts)
-
-| Skill | Purpose |
-|---|---|
-| `product-direction` | A session that brings requirements, PRDs and vision in line with what the user now wants, settles conflicts and decides when each change is built |
+| `product-direction` | Bring requirements, PRDs and vision in line with what the user now wants, settle conflicts, decide when each change is built |
 
 ### local-project-manager (temporary)
 

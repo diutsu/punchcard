@@ -25,7 +25,7 @@
 | `plugins/punchcard/` | Always-on base: output style, session card, task intake, question, briefing, operator-queue and skill-upkeep skills | When changing how Claude behaves in every session |
 | `plugins/coding/` | The work loop (`do-work`), its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
 | `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
-| `plugins/project-management/` | Backlog, prioritisation, triage, plans; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
+| `plugins/project-management/` | Backlog, prioritisation, triage, plans, and the product-direction session; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
 | `plugins/wip/` | Draft skills from `skill-reviewer` and draft agents, awaiting promotion | Drafts only |
 | `plugins/local-project-manager/` | Temporary: holds only `migrate-project-docs` | Do not edit; it is removed when the remaining migrations finish |
 | `docs/` | This repository's own docs, committed, in the Diataxis layout | When the structure or a contract changes |
@@ -60,5 +60,5 @@ ctask --file ops/local/tasks.md --done-file ops/local/done.md validate
 - **No hardcoded locations or tools:** a skill names a project-map key or says "via `backlog`". Only `project-management` names the task tool.
 - **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
 - **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
-- **New skills start in `wip`:** drafts from `skill-reviewer` land in `plugins/wip/` and move to another plugin only after review.
+- **Drafts from `skill-reviewer` start in `wip`:** they land in `plugins/wip/` and move to another plugin only after promotion per `skill-maintenance`. A skill the user asks for goes into the plugin that owns its territory.
 - **Third-party plugins are never vendored:** they are entries in `plugins/punchcard/skills/capability-check/references/watchlist.md`.

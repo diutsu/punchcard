@@ -53,7 +53,7 @@ Third-party plugins are tracked, not copied. `capability-check` holds a table of
 
 ## Promotion from `wip`
 
-`skill-reviewer` reads past session transcripts, finds repeated corrections and manual workflows, and drafts skills into `wip`. A draft stays there until the user approves it. Promotion moves it into the owning plugin and checks it against the skill anatomy in `skill-maintenance`. Keeping drafts in their own plugin means an unreviewed skill never loads in a project that installed only `coding`.
+`skill-reviewer` reads past session transcripts, finds repeated corrections and manual workflows, and drafts skills into `wip`. A draft stays there until it meets the promotion bar in `skill-maintenance`. Promotion moves it into the owning plugin and checks it against the skill anatomy in `skill-maintenance`. Keeping drafts in their own plugin means an unreviewed skill never loads in a project that installed only `coding`.
 
 ## Docs and templates
 

@@ -6,12 +6,13 @@ One line per user-visible change or project milestone, newest first.
 
 ### Changed
 
+- A draft leaves `wip` only after one real use; the promotion commit names the session or task. A skill the user asks for by hand goes straight into its plugin.
 - The always-on base plugin is now `punchcard` (was `claude`, a reserved name). Reinstall with `/plugin install punchcard@punchcard`.
 - `wip` holds four draft agents: `sonnet-executor`, `doc-writer`, `researcher`, `data-auditor`.
 
 ### Added
 
-- `product-direction` (draft in `wip`): a session that updates requirements, PRDs and vision to match what the user now wants, settles conflicts and blockers, and decides when each change is built. `capability-check` routes requirements, roadmap and vision requests to it.
+- `product-direction` in `project-management`: a session that updates requirements, PRDs and vision to match what the user now wants, settles conflicts and blockers, and decides when each change is built. `capability-check` routes requirements, roadmap and vision requests to it.
 - Four product and requirements skill collections join the list of third-party plugins under trial, all untested.
 - Four plugins replace the single one: `claude` (always-on base), `coding`, `techdocs` and `project-management`, plus `wip` for draft skills.
 - A project map in each project's `CLAUDE.md` tells every skill where files live and which task tool to use.
