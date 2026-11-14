@@ -7,8 +7,8 @@
   },
   "plugins": [
     {
-      "name": "claude",
-      "source": "./plugins/claude",
+      "name": "punchcard",
+      "source": "./plugins/punchcard",
       "description": "Always-on base: output style, project map, question and briefing skills, operator queue, and skill upkeep.",
       "category": "productivity",
       "keywords": ["skills", "workflow", "output-style"]

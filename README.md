@@ -8,16 +8,16 @@ Repository: `https://github.com/diutsu/punchcard`
 
 | Plugin | Holds |
 |---|---|
-| `claude` | The always-on base: output style, session card, project map, questions, briefing, operator queue, skill upkeep |
+| `punchcard` | The always-on base: output style, session card, project map, questions, briefing, operator queue, skill upkeep |
 | `coding` | The work loop and the per-work-type skills for writing, reviewing, investigating and operating code, plus two agents |
 | `techdocs` | Writing technical docs: one prose style, doc templates, the Diataxis layout, sourced research |
 | `project-management` | The backlog, plans and logs, through the project's task tool |
-| `wip` | Draft skills proposed by `skill-reviewer`, held until promoted |
+| `wip` | Draft skills proposed by `skill-reviewer` and draft agents, held until promoted |
 | `local-project-manager` | Temporary. Holds only `migrate-project-docs` until the remaining project migrations finish |
 
 ## Skills
 
-### claude
+### punchcard
 
 | Skill | Purpose |
 |---|---|
@@ -90,7 +90,7 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 
 ```bash
 /plugin marketplace add diutsu/punchcard
-/plugin install claude@punchcard
+/plugin install punchcard@punchcard
 /plugin install coding@punchcard
 ```
 

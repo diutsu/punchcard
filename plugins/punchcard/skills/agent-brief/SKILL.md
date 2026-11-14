@@ -73,6 +73,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-ls plugins/claude/skills/agent-brief/templates
-grep -c 'WHAT I DID NOT CHECK\|FILES CHANGED' plugins/claude/skills/agent-brief/templates/*.md
+ls plugins/punchcard/skills/agent-brief/templates
+grep -c 'WHAT I DID NOT CHECK\|FILES CHANGED' plugins/punchcard/skills/agent-brief/templates/*.md
 ```

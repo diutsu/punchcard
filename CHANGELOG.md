@@ -4,6 +4,11 @@ One line per user-visible change or project milestone, newest first.
 
 ## Unreleased
 
+### Changed
+
+- The always-on base plugin is now `punchcard` (was `claude`, a reserved name). Reinstall with `/plugin install punchcard@punchcard`.
+- `wip` holds four draft agents: `sonnet-executor`, `doc-writer`, `researcher`, `data-auditor`.
+
 ### Added
 
 - Four plugins replace the single one: `claude` (always-on base), `coding`, `techdocs` and `project-management`, plus `wip` for draft skills.

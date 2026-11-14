@@ -62,6 +62,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-grep -n 'operator-queue\|run-report' plugins/claude/skills/away-mode/SKILL.md
-ls plugins/claude/skills/run-report/templates
+grep -n 'operator-queue\|run-report' plugins/punchcard/skills/away-mode/SKILL.md
+ls plugins/punchcard/skills/run-report/templates
 ```

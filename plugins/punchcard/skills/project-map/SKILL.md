@@ -80,5 +80,5 @@ Updated: 2026-11-14.
 Re-verification commands:
 ```bash
 grep -n '^## Project map' CLAUDE.md
-grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/claude
+grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/punchcard
 ```

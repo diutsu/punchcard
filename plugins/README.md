@@ -1,6 +1,6 @@
 # plugins/
 
-One folder per plugin: `claude`, `coding`, `techdocs`, `project-management`, `wip`, and the temporary `local-project-manager`. To add your own:
+One folder per plugin: `punchcard`, `coding`, `techdocs`, `project-management`, `wip`, and the temporary `local-project-manager`. To add your own:
 
 ```text
 plugins/<name>/

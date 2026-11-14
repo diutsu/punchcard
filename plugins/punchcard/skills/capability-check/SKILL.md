@@ -62,6 +62,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-grep -n 'grilling\|watchlist' plugins/claude/skills/capability-check/SKILL.md
-ls plugins/claude/skills/grilling plugins/claude/skills/watchlist
+grep -n 'grilling\|watchlist' plugins/punchcard/skills/capability-check/SKILL.md
+ls plugins/punchcard/skills/grilling plugins/punchcard/skills/watchlist
 ```

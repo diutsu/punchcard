@@ -77,5 +77,5 @@ Updated: 2026-11-13.
 Re-verification commands:
 ```bash
 claude plugin list
-grep -c '^|' plugins/claude/skills/watchlist/references/watchlist.md
+grep -c '^|' plugins/punchcard/skills/watchlist/references/watchlist.md
 ```

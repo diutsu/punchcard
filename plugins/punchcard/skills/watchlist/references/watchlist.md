@@ -15,3 +15,6 @@ Statuses: `required`, `trial`, `untested`, `dropped`. Dates are the last review.
 | security-guidance | anthropics/claude-plugins-official | Security guidance plugin. | untested | 2026-11-13 |
 | superpowers | anthropics/claude-plugins-official | Workflow skill bundle. | untested | 2026-11-13 |
 | frontend-design | anthropics/claude-plugins-official | Frontend design skill. | untested | 2026-11-13 |
+| find-skills | vercel-labs/skills | Discovers and installs skills from the open skills ecosystem. Installed via `~/.agents`. | untested | 2026-11-14 |
+| taste-skill | Leonxlnx/taste-skill | Frontend design taste (`design-taste-frontend`). Installed via `~/.agents`. | untested | 2026-11-14 |
+| emil-design-eng | emilkowalski/skill | Design engineering skill. Installed via `~/.agents`. | untested | 2026-11-14 |

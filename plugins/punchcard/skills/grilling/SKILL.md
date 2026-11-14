@@ -53,6 +53,6 @@ Updated: 2026-11-14. Source: the `grilling` skill in https://github.com/mattpoco
 
 Re-verification commands:
 ```bash
-grep -n 'question interface' plugins/claude/skills/grilling/SKILL.md
+grep -n 'question interface' plugins/punchcard/skills/grilling/SKILL.md
 curl -sL https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md | head -20
 ```

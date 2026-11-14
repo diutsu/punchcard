@@ -68,6 +68,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-grep -n '^## Project map' plugins/claude/skills/project-doctor/templates/CLAUDE.md
-ls plugins/claude/skills/project-doctor/templates
+grep -n '^## Project map' plugins/punchcard/skills/project-doctor/templates/CLAUDE.md
+ls plugins/punchcard/skills/project-doctor/templates
 ```
