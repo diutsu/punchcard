@@ -3,7 +3,7 @@ name: doc-templates
 tier: leaf
 description: >
   Starting skeletons for the doc types written often: vision, target
-  architecture, discovery, technical design, PRD, research doc, ADR. Load when
+  architecture, discovery, technical design, PRD, research doc, proof-of-concept brief, ADR. Load when
   asked to write, start, restructure or convert one of these docs, or to decide
   which horizon a planning doc belongs to. Do NOT load for folder placement and
   frontmatter rules (see docs-management), for prose rules (see writing-style),
@@ -37,6 +37,7 @@ All live in `${CLAUDE_SKILL_DIR}/references/templates/`. Destination keys resolv
 | Technical design | H2 | `design-doc.md` | `design` key until built (see `docs-management`) |
 | PRD | none | `prd.md` | `prd` key |
 | Research doc | none | `research-doc.md` | `investigations` key |
+| Proof-of-concept brief | none | `poc.md` | `investigations` key |
 | ADR | none | `adr.md` | `docs` key, `explanation/` |
 
 The model has a Plan horizon (H4: initiatives, order, owners, dates). It has no template here, because quarter-level plans are owned by `project-management`.

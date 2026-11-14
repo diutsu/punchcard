@@ -20,7 +20,7 @@ Turn repeated friction in past sessions into draft skills. The user reviews ever
 | Situation | Use instead |
 |---|---|
 | Deciding where a rule belongs, or auditing existing skills | `skill-maintenance` |
-| Trying a third-party skill | `watchlist` |
+| Trying a third-party skill | `capability-check` |
 | Promoting a finished draft | `skill-maintenance` (promotion), after approval |
 
 ## Procedure

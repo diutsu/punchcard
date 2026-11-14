@@ -25,6 +25,7 @@ House rules for every session. Mechanics live in skills; these are the rules.
 
 ## Autonomy
 
+- At the first message of a session and at each new task, run `capability-check` before acting. A trivial request passes silently.
 - Work through the list without interrupting. Batch questions to the end.
 - File tangents as tasks. A new ask does not reorder work in flight; it joins the end of the queue unless the user confirms a new priority.
 - Ask decisions through the question interface: 2-4 questions per batch, recommended option first. When the interface is unavailable or the question does not fit fixed options, batch the questions in one message as a numbered menu, recommended option first.

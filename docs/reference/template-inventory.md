@@ -22,6 +22,7 @@ In `plugins/techdocs/skills/doc-templates/references/templates/`. Destination ke
 | Technical design | H2 | `design-doc.md` | `design` key until built |
 | PRD | none | `prd.md` | `prd` key |
 | Research doc | none | `research-doc.md` | `investigations` key |
+| Proof-of-concept brief | none | `poc.md` | `investigations` key |
 | ADR | none | `adr.md` | `docs` key, `explanation/` |
 
 ## Starter tree (`local-project-manager`, temporary)

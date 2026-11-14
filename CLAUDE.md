@@ -22,7 +22,7 @@
 | Path | What it is | When to edit |
 |---|---|---|
 | `.claude-plugin/marketplace.json` | The marketplace manifest | When adding, renaming or removing a plugin |
-| `plugins/claude/` | Always-on base: output style, session card, question, briefing, operator-queue and skill-upkeep skills, watchlist | When changing how Claude behaves in every session |
+| `plugins/claude/` | Always-on base: output style, session card, task intake, question, briefing, operator-queue and skill-upkeep skills | When changing how Claude behaves in every session |
 | `plugins/coding/` | The work loop (`do-work`), its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
 | `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
 | `plugins/project-management/` | Backlog, prioritisation, triage, plans; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
@@ -61,4 +61,4 @@ ctask --file ops/local/tasks.md --done-file ops/local/done.md validate
 - **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
 - **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
 - **New skills start in `wip`:** drafts from `skill-reviewer` land in `plugins/wip/` and move to another plugin only after review.
-- **Third-party plugins are never vendored:** they are entries in `plugins/claude/skills/watchlist/references/watchlist.md`.
+- **Third-party plugins are never vendored:** they are entries in `plugins/claude/skills/capability-check/references/watchlist.md`.

@@ -42,6 +42,7 @@ Typical run: executor agents for the steps, plus one `reviewer`, plus one grader
 | One file, about 50 lines or fewer | No plan file. One author, who self-scores per `review-rubric` and fixes before handing over, then one reviewer. |
 | Several steps, or module boundaries touched | Full loop below. |
 | Several tasks | Batch mode below. |
+| Proof of concept | Proof-of-concept flow below. |
 
 Work without a task ID follows the same loop. Skip the close step and report the outcome to the user.
 
@@ -67,6 +68,18 @@ Work without a task ID follows the same loop. Skip the close step and report the
 8. **Docs.** Update docs in the same pass, per `docs-management`: in place, timeless, `updated` bumped. Docs are committed. Add the changelog line per `changelog`; a milestone goes there too.
 9. **Close.** Close the task through `backlog`. Commit per `repo-infra`; push only when asked.
 
+## Proof-of-concept flow
+
+A proof of concept answers a question; its code is thrown away.
+
+1. **Brief.** Require the brief from the proof-of-concept template in `doc-templates`. Without goals, entry and exit criteria and an evaluation fixed in advance, stop and write it with the user.
+2. **Entry.** Check each entry criterion. If one fails, do not start; report which.
+3. **Build.** Work in a worktree or branch per `repo-infra`, marked throwaway. Skip the plan file, the review and the changelog. Keep the code honest: no fabricated results (`validation-and-qa`).
+4. **Evaluate.** Measure each goal against its threshold per `validate-run-results`. Stop at the first exit criterion met, the time box included.
+5. **Close.** Fill the result section of the brief. Take the next action the brief names for the outcome, filing it via `backlog` when it is work. Do the cleanup the brief lists and report it item by item.
+
+Code from a proof of concept never merges. A pass leads to a design or a task that builds it properly.
+
 ## Batch mode
 
 Use it when the user names several tasks.
@@ -87,6 +100,7 @@ Use it when the user names several tasks.
 - Never write a path or tool name for plans or tasks here; go through `plan` and `backlog`.
 - Never keep working on a task that needs a human; queue it and stop.
 - Never push unless asked.
+- Never merge proof-of-concept code, and never end a proof of concept without its result and cleanup.
 - Never end a session mid-task without a handoff note when the task needs another session (see `operator-queue`).
 
 ## Provenance and maintenance

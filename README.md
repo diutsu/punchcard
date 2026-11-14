@@ -23,7 +23,7 @@ Repository: `https://github.com/diutsu/punchcard`
 |---|---|
 | `project-map` | Declare where things live and which tools own them |
 | `grilling` | Interview the user until a plan is fully specified |
-| `capability-check` | Check whether the session can do a vague, high-value job alone |
+| `capability-check` | Task intake: enough input, output type, skills, session fit, and what happens first; holds the plugins under trial |
 | `agent-brief` | Decide whether to spawn an agent and write its brief |
 | `find-docs` | Locate the right project document for a question |
 | `project-doctor` | Validate a repo's setup: map, docs, task tool |
@@ -32,7 +32,6 @@ Repository: `https://github.com/diutsu/punchcard`
 | `run-report` | Report the outcome of a long operation |
 | `skill-reviewer` | Mine past sessions for repeated work and draft skills in `wip` |
 | `skill-maintenance` | Keep the skill library organised and free of drift |
-| `watchlist` | Track third-party plugins under investigation |
 
 ### coding
 

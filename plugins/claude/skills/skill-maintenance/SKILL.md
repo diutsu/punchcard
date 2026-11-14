@@ -20,7 +20,7 @@ Every skill earns its context budget. One fact lives in one home, siblings refer
 | Situation | Use instead |
 |---|---|
 | Mining past sessions for new skills | `skill-reviewer` |
-| Tracking a third-party plugin | `watchlist` |
+| Tracking a third-party plugin | `capability-check` |
 | Writing a project's docs | `docs-management` |
 | Running a task | `do-work` |
 
@@ -65,7 +65,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 - **Split by trigger family, not by mechanical step.** Commit, describe, push is one intent. Replying to review comments days later is another.
 - **Treat skill names as a public interface.** Rename in one pass: the folder, `name`, `trigger` and every reference. Leave no stub or note under the old name.
 - **State how it is.** A skill describes current behaviour only. What it replaced, was renamed from or used to do goes in the changelog and git history.
-- **Third-party skills run with your permissions.** Read the full text before installing. Track them in `watchlist`, never copy them in without review.
+- **Third-party skills run with your permissions.** Read the full text before installing. Track them through `capability-check`, never copy them in without review.
 
 ## 5. Split, merge, retire
 

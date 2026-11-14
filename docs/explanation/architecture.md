@@ -3,7 +3,7 @@ type: explanation
 state: done
 created: 2026-10-11
 updated: 2026-11-14
-cross-file-references: [.claude-plugin/marketplace.json, plugins/claude/session-card.md, plugins/claude/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/claude/skills/watchlist/SKILL.md, plugins/claude/skills/skill-maintenance/SKILL.md]
+cross-file-references: [.claude-plugin/marketplace.json, plugins/claude/session-card.md, plugins/claude/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/claude/skills/capability-check/SKILL.md, plugins/claude/skills/skill-maintenance/SKILL.md]
 ---
 
 # Architecture
@@ -45,9 +45,11 @@ Agents cost tokens and lose context, so `do-work` spends as few as the change al
 
 The two-agent rule governs review: every changed line is seen by exactly two agents, its author and one clean reviewer that has not seen the author's reasoning. The reviewer scores with `review-rubric`. When it applies quick fixes itself, a fresh instance grades only that fix diff, so nobody scores their own lines. The `suite-runner` agent joins only when test output is too large for the orchestrator to read. All briefs are written in one pass after the plan, using `agent-brief`, so executors can start in parallel.
 
-## Watchlist
+## Task intake and third-party plugins
 
-Third-party plugins are tracked, not copied. The `watchlist` skill keeps a table of plugins under investigation with a status: `untested`, `trial`, `required` or `dropped`. A verdict needs evidence from real use. Vendored copies go stale and carry someone else's instructions into the user's sessions, so only a reference to the upstream lives here.
+`capability-check` runs at the first message of a session and at each new task. It decides whether the input is enough, what the output is, and what happens first: work, questions, design, a plugin trial or a clean session.
+
+Third-party plugins are tracked, not copied. `capability-check` holds a table of plugins under trial and reads it when a task needs a craft no installed skill covers. Each row has a status: `untested`, `trial`, `required` or `dropped`. A verdict needs evidence from real use. Vendored copies go stale and carry someone else's instructions into the user's sessions, so only a reference to the upstream lives here.
 
 ## Promotion from `wip`
 

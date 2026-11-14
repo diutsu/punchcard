@@ -9,11 +9,13 @@ One line per user-visible change or project milestone, newest first.
 - Four plugins replace the single one: `claude` (always-on base), `coding`, `techdocs` and `project-management`, plus `wip` for draft skills.
 - A project map in each project's `CLAUDE.md` tells every skill where files live and which task tool to use.
 - `do-work` runs a low-agent work loop: every changed line is seen by its author and one clean reviewer.
-- A watchlist tracks third-party plugins under trial, with install and remove actions.
+- `capability-check` holds the list of third-party plugins under trial, with install and remove steps.
 - `away-mode` and `run-report` cover unattended runs and their outcome reports.
 - A handoff note carries one long task across sessions; it is local and exists only while that task is in flight.
 - `backend-code` bans references from code to tasks, plans and docs, with a diff check; the reviewer flags them and may remove them as a quick fix.
 - `migrate-project-docs` maps its output to the current docs layout.
+- A proof of concept starts from a one-page brief (goals, entry and exit criteria, evaluation, next actions, cleanup) and ends with its result and cleanup.
+- `capability-check` is the task intake: it runs at the first message and at each new task and picks what happens first.
 - The task registry, done log and plans are local work under `ops/local/` and are never committed.
 
 ### Changed

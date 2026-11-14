@@ -49,7 +49,7 @@ Put each real decision to the user and wait for the answer.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Source: the `grilling` skill in https://github.com/mattpocock/skills (MIT), tracked in `watchlist`.
+Updated: 2026-11-14. Source: the `grilling` skill in https://github.com/mattpocock/skills (MIT).
 
 Re-verification commands:
 ```bash
