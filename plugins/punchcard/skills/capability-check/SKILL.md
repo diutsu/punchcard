@@ -49,6 +49,7 @@ Starting in the wrong mode costs more than the check: code written before the de
    | One-off script | `ops-scripts` |
    | Artifact (report, page, diagram) | `writing-style`, plus the visual skill that fits; `run-report` for an outcome report |
    | Doc | `doc-templates` and `writing-style`; `external-research` first when it needs sources |
+   | Cleanup, simplification, or a hunt for outdated and half-finished code | `codebase-cleanup` |
    | Failure to explain | `forensics` before any fix |
    | A new defect reported outside the current task | `bug-report` |
    | "What next" | `prioritise` |
@@ -85,7 +86,7 @@ When no installed skill covers the craft, load `watchlist`: it matches the gap t
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-15.
 
 Re-verification commands:
 ```bash

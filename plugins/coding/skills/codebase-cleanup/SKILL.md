@@ -1,0 +1,99 @@
+---
+name: codebase-cleanup
+tier: workflow
+description: >
+  Audit a project or module for what can be removed, simplified or brought up
+  to date, judged against where the project is going: unnecessary complexity,
+  duplicated logic, assumptions that no longer hold, deprecated features, and
+  incomplete bits. Applies the small behaviour-preserving fixes through the
+  work loop and files the larger ones as tasks. Load for "clean up this
+  codebase", "simplify this", "what can we delete", "is this over-engineered",
+  "find outdated or half-finished code". Do NOT load for a maintainability
+  report with no edits (see project-evaluation), to tidy one diff (see
+  review-rubric), to explain a failure (see forensics), or to run one already
+  filed refactor (see do-work).
+trigger: /codebase-cleanup
+---
+
+# /codebase-cleanup
+
+Complexity is a cost paid for a purpose. This skill finds code whose purpose is gone or never arrived, proves it with evidence, removes the cheap cases now and files the rest. The target is the smallest change that preserves existing behaviour.
+
+## When NOT to use this skill
+
+| Situation | Use instead |
+|---|---|
+| A structural assessment and refactor sequence, with no edits | `project-evaluation` |
+| Cleanliness of one diff | `review-rubric` |
+| One question about how code works | `codebase-search` |
+| A failure needs a cause | `forensics` |
+| Carrying out one filed cleanup task | `do-work` |
+| Deciding what the project should become | `product-direction` |
+
+## Model split
+
+| Work | Runs on |
+|---|---|
+| Direction, complexity budget, verdicts, the fix-or-file sort, the final report | The strongest model available, in the main session. When the session runs on a lesser one, name the change for the user before step 2 |
+| Mechanical evidence gathering: greps, counts, build and deprecation output | A cheap agent, briefed per `agent-brief` |
+| Applying fixes | Executors and the reviewer, at the tiers `do-work` assigns |
+
+## Procedure
+
+1. **Scope and baseline.** Name the project or module and the commit (`git rev-parse HEAD`). Take the baseline as `do-work` defines it. On a red baseline, report and stop: a cleanup on a failing suite cannot show it preserved behaviour.
+2. **Read the direction.** Open and blocked tasks via `backlog`, active plans via `plan`, and the vision, requirements, design and architecture docs via `find-docs`. Ask nothing the repo answers.
+3. **Write the complexity budget.** One line per area: the complexity it carries, and the future task or target-architecture element that pays for it, or "none". An area with a named payer keeps its seams, extension points and abstractions. An area with none is held to what the code does today.
+4. **Sweep.** Run the lenses below, reading per `codebase-search`. Start from the findings of a current `project-evaluation` report when the `investigations` key holds one; do not re-measure what it measured.
+5. **Give each candidate a verdict.** `remove`, `simplify`, `update`, `complete` or `keep`. `keep` names its payer from the budget. A candidate with no evidence is dropped, not softened.
+6. **Sort into fix or file** with the bar below.
+7. **Apply the fixes** as one `do-work` batch: one commit per fix, one verify, one review. Executors load `backend-code` or `frontend-ui` by the files touched.
+8. **File the rest** via `backlog`, one task per finding: the evidence, the smallest change that preserves behaviour, a done-when, and the tasks it blocks or depends on.
+9. **Report** per `run-report`: fixed, filed, kept with the payer, and what was not examined.
+
+## Lenses
+
+| Lens | Looks for | Evidence |
+|---|---|---|
+| Unearned complexity | Single-implementation abstractions, config flags with one value, layers that only forward, options no caller sets | Reference counts, call sites, the budget line showing no payer |
+| Duplicated logic | Near-identical blocks, parallel implementations, re-derived constants | Duplication tool output or grep, with both locations |
+| Stale assumptions | Workarounds for fixed bugs, guards for states that cannot occur, compatibility paths for removed callers or formats, comments and docs the code contradicts | The removed caller or fixed version, a test or type that excludes the state, drift verdicts per `codebase-search` |
+| Outdated | Deprecated language, framework or library features; dependencies past end of support; patterns the project has replaced elsewhere | Compiler, linter and package-manager warnings with the command; the dependency's own release notes |
+| Incomplete | Stubs, placeholder returns, half-wired flags, unreachable branches, commented-out blocks, to-do markers | `file:line`; the open task that will finish it, or none |
+| Dead code | Unreferenced exports, files, scripts and settings; expired scripts per `ops-scripts` | Reference search, coverage output |
+
+An incomplete bit with an open task stays and is noted on that task. One with no task is either removed or filed for completion; the stub policy in `validation-and-qa` decides whether it may remain meanwhile.
+
+## Fix or file
+
+A finding is fixed now only when every line holds:
+
+| Test | Bar |
+|---|---|
+| Behaviour | Unchanged for every caller, public interface included |
+| Size | The small flow of `do-work`: one file, about 50 lines or fewer |
+| Proof | Existing tests cover the touched code, or the change is a pure deletion of unreferenced code |
+| Direction | No open task or plan touches the same lines |
+| Certainty | The evidence is fact, not inference |
+
+Anything else is filed. Code with no test around it is filed with a characterisation test as its first step. Cap one run at about ten fixes; file the remainder so the review stays readable.
+
+## Hard rules
+
+- No finding without evidence: `file:line`, a command with its output, or a count.
+- Never remove complexity the budget shows a payer for; never keep it on "might need it later" with no task or doc behind it.
+- Never change behaviour in a fix. A cleanup that needs a behaviour change is a task.
+- Never fix on a red baseline or without tests that would catch a regression.
+- Never fold a cleanup into lines an open task or plan is about to change; note it on that task via `backlog`.
+- Never run the verdicts or the fix-or-file sort on a cheaper model, and never apply fixes outside `do-work`.
+- Never decide direction here. A conflict between code and target architecture goes to `product-direction`.
+- Always end the report with what was not examined.
+
+## Provenance and maintenance
+
+Updated: 2026-11-15.
+
+Re-verification commands:
+```bash
+ls plugins/coding/skills/project-evaluation/SKILL.md plugins/coding/skills/do-work/SKILL.md plugins/punchcard/skills/run-report/SKILL.md
+grep -n "codebase-cleanup" plugins/coding/skills/project-evaluation/SKILL.md plugins/punchcard/skills/capability-check/SKILL.md README.md
+```

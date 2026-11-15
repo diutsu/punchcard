@@ -10,7 +10,8 @@ description: >
   codebase", "how maintainable is this", "where should we refactor first".
   Do NOT load to answer a single "how does X work" (see codebase-search), to
   explain a failure (see forensics), to review one diff (see review-rubric),
-  or to carry out the refactors (see do-work).
+  to clean up and simplify with edits (see codebase-cleanup), or to carry out
+  the refactors (see do-work).
 trigger: /project-evaluation
 ---
 
@@ -26,6 +27,7 @@ Assess a project or module for maintainability and refactorability, with evidenc
 | A specific failure needs a cause | `forensics` |
 | Reviewing a diff | `review-rubric` |
 | Performing the refactors | `do-work`, after filing tasks via `backlog` |
+| Removing, simplifying or updating code now, judged against where the project is going | `codebase-cleanup` |
 | Writing the plan for a refactor | `plan` |
 
 ## Procedure
@@ -72,7 +74,7 @@ Order the refactors so each step leaves the suite green and makes the next one c
 
 ## Provenance and maintenance
 
-Updated 2026-11-13. Check commands:
+Updated 2026-11-15. Check commands:
 
 ```bash
 ls plugins/coding/skills/project-evaluation/templates/evaluation-report.md plugins/coding/skills/project-evaluation/references/commands.md

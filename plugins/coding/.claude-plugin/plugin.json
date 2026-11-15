@@ -1,6 +1,6 @@
 {
   "name": "coding",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Write, review, investigate and operate code: a gated work loop, per-work-type leaf skills, project evaluation and forensics.",
   "author": { "name": "diutsu" },
   "repository": "https://github.com/diutsu/punchcard"

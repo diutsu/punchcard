@@ -49,6 +49,7 @@ Repository: `https://github.com/diutsu/punchcard`
 | `validate-run-results` | The bar for claiming a change made something better |
 | `operate-and-diagnose` | Run and measure a live system |
 | `project-evaluation` | Deep maintainability review of a project or module |
+| `codebase-cleanup` | Find what to remove, simplify or update given where the project is going; fix the small cases, file the rest |
 | `interactive-app-review` | Live UX review of a running app |
 | `device-qa` | Android build, install and device checklist loop |
 | `ops-scripts` | Where maintenance scripts live and how they are labelled |
