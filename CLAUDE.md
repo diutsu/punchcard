@@ -61,4 +61,4 @@ ctask --file ops/local/tasks.md --done-file ops/local/done.md validate
 - **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
 - **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
 - **Drafts from `skill-reviewer` start in `wip`:** they land in `plugins/wip/` and move to another plugin only after promotion per `skill-maintenance`. A skill the user asks for goes into the plugin that owns its territory.
-- **Third-party plugins are never vendored:** they are entries in `plugins/punchcard/skills/capability-check/references/watchlist.md`.
+- **Third-party plugins are never vendored:** they are entries in `plugins/punchcard/skills/watchlist/references/watchlist.md`.

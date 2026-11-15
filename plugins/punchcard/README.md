@@ -8,7 +8,8 @@ How Claude works with this user in every session.
 - **SessionStart hook** (`hooks/hooks.json`): prints `session-card.md`, the short list of house rules.
 - **Skills**
   - `project-map`: where things live and which tools own them.
-  - `capability-check`: task intake at the first message and at each new task; holds the list of third-party plugins under trial.
+  - `capability-check`: task intake at the first message and at each new task; hands plugin gaps to `watchlist`.
+  - `watchlist`: the third-party plugins under trial; add, install, record a verdict, uninstall.
   - `grilling`: close gaps in an underspecified request.
   - `agent-brief`: when and how to brief sub-agents, with templates.
   - `find-docs`: locate the right doc.

@@ -8,7 +8,7 @@ description: >
   doc), whether an installed skill covers the craft, and whether this session,
   model and effort fit. Then picks what happens first: straight to work, a
   round of questions, design and plan, a plugin trial, or a clean session with
-  a starting prompt. Also holds the list of third-party plugins under trial.
+  a starting prompt. Hands a missing craft to `watchlist`.
   Do NOT load for a follow-up inside a task already under way.
 trigger: /capability-check
 ---
@@ -73,14 +73,7 @@ Starting in the wrong mode costs more than the check: code written before the de
 
 ## Plugins under trial
 
-`${CLAUDE_SKILL_DIR}/references/watchlist.md` lists third-party plugins by purpose, install id and status. Nothing in it is copied into this marketplace.
-
-- **Search.** Match the missing craft to a row, then to the skills in the installed marketplaces.
-- **Propose.** Ask through the question interface whether to try the candidate, recommendation first. Read the instructions it would load before recommending it: a third-party skill runs with the user's permissions.
-- **Install** on a yes: `claude plugin marketplace add <repo>`, then `claude plugin install <install id>`. Set the status to `trial`.
-- **Record the verdict** after real use: `required`, `trial` or `dropped`, with one line of evidence. Keep a dropped row and its reason.
-- **Remove:** `claude plugin uninstall <install id>`, and `claude plugin marketplace remove <marketplace>` when nothing else uses it.
-- **Add a row** when the user names a plugin: name, repo, install id, what it does, status `untested`, the date.
+When no installed skill covers the craft, load `watchlist`: it matches the gap to a listed plugin and proposes it. Everything about the list (add, install, verdict, uninstall) lives there.
 
 ## Hard rules
 
@@ -89,8 +82,6 @@ Starting in the wrong mode costs more than the check: code written before the de
 - Never start a multi-module change without a plan.
 - Never start a proof of concept without its brief.
 - Never ask the user for a fact the repo holds.
-- Never install or remove a plugin without the user's confirmation unless they asked.
-- Never suggest the same plugin twice in a session after a no.
 
 ## Provenance and maintenance
 
@@ -98,6 +89,6 @@ Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
-ls plugins/punchcard/skills/capability-check/references/watchlist.md plugins/punchcard/skills/grilling
+ls plugins/punchcard/skills/watchlist plugins/punchcard/skills/grilling
 grep -n 'capability-check' plugins/punchcard/session-card.md
 ```
