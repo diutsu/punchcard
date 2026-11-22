@@ -31,8 +31,8 @@ Every task operation in the marketplace goes through this skill. It names the ne
 ## Resolve the tool
 
 1. Read the `tasks` key of the project map (see `project-map`).
-2. If the key is missing, ask the user through the question interface which tool holds the tasks (options: the adapters in `${CLAUDE_SKILL_DIR}/references/adapters/`, recommended first), then write the `tasks` line to the map.
-3. Load `${CLAUDE_SKILL_DIR}/references/adapters/<tool>.md`. If no adapter exists for the named tool, stop and tell the user; do not improvise commands.
+2. If the key is missing, ask the user through the question interface which tool holds the tasks (options: the adapters in `./references/adapters/`, recommended first), then write the `tasks` line to the map.
+3. Load `./references/adapters/<tool>.md`. If no adapter exists for the named tool, stop and tell the user; do not improvise commands.
 4. If the tool is not installed, give the adapter's install hint and stop.
 
 ## Neutral operations
@@ -77,7 +77,7 @@ Every task has: a stable id, a title, a priority, a module, optional blocked-by 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Adapter details: `${CLAUDE_SKILL_DIR}/references/adapters/`.
+Updated: 2026-11-22. Adapter details: `./references/adapters/`.
 
 ```bash
 ls plugins/project-management/skills/backlog/references/adapters/

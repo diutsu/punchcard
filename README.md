@@ -1,6 +1,6 @@
 # punchcard
 
-One person's shared Claude setup, packaged as a Claude Code plugin marketplace. Each plugin bundles skills, agents and defaults for one area of work, so the same habits follow the author into every project.
+One person's shared agent setup, packaged as a plugin marketplace for Claude Code, Antigravity and Codex. Each plugin bundles skills, rules, hooks and agents for one area of work, so the same habits follow the author into every project.
 
 Repository: `https://github.com/diutsu/punchcard`
 
@@ -13,7 +13,6 @@ Repository: `https://github.com/diutsu/punchcard`
 | `techdocs` | Writing technical docs: one prose style, doc templates, the Diataxis layout, sourced research |
 | `project-management` | The backlog, plans and logs, through the project's task tool, and the product-direction session |
 | `wip` | Draft skills proposed by `skill-reviewer` and draft agents, held until promoted |
-| `local-project-manager` | Temporary. Holds only `migrate-project-docs` until the remaining project migrations finish |
 
 ## Skills
 
@@ -83,13 +82,9 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 | `bug-report` | File a new issue reported outside the current task: settle the expected behaviour with the user and name the docs that change |
 | `close-task` | Before closing a task, decide which leftovers belong to its intention (do now) and which are separate concerns (new task), without asking the user |
 
-### local-project-manager (temporary)
-
-| Skill | Purpose |
-|---|---|
-| `migrate-project-docs` | Move a project's `docs/` to the v2 layout, or bootstrap one |
-
 ## Install
+
+### Claude Code
 
 ```bash
 /plugin marketplace add diutsu/punchcard
@@ -97,11 +92,19 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 /plugin install coding@punchcard
 ```
 
-Install any other plugin the same way, with `/plugin install <name>@punchcard`. Validate a local checkout with `claude plugin validate .`. Individual skills also install through `npx skills add https://github.com/diutsu/punchcard`.
+Install any other plugin the same way, with `/plugin install <name>@punchcard`. Validate a local checkout with `claude plugin validate .` and `python3 plugins/punchcard/scripts/sync_rules.py --check`.
+
+### Antigravity
+
+Each plugin ships a root `plugin.json`, and `.agents/plugins.json` exposes the repo plugins (excluding `wip`). Copy or symlink any `plugins/<name>/` into `~/.gemini/config/plugins/<name>/`, or inherit `.agents/plugins.json` from your global config.
+
+### Codex and ChatGPT
+
+`.agents/plugins/marketplace.json` registers the plugins for Codex. Individual skills also install through `npx skills add https://github.com/diutsu/punchcard`. To copy the always-on response style and session card into `~/.codex/AGENTS.md` or ChatGPT Custom Instructions, run `python3 plugins/punchcard/scripts/sync_rules.py --combined`.
 
 ## The project map
 
-Skills never hardcode a path or a tool. Each project's `CLAUDE.md` carries one `## Project map` section of `key:: value` lines (`tasks`, `docs`, `scripts`, `changelog`, `verify` and others). A skill names a key, and the `project-map` skill resolves it, so the same skill works in a repo that keeps docs in `docs/` and in one that keeps them in a vault. A missing key takes a default, and a key with no default makes Claude ask.
+Skills never hardcode a path or a tool. Each project's root instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) carries one `## Project map` section of `key:: value` lines (`tasks`, `docs`, `scripts`, `changelog`, `verify` and others). A skill names a key, and the `project-map` skill resolves it, so the same skill works in a repo that keeps docs in `docs/` and in one that keeps them in a vault. A missing key takes a default, and a key with no default makes the agent ask.
 
 ## More
 

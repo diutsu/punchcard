@@ -52,10 +52,10 @@ Find the one doc that answers the question and read only the part that answers i
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash
-grep -n '^- docs::\|^- investigations::\|^- prd::' CLAUDE.md
+grep -n '^- docs::\|^- investigations::\|^- prd::' AGENTS.md
 grep -c 'project-map' plugins/punchcard/skills/find-docs/SKILL.md
 ```

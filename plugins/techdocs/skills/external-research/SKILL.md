@@ -14,7 +14,7 @@ trigger: /external-research
 
 # /external-research
 
-Every external dependency is a liability until evidence says otherwise. Collect evidence, quote it, and say what you did not check. Output uses `${CLAUDE_SKILL_DIR}/../doc-templates/references/templates/research-doc.md` and lands at the `investigations` map key (resolve through `project-map`).
+Every external dependency is a liability until evidence says otherwise. Collect evidence, quote it, and say what you did not check. Output uses `../doc-templates/references/templates/research-doc.md` and lands at the `investigations` map key (resolve through `project-map`).
 
 ## When NOT to use this skill
 

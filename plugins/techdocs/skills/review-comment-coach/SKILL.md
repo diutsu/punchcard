@@ -23,7 +23,7 @@ Most review threads on planning documents go wrong the same way: a reviewer asks
 | Resolving `[COMMENT]` markers embedded in a doc | `handle-comments` |
 | Prose and source edits | `editorial-review` |
 
-Load `${CLAUDE_SKILL_DIR}/../doc-templates/references/model.md` for the horizons and constraint tests.
+Load `../doc-templates/references/model.md` for the horizons and constraint tests.
 
 ## For reviewers: drafting a comment
 

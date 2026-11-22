@@ -2,8 +2,8 @@
 type: explanation
 state: done
 created: 2026-10-11
-updated: 2026-11-14
-cross-file-references: [.claude-plugin/marketplace.json, plugins/punchcard/session-card.md, plugins/punchcard/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/punchcard/skills/capability-check/SKILL.md, plugins/punchcard/skills/skill-maintenance/SKILL.md]
+updated: 2026-11-22
+cross-file-references: [.claude-plugin/marketplace.json, .agents/plugins/marketplace.json, .agents/plugins.json, plugins/punchcard/session-card.md, plugins/punchcard/hooks.json, plugins/punchcard/rules/AGENTS.md, plugins/punchcard/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/punchcard/skills/capability-check/SKILL.md, plugins/punchcard/skills/skill-maintenance/SKILL.md]
 ---
 
 # Architecture
@@ -12,16 +12,15 @@ How the punchcard marketplace is built and why it is split this way.
 
 ## Plugins
 
-The marketplace ships five plugins and one temporary one. Each owns a territory, so a rule has one home and a user can install only what a project needs.
+The marketplace ships five plugins. Each owns a territory, so a rule has one home and a user can install only what a project needs.
 
 | Plugin | Territory |
 |---|---|
-| `claude` | How Claude works with this user in every session: style, house rules, asking, briefing, queues, away runs, reports, skill upkeep |
+| `punchcard` | How the agent works with this user in every session: style, house rules, asking, briefing, queues, away runs, reports, skill upkeep |
 | `coding` | Doing and reviewing code work, tests, scripts, operations, data and experiment discipline |
 | `techdocs` | Writing, structuring and reviewing technical documents |
 | `project-management` | Tasks, plans, priorities, closing and progress |
 | `wip` | Drafts only, never relied on |
-| `local-project-manager` | Temporary home of `migrate-project-docs`, kept until the remaining project migrations finish |
 
 Plugins declare no dependencies on each other. Cross-plugin dependency behaviour is untested on a real install, so skills refer to siblings by name.
 
@@ -33,11 +32,11 @@ The split keeps each skill small and lets the leaf rules apply outside the loop,
 
 ## The project map
 
-Skills must work in repos that keep docs, tasks and scripts in different places. Instead of hardcoding paths, a skill names a map key, and the project's `CLAUDE.md` resolves it in one `## Project map` block. `project-map` documents the keys and their defaults. A repo that moves its docs then edits one line, and no skill changes.
+Skills must work in repos that keep docs, tasks and scripts in different places. Instead of hardcoding paths, a skill names a map key, and the project's root instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) resolves it in one `## Project map` block. `project-map` documents the keys and their defaults. A repo that moves its docs then edits one line, and no skill changes.
 
 ## Session card and output style
 
-Two always-on pieces live in `claude`. The `punchcard` output style sets the shape of responses: action first, honest uncertainty. A SessionStart hook prints the session card, a short list of house rules: gate before done, privacy wall, delegation tiers, autonomy. A rule goes on the card only when it applies to every session and fits in two lines. Anything longer becomes a skill that loads on demand, which keeps the always-on cost low.
+Two always-on pieces live in `punchcard`. The `punchcard` output style (`output-styles/punchcard.md`, synced to `rules/AGENTS.md` for Antigravity via `scripts/sync_rules.py`) sets the shape of responses: action first, honest uncertainty. SessionStart hooks (`hooks/hooks.json` for Claude Code, `hooks.json` + `scripts/session_start_agy.py` for Antigravity) inject `session-card.md`, a short list of house rules: gate before done, privacy wall, delegation tiers, autonomy. A rule goes on the card only when it applies to every session and fits in two lines. Anything longer becomes a skill that loads on demand, which keeps the always-on cost low.
 
 ## The low-agent work loop
 
@@ -57,5 +56,5 @@ Third-party plugins are tracked, not copied. `capability-check` holds a table of
 
 ## Docs and templates
 
-This repository tracks its own `docs/` in the Diataxis layout defined by `docs-management`, as a readable example of the contract. Doc skeletons for new documents live in `techdocs`. The starter tree for the older flat layout stays in `local-project-manager` until the last migration finishes.
+This repository tracks its own `docs/` in the Diataxis layout defined by `docs-management`, as a readable example of the contract. Doc skeletons for new documents live in `techdocs`.
 

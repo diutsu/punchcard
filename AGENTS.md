@@ -1,6 +1,6 @@
 # punchcard — Agent Instructions
 
-> **One-liner:** `diutsu`'s shared Claude setup as a plugin marketplace (`https://github.com/diutsu/punchcard`): house rules, skills and agents that would otherwise live in a personal `~/.claude`.
+> **One-liner:** `diutsu`'s shared agent setup as a multi-harness plugin marketplace (`https://github.com/diutsu/punchcard`): house rules, skills and agents for Claude Code, Antigravity and Codex.
 > **Lifecycle stage:** `structured`
 
 ## Project map
@@ -21,13 +21,14 @@
 
 | Path | What it is | When to edit |
 |---|---|---|
-| `.claude-plugin/marketplace.json` | The marketplace manifest | When adding, renaming or removing a plugin |
-| `plugins/punchcard/` | Always-on base: output style, session card, task intake, question, briefing, operator-queue and skill-upkeep skills | When changing how Claude behaves in every session |
+| `.claude-plugin/marketplace.json` | Claude Code marketplace manifest | When adding, renaming or removing a plugin |
+| `.agents/plugins/marketplace.json` | Codex marketplace manifest | When adding, renaming or removing a plugin |
+| `.agents/plugins.json` | Antigravity workspace plugin discovery | When changing plugin roots or exclusions |
+| `plugins/punchcard/` | Always-on base: output style (`output-styles/punchcard.md` synced to `rules/AGENTS.md`), session card + SessionStart hooks (`hooks/hooks.json` and `hooks.json`), task intake, question, briefing, operator-queue and skill-upkeep skills | When changing how the agent behaves in every session |
 | `plugins/coding/` | The work loop (`do-work`), its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
 | `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
 | `plugins/project-management/` | Backlog, prioritisation, triage, plans, and the product-direction session; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
 | `plugins/wip/` | Draft skills from `skill-reviewer` and draft agents, awaiting promotion | Drafts only |
-| `plugins/local-project-manager/` | Temporary: holds only `migrate-project-docs` | Do not edit; it is removed when the remaining migrations finish |
 | `docs/` | This repository's own docs, committed, in the Diataxis layout | When the structure or a contract changes |
 
 ## 2. Verification gate commands
@@ -35,22 +36,28 @@
 Run these before completing any task in this repository:
 
 ```bash
-# 1. The marketplace and every plugin manifest are valid
+# 1. Cross-harness manifests parse cleanly, agree across harnesses, and rules/AGENTS.md is in sync
+python3 plugins/punchcard/scripts/sync_rules.py --check
+
+# 2. Claude Code marketplace and every plugin manifest are valid (when claude CLI is installed)
 claude plugin validate .
 
-# 2. Every skill has the required frontmatter and sections (no output = pass)
+# 3. Every skill has the required frontmatter and sections (no output = pass)
 find plugins/{punchcard,coding,techdocs,project-management,wip}/skills -name SKILL.md -exec grep -L '^name:' {} +
 find plugins/{punchcard,coding,techdocs,project-management,wip}/skills -name SKILL.md -exec grep -L '^tier:' {} +
 find plugins/{punchcard,coding,techdocs,project-management,wip}/skills -name SKILL.md -exec grep -L '^trigger:' {} +
 find plugins/{punchcard,coding,techdocs,project-management,wip}/skills -name SKILL.md -exec grep -L '^## Hard rules' {} +
 
-# 3. The task tool is named only inside project-management (no output = pass)
+# 4. No Claude-only path variable leaks in plugins (no output = pass)
+grep -rn '\${CLAUDE_SKILL_DIR}' plugins/
+
+# 5. The task tool is named only inside project-management (no output = pass)
 grep -rln 'ctask' plugins/punchcard/skills plugins/coding plugins/techdocs | grep -v -e project-map -e skill-maintenance -e project-doctor
 
-# 4. Every doc carries the frontmatter contract (no output = pass)
+# 6. Every doc carries the frontmatter contract (no output = pass)
 grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials docs/investigations docs/prd docs/design 2>/dev/null
 
-# 5. The task registry is valid (local file; skip on a checkout without one)
+# 7. The task registry is valid (local file; skip on a checkout without one)
 ctask --file ops/local/tasks.md --done-file ops/local/done.md validate
 ```
 

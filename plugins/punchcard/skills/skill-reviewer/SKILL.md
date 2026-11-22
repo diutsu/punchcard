@@ -25,7 +25,7 @@ Turn repeated friction in past sessions into draft skills. The user reviews ever
 
 ## Procedure
 
-1. **Locate transcripts.** Session files are `~/.claude/projects/<project-folder>/*.jsonl` for the current project. The folder name is the project path with separators replaced by dashes. Scan the sessions modified in the last 30 days unless the user names another window.
+1. **Locate transcripts.** Locate session transcript files for this project in the active harness's session folder. Scan the sessions modified in the last 30 days unless the user names another window.
 2. **Extract only the signal.** Read the lines where the user typed a prompt and the tool calls the agent made. Skip tool results, and never read, quote or store credentials, keys, tokens or personal data. If a line holds any, skip it. A script that streams the jsonl and prints only user prompts and tool names with command heads keeps this mechanical and the volume low.
 3. **Find three patterns.**
 
@@ -51,10 +51,9 @@ Turn repeated friction in past sessions into draft skills. The user reviews ever
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash
-ls ~/.claude/projects | head
 ls plugins/wip/skills
 ```

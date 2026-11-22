@@ -46,7 +46,7 @@ The user says where the product should go; the docs say where it was going; the 
 7. **Settle conflicts and blockers.** Keep a running list. The question interface hides the message around it, so carry the list inside the round: while an item is open, one question in each round is about it and names the others still open. Every item ends in a decision before the session closes: a conflict by the user choosing a side, a blocker by a timing decision in step 8. Nothing is carried out of the session as an open item.
 8. **Decide when.** For each change, ask whether it is built now, after a named milestone, or once the affected area is stable. State what blocks it and what it would displace: a change built now moves something else later, so name that thing. Skip this step for a change that is complete once the docs are written. Where the repo has no tasks or milestones to compare against, ask only "now" or "later, when `<condition>`".
 9. **Write.** Update the docs in place, per `docs-management` and `writing-style`. A doc states how things are. It carries no note about what a requirement used to say, who asked for the change or how it was decided.
-10. **Close.** Read back per `${CLAUDE_SKILL_DIR}/templates/read-back.md`: what changed and where, how each conflict was settled, and when each change is built. Then offer to file the tasks via `backlog`, with blockers recorded, and to rank them per `prioritise`. File them on a yes.
+10. **Close.** Read back per `./templates/read-back.md`: what changed and where, how each conflict was settled, and when each change is built. Then offer to file the tasks via `backlog`, with blockers recorded, and to rank them per `prioritise`. File them on a yes.
 
 ## What the session leaves behind
 

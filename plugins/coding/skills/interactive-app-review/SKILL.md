@@ -18,7 +18,7 @@ trigger: /interactive-app-review
 
 Two phases, always both, in order. Phase 1 establishes what the app does. Phase 2 turns that into a critique a build pass can act on. A clean Phase 1 (no console errors, everything works) does not excuse skipping Phase 2: a spotless exploration can sit under a poor experience, and only Phase 2 shows why.
 
-Read `${CLAUDE_SKILL_DIR}/references/defect-classes.md` in full before Phase 1 and again before Phase 2. Check each of its ten classes by name.
+Read `./references/defect-classes.md` in full before Phase 1 and again before Phase 2. Check each of its ten classes by name.
 
 ## When NOT to use this skill
 

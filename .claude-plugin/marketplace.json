@@ -40,13 +40,6 @@
       "description": "Draft skills proposed by skill-reviewer, held here until promoted into another plugin.",
       "category": "development",
       "keywords": ["drafts"]
-    },
-    {
-      "name": "local-project-manager",
-      "source": "./plugins/local-project-manager",
-      "description": "Temporary: holds only migrate-project-docs until the remaining project migrations finish.",
-      "category": "development",
-      "keywords": ["migration"]
     }
   ]
 }

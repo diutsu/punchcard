@@ -32,7 +32,7 @@ Establish what exists before anyone writes code or a plan. This skill reads and 
 
 Stop as soon as the evidence answers the question.
 
-1. The project `CLAUDE.md`: stage, gate commands, non-negotiables, and the project map (`project-map`).
+1. The project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`): stage, gate commands, non-negotiables, and the project map (`project-map`).
 2. Task history through `backlog`: open and closed tasks for the module. Known gaps live there, so the code may carry no hint of them.
 3. Docs located through `find-docs`: architecture, reference, explanation, and the `investigations` key (verdict section first).
 4. The code, last, compared against what steps 2 and 3 claim.

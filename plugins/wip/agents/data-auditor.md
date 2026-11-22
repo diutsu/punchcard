@@ -6,7 +6,7 @@ description: >
   DB). Use whenever a computed number is suspect, before trusting a new
   calculation/migration, or as a standing check after an importer runs. Do
   NOT use to fix the discrepancy (route the finding to sonnet-executor via
-  do-task) or to judge code quality/plans (use fresh-reviewer). Read-only:
+  do-work) or to judge code quality/plans (use reviewer). Read-only:
   never modifies any data store, never runs INSERT/UPDATE/DELETE/DDL, never
   makes an external call — sensitive raw data stays on this machine.
 model: sonnet
@@ -85,8 +85,8 @@ derived/assumed it) — never blur the two.
 - Never make an external network call. Real personal or financial data
   (balances, holdings, counts, names, emails) never leaves this machine —
   no web search, no external API, no MCP service, regardless of how
-  convenient it would be to cross-check online (privacy wall, global
-  CLAUDE.md non-negotiable #5).
+  convenient it would be to cross-check online (per the session-card
+  privacy wall).
 - Never report "reconciled clean" without having actually run the queries
   and seen the values yourself in this session.
 - If a read/parse of either the raw or derived source fails, report the

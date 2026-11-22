@@ -19,7 +19,7 @@ If `ctask` does not find the registry on its own, pass the paths on every call: 
 
 ## Seed files
 
-ctask needs the registry and the done log to exist. For a project without them, copy `${CLAUDE_SKILL_DIR}/templates/tasks.md` and `done.md` to the paths above, add `ops/local/` to `.gitignore`, then validate. Plans are created on first use (`plan`).
+ctask needs the registry and the done log to exist. For a project without them, copy `../../templates/tasks.md` and `../../templates/done.md` (from this skill's `templates/` folder) to the paths above, add `ops/local/` to `.gitignore`, then validate. Plans are created on first use (`plan`).
 
 ## Operation map
 

@@ -64,11 +64,18 @@ def _git_info() -> dict:
 
 
 def _proj(cwd: str) -> str:
-    """Replicate the `proj` zsh function: segment after `workspace/`, else basename."""
+    """Top-level folder under STATUSLINE_WORKSPACE_DIR (if set), else basename."""
     if not cwd:
         return "?"
-    if "/workspace/" in cwd:
-        return cwd.split("/workspace/")[-1].split("/")[0]
+    ws_dir = os.environ.get("STATUSLINE_WORKSPACE_DIR", "").strip()
+    if ws_dir:
+        ws_root = os.path.realpath(os.path.expanduser(ws_dir))
+        cwd_real = os.path.realpath(cwd)
+        if cwd_real == ws_root:
+            return os.path.basename(ws_root) or cwd
+        prefix = ws_root.rstrip(os.sep) + os.sep
+        if cwd_real.startswith(prefix):
+            return cwd_real[len(prefix):].split(os.sep)[0]
     return os.path.basename(cwd.rstrip("/")) or cwd
 
 
@@ -193,8 +200,8 @@ def main():
                 "session_name": "foobar do that thing now",
                 "model": {"id": "claude-opus-4-8", "display_name": "Opus 4.8 (1M context)"},
                 "effort": {"level": "high"},
-                "workspace": {"current_dir": "/Users/me/workspace/proj/sub"},
-                "cwd": "/Users/me/workspace/proj/sub",
+                "workspace": {"current_dir": "/path/to/proj/sub"},
+                "cwd": "/path/to/proj/sub",
                 "cost": {"total_cost_usd": 2.45},
                 "context_window": {"used_percentage": 9.3},
                 "rate_limits": {"five_hour": {"used_percentage": 41.0}},

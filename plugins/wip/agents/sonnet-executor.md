@@ -4,10 +4,10 @@ description: >
   Leaf code-task executor. Hand this agent ONE scoped, well-defined code
   change with an explicit "what to change", "done when" acceptance criteria,
   and the exact test/gate command to run. Use for: implementing a single
-  do-task execution step, a single code-task brief, a mechanical multi-file
+  do-work execution step, a single code-task brief, a mechanical multi-file
   edit that still needs test verification. Do NOT use for: planning or
   scoping a task (that's opus), scoring/reviewing a plan or diff (use
-  fresh-reviewer), touching docs/TASKS.md or writing REQUIREMENTS/
+  reviewer), touching docs/TASKS.md or writing REQUIREMENTS/
   BUSINESS_LOGIC docs (use doc-writer), open-ended research (use researcher),
   or any change spanning multiple unrelated files/concerns — split it into
   separate executor calls first.

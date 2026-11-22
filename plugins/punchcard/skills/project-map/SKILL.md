@@ -13,7 +13,7 @@ trigger: /project-map
 
 # /project-map
 
-Skills in this marketplace never hardcode a path or a tool. They name a map key, and the project's `CLAUDE.md` resolves it. A rule about where files go lives here once, not in every skill.
+Skills in this marketplace never hardcode a path or a tool. They name a map key, and the project's instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) resolves it. A rule about where files go lives here once, not in every skill.
 
 ## When NOT to use this skill
 
@@ -25,7 +25,7 @@ Skills in this marketplace never hardcode a path or a tool. They name a map key,
 
 ## The block
 
-Each project `CLAUDE.md` carries one `## Project map` section of `key:: value` lines. A missing key takes the default.
+Each project carries one `## Project map` section of `key:: value` lines in its root instructions file — check `AGENTS.md`, `CLAUDE.md` and `GEMINI.md` in that order and use the first one with the block. When creating a new file, use `AGENTS.md`. A missing key takes the default.
 
 ```markdown
 ## Project map
@@ -61,7 +61,7 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 
 ## Procedure
 
-1. Read the `## Project map` section of the repo `CLAUDE.md`.
+1. Read the `## Project map` section from the first of `AGENTS.md`, `CLAUDE.md` or `GEMINI.md` at the repo root that has one.
 2. Resolve the key the calling skill named. Use the default when the key is absent and a default exists.
 3. If the key has no default and no value, ask the user through the question interface, then add the line to the map.
 4. Write the file, or run the tool, at the resolved location only.
@@ -71,14 +71,14 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 - Never write a file to a location a skill guessed. Resolve the map key first.
 - Never read or edit task, plan or done files directly. Go through the tool named in `tasks`.
 - Never restate a map default inside another skill. Name the key.
-- Never create a second map. One block, in the repo `CLAUDE.md`.
+- Never create a second map. One block, in the repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`).
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash
-grep -n '^## Project map' CLAUDE.md
+grep -n '^## Project map' AGENTS.md
 grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/punchcard
 ```

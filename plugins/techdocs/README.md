@@ -2,6 +2,12 @@
 
 Write good technical docs from ideas, and plan those ideas into viable designs, in one strict writing style.
 
+## Install
+
+```bash
+/plugin install techdocs --marketplace diutsu/punchcard
+```
+
 | Skill | Use it to |
 | --- | --- |
 | `writing-style` | Apply the one prose style to every doc and report; lint for LLM tells |

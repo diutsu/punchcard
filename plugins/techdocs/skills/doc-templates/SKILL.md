@@ -13,7 +13,7 @@ trigger: /doc-templates
 
 # /doc-templates
 
-Templates save tokens: copy the skeleton, fill it, delete the guidance. Read `${CLAUDE_SKILL_DIR}/references/model.md` first when the doc is a planning doc (vision, target architecture, discovery, design): it defines horizons, spans and the constraint tests.
+Templates save tokens: copy the skeleton, fill it, delete the guidance. Read `./references/model.md` first when the doc is a planning doc (vision, target architecture, discovery, design): it defines horizons, spans and the constraint tests.
 
 ## When NOT to use this skill
 
@@ -27,7 +27,7 @@ Templates save tokens: copy the skeleton, fill it, delete the guidance. Read `${
 
 ## Templates
 
-All live in `${CLAUDE_SKILL_DIR}/references/templates/`. Destination keys resolve through `project-map`.
+All live in `./references/templates/`. Destination keys resolve through `project-map`.
 
 | Doc type | Horizon | Template | Destination |
 |---|---|---|---|

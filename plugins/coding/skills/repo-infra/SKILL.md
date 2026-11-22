@@ -41,7 +41,7 @@ Never create a worktree inside the repo or under a tool-managed folder.
 
 ## Branches and pushing
 
-- On a default branch (`main`, `master`), create a branch before working, unless the project `CLAUDE.md` says otherwise.
+- On a default branch (`main`, `master`), create a branch before working, unless the project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) says otherwise.
 - Push only when the user asks. Never force-push a shared branch.
 
 ## Personal details

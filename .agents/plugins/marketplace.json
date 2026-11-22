@@ -1,0 +1,70 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/marketplace.schema.json",
+  "name": "punchcard",
+  "interface": {
+    "displayName": "punchcard",
+    "description": "diutsu's personal agent plugin marketplace: always-on rules, coding loop, technical docs, and backlog skills."
+  },
+  "plugins": [
+    {
+      "name": "punchcard",
+      "source": {
+        "source": "local",
+        "path": "./plugins/punchcard"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "coding",
+      "source": {
+        "source": "local",
+        "path": "./plugins/coding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "techdocs",
+      "source": {
+        "source": "local",
+        "path": "./plugins/techdocs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Documentation"
+    },
+    {
+      "name": "project-management",
+      "source": {
+        "source": "local",
+        "path": "./plugins/project-management"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "wip",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wip"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    }
+  ]
+}

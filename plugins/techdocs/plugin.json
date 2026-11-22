@@ -1,0 +1,7 @@
+{
+  "name": "techdocs",
+  "version": "0.1.2",
+  "description": "Write technical docs from ideas and plan them into viable designs: shared writing style, templates, Diataxis layout, sourced research.",
+  "author": { "name": "diutsu" },
+  "repository": "https://github.com/diutsu/punchcard"
+}

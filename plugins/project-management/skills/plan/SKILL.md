@@ -35,7 +35,7 @@ Ask `backlog` for the plan location (`locations`). One plan per task, named `<ID
 | Size | Form |
 |---|---|
 | One file, obvious edit, no decision | Inline plan in the kickoff message: goal, exact commands, measurable done state. No file. |
-| Several files or phases, a real choice between approaches, or a dead end worth fencing | Plan file from `${CLAUDE_SKILL_DIR}/templates/plan.md`. |
+| Several files or phases, a real choice between approaches, or a dead end worth fencing | Plan file from `./templates/plan.md`. |
 
 An inline plan is the same anatomy compressed. It still states an exact expected result.
 

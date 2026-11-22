@@ -32,7 +32,7 @@ An investigation is an experiment-design problem. Reproduce, check history, enum
 
 ## Procedure
 
-1. **Reproduce first.** Get the exact input, command, expected output and actual output. Reduce to the smallest case: one record, one date, one request. Run the project's real command (from the project `CLAUDE.md` or manifest). If it does not reproduce, say so; the task is then "build a reproduction". Re-ask vague reports for specifics.
+1. **Reproduce first.** Get the exact input, command, expected output and actual output. Reduce to the smallest case: one record, one date, one request. Run the project's real command (from the project instructions file `AGENTS.md`/`CLAUDE.md` or manifest). If it does not reproduce, say so; the task is then "build a reproduction". Re-ask vague reports for specifics.
 2. **Was this investigated and closed before?** Search task history through `backlog` and past reports in the `investigations` key (locate with `find-docs`). An open item: extend it, do not duplicate it. A closed item or report: read what was tried. If the failure returned, treat it as a regression against that specific fix and name the fix. If the project has no such records, check commit history for the affected file.
 3. **Enumerate hypotheses.** Fill the table below before touching code. Each row needs a predicted value and one observation that only that hypothesis explains. Two hypotheses that predict the same observation are one hypothesis until sharpened.
 4. **Run the cheapest discriminating experiment**, read-only where possible (log a value, query the store, grep the config). Pick the experiment that splits the remaining space, not the one that confirms the favourite.
@@ -58,7 +58,7 @@ Check these classes first: stale values (who invalidates this store, and did tha
 
 ## Bug report
 
-When the user asks for a written bug report document with the root cause, write it from `${CLAUDE_SKILL_DIR}/templates/bug-report.md` into the `investigations` key. Fill every section: title, environment and versions, reproduction steps someone else can run verbatim, expected versus actual with exact output, frequency, root cause with evidence (or "not yet established" plus the hypotheses ruled out), scope of impact, workaround, suggested fix. Frontmatter follows `docs-management`.
+When the user asks for a written bug report document with the root cause, write it from `./templates/bug-report.md` into the `investigations` key. Fill every section: title, environment and versions, reproduction steps someone else can run verbatim, expected versus actual with exact output, frequency, root cause with evidence (or "not yet established" plus the hypotheses ruled out), scope of impact, workaround, suggested fix. Frontmatter follows `docs-management`.
 
 ## Hard rules
 

@@ -35,7 +35,7 @@ Assess a project or module for maintainability and refactorability, with evidenc
 1. **Scope.** Name the project or module, the commit evaluated (`git rev-parse HEAD`), and the question driving the evaluation. Ask the user through the question interface only if scope is ambiguous, in one batch.
 2. **Read.** Use `codebase-search` for every reading step: project map, task history via `backlog`, docs via `find-docs`, then code. Keep its fact and inference tags.
 3. **Measure.** Run the lenses below. Prefer commands that give counts.
-4. **Write.** Fill `${CLAUDE_SKILL_DIR}/templates/evaluation-report.md` and save it to the `investigations` key. Frontmatter follows `docs-management`.
+4. **Write.** Fill `./templates/evaluation-report.md` and save it to the `investigations` key. Frontmatter follows `docs-management`.
 5. **File follow-ups** via `backlog`, one task per recommended refactor step. Do not start them here.
 
 ## Lenses
@@ -53,7 +53,7 @@ Assess a project or module for maintainability and refactorability, with evidenc
 | Links from code to project work | Task IDs, plan and doc names, step numbers in code and comments; how many point at files that no longer exist | grep recipe in `backend-code` |
 | Third-party SDK leakage | SDK types or calls outside their wrapper module | grep of SDK imports outside the boundary (`backend-code` states the rule) |
 
-Recipes for co-change and churn-times-size are in `${CLAUDE_SKILL_DIR}/references/commands.md`.
+Recipes for co-change and churn-times-size are in `./references/commands.md`.
 
 ## Findings
 

@@ -27,7 +27,7 @@ The author writes first and fast; this skill is the editor. It runs a lint step,
 
 ## Step 0: lint
 
-Run `sh ${CLAUDE_SKILL_DIR}/../writing-style/scripts/lint-prose.sh <file>` and fix every hit that is not a quotation or proper noun. Load `writing-style`; its guide is the yardstick for every comment on voice, terms and sources. For a planning doc (vision, target architecture, discovery, design), also run `horizon-review`.
+Run `sh ../writing-style/scripts/lint-prose.sh <file>` (relative to this skill folder) and fix every hit that is not a quotation or proper noun. Load `writing-style`; its guide is the yardstick for every comment on voice, terms and sources. For a planning doc (vision, target architecture, discovery, design), also run `horizon-review`.
 
 ## Pass 1: critique
 

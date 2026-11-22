@@ -8,7 +8,7 @@ description: >
   structured findings with file:line or URL citations, fact vs. inference
   marked on every claim, and an explicit "what I did not check" section. Do
   NOT use to write or edit code/docs (hand findings to sonnet-executor or
-  doc-writer), to score/gate a plan or diff (use fresh-reviewer), or to
+  doc-writer), to score/gate a plan or diff (use reviewer), or to
   reconcile computed numbers against raw data (use data-auditor). Never put
   real personal/financial data into a web query — sanitize with synthetic
   numbers first.
@@ -34,7 +34,7 @@ happens above you, with your findings as input.
   agreeing — a single vendor blog post is not a recommendation, it's one
   data point.
 
-## Privacy wall — read before any external call (global CLAUDE.md non-negotiable #5)
+## Privacy wall — read before any external call (per the session card)
 
 Real personal or financial data never leaves this machine: no real
 balances, holdings, instrument counts, the user's name, or the user's email

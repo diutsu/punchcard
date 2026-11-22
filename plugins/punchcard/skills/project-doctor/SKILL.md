@@ -25,7 +25,7 @@ Run three checks, report each as pass or fail with the one-line fix, and change 
 
 ## Check 1: repo
 
-1. The repo `CLAUDE.md` has one `## Project map` block (see `project-map`). Missing block: fail, copy the block from `${CLAUDE_SKILL_DIR}/templates/CLAUDE.md` and fill it in.
+1. The repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`, per `project-map`) has one `## Project map` block. Missing block: fail, copy the block from `./templates/AGENTS.md` and fill it in.
 2. Every path value in the block exists, except `handoff` and `operator-queue`. List each missing path. Keys absent from the block take their defaults from `project-map`; check that those default paths exist too.
 3. The `scripts` folder exists.
 4. The `changelog` file exists.
@@ -64,10 +64,10 @@ Offer the fixes as a batch through the question interface, recommended option fi
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash
-grep -n '^## Project map' plugins/punchcard/skills/project-doctor/templates/CLAUDE.md
+grep -n '^## Project map' plugins/punchcard/skills/project-doctor/templates/AGENTS.md
 ls plugins/punchcard/skills/project-doctor/templates
 ```

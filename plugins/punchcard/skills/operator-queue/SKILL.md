@@ -30,7 +30,7 @@ The file lives at the `operator-queue` key of the project map (see `project-map`
 
 ## File shape
 
-Exactly two H2 sections: `## Run queue` and `## Decision gates`. Create the file from `${CLAUDE_SKILL_DIR}/templates/operator-queue.md`. It is a worklist, not a doc: no frontmatter, and no links to other files beyond the task each entry names.
+Exactly two H2 sections: `## Run queue` and `## Decision gates`. Create the file from `./templates/operator-queue.md`. It is a worklist, not a doc: no frontmatter, and no links to other files beyond the task each entry names.
 
 ### Run queue
 
@@ -87,7 +87,7 @@ When the human pastes output or checks an option:
 
 The handoff note carries one task across sessions or between independent agents. It lives at the `handoff` key of the project map. It is local work: never commit it, and keep its folder ignored by git.
 
-- **Write it only for work in flight** that is expected to outlast this session or needs several sessions or independent agents. Start from `${CLAUDE_SKILL_DIR}/templates/handoff.md`.
+- **Write it only for work in flight** that is expected to outlast this session or needs several sessions or independent agents. Start from `./templates/handoff.md`.
 - **No work in flight, no file.** Delete the note when the task lands or stops. A missing note means the next session starts from `prioritise`.
 - **Never list pending tasks in it.** A task nobody has started is backlog, however likely it is to be next.
 - Keep it to what the next session cannot get elsewhere: the task, the branch and test state, what is done, the next step, running jobs, and open questions. At most 40 lines. Rewrite it; do not append.
@@ -113,9 +113,9 @@ The handoff note carries one task across sessions or between independent agents.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash
-grep -n '^## ' "$(sed -n 's/^- operator-queue:: //p' CLAUDE.md)"
+grep -n '^## ' "$(sed -n 's/^- operator-queue:: //p' AGENTS.md)"
 ```

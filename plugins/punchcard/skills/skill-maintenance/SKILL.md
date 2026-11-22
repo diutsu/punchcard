@@ -6,7 +6,7 @@ description: >
   rule belongs, the skill anatomy contract, split, merge and retire heuristics,
   and promotion from `wip`. Load when authoring or editing a SKILL.md, auditing
   skills for overlap or stale paths, deciding whether a rule belongs in the
-  session card, a skill or a project CLAUDE.md, or promoting a draft. Do NOT
+  session card, a skill or a project instructions file (`AGENTS.md`), or promoting a draft. Do NOT
   load to run a task governed by another skill.
 trigger: /skill-maintenance
 ---
@@ -30,15 +30,15 @@ Decide where a rule goes before writing it.
 
 | Layer | Home | Holds |
 |---|---|---|
-| Always on | Output style and session card in the `punchcard` plugin | Response style and the short house rules loaded every session |
+| Always on | Output style (`output-styles/punchcard.md`, synced to `rules/AGENTS.md`) and `session-card.md` in the `punchcard` plugin | Response style and the short house rules loaded every session |
 | Triggered procedures | `plugins/<plugin>/skills/<name>/SKILL.md` | Workflows, leaf procedures and reference sheets, project-agnostic |
-| Project facts | The repo `CLAUDE.md` with its Project map, plus the repo docs | Locations, tools, module boundaries, project-specific rules |
+| Project facts | The repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) with its Project map, plus the repo docs | Locations, tools, module boundaries, project-specific rules |
 
 A rule that applies to every session and fits in two lines goes on the session card. A rule that applies to a kind of work goes in a skill. A rule that names a path, a tool or a module goes in the project.
 
 ## 2. Territory per plugin
 
-- `claude`: how Claude works with this user: style, house rules, asking, briefing, queues, away runs, reports and skill upkeep.
+- `punchcard`: how the agent works with this user in every session: style, house rules, asking, briefing, queues, away runs, reports and skill upkeep.
 - `coding`: doing and reviewing code work, tests, scripts, ops, data and experiment discipline.
 - `techdocs`: writing, structuring and reviewing technical documents.
 - `project-management`: tasks, plans, priorities, closing and progress, and the session that sets product direction.
@@ -56,7 +56,7 @@ Every `SKILL.md` has:
 
 Tiers: a **leaf** runs one intent and loads no sibling to orchestrate. A **workflow** composes leaves and agents by name and never restates their mechanics. A **reference** is consulted, not stepped through.
 
-Aim for 60-110 lines. Move long lists and templates to `references/` or `templates/` inside the skill folder and point to them with `${CLAUDE_SKILL_DIR}/...`. Never reference a file across plugin folders.
+Aim for 60-110 lines. Move long lists and templates to `references/` or `templates/` inside the skill folder and link to them with relative paths (`./references/...`, `./templates/...`). Never reference a file across plugin folders.
 
 ## 4. Composition rules
 
@@ -90,7 +90,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-22.
 
 Re-verification commands:
 ```bash

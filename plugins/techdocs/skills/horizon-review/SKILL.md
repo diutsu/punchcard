@@ -22,7 +22,7 @@ trigger: /horizon-review
 | Starting a doc from a skeleton | `doc-templates` |
 | Placement, frontmatter | `docs-management` |
 
-Read `${CLAUDE_SKILL_DIR}/../doc-templates/references/model.md` first for the horizons, spans and constraint tests.
+Read `../doc-templates/references/model.md` first for the horizons, spans and constraint tests.
 
 The review has two parts. Run both unless the user asks for one.
 

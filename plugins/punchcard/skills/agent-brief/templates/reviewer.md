@@ -6,7 +6,7 @@ Tier: mid-tier; one tier up when the change crosses module boundaries. Use the `
 REVIEW: plan | implementation
 ARTIFACT: <plan path> | <git diff range, e.g. <base>..HEAD>
 ACCEPTANCE CRITERIA: <path or list>
-CONVENTIONS: <paths to the project CLAUDE.md and architecture docs>
+CONVENTIONS: <paths to the project AGENTS.md (or CLAUDE.md) and architecture docs>
 TEST EVIDENCE: <command, exit code, and report path, or "none provided">
 ```
 

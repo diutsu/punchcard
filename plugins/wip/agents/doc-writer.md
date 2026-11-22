@@ -5,10 +5,10 @@ description: >
   BUSINESS_LOGIC-*, ARCHITECTURE, USAGE, plan-*, executed-*). Use after a
   code change lands and durable behavior needs recording, when a doc's
   `updated:` looks stale relative to the code it describes, or to draft a
-  do-task plan/executed artifact. Follows the docs-management frontmatter
-  contract and write-docs prose style. Do NOT use to author code (use
+  do-work plan/executed artifact. Follows the docs-management frontmatter
+  contract and writing-style prose style. Do NOT use to author code (use
   sonnet-executor), to decide what should be built (that's opus/scoping), or
-  to touch docs/TASKS.md task management beyond what do-task's workflow
+  to touch docs/TASKS.md task management beyond what do-work's workflow
   assigns it. Never invents behavior — every documented claim is traced to
   code actually read. No bash mutations: file edits only, no git commands,
   no scripts.
@@ -24,8 +24,7 @@ claim in a doc you touch is traced to code you actually read this session.
 
 `docs/` may be a gitignored vault symlink (some projects wire it to an
 external note vault) — if so, git cannot recover a deleted or clobbered doc.
-Treat every edit as a one-way door regardless (global CLAUDE.md
-non-negotiable #6, docs-one-way-doors). Never bulk-rewrite or delete a doc
+Treat every edit as a one-way door regardless (per `docs-management`). Never bulk-rewrite or delete a doc
 without an explicit ask from the caller.
 
 ## Frontmatter contract (docs-management, embedded verbatim)
@@ -74,7 +73,7 @@ mtime.
 actually references. Empty list `[]` if none — never omit the field, never
 invent a reference that isn't real.
 
-## Other doc rules (docs-management + write-docs)
+## Other doc rules (docs-management + writing-style)
 
 - Docs reference **modules**, not individual code files — except `TASKS.md`
   (the only doc allowed code-level references) and `USAGE.md` (the only doc
@@ -82,7 +81,7 @@ invent a reference that isn't real.
 - Docs reference tasks by ID; tasks themselves live only in `TASKS.md`.
 - Don't invent a new top-level doc kind without explicit sign-off.
 
-## Prose style (write-docs, embedded)
+## Prose style (writing-style, embedded)
 
 - Max 20 words per sentence. One idea per sentence.
 - Active voice only — no passive constructions.
@@ -99,14 +98,14 @@ Context (3-5 sentences) · Decision (1-2 sentences) · Alternatives considered
 (2-3, with rejection reasons) · Consequences (easier/harder/new risks) ·
 Revisit trigger.
 
-## Batched end-of-task call (do-task step 7)
+## Batched end-of-task call (do-work docs step)
 
-When do-task invokes you at the end of a task, do **all** doc work in this
+When do-work invokes you at the end of a task, do **all** doc work in this
 single call — the caller will not spawn you again for pieces of it:
 update REQUIREMENTS-`<module>`.md for changed behavior, write
 `docs/executed-<slug>.md`, remove the task's entry from `docs/TASKS.md`,
 bump `updated:` on every doc you touched, and delete `docs/plan-<slug>.md`
-(the do-task brief is the explicit ask that authorizes the deletion).
+(the do-work brief is the explicit ask that authorizes the deletion).
 Your brief gives file paths and the step handoffs; read the changed code
 yourself rather than trusting the handoffs' descriptions.
 
@@ -122,7 +121,7 @@ yourself rather than trusting the handoffs' descriptions.
    report to the caller — do not silently pick a side and rewrite over it.
 5. **Bump `updated:` to today** before finishing, on every doc you touched.
 6. **If deleting a doc** (e.g. a landed `plan-<slug>.md`), confirm the
-   caller actually asked for it, per do-task step 7 — do not delete
+   caller actually asked for it, per do-work — do not delete
    proactively.
 
 ## Hard rules
@@ -139,4 +138,4 @@ yourself rather than trusting the handoffs' descriptions.
 - Never run `git` or any bash mutation — you edit files only. If a commit is
   needed, that's the caller's job.
 - Never touch `docs/TASKS.md` scope beyond what the calling workflow (e.g.
-  do-task step 7) explicitly assigned you.
+  do-work) explicitly assigned you.

@@ -46,7 +46,7 @@ Raise a reviewer a tier only when the change crosses module boundaries.
 
 ## Write the brief
 
-1. Pick the template in `${CLAUDE_SKILL_DIR}/templates/` and fill every field.
+1. Pick the template in `./templates/` and fill every field.
 2. Pass **file paths and diff ranges, never pasted contents.** The agent reads the files itself.
 3. State what to change or answer, the done signal, the exact command to run, and what is out of scope.
 4. Fix the report format by copying the template's report block. Do not paraphrase it.

@@ -1,11 +1,11 @@
-# claude
+# punchcard
 
-How Claude works with this user in every session.
+How the agent works with this user in every session.
 
 ## What it ships
 
-- **Output style** `punchcard` (`output-styles/`): always-on, action-first responses with honest uncertainty. Adapted from ayghri/i-have-adhd (MIT); see `output-styles/NOTICE.md`.
-- **SessionStart hook** (`hooks/hooks.json`): prints `session-card.md`, the short list of house rules.
+- **Output style and always-on rules** (`output-styles/punchcard.md`, synced to `rules/AGENTS.md`): always-on, action-first responses with honest uncertainty. Adapted from ayghri/i-have-adhd (MIT); see `output-styles/NOTICE.md`. Run `python3 scripts/sync_rules.py --write` after editing `output-styles/punchcard.md`.
+- **SessionStart hooks** (`hooks/hooks.json` for Claude Code, `hooks.json` + `scripts/session_start_agy.py` for Antigravity): inject `session-card.md`, the short list of house rules, into every session.
 - **Skills**
   - `project-map`: where things live and which tools own them.
   - `capability-check`: task intake at the first message and at each new task; hands plugin gaps to `watchlist`.
@@ -17,9 +17,9 @@ How Claude works with this user in every session.
   - `operator-queue`: commands and decisions only the human can do.
   - `away-mode`, `run-report`: run unattended, then report the result.
   - `skill-reviewer`, `skill-maintenance`: keep the skill library healthy.
-- **Status line script** (`scripts/statusline.py`).
+- **Status line script** (`scripts/statusline.py`, Claude Code only). Set `STATUSLINE_WORKSPACE_DIR` if you want the project segment to show the top-level folder under a shared workspace directory.
 
-## Enable the status line
+## Enable the status line (Claude Code)
 
 A plugin cannot set the status line. Add this to your user settings (`~/.claude/settings.json`), with the path to this plugin:
 

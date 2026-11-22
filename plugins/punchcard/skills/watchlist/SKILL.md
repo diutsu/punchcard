@@ -14,7 +14,7 @@ trigger: /watchlist
 
 # /watchlist
 
-The list is `${CLAUDE_SKILL_DIR}/references/watchlist.md`. Its Repo column links to each source. It records plugins this marketplace does not ship, so they can be tried, kept or dropped on evidence. It never holds a copy of a plugin's files.
+The list is `./references/watchlist.md`. Its Repo column links to each source. It records plugins this marketplace does not ship, so they can be tried, kept or dropped on evidence. It never holds a copy of a plugin's files.
 
 ## When NOT to use this skill
 
@@ -47,9 +47,8 @@ Whenever a step runs a command, ask once: run it here, or print it for the user 
 
 ### Install
 
-1. `claude plugin marketplace add owner/name`
-2. `claude plugin install <plugin>@<marketplace>`
-3. Set status `trial` and the date. Tell the user to run `/reload-plugins` or restart the session.
+1. Install `<plugin>` from `owner/name` via the active harness's plugin manager (e.g. Claude Code: `claude plugin marketplace add owner/name`, then `claude plugin install <plugin>@<marketplace>`; Antigravity: `agy plugin install https://github.com/owner/name`).
+2. Set status `trial` and the date. Reload plugins or restart the session if the harness requires it.
 
 For an entry that is not a plugin, use the install command in its row.
 
@@ -65,9 +64,8 @@ After use on real work, set the status and write one line of evidence in the row
 
 ### Uninstall
 
-1. `claude plugin uninstall <plugin>@<marketplace>`
-2. `claude plugin marketplace remove <marketplace>`, only if no other installed plugin uses it.
-3. Set `dropped` with the reason and keep the row. Delete a row only when the user asks.
+1. Uninstall `<plugin>` via the active harness's plugin manager (and remove its marketplace when nothing else uses it).
+2. Set `dropped` with the reason and keep the row. Delete a row only when the user asks.
 
 ### Suggest
 

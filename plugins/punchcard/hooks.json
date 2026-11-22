@@ -1,0 +1,10 @@
+{
+  "punchcard-session-card": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 ./scripts/session_start_agy.py"
+      }
+    ]
+  }
+}

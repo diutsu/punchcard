@@ -14,7 +14,7 @@ trigger: /writing-style
 
 # /writing-style
 
-A rule card. The full guide is `${CLAUDE_SKILL_DIR}/references/style-guide.md`; the catalogue of LLM tells and word lists is `${CLAUDE_SKILL_DIR}/references/llm-tells.md`. Read the guide before a long draft.
+A rule card. The full guide is `./references/style-guide.md`; the catalogue of LLM tells and word lists is `./references/llm-tells.md`. Read the guide before a long draft.
 
 ## When NOT to use this skill
 
@@ -59,7 +59,7 @@ Write none of these; the catalogue gives the pattern and the rewrite for each.
 
 ## Final pass
 
-1. Run `sh ${CLAUDE_SKILL_DIR}/scripts/lint-prose.sh <file>`; fix every `file:line: pattern` it prints.
+1. Run `sh ./scripts/lint-prose.sh <file>` (relative to this skill folder); fix every `file:line: pattern` it prints.
 2. Verify the content, because removing surface tells does not fix unsupported claims: open each link, check each quote against its source, re-run each command.
 
 ## Hard rules

@@ -2,8 +2,8 @@
 type: reference
 state: done
 created: 2026-10-11
-updated: 2026-11-14
-cross-file-references: [plugins/techdocs/skills/doc-templates/SKILL.md, plugins/techdocs/skills/docs-management/SKILL.md, plugins/local-project-manager/skills/migrate-project-docs/SKILL.md]
+updated: 2026-11-22
+cross-file-references: [plugins/techdocs/skills/doc-templates/SKILL.md, plugins/techdocs/skills/docs-management/SKILL.md, plugins/punchcard/skills/project-doctor/SKILL.md, plugins/project-management/skills/product-direction/SKILL.md]
 ---
 
 # Template inventory
@@ -25,20 +25,13 @@ In `plugins/techdocs/skills/doc-templates/references/templates/`. Destination ke
 | Proof-of-concept brief | none | `poc.md` | `investigations` key |
 | ADR | none | `adr.md` | `docs` key, `explanation/` |
 
-## Starter tree (`local-project-manager`, temporary)
+## Project starter (`punchcard`)
 
-In `plugins/local-project-manager/skills/migrate-project-docs/templates/`, used by `migrate-project-docs`.
+In `plugins/punchcard/skills/project-doctor/templates/`, used by `project-doctor`.
 
 | Path | Purpose |
 |---|---|
-| `CLAUDE.md` | Starter project instructions |
-| `docs/tasks.md`, `docs/done.md` | Task registry and done log |
-| `docs/next-session-prompt.md` | Live snapshot, at most 40 lines |
-| `docs/operator-instructions.md` | Run queue and decision gates only |
-| `docs/architecture.md`, `docs/usage.md`, `docs/progress-log.md` | Root docs |
-| `docs/requirements/`, `docs/logic/` | Index and template per folder |
-| `docs/investigations/_template.md` | Investigation skeleton |
-| `docs/plans/_template.md` | Plan skeleton, at most 150 lines with phase roll-forward |
+| `AGENTS.md` | Starter project instructions and Project map block |
 
 ## Session read-back (`project-management`)
 
@@ -47,11 +40,3 @@ In `plugins/project-management/skills/product-direction/templates/`, used by `pr
 | Path | Purpose |
 |---|---|
 | `read-back.md` | The closing summary shown in the conversation: what changed, conflicts settled, when each change is built. Never saved as a file |
-
-## Contract
-
-Every `.md` under the starter `docs/` carries the five-field frontmatter from `docs-management`.
-
-```bash
-grep -rL '^type:' plugins/local-project-manager/skills/migrate-project-docs/templates/docs/
-```

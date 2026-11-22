@@ -4,14 +4,9 @@ One line per user-visible change or project milestone, newest first.
 
 ## Unreleased
 
-### Changed
-
-- A draft leaves `wip` only after one real use; the promotion commit names the session or task. A skill the user asks for by hand goes straight into its plugin.
-- The always-on base plugin is now `punchcard` (was `claude`, a reserved name). Reinstall with `/plugin install punchcard@punchcard`.
-- `wip` holds four draft agents: `sonnet-executor`, `doc-writer`, `researcher`, `data-auditor`.
-
 ### Added
 
+- Multi-harness packaging: root `plugin.json` and `.codex-plugin/plugin.json` per plugin, `.agents/plugins.json`, `.agents/plugins/marketplace.json`, Antigravity `SessionStart` hook (`plugins/punchcard/hooks.json` + `scripts/session_start_agy.py`), synced `plugins/punchcard/rules/AGENTS.md` via `scripts/sync_rules.py`, and root `LICENSE` (MIT).
 - `codebase-cleanup` in `coding`: audits a project for unearned complexity, duplicated logic, stale assumptions, deprecated features and unfinished code, judged against open tasks and the target architecture. It applies the small behaviour-preserving fixes through `do-work` and files the rest as tasks; the judging runs on the strongest model, the edits on cheaper ones. `capability-check` routes cleanup requests to it.
 - `bug-report` and `close-task` in `project-management`: the first files a new issue with its expected behaviour confirmed and its doc impact named; the second makes the agent decide, before closing, which leftovers are part of the task's intention and which become new tasks. `do-work` closes through `close-task`; `capability-check` routes defect reports to `bug-report`.
 - `product-direction` in `project-management`: a session that updates requirements, PRDs and vision to match what the user now wants, settles conflicts and blockers, and decides when each change is built. `capability-check` routes requirements, roadmap and vision requests to it.
@@ -30,12 +25,18 @@ One line per user-visible change or project milestone, newest first.
 
 ### Changed
 
+- Renamed `CLAUDE.md` and the `project-doctor` template to `AGENTS.md`; `project-map` now resolves `AGENTS.md`, `CLAUDE.md` or `GEMINI.md`.
+- Replaced `${CLAUDE_SKILL_DIR}` with relative paths across all skills, generalized `skill-reviewer` session transcript lookup, replaced hardcoded `/workspace/` in `statusline.py` with `STATUSLINE_WORKSPACE_DIR`, and cleaned up stale references in `wip` agents.
+- A draft leaves `wip` only after one real use; the promotion commit names the session or task. A skill the user asks for by hand goes straight into its plugin.
+- The always-on base plugin is now `punchcard` (was `claude`, a reserved name). Reinstall with `/plugin install punchcard@punchcard`.
+- `wip` holds four draft agents: `sonnet-executor`, `doc-writer`, `researcher`, `data-auditor`.
 - Docs follow the Diataxis layout and are committed to the repo.
 - Milestones are recorded in this changelog; the separate progress log is gone.
 - `do-task` is now `do-work`, `internal-research` is `codebase-search`, `research-methodology` is `validate-run-results`, `debugging-method` is `forensics`, and `operator-instructions` is `operator-queue`.
 
 ### Removed
 
+- The temporary `local-project-manager` plugin (`migrate-project-docs`).
 - The `planning-horizons` plugin; its skills moved into `techdocs`.
 - README and API-endpoint doc templates.
 

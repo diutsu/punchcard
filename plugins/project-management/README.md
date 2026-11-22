@@ -2,6 +2,12 @@
 
 The only owner of task management in this marketplace. Once enabled, every other skill asks it for task operations ("via `backlog`").
 
+## Install
+
+```bash
+/plugin install project-management --marketplace diutsu/punchcard
+```
+
 ## What it owns
 
 - The backlog: priorities, blockers, modules, open and closed tasks.

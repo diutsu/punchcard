@@ -25,7 +25,7 @@ The reader was not watching. Let them learn the result in ten seconds and the re
 
 ## Structure
 
-Use `${CLAUDE_SKILL_DIR}/templates/run-report.md`. Sections in order:
+Use `./templates/run-report.md`. Sections in order:
 
 1. **Outcome.** Two or three sentences: what was asked, what happened, whether it is done. State failure plainly.
 2. **Needs you.** Items only the user can do, each with the file or queue entry. Leave the section out only if there are none, and say so in the outcome.

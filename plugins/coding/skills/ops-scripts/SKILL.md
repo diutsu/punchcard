@@ -33,7 +33,7 @@ A one-off or maintenance script is a project artifact. It lives in the repo, wit
 
 ## Header
 
-Start every script with the header from `${CLAUDE_SKILL_DIR}/templates/header.sh` or `${CLAUDE_SKILL_DIR}/templates/header.py`. Fill every field:
+Start every script with the header from `./templates/header.sh` or `./templates/header.py`. Fill every field:
 
 - **Purpose:** one sentence.
 - **Main steps:** the actions in order.
