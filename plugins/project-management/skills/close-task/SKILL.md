@@ -42,7 +42,7 @@ It runs twice per task, so the single suite run and single review of `do-work` c
    | Separate concern | No to the test. It has its own goal and value, and the task is correct without it. Includes the same behaviour elsewhere that this change did not create | File a task via `backlog`, with refs and a link to this task |
    | Defect the change did not cause | A failure found on the way | `bug-report` |
    | Not worth a task | A nit with no user-visible effect | List it in the closing report; file nothing |
-   | Needs the human | Only the user can run or decide it | `operator-queue`; block this task if the step is in scope, otherwise file the follow-up and block that, per `backlog` |
+   | Needs the human | Only the user can run or decide it | Human step per `backlog`: on this task if the step is in scope, otherwise on a filed follow-up |
 
    "It needs changes in other files" and "it adds cases" are never reasons to defer. Size is not one either: a large part of the task is still the task.
 4. **Settle doubt without asking.** Treat an unclear item as in scope when leaving it would let a user hit the original problem again, or a new one the change introduced. Otherwise it is a separate concern. A `bug-report` expectation question is not a classification question; it goes in the end-of-work batch.
@@ -64,6 +64,6 @@ Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
-for s in backlog do-work validation-and-qa operator-queue triage-close bug-report prioritise plan review-rubric; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in backlog do-work validation-and-qa triage-close bug-report prioritise plan review-rubric; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'close-task' plugins/coding/skills/do-work/SKILL.md plugins/project-management/skills/triage-close/SKILL.md README.md
 ```

@@ -22,10 +22,9 @@ Docs follow [Diataxis](https://diataxis.fr): four kinds, each serving a differen
 |---|---|
 | Sentence-level style, LLM tells | `writing-style` |
 | Starting a doc from a skeleton | `doc-templates` |
-| Tasks, plans, done log | `project-management` |
+| Tasks and plans | `project-management` |
 | Milestones | `changelog` |
-| Handoff between sessions | `operator-queue` |
-| Operator worklist | `operator-queue` |
+| Session handoffs and human-only steps | `backlog` |
 | Resolving `[COMMENT]` markers | `handle-comments` |
 | Checking a whole repo's setup | `project-doctor` |
 

@@ -1,7 +1,7 @@
 {
   "name": "project-management",
-  "version": "0.3.0",
-  "description": "Own the backlog: prioritise, triage, plan and close tasks through the project's task tool.",
+  "version": "0.4.0",
+  "description": "Own the backlog: prioritise, triage, plan and close tasks in the project's configured tracker.",
   "author": { "name": "diutsu" },
   "repository": "https://github.com/diutsu/punchcard",
   "skills": "./skills/"

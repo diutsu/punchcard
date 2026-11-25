@@ -13,8 +13,6 @@
 - scripts:: ops/scripts/
 - changelog:: CHANGELOG.md
 - worktrees:: ../punchcard.worktrees/
-- operator-queue:: ops/local/operator-queue.md
-- handoff:: ops/local/handoff.md
 - verify:: the commands in section 2
 
 ## 1. Repository layout
@@ -24,10 +22,10 @@
 | `.claude-plugin/marketplace.json` | Claude Code marketplace manifest | When adding, renaming or removing a plugin |
 | `.agents/plugins/marketplace.json` | Codex marketplace manifest | When adding, renaming or removing a plugin |
 | `.agents/plugins.json` | Antigravity workspace plugin discovery | When changing plugin roots or exclusions |
-| `plugins/punchcard/` | Always-on base: output style (`output-styles/punchcard.md` synced to `rules/AGENTS.md`), session card + SessionStart hooks (`hooks/hooks.json` and `hooks.json`), task intake, question, briefing, operator-queue and skill-upkeep skills | When changing how the agent behaves in every session |
+| `plugins/punchcard/` | Always-on base: output style (`output-styles/punchcard.md` synced to `rules/AGENTS.md`), session card + SessionStart hooks (`hooks/hooks.json` and `hooks.json`), task intake, question, briefing and skill-upkeep skills | When changing how the agent behaves in every session |
 | `plugins/coding/` | The work loop (`do-work`), its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
 | `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
-| `plugins/project-management/` | Backlog, prioritisation, triage, plans, and the product-direction session; the only place that names the task tool | When changing task handling or adding a task-tool adapter |
+| `plugins/project-management/` | Backlog, prioritisation, triage, plans, and the product-direction session; names no tracker | When changing task handling |
 | `plugins/wip/` | Draft skills from `skill-reviewer` and draft agents, awaiting promotion | Drafts only |
 | `docs/` | This repository's own docs, committed, in the Diataxis layout | When the structure or a contract changes |
 
@@ -51,8 +49,8 @@ find plugins/{punchcard,coding,techdocs,project-management,wip}/skills -name SKI
 # 4. No Claude-only path variable leaks in plugins (no output = pass)
 grep -rn '\${CLAUDE_SKILL_DIR}' plugins/
 
-# 5. The task tool is named only inside project-management (no output = pass)
-grep -rln 'ctask' plugins/punchcard/skills plugins/coding plugins/techdocs | grep -v -e project-map -e skill-maintenance -e project-doctor
+# 5. No tracker is named outside its own plugin (no output = pass)
+grep -rniE 'ctask|kaneo' plugins/punchcard/skills plugins/coding plugins/techdocs plugins/project-management/skills | grep -v 'grep -rn'
 
 # 6. Every doc carries the frontmatter contract (no output = pass)
 grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials docs/investigations docs/prd docs/design 2>/dev/null
@@ -61,7 +59,7 @@ grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials doc
 ## 3. Authoring non-negotiables
 
 - **Skill contract:** every `plugins/<plugin>/skills/<name>/SKILL.md` has YAML frontmatter (`name`, `tier: leaf | workflow | reference`, `description`, `trigger`), `## When NOT to use this skill`, `## Hard rules`, and `## Provenance and maintenance`. `skill-maintenance` holds the full contract.
-- **No hardcoded locations or tools:** a skill names a project-map key or says "via `backlog`". Only `project-management` names the task tool.
+- **No hardcoded locations or tools:** a skill names a project-map key or says "via `backlog`". Only a tracker's own plugin names it.
 - **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
 - **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
 - **Drafts from `skill-reviewer` start in `wip`:** they land in `plugins/wip/` and move to another plugin only after promotion per `skill-maintenance`. A skill the user asks for goes into the plugin that owns its territory.

@@ -2,18 +2,18 @@
 name: backlog
 tier: leaf
 description: >
-  The tool-neutral interface to the project's task registry: list, show,
-  search, blockers, add, edit, block, close, validate, annotate, and locate
-  the plans and the done log. Load before ANY
-  task operation, from any skill. Do NOT load to decide what to do next
-  (see prioritise), which tasks can close (see triage-close) or to write a
-  plan (see plan).
+  Read and file tasks in the project's configured tracker, which also holds
+  plans, session handoffs, steps only the human can do and closed work. Load
+  before ANY task operation, from any skill, when a task hits a human-only
+  step, or when work carries into another session. Do NOT load to decide what to do next (see
+  prioritise), which tasks can close (see triage-close) or to write a plan
+  (see plan).
 trigger: /backlog
 ---
 
 # /backlog
 
-Every task operation in the marketplace goes through this skill. It names the neutral operation; an adapter file maps it to the tool. Other skills say "via `backlog`" and never name a tool or a path.
+Use the project's configured tracker to read and file tasks. All task state lives there, never in local files. Other skills say "via `backlog`" and never name a tracker.
 
 ## When NOT to use this skill
 
@@ -21,65 +21,74 @@ Every task operation in the marketplace goes through this skill. It names the ne
 |---|---|
 | Choosing what to work on next | `prioritise` |
 | Deciding which tasks are finished | `triage-close` |
-| Judging leftovers before closing the task just finished | `close-task` |
-| Filing a newly reported defect | `bug-report` |
 | Writing or rolling an execution plan | `plan` |
 | Recording a significant milestone | `changelog` |
-| Carrying a long task across sessions | the handoff note (`operator-queue`) |
-| Queuing a command only the human can run | `operator-queue` |
 
-## Resolve the tool
+## Resolve the tracker
 
-1. Read the `tasks` key of the project map (see `project-map`).
-2. If the key is missing, ask the user through the question interface which tool holds the tasks (options: the adapters in `./references/adapters/`, recommended first), then write the `tasks` line to the map.
-3. Load `./references/adapters/<tool>.md`. If no adapter exists for the named tool, stop and tell the user; do not improvise commands.
-4. If the tool is not installed, give the adapter's install hint and stop.
+1. Read the `tasks` key of the project map (see `project-map`). If it is missing, ask the user which tracker holds the tasks, then write the line to the map.
+2. If an installed skill covers that tracker, load it and follow it. Otherwise use the tracker's own CLI or connected tools, and read their help before the first command.
+3. If nothing can reach the tracker, tell the user what is missing and stop. Never keep a substitute task list.
 
-## Neutral operations
+## Operations
 
-| Operation | Purpose |
-|---|---|
-| `list` | Open tasks, filtered by priority, module, or blocked state. |
-| `show` | One or more tasks in full, open or closed. |
-| `search` | Find tasks by text, optionally including closed ones. |
-| `blockers` / `blocking` | What blocks a task; what a task blocks. |
-| `refs` | Tasks that reference a file or another task. |
-| `add` | New task with title, priority, module, goal, details, done-when. |
-| `edit` | Change any field, move a task, append to goal, details or done-when. |
-| `block` / `unblock` | Set or clear what a task waits on. |
-| `close` | Move a task to the done log. |
-| `validate` | Structural check of the registry. |
-| `annotate` | Record a prediction, note, commit hash or finding on a task. |
-| `locations` | Paths of the plans and the done log. |
+- **Read:** list open tasks, show one in full, search open and closed tasks, find what blocks what.
+- **File:** add, edit, annotate, move, block, unblock, close.
 
-The adapter states the exact command for each. If an operation has no mapping, extend the tool in its own repo; do not hand-edit the registry.
+When the tracker has no native form of an operation or field, record it in the task's description or a comment.
+
+## States
+
+Map each state to the tracker's matching status or column.
+
+| State | Holds | Enters when |
+|---|---|---|
+| backlog | Unrefined tasks | Every new task starts here |
+| to do | Refined tasks, ready to start | The user has refined the task |
+| in progress | Work in flight and its handoff | Work starts |
+| in review | Work waiting on the human: a command, a decision or a review | The agent cannot continue without the human |
+| done | Closed work | The task closes |
 
 ## Task shape
 
-Every task has: a stable id, a title, a priority, a module, optional blocked-by and refs, a **goal** (the outcome), **details** (constraints, approach, open questions) and **done-when** (checkable criteria). Write done-when so a reader can verify it against code or git history without asking; `triage-close` depends on that.
+Every task has a title, a priority, a **goal** (the outcome), **details** (constraints, approach, open questions) and **done-when** (checkable criteria). Write done-when so a reader can verify it against code or git history without asking; `triage-close` depends on that. A plan lives on its task (`plan`).
 
 ## Procedures
 
-- **Add:** search for an existing task first; add only if none covers it. State goal and done-when in the same call.
-- **Close:** confirm the done-when evidence, make sure the shipped behaviour is recorded where it belongs (`docs-management`), delete the task's plan (`plan`), then close, clear any stale blocked-by the tool reports, and validate.
-- **Block on a human step:** queue the step with `operator-queue`, then `block` the task on that entry and stop work on it.
-- **Batch changes:** run `validate` once after the batch.
+- **Add:** search first; add only if no open or closed task covers it. State goal and done-when in the same call. The task goes to backlog.
+- **Refine:** settle goal, details, done-when and priority with the user, then move the task to to do.
+- **Start:** move the task to in progress.
+- **Close:** confirm the done-when evidence, make sure the shipped behaviour is recorded where it belongs (`docs-management`), then close and unblock the tasks that waited on it.
+
+## Handoff
+
+When work will carry into another session, comment on the in-progress task with what the next session cannot get elsewhere: branch and test state, what is done, the exact next step, running jobs and open questions. The newest handoff comment is the current one.
+
+## Human steps
+
+A step only the human can run, or a result that needs their decision, moves the task to in review with one comment:
+
+- **Command:** the literal, copy-pasteable command first, then the observable result that means success (exit code, row count, log line or file), then any reason.
+- **Decision:** the measured fact with its numbers, then the options, recommended first.
+
+Then stop work on that task and continue with unblocked work. Do not rerun the command hoping for new data or add status essays. A human step that belongs to no task gets its own task, filed straight into in review.
+
+When the human answers, read the result and record durable behaviour in the docs. Then close the task, or move it back to in progress, and file any follow-up.
 
 ## Hard rules
 
-- Never read the registry file raw when a query answers the question.
-- Never hand-edit a task, the done log, or any file the tool owns.
-- Never commit a file the tool owns. Tasks, the done log and plans are local work.
-- Never name the tool or a registry path outside the adapter file.
+- Never add a task that an open or closed task already covers; extend that one.
 - Never close a task without evidence in the close note or the confirmed batch.
-- Always validate after a batch of changes.
-- Never add a task that an open or closed task already covers; extend that one. A failure that returns after a closed task's fix is the exception: add a regression task that links the closed one.
+- Never move a task from backlog to to do before the user has refined it.
+- Never keep tasks, plans, handoffs or human steps in local files.
+- Never hand the human a step the agent can run, and never keep working a task that waits on the human.
+- Never delete a task, or change tasks in bulk, without the user's confirmation. A tracker may be shared.
+- Never invent a command; take it from the tracker's skill or its help.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-22. Adapter details: `./references/adapters/`.
+Updated: 2026-11-25.
 
 ```bash
-ls plugins/project-management/skills/backlog/references/adapters/
-grep -rn 'ctask' plugins --include=SKILL.md | grep -v project-management
+grep -rniE 'ctask|kaneo|jira' plugins/project-management plugins/coding plugins/techdocs plugins/punchcard/skills
 ```

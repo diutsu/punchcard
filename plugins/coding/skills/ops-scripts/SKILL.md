@@ -23,7 +23,7 @@ A one-off or maintenance script is a project artifact. It lives in the repo, wit
 | Product code and tests | `backend-code` |
 | Raw vs. derived data audit scripts | `data-integrity` |
 | Git commits and worktrees | `repo-infra` |
-| Commands only a human can run | `operator-queue` |
+| Commands only a human can run | `backlog` |
 
 ## Placement
 

@@ -39,7 +39,7 @@ Typical run: executor agents for the steps, plus one `reviewer`, plus one grader
 
 | Change | Flow |
 |---|---|
-| One file, about 50 lines or fewer | No plan file. One author, who self-scores per `review-rubric` and fixes before handing over, then one reviewer. |
+| One file, about 50 lines or fewer | Inline plan. One author, who self-scores per `review-rubric` and fixes before handing over, then one reviewer. |
 | Several steps, or module boundaries touched | Full loop below. |
 | Several tasks | Batch mode below. |
 | Proof of concept | Proof-of-concept flow below. |
@@ -61,7 +61,7 @@ Work without a task ID follows the same loop. Skip only the `backlog` close; sti
    - Executors may edit docs and the changelog when their step says so.
    - **Plan invalidation.** An executor that hits a false assumption stops. Return to step 3.
    - **Leftovers.** After the last step, run `close-task` pass 1: in-scope leftovers become plan steps in this loop, so the one verify and the one review cover them; separate concerns are filed as tasks.
-   - **Binary Exit Rule.** A step only the human can run, or a null result needing a decision, goes to `operator-queue`. Record the blocker through `backlog` and stop working on that task.
+   - **Human step.** A step only the human can run, or a null result needing a decision, follows the human-step procedure in `backlog`.
 6. **Verify.** Run the full suite once, with the `verify` commands, per `validation-and-qa`. Delegate to `suite-runner` only when the output is large.
 7. **Implementation gate.** Send one `reviewer` the diff range, acceptance criteria and test output, scored with `review-rubric`.
    - The reviewer applies quick fixes itself. If it changed code, one fresh `reviewer` instance grades only that fix diff.
@@ -75,7 +75,7 @@ A proof of concept answers a question; its code is thrown away.
 
 1. **Brief.** Require the brief from the proof-of-concept template in `doc-templates`. Without goals, entry and exit criteria and an evaluation fixed in advance, stop and write it with the user.
 2. **Entry.** Check each entry criterion. If one fails, do not start; report which.
-3. **Build.** Work in a worktree or branch per `repo-infra`, marked throwaway. Skip the plan file, the review and the changelog. Keep the code honest: no fabricated results (`validation-and-qa`).
+3. **Build.** Work in a worktree or branch per `repo-infra`, marked throwaway. Skip the saved plan, the review and the changelog. Keep the code honest: no fabricated results (`validation-and-qa`).
 4. **Evaluate.** Measure each goal against its threshold per `validate-run-results`. Stop at the first exit criterion met, the time box included.
 5. **Close.** Fill the result section of the brief. Take the next action the brief names for the outcome, filing it via `backlog` when it is work. Do the cleanup the brief lists and report it item by item.
 
@@ -99,15 +99,15 @@ Use it when the user names several tasks.
 - Never let an author review its own lines, and never review the same lines twice.
 - Never run the full suite more than once per task, plus the baseline when no recent green record exists.
 - Never write a path or tool name for plans or tasks here; go through `plan` and `backlog`.
-- Never keep working on a task that needs a human; queue it and stop.
+- Never keep working on a task that needs a human; hand it over via `backlog` and stop.
 - Never defer part of a task's intention because it touches other files, and never ask the user about a leftover; `close-task` decides.
 - Never push unless asked.
 - Never merge proof-of-concept code, and never end a proof of concept without its result and cleanup.
-- Never end a session mid-task without a handoff note when the task needs another session (see `operator-queue`).
+- Never end a session mid-task without a handoff (`backlog`) when the task needs another session.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-25.
 
 Re-verification commands:
 ```bash

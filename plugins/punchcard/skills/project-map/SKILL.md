@@ -5,7 +5,7 @@ description: >
   The single place a project declares where things live and which tools own
   them: task tool, docs roots, scripts folder, changelog, verification
   commands, worktree location. Consult BEFORE writing any file whose location
-  another skill describes as "per the project map", before any task-registry
+  another skill describes as "per the project map", before any task
   operation, and when a repo has no map yet. Do NOT load to learn how to write
   the doc or run the task tool itself (see the skill that owns that work).
 trigger: /project-map
@@ -30,7 +30,7 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 ```markdown
 ## Project map
 
-- tasks:: ctask
+- tasks:: <tracker and project, such as jira (project KEY)>
 - docs:: docs/
 - investigations:: docs/investigations/
 - prd:: docs/prd/
@@ -38,14 +38,12 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 - scripts:: ops/scripts/
 - changelog:: CHANGELOG.md
 - worktrees:: ../<repo>.worktrees/
-- operator-queue:: ops/local/operator-queue.md
-- handoff:: ops/local/handoff.md
 - verify:: <command that must pass before work is called done>
 ```
 
 | Key | Meaning | Default | Owner |
 |---|---|---|---|
-| `tasks` | Task tool. Tasks, plans and the done log belong to it, wherever it stores them. They are local work: never committed. | none; ask the user | `project-management` |
+| `tasks` | Task tracker, with the project or board in it. All task state lives there. | none; ask the user | `project-management` |
 | `docs` | Root of committed technical docs, laid out as `tutorials/`, `how-to/`, `reference/`, `explanation/`. | `docs/` | `docs-management` |
 | `investigations` | Forward-looking research and forensic reports. | `docs/investigations/` | `techdocs`, `coding` |
 | `prd` | Product and logic requirements. | `docs/prd/` | `techdocs` |
@@ -54,8 +52,6 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 | `changelog` | Changelog file. | `CHANGELOG.md` | `changelog` |
 | `worktrees` | Where git worktrees are created. | `../<repo>.worktrees/` | `repo-infra` |
 | `verify` | Verification gate commands, one per line if several. | none; ask the user | `validation-and-qa` |
-| `operator-queue` | Worklist of commands and decisions only the human can do. Local work: never committed. | `ops/local/operator-queue.md` | `operator-queue` |
-| `handoff` | Note that carries one long task across sessions. Local work: never committed, absent when no such task is in flight. | `ops/local/handoff.md` | `operator-queue` |
 
 A value may be a path outside the repo, such as a vault folder. Files under such a path are never committed to the project repo.
 
@@ -69,16 +65,16 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 ## Hard rules
 
 - Never write a file to a location a skill guessed. Resolve the map key first.
-- Never read or edit task, plan or done files directly. Go through the tool named in `tasks`.
+- Never read or change tasks directly. Go through `backlog`.
 - Never restate a map default inside another skill. Name the key.
 - Never create a second map. One block, in the repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`).
 
 ## Provenance and maintenance
 
-Updated: 2026-11-22.
+Updated: 2026-11-25.
 
 Re-verification commands:
 ```bash
 grep -n '^## Project map' AGENTS.md
-grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/punchcard
+grep -rniE 'ctask|kaneo' plugins/coding plugins/techdocs plugins/punchcard
 ```

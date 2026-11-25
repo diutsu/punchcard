@@ -37,7 +37,7 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
    | Docs are silent or unclear | Ask the user what is right, recommended option first |
    | Docs and the user disagree | Show both texts; the user decides; a changed requirement goes to `product-direction` |
 
-   Ask when the user reported the bug in their own message. When the agent found the defect or the user is away, do not stop: file it with the expected behaviour marked "unconfirmed" and the candidate options listed, and put the question in the end-of-work batch (`operator-queue` when away).
+   Ask when the user reported the bug in their own message. When the agent found the defect or the user is away, do not stop: file it with the expected behaviour marked "unconfirmed" and the candidate options listed, and put the question in the end-of-work batch (recorded on the task via `backlog` when away).
 4. **Name the doc impact.** For each doc the decision makes wrong or missing, record the path, the section and the change: correct a statement, add the behaviour, create a doc (per `docs-management`, `doc-templates`). If none changes, say so and why.
 5. **File it** via `backlog` `add`:
    - goal: the expected behaviour holds
@@ -60,6 +60,6 @@ Updated: 2026-11-14.
 
 Re-verification commands:
 ```bash
-for s in forensics backlog find-docs docs-management doc-templates product-direction close-task operator-queue; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in forensics backlog find-docs docs-management doc-templates product-direction close-task; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'bug-report' plugins/punchcard/skills/capability-check/SKILL.md README.md
 ```

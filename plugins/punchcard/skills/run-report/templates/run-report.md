@@ -40,4 +40,4 @@ Assumed, not verified: <list, or none>.
 
 - Changes: <branch or paths>
 - Logs: <paths>
-- Operator queue: <path to the queue entries>
+- Waiting on you: <tasks in review>

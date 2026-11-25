@@ -97,5 +97,5 @@ Re-verification commands:
 grep -L '^name:' plugins/*/skills/*/SKILL.md
 grep -L '^tier:' plugins/*/skills/*/SKILL.md
 grep -L '^## Hard rules' plugins/*/skills/*/SKILL.md
-grep -rn 'tasks\.md\|ctask ' plugins/coding plugins/techdocs plugins/punchcard
+grep -rniE 'ctask|kaneo' plugins/coding plugins/techdocs plugins/punchcard
 ```

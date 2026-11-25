@@ -28,14 +28,14 @@ Research produces a finding. This skill turns it into a plan with every command,
 
 ## Where the plan lives
 
-Ask `backlog` for the plan location (`locations`). One plan per task, named `<ID>-<slug>`. Link the task from the plan and add the plan path to the task's refs through `backlog`. Use the front matter from `docs-management` (`type: plan`, `state: wip`).
+On its task: a `## Plan` section in the description, written via `backlog`. One plan per task. Work with no task keeps its plan in the conversation.
 
 ## Sizing
 
 | Size | Form |
 |---|---|
-| One file, obvious edit, no decision | Inline plan in the kickoff message: goal, exact commands, measurable done state. No file. |
-| Several files or phases, a real choice between approaches, or a dead end worth fencing | Plan file from `./templates/plan.md`. |
+| One file, obvious edit, no decision | Inline plan in the kickoff message: goal, exact commands, measurable done state. Nothing saved on the task. |
+| Several files or phases, a real choice between approaches, or a dead end worth fencing | Full plan on the task, from `./templates/plan.md`. |
 
 An inline plan is the same anatomy compressed. It still states an exact expected result.
 
@@ -50,10 +50,10 @@ An inline plan is the same anatomy compressed. It still states an exact expected
 
 ## Size discipline
 
-- The file never exceeds 150 lines.
+- The plan never exceeds 150 lines.
 - **Phase roll-forward.** Detail only the active phase. List later phases as one-line placeholders. When a phase lands, replace its step block with one line under "Completed phases": summary and commit hash.
 - Deep scoping goes to `investigations`, linked by one line.
-- When the task closes, delete the plan file (`backlog` close procedure). Shipped behaviour belongs in the docs (`docs-management`), not the plan.
+- Shipped behaviour belongs in the docs (`docs-management`), not the plan.
 
 ## Hard rules
 
@@ -62,13 +62,13 @@ An inline plan is the same anatomy compressed. It still states an exact expected
 - Never list a fenced-off path that is a hypothesis; each traces to an incident or finding.
 - Never execute, score or commit the plan; that is `do-work`.
 - Never restate review or gate mechanics in the plan; cite `review-rubric` and `validation-and-qa`.
-- Always create the plan with `state: wip`.
+- Never save a plan as a file.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-25.
 
 ```bash
 wc -l plugins/project-management/skills/plan/templates/plan.md
-grep -n 'locations' plugins/project-management/skills/backlog/SKILL.md
+grep -n 'plan' plugins/project-management/skills/backlog/SKILL.md
 ```

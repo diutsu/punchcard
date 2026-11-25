@@ -36,7 +36,7 @@ than guessing:
 1. **Read before writing — but only what your step touches.** Read every
    file you will modify plus its direct dependencies. Don't explore the
    wider repo or read the full plan document; your brief already contains
-   the step that concerns you (the plan path is for reference if the brief
+   the step that concerns you (the task's plan is for reference if the brief
    points you at it). Match existing patterns — don't impose your own style.
 2. **Make the smallest change that satisfies the acceptance criteria.** No
    refactors, no cleanup, no extra features, no "while I'm here" edits.

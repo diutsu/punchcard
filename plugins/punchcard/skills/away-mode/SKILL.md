@@ -5,7 +5,7 @@ description: >
   Run without the user present. Load when the user says they will not be around
   ("continue, don't wait for me", "I won't be around"). Never stop to ask: take
   a reasonable default, record each decision in a decisions log, queue
-  irreversible or outward-facing actions in the `operator-queue`, keep working
+  irreversible or outward-facing actions as human steps via `backlog`, keep working
   on everything else, and finish with a `run-report`. Do NOT load when the user
   is present, or to skip a confirmation they have not waived.
 trigger: /away-mode
@@ -20,7 +20,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
 | Situation | Use instead |
 |---|---|
 | The user is present | Ask through the question interface (`grilling` for deep gaps) |
-| Parking a human-only command or decision | `operator-queue` |
+| Parking a human-only command or decision | `backlog` |
 | Writing the final account of the run | `run-report` |
 
 ## Procedure
@@ -37,7 +37,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
    REVERSE: <how to undo or switch>
    ```
 
-4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Write each as an entry in the `operator-queue` with the exact command, then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
+4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each as a human step via `backlog` with the exact command, then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
 5. **Keep the other rules.** The gate before done, the privacy wall and raw-data rules do not relax while away.
 6. **Finish with a `run-report`.** Include the decisions log in it and point at the queue entries that need the user.
 
@@ -62,6 +62,6 @@ Updated: 2026-11-13.
 
 Re-verification commands:
 ```bash
-grep -n 'operator-queue\|run-report' plugins/punchcard/skills/away-mode/SKILL.md
+grep -n 'backlog\|run-report' plugins/punchcard/skills/away-mode/SKILL.md
 ls plugins/punchcard/skills/run-report/templates
 ```

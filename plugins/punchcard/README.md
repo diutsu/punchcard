@@ -14,7 +14,6 @@ How the agent works with this user in every session.
   - `agent-brief`: when and how to brief sub-agents, with templates.
   - `find-docs`: locate the right doc.
   - `project-doctor`: validate a repo's setup.
-  - `operator-queue`: commands and decisions only the human can do.
   - `away-mode`, `run-report`: run unattended, then report the result.
   - `skill-reviewer`, `skill-maintenance`: keep the skill library healthy.
 - **Status line script** (`scripts/statusline.py`, Claude Code only). Set `STATUSLINE_WORKSPACE_DIR` if you want the project segment to show the top-level folder under a shared workspace directory.

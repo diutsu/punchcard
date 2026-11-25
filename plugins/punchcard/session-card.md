@@ -34,8 +34,8 @@ House rules for every session. Mechanics live in skills; these are the rules.
 ## Where things live
 
 - Resolve every location and tool through `project-map`. Never guess a path.
-- All task, plan and done-log operations go through the `project-management` plugin. Milestones go to the changelog. A handoff note exists only while a long task is in flight (see `operator-queue`).
-- Commands and decisions only the human can do go in the `operator-queue`.
+- All task state goes through the `project-management` plugin: tasks, plans, handoffs, human-only steps and done work live in the project's tracker. Milestones go to the changelog.
+- New tasks go to backlog. They move to to do only after the user refines them.
 
 ## Writing guidance
 

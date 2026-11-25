@@ -9,7 +9,7 @@
     {
       "name": "punchcard",
       "source": "./plugins/punchcard",
-      "description": "Always-on base: output style, project map, question and briefing skills, operator queue, and skill upkeep.",
+      "description": "Always-on base: output style, project map, question and briefing skills, and skill upkeep.",
       "category": "productivity",
       "keywords": ["skills", "workflow", "output-style"]
     },
@@ -30,9 +30,9 @@
     {
       "name": "project-management",
       "source": "./plugins/project-management",
-      "description": "Own the backlog: prioritise, triage, plan and close tasks through the project's task tool (ctask adapter).",
+      "description": "Own the backlog: prioritise, triage, plan and close tasks in the project's configured tracker.",
       "category": "productivity",
-      "keywords": ["tasks", "backlog", "ctask", "planning"]
+      "keywords": ["tasks", "backlog", "planning"]
     },
     {
       "name": "wip",

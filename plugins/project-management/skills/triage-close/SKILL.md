@@ -44,7 +44,7 @@ Close tasks only with evidence. This skill reads tasks, code and git history, pr
 
 4. **Cite evidence.** Each done or obsolete verdict gives a `file:line` or a commit hash. A verdict without a citation becomes "open".
 5. **Batch and confirm.** Present the table of proposed closes, cancels, merges and edits. Ask once through the question interface (recommended option first: apply all; then apply done only; then none). Do not close one task at a time.
-6. **Write.** Apply the confirmed items with `backlog` (`close`, `edit`, `annotate` for the reason or commit). Then `validate`.
+6. **Write.** Apply the confirmed items with `backlog` (`close`, `edit`, `annotate` for the reason or commit).
 
 ## Output
 
@@ -62,13 +62,12 @@ Follow with a count per class and any task you could not judge, with what is mis
 - Never infer "done" from the task title, or from a plan being finished.
 - Never close without the batch confirmation, unless the user named the exact tasks to close.
 - Never edit a task's goal to make it match the code; record partial progress in details.
-- Always `validate` after the batch, and clear blocked-by references the close reports.
-- Delete the plan of every closed task (`plan`).
+- Always unblock the tasks that waited on a closed one.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-25.
 
 ```bash
-grep -n 'close\|validate' plugins/project-management/skills/backlog/SKILL.md
+grep -n 'close' plugins/project-management/skills/backlog/SKILL.md
 ```

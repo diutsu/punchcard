@@ -8,10 +8,10 @@ Repository: `https://github.com/diutsu/punchcard`
 
 | Plugin | Holds |
 |---|---|
-| `punchcard` | The always-on base: output style, session card, project map, questions, briefing, operator queue, skill upkeep |
+| `punchcard` | The always-on base: output style, session card, project map, questions, briefing, skill upkeep |
 | `coding` | The work loop and the per-work-type skills for writing, reviewing, investigating and operating code, plus two agents |
 | `techdocs` | Writing technical docs: one prose style, doc templates, the Diataxis layout, sourced research |
-| `project-management` | The backlog, plans and logs, through the project's task tool, and the product-direction session |
+| `project-management` | The backlog and plans, in the project's configured tracker, and the product-direction session |
 | `wip` | Draft skills proposed by `skill-reviewer` and draft agents, held until promoted |
 
 ## Skills
@@ -25,8 +25,7 @@ Repository: `https://github.com/diutsu/punchcard`
 | `capability-check` | Task intake: enough input, output type, skills, session fit, and what happens first; holds the plugins under trial |
 | `agent-brief` | Decide whether to spawn an agent and write its brief |
 | `find-docs` | Locate the right project document for a question |
-| `project-doctor` | Validate a repo's setup: map, docs, task tool |
-| `operator-queue` | Hand the human commands and decisions only they can do |
+| `project-doctor` | Validate a repo's setup: map, docs, task tracker |
 | `away-mode` | Run without the user present, logging decisions |
 | `run-report` | Report the outcome of a long operation |
 | `skill-reviewer` | Mine past sessions for repeated work and draft skills in `wip` |
@@ -74,7 +73,7 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 
 | Skill | Purpose |
 |---|---|
-| `backlog` | Run any task operation through the project's task tool |
+| `backlog` | Read and file tasks in the project's configured tracker |
 | `prioritise` | Rank open tasks |
 | `triage-close` | Close tasks whose done-when is met, with evidence |
 | `plan` | Turn accepted research into an execution plan |

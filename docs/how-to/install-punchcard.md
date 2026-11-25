@@ -28,11 +28,7 @@ Add the marketplace and enable the plugins a project needs.
    ```
 
 3. Reload plugins or restart the session.
-4. If you installed `project-management`, install its task tool, `ctask`:
-
-   ```bash
-   uv tool install git+https://github.com/diutsu/ctask
-   ```
+4. If you installed `project-management`, make sure the agent can reach your tracker through its CLI, a connected tool or a skill.
 
 5. Add a `## Project map` block to the project's `AGENTS.md` (or `CLAUDE.md` / `GEMINI.md`), or run `project-doctor` to check what is missing. The `tasks` and `verify` keys have no default.
 6. Optional: enable the status line by adding the `statusLine` entry shown in `plugins/punchcard/README.md` to `~/.claude/settings.json`. A plugin cannot set it for you.

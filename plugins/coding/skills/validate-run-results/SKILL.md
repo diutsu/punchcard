@@ -66,7 +66,7 @@ When a clean run hits the falsifying condition or shows no real effect, record i
 
 - Record the prediction and outcome through `backlog` or the active plan.
 - Record dead ends in the `investigations` key so no one repeats them.
-- Queue a human judgment call through `operator-queue`.
+- Hand a human judgment call over through `backlog`.
 - Treat the user's distrust of a number as a research trigger.
 
 ## Hard rules

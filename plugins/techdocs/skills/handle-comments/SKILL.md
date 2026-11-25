@@ -4,24 +4,23 @@ tier: leaf
 description: >
   Process `[COMMENT]` markers the user embeds in docs: find each, classify it
   as a directive, a perspective or a question, act, remove the marker, and
-  route unresolved follow-ups to the operator queue. Load when the user says
+  route unresolved follow-ups to the tracker. Load when the user says
   "handle the comments", "process my comments" or points at annotated docs.
   Do NOT load for review threads on a planning doc (see review-comment-coach),
   for frontmatter audits (see docs-management), or for queue upkeep (see
-  operator-queue).
+  backlog).
 trigger: /handle-comments
 ---
 
 # /handle-comments
 
-Resolve `[COMMENT]` markers the user left inside docs. Read the surrounding context, classify the intent, act, and remove the marker so the doc stays clean. A reply that needs the user goes to `operator-queue`, never into a deep doc where nobody will look.
+Resolve `[COMMENT]` markers the user left inside docs. Read the surrounding context, classify the intent, act, and remove the marker so the doc stays clean. A reply that needs the user becomes a human step via `backlog`, never into a deep doc where nobody will look.
 
 ## When NOT to use this skill
 
 | Situation | Use instead |
 |---|---|
 | Review threads on a vision, architecture or design | `review-comment-coach` |
-| Adding or folding queue items | `operator-queue` |
 | Creating or changing tasks | `backlog` |
 | Frontmatter and layout audits | `docs-management` |
 
@@ -50,7 +49,7 @@ When unsure between types, treat the comment as a question and validate first.
 ## Clean up and route
 
 1. Remove the marker and its text from the source doc, with any leftover blank line or empty blockquote.
-2. If a comment needs a human decision or command, remove the marker and add an item to `operator-queue` that cites the doc and states the validated options. Ask the user through the question interface when a decision has 2-4 clear options.
+2. If a comment needs a human decision or command, remove the marker and record a human step via `backlog` that cites the doc and states the validated options. Ask the user through the question interface when a decision has 2-4 clear options.
 3. Bump `updated` in the frontmatter of every edited doc (see `docs-management`).
 
 ## Report
@@ -60,7 +59,7 @@ For each marker: `file:line`, classification, and the action taken or the queue 
 ## Hard rules
 
 - Never act on a question before validating its premise against code, docs or sources.
-- Never leave a marker or an unanswered reply inside a doc; route it to `operator-queue`.
+- Never leave a marker or an unanswered reply inside a doc; route it through `backlog`.
 - Never edit task state directly; go through `backlog`.
 - Finish only when the scan command returns nothing.
 

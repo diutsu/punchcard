@@ -4,6 +4,15 @@ One line per user-visible change or project milestone, newest first.
 
 ## Unreleased
 
+### Changed
+
+- `backlog` reads and files tasks in whatever tracker the project map names. All task state lives there: plans on the task, handoffs on in-progress tasks, human-only steps in review, closed work in done.
+- New tasks go to backlog and move to to do only after the user refines them.
+
+### Removed
+
+- `ctask` support, the `operator-queue` skill and the `operator-queue` and `handoff` map keys.
+
 ### Added
 
 - Multi-harness packaging: root `plugin.json` and `.codex-plugin/plugin.json` per plugin, `.agents/plugins.json`, `.agents/plugins/marketplace.json`, Antigravity `SessionStart` hook (`plugins/punchcard/hooks.json` + `scripts/session_start_agy.py`), synced `plugins/punchcard/rules/AGENTS.md` via `scripts/sync_rules.py`, and root `LICENSE` (MIT).

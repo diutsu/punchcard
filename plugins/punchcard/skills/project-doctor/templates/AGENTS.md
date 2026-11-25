@@ -4,7 +4,7 @@
 
 ## Project map
 
-- tasks:: ctask
+- tasks:: <tracker and project>
 - docs:: docs/
 - investigations:: docs/investigations/
 - prd:: docs/prd/
@@ -12,8 +12,6 @@
 - scripts:: ops/scripts/
 - changelog:: CHANGELOG.md
 - worktrees:: ../<repo>.worktrees/
-- operator-queue:: ops/local/operator-queue.md
-- handoff:: ops/local/handoff.md
 - verify:: npm test && npm run lint
 
 ## Layout
@@ -22,7 +20,7 @@
 |---|---|
 | `src/` | Application code |
 | `tests/` | Tests, mirroring `src/` |
-| `ops/` | Scripts and the operator queue |
+| `ops/` | Scripts |
 | `docs/` | Committed docs: `tutorials/`, `how-to/`, `reference/`, `explanation/` |
 
 ## Project rules
