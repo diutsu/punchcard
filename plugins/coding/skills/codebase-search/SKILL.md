@@ -33,7 +33,7 @@ Establish what exists before anyone writes code or a plan. This skill reads and 
 Stop as soon as the evidence answers the question.
 
 1. The project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`): stage, gate commands, non-negotiables, and the project map (`project-map`).
-2. Task history through `backlog`: open and closed tasks for the module. Known gaps live there, so the code may carry no hint of them.
+2. Task history through `tracker`: open and closed tasks for the module. Known gaps live there, so the code may carry no hint of them.
 3. Docs located through `find-docs`: architecture, reference, explanation, and the `investigations` key (verdict section first).
 4. The code, last, compared against what steps 2 and 3 claim.
 
@@ -108,7 +108,7 @@ WHAT I DID NOT CHECK: <scope boundaries, unread areas, unverifiable items>
 
 ## Provenance and maintenance
 
-Updated 2026-11-13. Check commands:
+Updated: 2026-11-26. Check commands:
 
 ```bash
 git log --oneline -1

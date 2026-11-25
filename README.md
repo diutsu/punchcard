@@ -73,10 +73,10 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 
 | Skill | Purpose |
 |---|---|
-| `backlog-review` | Find stale and duplicate backlog tasks, titles first |
-| `backlog` | Read and file tasks in the project's configured tracker |
-| `prioritise` | Rank open tasks |
-| `triage-close` | Close tasks whose done-when is met, with evidence |
+| `tracker` | Read and file tasks in the project's configured tracker; set up its task workflow once |
+| `whats-next` | Show work in flight, what needs the user first |
+| `prioritise` | Pick what to start next, with quick wins |
+| `backlog-review` | Find done, stale and duplicate open tasks, titles first, and close them with evidence |
 | `plan` | Turn accepted research into an execution plan |
 | `product-direction` | Bring requirements, PRDs and vision in line with what the user now wants, settle conflicts, decide when each change is built |
 | `bug-report` | File a new issue reported outside the current task: settle the expected behaviour with the user and name the docs that change |

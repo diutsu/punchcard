@@ -24,7 +24,7 @@ Docs follow [Diataxis](https://diataxis.fr): four kinds, each serving a differen
 | Starting a doc from a skeleton | `doc-templates` |
 | Tasks and plans | `project-management` |
 | Milestones | `changelog` |
-| Session handoffs, review requests and open questions | `backlog` |
+| Session handoffs, review requests and open questions | `tracker`, or the installed task skill |
 | Resolving `[COMMENT]` markers | `handle-comments` |
 | Checking a whole repo's setup | `project-doctor` |
 
@@ -122,7 +122,7 @@ A doc is valid when frontmatter is the first thing in the file, all five fields 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-25. Source: Diataxis, https://diataxis.fr.
+Updated: 2026-11-26. Source: Diataxis, https://diataxis.fr.
 
 Re-verification commands:
 ```bash

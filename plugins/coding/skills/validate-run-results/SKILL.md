@@ -30,7 +30,7 @@ An unfalsifiable claim, an eyeballed "looks better", or a number from an uncheck
 
 ## 1. Predict before running
 
-Record this before the run, in the task through `backlog` or in the active plan:
+Record this before the run, in the task through `tracker` or in the active plan:
 
 ```text
 Hypothesis:   <mechanism: why this should change the outcome>
@@ -64,9 +64,9 @@ State the regime, the sample size and the conditions where the result was measur
 
 When a clean run hits the falsifying condition or shows no real effect, record it and stop. Never re-run with tweaked parameters to force a win.
 
-- Record the prediction and outcome through `backlog` or the active plan.
+- Record the prediction and outcome through `tracker` or the active plan.
 - Record dead ends in the `investigations` key so no one repeats them.
-- Hand a human judgment call over through `backlog`.
+- Hand a human judgment call over through `tracker`.
 - Treat the user's distrust of a number as a research trigger.
 
 ## Hard rules
@@ -80,7 +80,7 @@ When a clean run hits the falsifying condition or shows no real effect, record i
 
 ## Provenance and maintenance
 
-Updated 2026-11-13. Check commands:
+Updated: 2026-11-26. Check commands:
 
 ```bash
 grep -n "Falsified if" plugins/coding/skills/validate-run-results/SKILL.md

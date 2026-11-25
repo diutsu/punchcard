@@ -70,7 +70,7 @@ Each finding states what is wrong (naming the screenshot and element), why it ma
 
 ## Handing off
 
-File each finding via `backlog` and offer `do-work` for the fixes. Do not change code in this skill's run.
+File each finding via `tracker` and offer `do-work` for the fixes. Do not change code in this skill's run.
 
 ## Hard rules
 
@@ -82,7 +82,7 @@ File each finding via `backlog` and offer `do-work` for the fixes. Do not change
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

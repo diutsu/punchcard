@@ -29,7 +29,7 @@ The user says where the product should go; the docs say where it was going; the 
 
 ## Procedure
 
-1. **Read first.** Before any question, read what exists: the docs under the `prd` and `design` keys, the vision, the reference docs (per `find-docs`), the open tasks (via `backlog`), and the app itself where the docs are silent (per `codebase-search`). Where the `prd` and `design` keys hold nothing, the requirements are what the repo treats as its contract: the explanation and reference docs and the project instructions. Say which docs you are treating as the requirements before the first round. List the topics the session covers: the user's input, plus what the reading shows is unclear, contradictory or missing.
+1. **Read first.** Before any question, read what exists: the docs under the `prd` and `design` keys, the vision, the reference docs (per `find-docs`), the open tasks (via `tracker`), and the app itself where the docs are silent (per `codebase-search`). Where the `prd` and `design` keys hold nothing, the requirements are what the repo treats as its contract: the explanation and reference docs and the project instructions. Say which docs you are treating as the requirements before the first round. List the topics the session covers: the user's input, plus what the reading shows is unclear, contradictory or missing.
 2. **Confirm, topic by topic.** For each topic, state what the docs and the app say today, quoting the requirement, then ask the user to confirm or correct it. Run the rounds per `grilling`. A topic takes at least three rounds: confirm and challenge, then place, then decide when. Placement and timing wait for the conflict decision they depend on.
 3. **Complement.** Offer what the user did not mention and the app implies: behaviour that exists and no doc states, a gap between two requirements, the requirement next to the one under discussion. Each is a question, never an edit.
 4. **Challenge.** When the user's input conflicts with a requirement, a priority or something they said earlier, show both texts side by side and name the conflict. Check what the user says about the app against the app. Challenge only what a decision depends on, and say which parts hold. The user decides and may overrule the docs.
@@ -44,9 +44,9 @@ The user says where the product should go; the docs say where it was going; the 
 
 6. **Place it.** For each new or changed requirement, propose the doc and the section, per `docs-management`, and a new doc per `doc-templates` when none fits. Check a statement bound for a vision or design doc per `horizon-review`. Get a yes before writing.
 7. **Settle conflicts and blockers.** Keep a running list. The question interface hides the message around it, so carry the list inside the round: while an item is open, one question in each round is about it and names the others still open. Every item ends in a decision before the session closes: a conflict by the user choosing a side, a blocker by a timing decision in step 8. Nothing is carried out of the session as an open item.
-8. **Decide when.** For each change, ask whether it is built now, after a named milestone, or once the affected area is stable. State what blocks it and what it would displace: a change built now moves something else later, so name that thing. Skip this step for a change that is complete once the docs are written. Where the repo has no tasks or milestones to compare against, ask only "now" or "later, when `<condition>`".
+8. **Decide when.** For each change, ask whether it is built now, after a named milestone (as `tracker` defines one), or once the affected area is stable. State what blocks it and what it would displace: a change built now moves something else later, so name that thing. Skip this step for a change that is complete once the docs are written. Where the repo has no tasks or milestones to compare against, ask only "now" or "later, when `<condition>`".
 9. **Write.** Update the docs in place, per `docs-management` and `writing-style`. A doc states how things are. It carries no note about what a requirement used to say, who asked for the change or how it was decided.
-10. **Close.** Read back per `./templates/read-back.md`: what changed and where, how each conflict was settled, and when each change is built. Then offer to file the tasks via `backlog`, with blockers recorded, and to rank them per `prioritise`. File them on a yes.
+10. **Close.** Read back per `./templates/read-back.md`: what changed and where, how each conflict was settled, and when each change is built. Then offer to file the tasks via `tracker`, with blockers recorded, and to rank them per `prioritise`. File them on a yes, into backlog. Move a filed task to to do only when the user says it is ready as written.
 
 ## What the session leaves behind
 
@@ -66,11 +66,11 @@ Updated or new docs, and the tasks the user agreed to. No decision log and no op
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `watchlist`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
+Updated: 2026-11-26. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `watchlist`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
 
 Re-verification commands:
 ```bash
 ls plugins/*/skills/product-direction/templates/read-back.md
-for s in grilling horizon-review docs-management doc-templates writing-style find-docs codebase-search backlog prioritise; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in grilling horizon-review docs-management doc-templates writing-style find-docs codebase-search tracker prioritise; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'product-direction' plugins/punchcard/skills/capability-check/SKILL.md README.md
 ```

@@ -20,7 +20,7 @@ Run three checks, report each as pass or fail with the one-line fix, and change 
 | Situation | Use instead |
 |---|---|
 | Docs fail the criteria and need fixing | `docs-management` |
-| Tasks need work | `backlog` |
+| Tasks need work | `tracker` |
 | You need the meaning of a map key | `project-map` |
 
 ## Check 1: repo
@@ -40,8 +40,9 @@ Run three checks, report each as pass or fail with the one-line fix, and change 
 ## Check 3: task management
 
 1. The `tasks` key is set.
-2. Listing open tasks via `backlog` succeeds.
-3. The tracker has a status for every state `backlog` names.
+2. Listing open tasks via `tracker` succeeds.
+3. The `tasks-workflow` key is set and its file exists.
+4. The tracker has the status the workflow file maps to each state `tracker` names.
 
 ## Report
 
@@ -57,12 +58,12 @@ Offer the fixes as a batch through the question interface, recommended option fi
 
 - Never modify the repo while diagnosing. Report first.
 - Never guess a path. Resolve it through the map.
-- Never restate the docs criteria or the task rules. Defer to `docs-management` and `backlog`.
+- Never restate the docs criteria or the task rules. Defer to `docs-management` and `tracker`.
 - Never report a check as passed without running it.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-22.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

@@ -1,12 +1,9 @@
 ## Plan
 
-Goal: `<one-line falsifiable claim or deliverable>`
+Serves the task's goal and done-when; never restate them here.
 
 ### Context
 `<problem and evidence, each claim cited>`
-
-### Acceptance criteria
-- [ ] `<checkable condition>`
 
 ### Solution menu (only if a real decision exists)
 1. `<option>` — must be true: `<premise>` — verified by: `<concrete check>`

@@ -41,13 +41,13 @@ Complexity is a cost paid for a purpose. This skill finds code whose purpose is 
 ## Procedure
 
 1. **Scope and baseline.** Name the project or module and the commit (`git rev-parse HEAD`). Take the baseline as `do-work` defines it. On a red baseline, report and stop: a cleanup on a failing suite cannot show it preserved behaviour.
-2. **Read the direction.** Open and blocked tasks via `backlog`, active plans via `plan`, and the vision, requirements, design and architecture docs via `find-docs`. Ask nothing the repo answers.
+2. **Read the direction.** Open and blocked tasks via `tracker`, active plans via `plan`, and the vision, requirements, design and architecture docs via `find-docs`. Ask nothing the repo answers.
 3. **Write the complexity budget.** One line per area: the complexity it carries, and the future task or target-architecture element that pays for it, or "none". An area with a named payer keeps its seams, extension points and abstractions. An area with none is held to what the code does today.
 4. **Sweep.** Run the lenses below, reading per `codebase-search`. Start from the findings of a current `project-evaluation` report when the `investigations` key holds one; do not re-measure what it measured.
 5. **Give each candidate a verdict.** `remove`, `simplify`, `update`, `complete` or `keep`. `keep` names its payer from the budget. A candidate with no evidence is dropped, not softened.
 6. **Sort into fix or file** with the bar below.
 7. **Apply the fixes** as one `do-work` batch: one commit per fix, one verify, one review. Executors load `backend-code` or `frontend-ui` by the files touched.
-8. **File the rest** via `backlog`, one task per finding: the evidence, the smallest change that preserves behaviour, a done-when, and the tasks it blocks or depends on.
+8. **File the rest** via `tracker`, one task per finding: the evidence, the smallest change that preserves behaviour, a done-when, and the tasks it blocks or depends on.
 9. **Report** per `run-report`: fixed, filed, kept with the payer, and what was not examined.
 
 ## Lenses
@@ -83,14 +83,14 @@ Anything else is filed. Code with no test around it is filed with a characterisa
 - Never remove complexity the budget shows a payer for; never keep it on "might need it later" with no task or doc behind it.
 - Never change behaviour in a fix. A cleanup that needs a behaviour change is a task.
 - Never fix on a red baseline or without tests that would catch a regression.
-- Never fold a cleanup into lines an open task or plan is about to change; note it on that task via `backlog`.
+- Never fold a cleanup into lines an open task or plan is about to change; note it on that task via `tracker`.
 - Never run the verdicts or the fix-or-file sort on a cheaper model, and never apply fixes outside `do-work`.
 - Never decide direction here. A conflict between code and target architecture goes to `product-direction`.
 - Always end the report with what was not examined.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-15.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

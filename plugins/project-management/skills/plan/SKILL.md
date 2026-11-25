@@ -28,7 +28,7 @@ Research produces a finding. This skill turns it into a plan with every command,
 
 ## Where the plan lives
 
-On its task: a `## Plan` section in the description, written via `backlog`. One plan per task. Work with no task keeps its plan in the conversation.
+On its task: a `## Plan` section in the description, written via `tracker`. One plan per task. The task's goal and done-when are the plan's goal and acceptance criteria; the plan never restates them. Work with no task keeps its plan in the conversation, with its goal and done-when at the top.
 
 ## Sizing
 
@@ -66,9 +66,10 @@ An inline plan is the same anatomy compressed. It still states an exact expected
 
 ## Provenance and maintenance
 
-Updated: 2026-11-25.
+Updated: 2026-11-26.
 
 ```bash
 wc -l plugins/project-management/skills/plan/templates/plan.md
-grep -n 'plan' plugins/project-management/skills/backlog/SKILL.md
+grep -n '^## Goal\|^## Done when' plugins/project-management/skills/tracker/templates/task.md
+grep -n 'sized per `plan`' plugins/project-management/skills/tracker/SKILL.md
 ```

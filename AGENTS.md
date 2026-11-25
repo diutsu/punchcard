@@ -59,7 +59,7 @@ grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials doc
 ## 3. Authoring non-negotiables
 
 - **Skill contract:** every `plugins/<plugin>/skills/<name>/SKILL.md` has YAML frontmatter (`name`, `tier: leaf | workflow | reference`, `description`, `trigger`), `## When NOT to use this skill`, `## Hard rules`, and `## Provenance and maintenance`. `skill-maintenance` holds the full contract.
-- **No hardcoded locations or tools:** a skill names a project-map key or says "via `backlog`". Only a tracker's own plugin names it.
+- **No hardcoded locations or tools:** a skill names a project-map key or says "via `tracker`". Only a tracker's own plugin names it.
 - **One fact, one home:** reference a sibling skill by name; never restate its mechanics. A file is never referenced across plugin folders.
 - **Backtick angle-bracket placeholders:** any `<placeholder>` in prose outside code fences or YAML frontmatter is wrapped in backticks.
 - **Drafts from `skill-reviewer` start in `wip`:** they land in `plugins/wip/` and move to another plugin only after promotion per `skill-maintenance`. A skill the user asks for goes into the plugin that owns its territory.

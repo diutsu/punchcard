@@ -67,7 +67,7 @@ Code outlives the tasks, plans and docs that produced it. Those get closed, rena
 
 - Never name a task or ticket ID, a plan, an investigation, a design or requirement doc, a doc path, or a plan step or phase number in code. This covers comments, docstrings, identifiers, test names, log and error messages.
 - When the reason matters, write the reason itself: "retry three times because the provider drops the first connection after idle", not "see the retry investigation".
-- The link runs the other way. Docs name the modules they describe (see `docs-management`), and tasks name the files they touch (via `backlog`).
+- The link runs the other way. Docs name the modules they describe (see `docs-management`), and tasks name the files they touch (via `tracker`).
 - A URL to an external spec or upstream bug is allowed: it is not project work and it does not move.
 - When you edit a file that already holds such a reference, replace it with the reason or delete it in the same pass.
 
@@ -90,7 +90,7 @@ Review each hit; an external standard such as `RFC-9110` or `UTF-8` is not a fin
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

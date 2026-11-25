@@ -29,7 +29,7 @@ Ranked by refactor payoff against risk. Every row has evidence.
 1. `<Safest first step, for example a characterisation test or a seam>`. Verified by `<command>`.
 2. `<Next step>`. Depends on 1. Verified by `<command>`.
 
-Each step is filed as a task via `backlog`: `<task ids>`.
+Each step is filed as a task via `tracker`: `<task ids>`.
 
 ## What was not examined
 

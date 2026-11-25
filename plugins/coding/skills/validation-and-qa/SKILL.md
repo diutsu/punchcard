@@ -37,7 +37,7 @@ A mock, hardcoded return, placeholder or fabricated value makes the feature undo
 
 1. It returns an honest empty, null or unavailable state, never invented numbers.
 2. Its name makes it visible (`_stub_` or `TODO_STUB` prefix).
-3. It is filed as an open task via `backlog` and named in the completion report.
+3. It is filed as an open task via `tracker` and named in the completion report.
 
 ## 3. Test-writing discipline
 
@@ -72,7 +72,7 @@ Fails everywhere: a real failure. Fails only in the full suite: order or shared-
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

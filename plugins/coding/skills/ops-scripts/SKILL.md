@@ -23,7 +23,7 @@ A one-off or maintenance script is a project artifact. It lives in the repo, wit
 | Product code and tests | `backend-code` |
 | Raw vs. derived data audit scripts | `data-integrity` |
 | Git commits and worktrees | `repo-infra` |
-| Commands only a human can run | `backlog` |
+| Commands only a human can run | `tracker` |
 
 ## Placement
 
@@ -61,7 +61,7 @@ Pick an expiry that matches the need: a migration script expires when the migrat
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

@@ -26,17 +26,17 @@ Assess a project or module for maintainability and refactorability, with evidenc
 | One question about how code works | `codebase-search` |
 | A specific failure needs a cause | `forensics` |
 | Reviewing a diff | `review-rubric` |
-| Performing the refactors | `do-work`, after filing tasks via `backlog` |
+| Performing the refactors | `do-work`, after filing tasks via `tracker` |
 | Removing, simplifying or updating code now, judged against where the project is going | `codebase-cleanup` |
 | Writing the plan for a refactor | `plan` |
 
 ## Procedure
 
 1. **Scope.** Name the project or module, the commit evaluated (`git rev-parse HEAD`), and the question driving the evaluation. Ask the user through the question interface only if scope is ambiguous, in one batch.
-2. **Read.** Use `codebase-search` for every reading step: project map, task history via `backlog`, docs via `find-docs`, then code. Keep its fact and inference tags.
+2. **Read.** Use `codebase-search` for every reading step: project map, task history via `tracker`, docs via `find-docs`, then code. Keep its fact and inference tags.
 3. **Measure.** Run the lenses below. Prefer commands that give counts.
 4. **Write.** Fill `./templates/evaluation-report.md` and save it to the `investigations` key. Frontmatter follows `docs-management`.
-5. **File follow-ups** via `backlog`, one task per recommended refactor step. Do not start them here.
+5. **File follow-ups** via `tracker`, one task per recommended refactor step. Do not start them here.
 
 ## Lenses
 
@@ -74,7 +74,7 @@ Order the refactors so each step leaves the suite green and makes the next one c
 
 ## Provenance and maintenance
 
-Updated 2026-11-15. Check commands:
+Updated: 2026-11-26. Check commands:
 
 ```bash
 ls plugins/coding/skills/project-evaluation/templates/evaluation-report.md plugins/coding/skills/project-evaluation/references/commands.md

@@ -48,7 +48,7 @@ An empty `.catch(() => {})` on a fetch is a bug: a dead backend would render as 
 
 ## 3. No fabricated values
 
-Ship no sample rows, random series or plausible fake numbers. An unset control shows as unset, not as zero. When an endpoint is not wired yet, render `data-unavailable`, name the stub per `validation-and-qa`, and file it via `backlog`.
+Ship no sample rows, random series or plausible fake numbers. An unset control shows as unset, not as zero. When an endpoint is not wired yet, render `data-unavailable`, name the stub per `validation-and-qa`, and file it via `tracker`.
 
 ## 4. Restrained visual treatment
 
@@ -66,7 +66,7 @@ grep -rln "useState\|catch" src/**/views/*.tsx   # adapt the glob to the project
 
 ## 6. Mockups
 
-Produce a mockup as HTML or SVG. Iterate with the user until the layout and the five states are settled, then file each follow-up change via `backlog`. A mockup shows the unavailable and error states too, not only real data.
+Produce a mockup as HTML or SVG. Iterate with the user until the layout and the five states are settled, then file each follow-up change via `tracker`. A mockup shows the unavailable and error states too, not only real data.
 
 ## Hard rules
 
@@ -78,7 +78,7 @@ Produce a mockup as HTML or SVG. Iterate with the user until the layout and the 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

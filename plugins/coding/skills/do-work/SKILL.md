@@ -44,13 +44,13 @@ Typical run: executor agents for the steps, plus one `reviewer`, plus one grader
 | Several tasks | Batch mode below. |
 | Proof of concept | Proof-of-concept flow below. |
 
-Work without a task ID follows the same loop. Skip only the `backlog` close; still run `close-task` with the user's request as the intention, and report the outcome and any filed follow-ups to the user.
+Work without a task ID follows the same loop. Skip only the `tracker` close; still run `close-task` with the user's request as the intention, and report the outcome and any filed follow-ups to the user.
 
 ## Loop
 
 1. **Baseline.** Look for a recent green record. Without one, run the `verify` commands once. If the result is red, tell the user before changing anything.
 2. **Scope.** Find affected files, test seams and conflicts between code and docs. Resolve each staleness in one line in the plan. If scope is ambiguous, ask through the question interface, 2-4 questions in one batch, recommended option first.
-3. **Plan.** Write the plan through `plan`, and read the task through `backlog`. Detail only the active phase of a multi-phase task. Self-score it against the plan dimensions of `review-rubric`. Spawn a separate plan reviewer only when the work crosses module boundaries or has several phases.
+3. **Plan.** Write the plan through `plan`, and read the task through `tracker`. Detail only the active phase of a multi-phase task. Self-score it against the plan dimensions of `review-rubric`. Spawn a separate plan reviewer only when the work crosses module boundaries or has several phases.
 4. **Write every brief at once.** Right after the plan, write all executor briefs and the reviewer brief in one pass, using `agent-brief`. Name the leaf skills each brief loads, chosen by the files its step touches:
    - backend source: `backend-code`
    - views and front-end: `frontend-ui`
@@ -61,13 +61,13 @@ Work without a task ID follows the same loop. Skip only the `backlog` close; sti
    - Executors may edit docs and the changelog when their step says so.
    - **Plan invalidation.** An executor that hits a false assumption stops. Return to step 3.
    - **Leftovers.** After the last step, run `close-task` pass 1: in-scope leftovers become plan steps in this loop, so the one verify and the one review cover them; separate concerns are filed as tasks.
-   - **Needs the human.** A command only the human can run, or a null result needing a decision, follows `backlog`: the review gate when the work is complete, otherwise a comment on the task. Stop working on that task.
+   - **Needs the human.** A command only the human can run, or a null result needing a decision, follows `tracker`: the review gate when the work is complete, otherwise a comment on the task. Stop working on that task.
 6. **Verify.** Run the full suite once, with the `verify` commands, per `validation-and-qa`. Delegate to `suite-runner` only when the output is large.
 7. **Implementation gate.** Send one `reviewer` the diff range, acceptance criteria and test output, scored with `review-rubric`.
    - The reviewer applies quick fixes itself. If it changed code, one fresh `reviewer` instance grades only that fix diff.
    - Executor fixes made after review get a delta review from the original reviewer. Allow at most 3 iterations; then report to the user.
 8. **Docs.** Update docs in the same pass, per `docs-management`: in place, timeless, `updated` bumped. Docs are committed. Add the changelog line per `changelog`; a milestone goes there too.
-9. **Close.** Run `close-task` pass 2 over what verify, review and docs exposed: targeted tests and a delta review for any item it adds, no second full suite. Then close the task through `backlog`. Commit per `repo-infra`; push only when asked.
+9. **Close.** Run `close-task` pass 2 over what verify, review and docs exposed: targeted tests and a delta review for any item it adds, no second full suite. Then close the task through `tracker`. Commit per `repo-infra`; push only when asked.
 
 ## Proof-of-concept flow
 
@@ -77,7 +77,7 @@ A proof of concept answers a question; its code is thrown away.
 2. **Entry.** Check each entry criterion. If one fails, do not start; report which.
 3. **Build.** Work in a worktree or branch per `repo-infra`, marked throwaway. Skip the saved plan, the review and the changelog. Keep the code honest: no fabricated results (`validation-and-qa`).
 4. **Evaluate.** Measure each goal against its threshold per `validate-run-results`. Stop at the first exit criterion met, the time box included.
-5. **Close.** Fill the result section of the brief. Take the next action the brief names for the outcome, filing it via `backlog` when it is work. Do the cleanup the brief lists and report it item by item.
+5. **Close.** Fill the result section of the brief. Take the next action the brief names for the outcome, filing it via `tracker` when it is work. Do the cleanup the brief lists and report it item by item.
 
 Code from a proof of concept never merges. A pass leads to a design or a task that builds it properly.
 
@@ -98,16 +98,16 @@ Use it when the user names several tasks.
 - Never mark a step done without running its command and seeing the exit code.
 - Never let an author review its own lines, and never review the same lines twice.
 - Never run the full suite more than once per task, plus the baseline when no recent green record exists.
-- Never write a path or tool name for plans or tasks here; go through `plan` and `backlog`.
-- Never keep working on a task that needs a human; hand it over via `backlog` and stop.
+- Never write a path or tool name for plans or tasks here; go through `plan` and `tracker`.
+- Never keep working on a task that needs a human; hand it over via `tracker` and stop.
 - Never defer part of a task's intention because it touches other files, and never ask the user about a leftover; `close-task` decides.
 - Never push unless asked.
 - Never merge proof-of-concept code, and never end a proof of concept without its result and cleanup.
-- Never end a session mid-task without a handoff (`backlog`) when the task needs another session.
+- Never end a session mid-task without a handoff (`tracker`) when the task needs another session.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-25.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

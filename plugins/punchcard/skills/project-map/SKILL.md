@@ -31,6 +31,7 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 ## Project map
 
 - tasks:: <tracker and project, such as jira (project KEY)>
+- tasks-workflow:: <path to the task workflow file, in the repo or user-level>
 - docs:: docs/
 - investigations:: docs/investigations/
 - prd:: docs/prd/
@@ -44,6 +45,7 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 | Key | Meaning | Default | Owner |
 |---|---|---|---|
 | `tasks` | Task tracker, with the project or board in it. All task state lives there. | none; ask the user | `project-management` |
+| `tasks-workflow` | The task workflow file: state names, close reasons, priority scale, labels, milestones. May be a user-level file shared by all projects. | none; `tracker` sets it up | `project-management` |
 | `docs` | Root of committed technical docs, laid out as `tutorials/`, `how-to/`, `reference/`, `explanation/`. | `docs/` | `docs-management` |
 | `investigations` | Forward-looking research and forensic reports. | `docs/investigations/` | `techdocs`, `coding` |
 | `prd` | Product and logic requirements. | `docs/prd/` | `techdocs` |
@@ -65,13 +67,13 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 ## Hard rules
 
 - Never write a file to a location a skill guessed. Resolve the map key first.
-- Never read or change tasks directly. Go through `backlog`.
+- Never read or change tasks directly. Go through `tracker`.
 - Never restate a map default inside another skill. Name the key.
 - Never create a second map. One block, in the repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`).
 
 ## Provenance and maintenance
 
-Updated: 2026-11-25.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

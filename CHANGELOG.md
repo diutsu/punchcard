@@ -6,17 +6,24 @@ One line per user-visible change or project milestone, newest first.
 
 ### Added
 
-- `backlog-review` in `project-management`: finds stale and duplicate backlog tasks, starting from titles and opening only the suspects.
+- `backlog-review` in `project-management`: finds done, stale and duplicate open tasks, starting from titles and opening only the suspects, and closes them with cited evidence after one confirmation.
+- `whats-next` in `project-management`: shows the in-progress and in-review tasks, the ones that need the user first, and flags stuck work.
+- `tasks-workflow` map key: a task workflow file, set up once by `tracker`, holds the state names, close reasons, priority scale, labels and milestones. It may be user-level and shared by all projects.
 
 ### Changed
 
-- `backlog` reads and files tasks in whatever tracker the project map names. All task state lives there: plans on the task, handoffs on in-progress tasks, closed work in done.
-- New tasks go to backlog and move to to do only after the user refines them. In review holds only completed work that needs a human check; partly done work that needs the user gets a comment and stays in progress; anything new for the user is an open question on a task.
-- `backlog` has task, handoff and review request templates, and a checklist gate for each move between states.
+- The `backlog` skill is now `tracker`; "backlog" names only the state.
+- `prioritise` ranks only to-do tasks, validates them through `backlog-review`, lists quick wins and no longer groups by module.
+- Closing a task leaves one short closing comment: `done, closing` (optional), `stale task, closing`, `duplicated task, closing` or `merged with <ID>, closing`.
+- Plans no longer restate the task's goal and done-when.
+- `tracker` reads and files tasks in whatever tracker the project map names. All task state lives there: plans on the task, handoffs on in-progress tasks, closed work in done.
+- New tasks go to backlog and move to to do only on the user's explicit word: they refine it, or say it is ready. In review holds only completed work that needs a human check; partly done work that needs the user gets a comment and stays in progress; anything new for the user is an open question on a task.
+- `tracker` has task, handoff and review request templates, and a checklist gate for each move between states.
 - Docs never cite task IDs.
 
 ### Removed
 
+- `triage-close`, merged into `backlog-review`.
 - `ctask` support, the `operator-queue` skill and the `operator-queue` and `handoff` map keys.
 
 ### Added

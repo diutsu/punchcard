@@ -5,7 +5,7 @@ description: >
   Run without the user present. Load when the user says they will not be around
   ("continue, don't wait for me", "I won't be around"). Never stop to ask: take
   a reasonable default, record each decision in a decisions log, queue
-  irreversible or outward-facing actions via `backlog`, keep working
+  irreversible or outward-facing actions via `tracker`, keep working
   on everything else, and finish with a `run-report`. Do NOT load when the user
   is present, or to skip a confirmation they have not waived.
 trigger: /away-mode
@@ -20,7 +20,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
 | Situation | Use instead |
 |---|---|
 | The user is present | Ask through the question interface (`grilling` for deep gaps) |
-| Parking a command or decision that needs the user | `backlog` |
+| Parking a command or decision that needs the user | `tracker` |
 | Writing the final account of the run | `run-report` |
 
 ## Procedure
@@ -37,7 +37,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
    REVERSE: <how to undo or switch>
    ```
 
-4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `backlog` with the exact command (a review request when the work is complete, otherwise a comment or open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
+4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `tracker` with the exact command (a review request when the work is complete, otherwise a comment or open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
 5. **Keep the other rules.** The gate before done, the privacy wall and raw-data rules do not relax while away.
 6. **Finish with a `run-report`.** Include the decisions log in it and list the tasks in review and the open questions that need the user.
 
@@ -45,7 +45,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
 
 - Prefer reversible over irreversible, small over large, existing convention over new.
 - When two options are equal, take the one the project docs or repo already favour.
-- Do not widen scope to fill time. File extra ideas as tasks via `backlog`.
+- Do not widen scope to fill time. File extra ideas as tasks via `tracker`.
 - A blocked task is parked in the queue, not guessed at. Move to the next one.
 
 ## Hard rules
@@ -58,7 +58,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

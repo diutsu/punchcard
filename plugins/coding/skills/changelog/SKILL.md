@@ -34,7 +34,7 @@ Follow Keep a Changelog. Keep one `Unreleased` heading at the top. Under it, use
 
 Add `Deprecated` or `Security` only when a change calls for it. Write one line per change, in the active voice, from the user's point of view: what they can now do or what behaves differently. Skip implementation detail.
 
-A project milestone is also a changelog line: a major product decision, a feature shipping, a real operational event. Routine task progress belongs to the task tool (via `backlog`) and to git history.
+A project milestone is also a changelog line: a major product decision, a feature shipping, a real operational event. Routine task progress belongs to the task tool (via `tracker`) and to git history.
 
 ## Procedure
 
@@ -53,7 +53,7 @@ A project milestone is also a changelog line: a major product decision, a featur
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash

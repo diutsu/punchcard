@@ -52,7 +52,8 @@ Starting in the wrong mode costs more than the check: code written before the de
    | Cleanup, simplification, or a hunt for outdated and half-finished code | `codebase-cleanup` |
    | Failure to explain | `forensics` before any fix |
    | A new defect reported outside the current task | `bug-report` |
-   | "What next" | `prioritise` |
+   | "What's next", "what needs me" | `whats-next` |
+   | "What should I pick up", re-prioritise | `prioritise` |
    | Requirements, product direction, roadmap or vision | `product-direction` |
 
    A skill named here that is not installed: say which plugin holds it and continue with what is installed.
@@ -86,7 +87,7 @@ When no installed skill covers the craft, load `watchlist`: it matches the gap t
 
 ## Provenance and maintenance
 
-Updated: 2026-11-15.
+Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash
