@@ -20,6 +20,7 @@ The only owner of task management in this marketplace. Once enabled, every other
 |---|---|
 | `backlog` | Read and file tasks in the tracker named by the `tasks` key of the project map |
 | `prioritise` | Rank open tasks: unblock first, then value, effort and risk, grouped by module |
+| `backlog-review` | Find stale and duplicate backlog tasks, titles first |
 | `triage-close` | Check done-when criteria against code and git history and close tasks with evidence |
 | `plan` | Turn accepted research into a plan of 150 lines or fewer with phase roll-forward |
 | `product-direction` | Run a session that brings requirements, PRDs and vision in line with what the user now wants, settles conflicts and blockers, decides when each change is built, then files the agreed tasks |

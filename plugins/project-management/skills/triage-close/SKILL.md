@@ -23,6 +23,7 @@ Close tasks only with evidence. This skill reads tasks, code and git history, pr
 | Choosing the next task | `prioritise` |
 | Closing the one task a work session just finished | `close-task` |
 | Creating or editing a task | `backlog` |
+| Sweeping backlog for stale or duplicate tasks, titles first | `backlog-review` |
 | Recording a milestone for a closed task | `changelog` |
 
 ## Method

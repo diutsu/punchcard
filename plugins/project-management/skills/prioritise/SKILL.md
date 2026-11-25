@@ -31,11 +31,11 @@ Gather through `backlog`:
 1. `list` of all open tasks with priority and module.
 2. What blocks each blocked task, and what blocks any task you plan to rank high.
 3. `show` for the top candidates, to read goal, details and done-when.
-4. Tasks in progress, with their latest handoff comment, and tasks in review. Work in motion finishes before a new task is picked.
+4. Tasks in progress, with their latest handoff comment, and tasks in review. Work in motion that can continue finishes before a new task is picked.
 
 ## Method
 
-1. **Drop what cannot start.** Tasks in review or waiting on an external decision are not candidates; list them separately with what they wait on. Rank only to-do tasks; list backlog tasks worth taking as needing refinement.
+1. **Drop what cannot start.** Tasks in review, in progress with an unanswered question, or waiting on an external decision are not candidates; list them separately with what they wait on. Rank only to-do tasks; list backlog tasks worth taking as needing refinement.
 2. **Unblock first.** Rank by how many open tasks a task blocks, directly and transitively. A task that frees three others outranks a standalone high-priority task.
 3. **Value against effort against risk.** For the rest, judge the outcome's value, the effort from the details, and the risk of leaving it (data loss, wrong numbers, broken workflow). Cheap, valuable and risky-to-leave rank first. Say the judgement in one line; do not invent numeric scores.
 4. **Group by module.** When two ranked tasks touch the same module or files (`refs`), place them adjacent so one session shares the context.

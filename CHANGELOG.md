@@ -4,10 +4,14 @@ One line per user-visible change or project milestone, newest first.
 
 ## Unreleased
 
+### Added
+
+- `backlog-review` in `project-management`: finds stale and duplicate backlog tasks, starting from titles and opening only the suspects.
+
 ### Changed
 
 - `backlog` reads and files tasks in whatever tracker the project map names. All task state lives there: plans on the task, handoffs on in-progress tasks, closed work in done.
-- New tasks go to backlog and move to to do only after the user refines them. In review holds only started work that needs a human; anything new for the user is an open question on a task.
+- New tasks go to backlog and move to to do only after the user refines them. In review holds only completed work that needs a human check; partly done work that needs the user gets a comment and stays in progress; anything new for the user is an open question on a task.
 - `backlog` has task, handoff and review request templates, and a checklist gate for each move between states.
 - Docs never cite task IDs.
 

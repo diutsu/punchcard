@@ -46,7 +46,7 @@ Map each state to the tracker's matching status or column.
 | backlog | Unrefined tasks | Every new task starts here |
 | to do | Refined tasks, ready to start | The user has refined the task |
 | in progress | Work in flight and its handoff | Implementation of a to-do task starts |
-| in review | Started work that needs a human review before it can close | An in-progress task passes the review gate |
+| in review | Completed work that needs a human check before it can close | An in-progress task passes the review gate |
 | done | Closed work | The task closes |
 
 ## Templates
@@ -68,12 +68,12 @@ A task moves only when every check for that move passes. Check each one against 
 | new to backlog | No open or closed task covers it. Title and goal are filled. Unknowns are listed as open questions. |
 | backlog to to do | The user refined it. The goal is one verifiable outcome. Every done-when item can be checked against code, command output or the running app. Priority is set. No open question is left. |
 | to do to in progress | Nothing blocks it. A plan sized per `plan` exists. The code and docs it names still exist. |
-| in progress to in review | The work is implemented and committed. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
+| in progress to in review | All the work is implemented and committed; partial work stays in progress. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
 | in progress or in review to done | Every done-when item has evidence. Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. Leftovers are filed in backlog (`close-task`). |
 | any state to done through `triage-close` | The task is already met, obsolete or a duplicate, with cited evidence, in a batch the user confirmed. |
 | in review to in progress | The review asks for changes, and each is recorded on the task. |
 
-A task needs in review only when a human must check or run something before it can close.
+A task needs in review only when its work is complete and a human must check or run something before it can close.
 
 ## Procedures
 
@@ -92,7 +92,9 @@ Anything new that needs the user's input or review is an open question, never a 
 - It belongs to an existing task: add it under that task's open questions, or as a comment.
 - It belongs to no task: file a backlog task with the question under open questions.
 
-State the question, what depends on it, and the options with the recommended one first. Do not change the task's state, except when started work cannot continue without the answer: then it goes to in review with the question in the review request.
+State the question, what depends on it, and the options with the recommended one first. An open question never changes the task's state.
+
+When partly done work needs the user to continue, comment on the task and leave it in progress. The comment holds the question, or the literal command first and what success looks like, plus the handoff when the work carries into another session. Stop work on that task and continue with unblocked work. When the user answers, resume from the comment.
 
 ## Hard rules
 
@@ -100,7 +102,7 @@ State the question, what depends on it, and the options with the recommended one
 - Never close a task without evidence in the close note or the confirmed batch.
 - Never move a task without passing the gate for that move.
 - Never file a task into any state but backlog.
-- Never move a task to in review unless it is in progress.
+- Never move a task to in review unless it is in progress and its work is complete.
 - Never keep tasks, plans, handoffs, review requests or open questions in local files.
 - Never hand the human a step the agent can run, and never keep working a task that waits on the human.
 - Never delete a task, or change tasks in bulk, without the user's confirmation. A tracker may be shared.

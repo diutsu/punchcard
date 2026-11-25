@@ -73,6 +73,7 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 
 | Skill | Purpose |
 |---|---|
+| `backlog-review` | Find stale and duplicate backlog tasks, titles first |
 | `backlog` | Read and file tasks in the project's configured tracker |
 | `prioritise` | Rank open tasks |
 | `triage-close` | Close tasks whose done-when is met, with evidence |

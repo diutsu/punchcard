@@ -37,7 +37,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
    REVERSE: <how to undo or switch>
    ```
 
-4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `backlog` with the exact command (a review request for the started task, otherwise an open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
+4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `backlog` with the exact command (a review request when the work is complete, otherwise a comment or open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
 5. **Keep the other rules.** The gate before done, the privacy wall and raw-data rules do not relax while away.
 6. **Finish with a `run-report`.** Include the decisions log in it and list the tasks in review and the open questions that need the user.
 
