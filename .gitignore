@@ -9,3 +9,5 @@ build/
 
 # Local work, never committed: task registry, plans, operator queue, handoff note
 ops/local/
+
+.env

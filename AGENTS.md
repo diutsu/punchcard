@@ -5,7 +5,7 @@
 
 ## Project map
 
-- tasks:: ctask
+- tasks:: kaneo (project `CLAUDE`)
 - docs:: docs/
 - investigations:: docs/investigations/
 - prd:: docs/prd/
@@ -56,9 +56,6 @@ grep -rln 'ctask' plugins/punchcard/skills plugins/coding plugins/techdocs | gre
 
 # 6. Every doc carries the frontmatter contract (no output = pass)
 grep -rL '^type:' docs/explanation docs/reference docs/how-to docs/tutorials docs/investigations docs/prd docs/design 2>/dev/null
-
-# 7. The task registry is valid (local file; skip on a checkout without one)
-ctask --file ops/local/tasks.md --done-file ops/local/done.md validate
 ```
 
 ## 3. Authoring non-negotiables
