@@ -37,9 +37,9 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
    | Docs are silent or unclear | Ask the user what is right, recommended option first |
    | Docs and the user disagree | Show both texts; the user decides; a changed requirement goes to `product-direction` |
 
-   Ask when the user reported the bug in their own message. When the agent found the defect or the user is away, do not stop: file it with the expected behaviour marked "unconfirmed" and the candidate options listed, and put the question in the end-of-work batch (recorded on the task via `backlog` when away).
+   Ask when the user reported the bug in their own message. When the agent found the defect or the user is away, do not stop: file it with the expected behaviour marked "unconfirmed" and the candidate options listed, and put the question in the end-of-work batch (recorded as an open question via `backlog` when away).
 4. **Name the doc impact.** For each doc the decision makes wrong or missing, record the path, the section and the change: correct a statement, add the behaviour, create a doc (per `docs-management`, `doc-templates`). If none changes, say so and why.
-5. **File it** via `backlog` `add`:
+5. **File it** via `backlog` `add`, on its task template:
    - goal: the expected behaviour holds
    - details: observed behaviour, reproduction steps someone else can run verbatim, scope and frequency, the doc impact
    - done-when: the reproduction passes, a test pins the behaviour, each doc change is made, and, if unconfirmed, the expected behaviour is confirmed

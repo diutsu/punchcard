@@ -42,7 +42,7 @@ It runs twice per task, so the single suite run and single review of `do-work` c
    | Separate concern | No to the test. It has its own goal and value, and the task is correct without it. Includes the same behaviour elsewhere that this change did not create | File a task via `backlog`, with refs and a link to this task |
    | Defect the change did not cause | A failure found on the way | `bug-report` |
    | Not worth a task | A nit with no user-visible effect | List it in the closing report; file nothing |
-   | Needs the human | Only the user can run or decide it | Human step per `backlog`: on this task if the step is in scope, otherwise on a filed follow-up |
+   | Needs the human | Only the user can run or decide it | In scope: the review gate in `backlog`. Otherwise: an open question per `backlog` |
 
    "It needs changes in other files" and "it adds cases" are never reasons to defer. Size is not one either: a large part of the task is still the task.
 4. **Settle doubt without asking.** Treat an unclear item as in scope when leaving it would let a user hit the original problem again, or a new one the change introduced. Otherwise it is a separate concern. A `bug-report` expectation question is not a classification question; it goes in the end-of-work batch.

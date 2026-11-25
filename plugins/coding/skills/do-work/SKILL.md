@@ -61,7 +61,7 @@ Work without a task ID follows the same loop. Skip only the `backlog` close; sti
    - Executors may edit docs and the changelog when their step says so.
    - **Plan invalidation.** An executor that hits a false assumption stops. Return to step 3.
    - **Leftovers.** After the last step, run `close-task` pass 1: in-scope leftovers become plan steps in this loop, so the one verify and the one review cover them; separate concerns are filed as tasks.
-   - **Human step.** A step only the human can run, or a null result needing a decision, follows the human-step procedure in `backlog`.
+   - **Needs the human.** For a command only the human can run, or a null result needing a decision, pass the review gate in `backlog` and stop working on that task.
 6. **Verify.** Run the full suite once, with the `verify` commands, per `validation-and-qa`. Delegate to `suite-runner` only when the output is large.
 7. **Implementation gate.** Send one `reviewer` the diff range, acceptance criteria and test output, scored with `review-rubric`.
    - The reviewer applies quick fixes itself. If it changed code, one fresh `reviewer` instance grades only that fix diff.

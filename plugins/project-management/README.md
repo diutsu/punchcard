@@ -11,7 +11,8 @@ The only owner of task management in this marketplace. Once enabled, every other
 ## What it owns
 
 - The backlog: priorities, blockers, modules, open and closed tasks.
-- Plans, one per task, deleted when the task closes.
+- Plans, one per task, kept on the task.
+- Task, handoff and review request templates, and the gates between states.
 
 ## Skills
 

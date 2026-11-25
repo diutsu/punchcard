@@ -4,8 +4,8 @@ tier: leaf
 description: >
   Read and file tasks in the project's configured tracker, which also holds
   plans, session handoffs, steps only the human can do and closed work. Load
-  before ANY task operation, from any skill, when a task hits a human-only
-  step, or when work carries into another session. Do NOT load to decide what to do next (see
+  before ANY task operation, from any skill, when something needs the
+  user, or when work carries into another session. Do NOT load to decide what to do next (see
   prioritise), which tasks can close (see triage-close) or to write a plan
   (see plan).
 trigger: /backlog
@@ -45,42 +45,63 @@ Map each state to the tracker's matching status or column.
 |---|---|---|
 | backlog | Unrefined tasks | Every new task starts here |
 | to do | Refined tasks, ready to start | The user has refined the task |
-| in progress | Work in flight and its handoff | Work starts |
-| in review | Work waiting on the human: a command, a decision or a review | The agent cannot continue without the human |
+| in progress | Work in flight and its handoff | Implementation of a to-do task starts |
+| in review | Started work that needs a human review before it can close | An in-progress task passes the review gate |
 | done | Closed work | The task closes |
 
-## Task shape
+## Templates
 
-Every task has a title, a priority, a **goal** (the outcome), **details** (constraints, approach, open questions) and **done-when** (checkable criteria). Write done-when so a reader can verify it against code or git history without asking; `triage-close` depends on that. A plan lives on its task (`plan`).
+| Writing | Template |
+|---|---|
+| A new task, or a task being refined | `./templates/task.md` |
+| A handoff comment | `./templates/handoff.md` |
+| A review request comment | `./templates/review-request.md` |
+
+A plan lives on its task (`plan`). Write the task as it stands now; history stays in the tracker's comments.
+
+## Gates
+
+A task moves only when every check for that move passes. Check each one against the task, the code or command output. When a check fails, leave the task where it is and say which check failed.
+
+| Move | Checks |
+|---|---|
+| new to backlog | No open or closed task covers it. Title and goal are filled. Unknowns are listed as open questions. |
+| backlog to to do | The user refined it. The goal is one verifiable outcome. Every done-when item can be checked against code, command output or the running app. Priority is set. No open question is left. |
+| to do to in progress | Nothing blocks it. A plan sized per `plan` exists. The code and docs it names still exist. |
+| in progress to in review | The work is implemented and committed. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
+| in progress or in review to done | Every done-when item has evidence. Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. Leftovers are filed in backlog (`close-task`). |
+| any state to done through `triage-close` | The task is already met, obsolete or a duplicate, with cited evidence, in a batch the user confirmed. |
+| in review to in progress | The review asks for changes, and each is recorded on the task. |
+
+A task needs in review only when a human must check or run something before it can close.
 
 ## Procedures
 
-- **Add:** search first; add only if no open or closed task covers it. State goal and done-when in the same call. The task goes to backlog.
-- **Refine:** settle goal, details, done-when and priority with the user, then move the task to to do.
-- **Start:** move the task to in progress.
-- **Close:** confirm the done-when evidence, make sure the shipped behaviour is recorded where it belongs (`docs-management`), then close and unblock the tasks that waited on it.
+- **Add:** pass the first gate and file into backlog.
+- **Refine:** settle the open questions, goal, details, done-when and priority with the user, then move the task to to do.
+- **Close:** pass the done gate, close, then unblock the tasks that waited on it.
 
 ## Handoff
 
-When work will carry into another session, comment on the in-progress task with what the next session cannot get elsewhere: branch and test state, what is done, the exact next step, running jobs and open questions. The newest handoff comment is the current one.
+When work will carry into another session, comment on the in-progress task with the handoff template. The newest handoff comment is the current one.
 
-## Human steps
+## Open questions
 
-A step only the human can run, or a result that needs their decision, moves the task to in review with one comment:
+Anything new that needs the user's input or review is an open question, never a task in review.
 
-- **Command:** the literal, copy-pasteable command first, then the observable result that means success (exit code, row count, log line or file), then any reason.
-- **Decision:** the measured fact with its numbers, then the options, recommended first.
+- It belongs to an existing task: add it under that task's open questions, or as a comment.
+- It belongs to no task: file a backlog task with the question under open questions.
 
-Then stop work on that task and continue with unblocked work. Do not rerun the command hoping for new data or add status essays. A human step that belongs to no task gets its own task, filed straight into in review.
-
-When the human answers, read the result and record durable behaviour in the docs. Then close the task, or move it back to in progress, and file any follow-up.
+State the question, what depends on it, and the options with the recommended one first. Do not change the task's state, except when started work cannot continue without the answer: then it goes to in review with the question in the review request.
 
 ## Hard rules
 
 - Never add a task that an open or closed task already covers; extend that one.
 - Never close a task without evidence in the close note or the confirmed batch.
-- Never move a task from backlog to to do before the user has refined it.
-- Never keep tasks, plans, handoffs or human steps in local files.
+- Never move a task without passing the gate for that move.
+- Never file a task into any state but backlog.
+- Never move a task to in review unless it is in progress.
+- Never keep tasks, plans, handoffs, review requests or open questions in local files.
 - Never hand the human a step the agent can run, and never keep working a task that waits on the human.
 - Never delete a task, or change tasks in bulk, without the user's confirmation. A tracker may be shared.
 - Never invent a command; take it from the tracker's skill or its help.

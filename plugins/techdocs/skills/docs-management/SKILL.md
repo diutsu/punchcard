@@ -24,7 +24,7 @@ Docs follow [Diataxis](https://diataxis.fr): four kinds, each serving a differen
 | Starting a doc from a skeleton | `doc-templates` |
 | Tasks and plans | `project-management` |
 | Milestones | `changelog` |
-| Session handoffs and human-only steps | `backlog` |
+| Session handoffs, review requests and open questions | `backlog` |
 | Resolving `[COMMENT]` markers | `handle-comments` |
 | Checking a whole repo's setup | `project-doctor` |
 
@@ -116,12 +116,13 @@ A doc is valid when frontmatter is the first thing in the file, all five fields 
 - Never put two Diataxis kinds in one doc.
 - Never omit a frontmatter field or leave `updated` stale after an edit.
 - Never add dated or historical narrative to `reference/` or `explanation/`.
+- Never cite a task ID in a doc. State the behaviour, gap or open question itself.
 - Never create a doc kind or folder outside this layout without asking the user.
 - Never invent a `cross-file-references` entry.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Source: Diataxis, https://diataxis.fr.
+Updated: 2026-11-25. Source: Diataxis, https://diataxis.fr.
 
 Re-verification commands:
 ```bash

@@ -34,8 +34,8 @@ House rules for every session. Mechanics live in skills; these are the rules.
 ## Where things live
 
 - Resolve every location and tool through `project-map`. Never guess a path.
-- All task state goes through the `project-management` plugin: tasks, plans, handoffs, human-only steps and done work live in the project's tracker. Milestones go to the changelog.
-- New tasks go to backlog. They move to to do only after the user refines them.
+- All task state goes through the `project-management` plugin: tasks, plans, handoffs, reviews, open questions and done work live in the project's tracker. Milestones go to the changelog.
+- New tasks go to backlog and move to to do only after the user refines them. Anything new that needs the user is an open question on a task; in review is only for started work.
 
 ## Writing guidance
 

@@ -14,7 +14,7 @@ trigger: /handle-comments
 
 # /handle-comments
 
-Resolve `[COMMENT]` markers the user left inside docs. Read the surrounding context, classify the intent, act, and remove the marker so the doc stays clean. A reply that needs the user becomes a human step via `backlog`, never into a deep doc where nobody will look.
+Resolve `[COMMENT]` markers the user left inside docs. Read the surrounding context, classify the intent, act, and remove the marker so the doc stays clean. A reply that needs the user becomes an open question via `backlog`, never into a deep doc where nobody will look.
 
 ## When NOT to use this skill
 
@@ -49,7 +49,7 @@ When unsure between types, treat the comment as a question and validate first.
 ## Clean up and route
 
 1. Remove the marker and its text from the source doc, with any leftover blank line or empty blockquote.
-2. If a comment needs a human decision or command, remove the marker and record a human step via `backlog` that cites the doc and states the validated options. Ask the user through the question interface when a decision has 2-4 clear options.
+2. If a comment needs a human decision or command, remove the marker and record an open question via `backlog` that cites the doc and states the validated options. Ask the user through the question interface when a decision has 2-4 clear options.
 3. Bump `updated` in the frontmatter of every edited doc (see `docs-management`).
 
 ## Report

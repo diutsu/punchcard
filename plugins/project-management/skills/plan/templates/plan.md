@@ -1,6 +1,5 @@
 ## Plan
 
-Task: `<ID>`
 Goal: `<one-line falsifiable claim or deliverable>`
 
 ### Context
