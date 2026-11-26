@@ -45,12 +45,21 @@ An inline plan is the same anatomy compressed. It still states an exact expected
 
 ## Anatomy
 
-1. **Context.** Problem and evidence. Every claim cites a doc, commit or log line. A hunch is not evidence; send it back through `validate-run-results`.
+1. **Context.** Problem and evidence, a few sentences. Each claim rests on one anchor: a doc, commit or log line. A hunch is not evidence; send it back through `validate-run-results`.
 2. **Solution menu, ranked.** Only when more than one approach is viable. For each option state what must be true for it to work and the concrete check that verifies it. Mark an unverifiable premise `open`.
 3. **Fenced-off wrong paths.** Each known dead end, with its reason, one bullet. Cite an incident or investigation instead of retelling it.
-4. **Steps.** Each step has: the exact command, the exact expected number, string or exit code, and the branch to take when reality differs. Pin functions and line ranges; state the behaviour each step must produce.
+4. **Steps.** Each step has: the behaviour it must produce, in words; the exact command; the exact expected number, string or exit code; and the branch to take when reality differs. Name the one file or function it changes.
 5. **Test strategy.** Baseline count and commit before execution, target after. Pass or fail is a diff.
 6. **Risks and rollback.** One line per step that needs it.
+
+## Writing
+
+The plan is read by the user, so it is written in the session's output style: short, dense sentences, one idea each, no filler.
+
+- Describe behaviour in words. A reader should follow the plan without opening a file.
+- Use a few anchors, not many: about one file, function or commit per step or claim. A line where half the words are links is harder to read than the code it points at.
+- Never paste code into a plan. Point at it once.
+- Never cite another plan; cite the finding, doc or commit it rested on.
 
 ## Review
 
@@ -66,6 +75,7 @@ Show the full plan to the user and wait for approval before execution. An inline
 ## Hard rules
 
 - Never write a step gate without an exact expected result.
+- Never anchor more than about one reference per step or claim.
 - Never exceed 60 lines or plan beyond this session's work.
 - Never list a fenced-off path that is a hypothesis; each traces to an incident or finding.
 - Never execute, score or commit the plan; that is `do-work`.
