@@ -2,13 +2,10 @@
 name: handle-comments
 tier: leaf
 description: >
-  Process `[COMMENT]` markers the user embeds in docs: find each, classify it
-  as a directive, a perspective or a question, act, remove the marker, and
-  route unresolved follow-ups to the tracker. Load when the user says
-  "handle the comments", "process my comments" or points at annotated docs.
-  Do NOT load for review threads on a planning doc (see review-comment-coach),
-  for frontmatter audits (see docs-management), or for task upkeep (see
-  tracker).
+  Process `[COMMENT]` markers in docs: classify each, act, remove it, route
+  follow-ups to the tracker. Load for "handle the comments", "process my
+  comments" or annotated docs. Do NOT load for planning-doc review threads
+  (review-comment-coach) or frontmatter audits (docs-management).
 trigger: /handle-comments
 ---
 

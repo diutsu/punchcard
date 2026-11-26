@@ -2,13 +2,10 @@
 name: watchlist
 tier: workflow
 description: >
-  The list of third-party plugins under trial, and the actions on it. With a
-  plugin name or repo: add it to the list, or if it is already listed, install
-  or uninstall it. With no argument: show the list and ask what to do. For any
-  action, either run the exact command or, when the user prefers, print it for
-  them to run. Load when the user says "watchlist", names a third-party plugin,
-  or when `capability-check` finds no installed skill for a craft. Do NOT load
-  to copy or vendor a plugin, or to write one of our own skills.
+  The list of third-party plugins under trial: add, install, uninstall, show;
+  runs or prints the exact command. Load when the user says "watchlist", names a
+  third-party plugin, or `capability-check` finds no installed skill for a
+  craft. Do NOT load to vendor a plugin or write our own skill.
 trigger: /watchlist
 ---
 

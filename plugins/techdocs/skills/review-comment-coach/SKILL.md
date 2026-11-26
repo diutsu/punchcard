@@ -2,12 +2,10 @@
 name: review-comment-coach
 tier: leaf
 description: >
-  Help reviewers of planning docs write comments at the right horizon, and help
-  authors answer comments that belong elsewhere. Load when drafting or
-  triaging review comments on a vision, target architecture, discovery or
-  technical design. Do NOT load to review the doc itself (see horizon-review),
-  to process in-doc `[COMMENT]` markers (see handle-comments), or to polish
-  prose (see editorial-review).
+  Help reviewers write planning-doc comments at the right horizon, and authors
+  answer misplaced ones. Load when drafting or triaging review comments on a
+  vision, target architecture, discovery or technical design. Do NOT load to
+  review the doc (horizon-review) or `[COMMENT]` markers (handle-comments).
 trigger: /review-comment-coach
 ---
 

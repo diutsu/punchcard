@@ -2,19 +2,10 @@
 name: validation-and-qa
 tier: reference
 description: >
-  What counts as evidence and as done for any coding task. Load BEFORE marking
-  a task, step or sub-agent handoff done, before writing or reviewing tests,
-  when a completion claim arrives ("tests pass", "should work"), before
-  closing a task (the done-when check), and when deciding whether a stub or
-  placeholder may ship. Covers the verify gate, the done-when check,
-  no-stubs-as-done, test-writing discipline, honest failure reporting and the
-  triage of unexpected failures, and the evidence bar for any claim that a
-  change made something better: prediction before the run, a validated
-  instrument, the acceptance bar, regime honesty and null results. Also load
-  BEFORE running an experiment, tuning a parameter, comparing two approaches,
-  or answering "is this faster/better/more accurate". Do NOT load for the work
-  loop (see do-work), code style (see backend-code), or judging external
-  libraries (see external-research).
+  What counts as evidence and done: verify gate, done-when, no stubs, tests,
+  failure triage, the bar for "it got better". Load BEFORE marking work done,
+  writing tests, trusting "tests pass", running an experiment or answering "is
+  this faster/better". Do NOT load for the loop (do-work).
 trigger: /validation-and-qa
 ---
 

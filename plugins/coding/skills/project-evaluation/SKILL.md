@@ -2,16 +2,10 @@
 name: project-evaluation
 tier: workflow
 description: >
-  Deep code research on a whole project or module, aimed at maintainability
-  and at making future refactors easier. Produces an evidence-backed
-  evaluation report: module boundaries, coupling, churn hotspots, duplication,
-  test seams, error handling, dead code, doc drift and SDK leakage, with
-  ranked findings and a safe refactor sequence. Load for "evaluate this
-  codebase", "how maintainable is this", "where should we refactor first".
-  Do NOT load to answer a single "how does X work" (see codebase-search), to
-  explain a failure (see forensics), to review one diff (see review-rubric),
-  to clean up and simplify with edits (see codebase-cleanup), or to carry out
-  the refactors (see do-work).
+  Evidence-backed maintainability report on a project or module, with ranked
+  findings and a safe refactor sequence. Load for "evaluate this codebase", "how
+  maintainable is this", "where should we refactor first". Do NOT load for edits
+  (codebase-cleanup, do-work) or one question (codebase-search).
 trigger: /project-evaluation
 ---
 

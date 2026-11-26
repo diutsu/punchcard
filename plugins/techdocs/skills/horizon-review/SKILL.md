@@ -3,11 +3,9 @@ name: horizon-review
 tier: workflow
 description: >
   Check a planning doc against the Planning Horizons model, statement by
-  statement, and against the docs above and below it. Load when reviewing a
-  vision, target architecture, discovery or technical design, or when asked
-  whether a statement is at the right horizon or a constraint is any good. Do
-  NOT load for prose polish (see editorial-review), for review-comment triage
-  (see review-comment-coach), or for starting a doc (see doc-templates).
+  statement. Load when reviewing a vision, target architecture, discovery or
+  technical design, or judging a statement's horizon or a constraint. Do NOT
+  load for prose (editorial-review) or comment triage (review-comment-coach).
 trigger: /horizon-review
 ---
 

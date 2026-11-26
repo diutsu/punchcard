@@ -2,12 +2,11 @@
 name: grilling
 tier: workflow
 description: >
-  Interview the user until a plan, decision or idea is fully specified, by
-  walking a design tree in rounds of 2-4 questions through the question
-  interface. Load when the user asks to be grilled or stress-tested, or when
-  `capability-check` finds the request too underspecified to start. Do NOT load
-  for a single clarifying question, for facts you can look up yourself, or when
-  `away-mode` is active.
+  Interview the user until a plan, decision or idea is fully specified, in
+  rounds of 2-4 questions. Load when the user asks to be grilled or
+  stress-tested, or `capability-check` finds the request too underspecified. Do
+  NOT load for one clarifying question, facts you can look up, or in
+  `away-mode`.
 trigger: /grilling
 ---
 

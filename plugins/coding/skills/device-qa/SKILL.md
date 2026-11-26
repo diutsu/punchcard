@@ -2,14 +2,10 @@
 name: device-qa
 tier: leaf
 description: >
-  The Android device loop: build and reinstall with adb over wireless
-  debugging, verify what the emulator can show first, hand the human a short
-  checklist of what only a physical device shows, collect results through the
-  question interface, then close or reopen tasks. Load when a task needs a
-  build installed on a phone or tablet, or when the user reports a defect from
-  a device. Do NOT load for browser-based review (see interactive-app-review),
-  view rules (see frontend-ui), or tests that run without a device (see
-  validation-and-qa).
+  The Android device loop: adb install over wireless debugging, emulator first,
+  then a checklist for the physical device. Load when a build must go on a phone
+  or tablet, or a defect is reported from one. Do NOT load for browser review
+  (interactive-app-review) or device-free tests (validation-and-qa).
 trigger: /device-qa
 ---
 

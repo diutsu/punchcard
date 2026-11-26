@@ -2,14 +2,10 @@
 name: do-work
 tier: workflow
 description: >
-  The work loop for doing a task, several tasks, or untracked work end to end:
-  start, baseline, scope, plan, plan check, execute, verify, one review of the whole
-  diff, docs, close. Loads the leaf skills that match the files each step
-  touches (backend-code, frontend-ui, changelog, ops-scripts, device-qa) and
-  keeps the agent count low. Trigger when the user asks to do, execute or
-  implement work with quality gates. Do NOT load for a pure question, for
-  debugging with no fix yet (see forensics), or for doc-only edits (see
-  docs-management).
+  The work loop for tasks or untracked work: baseline, scope, plan, execute,
+  verify, one review, docs, close; loads matching leaf skills. Load when the
+  user asks to do, execute or implement work. Do NOT load for a pure question,
+  debugging with no fix (forensics) or doc-only edits (docs-management).
 trigger: /do-work
 ---
 

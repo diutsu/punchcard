@@ -2,12 +2,10 @@
 name: agent-brief
 tier: reference
 description: >
-  How to decide whether a separate agent is worth the tokens, which model tier
-  to give it, and how to write the brief, with templates for a read-only
-  investigation, an executor step, a reviewer and an external-builder handoff.
-  Load before spawning any sub-agent or writing a handoff for another coding
-  tool. Do NOT load for the reviewer's scoring rubric or the work loop (see
-  `review-rubric`, `do-work`).
+  Whether a sub-agent is worth the tokens, which model tier, and how to brief
+  it, with templates per agent role. Load before spawning any sub-agent or
+  writing a handoff for another coding tool. Do NOT load for the scoring rubric
+  (`review-rubric`) or the work loop (`do-work`).
 trigger: /agent-brief
 ---
 

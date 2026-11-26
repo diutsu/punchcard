@@ -2,13 +2,10 @@
 name: review-rubric
 tier: reference
 description: >
-  The scoring rubric for plans and implementations: dimensions, 0-10 scale,
-  minimum-wins mechanics, blocking cap, pass bar, issue tags, delta re-review,
-  quick-fix limits, second-look rule and the exact verdict format. Load before
-  scoring or reviewing any plan or diff, whether as the author self-scoring or
-  as the `reviewer` agent, and when deciding how much review a change needs.
-  Do NOT load to run the work loop (see do-work) or to decide what counts as
-  evidence of done (see validation-and-qa).
+  The scoring rubric for plans and diffs: dimensions, 0-10 scale, pass bar,
+  issue tags, re-review, quick fixes, verdict format. Load before scoring or
+  reviewing any plan or diff, as author or `reviewer`, or sizing review. Do NOT
+  load to run the work loop (do-work) or define done (validation-and-qa).
 trigger: /review-rubric
 ---
 

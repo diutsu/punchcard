@@ -2,15 +2,10 @@
 name: data-integrity
 tier: reference
 description: >
-  Raw-versus-derived data discipline: classify every store as RAW, DERIVED or
-  CACHE, never destroy or patch raw data, wipe and recompute derived data when
-  logic changes, back up before destructive operations, never show invented
-  data, and audit computed numbers against independent ground truth. Load for
-  ingestion, importers, migrations, recalculations, schema changes, a new data
-  source, or a computed number that disagrees with its source. Do NOT load for
-  UI loading and error states (see frontend-ui), for test-gate execution (see
-  validation-and-qa), or for choosing an external data provider (see
-  external-research).
+  Raw vs derived data: never patch raw, recompute derived, back up before
+  destructive changes, audit numbers against ground truth. Load for importers,
+  migrations, recalculations, schema changes, new data sources, or a number that
+  disagrees with its source. Do NOT load for UI states (frontend-ui).
 trigger: /data-integrity
 ---
 

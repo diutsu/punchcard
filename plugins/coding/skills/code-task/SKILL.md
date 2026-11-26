@@ -2,13 +2,10 @@
 name: code-task
 tier: leaf
 description: >
-  Executor contract for one scoped step: implement one focused code change
-  from a brief, follow the code rules, run only the targeted test command,
-  commit the step, and return a fixed report block. Load when you are the
-  agent carrying out a step briefed by do-work, or doing one well-defined
-  change on your own. Do NOT load for scoping, planning or review (see
-  do-work), for the code rules themselves (see backend-code), or for task
-  bookkeeping (the orchestrator owns it).
+  Executor contract for one scoped step: implement the change from a brief, run
+  only its targeted tests, commit, return a fixed report. Load when carrying out
+  a step briefed by do-work. Do NOT load for scoping, planning or review
+  (do-work), code rules (backend-code) or task bookkeeping.
 trigger: /code-task
 ---
 

@@ -2,13 +2,10 @@
 name: external-research
 tier: leaf
 description: >
-  Build a sourced research doc from material outside the repo: a library, API,
-  provider, model, standard or any open question. Every finding links its
-  primary source and carries a checked quote or a marked paraphrase. Load on
-  "should we use X", "compare X and Y", "is there a library for", or before any
-  query leaves the machine (privacy wall). Do NOT load for questions the repo's
-  own code answers (see codebase-search), for turning a verdict into work (see
-  plan), or for editing finished prose (see editorial-review).
+  A sourced research doc on a library, API, provider, model or standard outside
+  the repo. Load on "should we use X", "compare X and Y", "is there a library
+  for", or before any query leaves the machine. Do NOT load for questions the
+  repo answers (codebase-search) or plans (plan).
 trigger: /external-research
 ---
 

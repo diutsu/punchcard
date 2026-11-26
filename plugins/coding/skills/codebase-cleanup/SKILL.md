@@ -2,16 +2,10 @@
 name: codebase-cleanup
 tier: workflow
 description: >
-  Audit a project or module for what can be removed, simplified or brought up
-  to date, judged against where the project is going: unnecessary complexity,
-  duplicated logic, assumptions that no longer hold, deprecated features, and
-  incomplete bits. Applies the small behaviour-preserving fixes through the
-  work loop and files the larger ones as tasks. Load for "clean up this
-  codebase", "simplify this", "what can we delete", "is this over-engineered",
-  "find outdated or half-finished code". Do NOT load for a maintainability
-  report with no edits (see project-evaluation), to tidy one diff (see
-  review-rubric), to explain a failure (see forensics), or to run one already
-  filed refactor (see do-work).
+  Find what to remove, simplify or update, fix the small parts, file the rest.
+  Load for "clean up this codebase", "simplify this", "what can we delete", "is
+  this over-engineered", outdated or half-finished code. Do NOT load for a
+  report with no edits (project-evaluation) or one diff (review-rubric).
 trigger: /codebase-cleanup
 ---
 

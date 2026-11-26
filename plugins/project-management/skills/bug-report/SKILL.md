@@ -2,13 +2,10 @@
 name: bug-report
 tier: workflow
 description: >
-  File a new issue as a task: fix what goes on it, settle the expected
-  behaviour, and name the docs that must change or be created. Load when the
-  user reports a defect, wrong behaviour or surprise outside the task in hand,
-  or when work turns up a defect. Do NOT load to find the root cause or write
-  a root-cause document (see forensics), to fix it (see do-work), to change
-  what the product should do (see product-direction), or for a leftover of the
-  task being worked (see do-work).
+  File a new defect as a task: what goes on it, the expected behaviour, the docs
+  that must change. Load when the user reports a defect or surprise outside the
+  task in hand, or work turns one up. Do NOT load for the root cause
+  (forensics), the fix (do-work) or product changes (product-direction).
 trigger: /bug-report
 ---
 

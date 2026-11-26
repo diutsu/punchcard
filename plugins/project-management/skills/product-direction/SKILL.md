@@ -2,13 +2,10 @@
 name: product-direction
 tier: workflow
 description: >
-  A session on what the product should do: bring the requirements, PRDs and
-  vision in line with what the user now wants, settle the conflicts and
-  blockers that surface, and decide when each change is built. Load when the
-  user wants to talk about requirements, product direction, roadmap or vision,
-  with input or with none. Do NOT load to specify one request before work
-  starts (see grilling), to review one finished planning doc (see
-  horizon-review), to rank existing tasks (see prioritise), or to write code.
+  A session on what the product should do: align requirements, PRDs and vision
+  with what the user wants. Load to talk requirements, product direction,
+  roadmap or vision. Do NOT load to specify one request (grilling), review a
+  planning doc (horizon-review) or rank tasks (prioritise).
 trigger: /product-direction
 ---
 

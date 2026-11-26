@@ -2,14 +2,10 @@
 name: prioritise
 tier: leaf
 description: >
-  Decide what to pick up next from the tasks that can start: validate the
-  candidates through backlog-review, then rank by what they unblock, value,
-  effort and risk, and pull out quick wins. Load when the user asks "what
-  should I pick up", "what should I work on", "re-prioritise", or when
-  whats-next finds nothing in flight. Do NOT load for what needs the user or
-  is already in flight (see whats-next), to decide which tasks can close (see
-  backlog-review), to run a task (see do-work), or for raw task queries (see
-  tracker).
+  Decide what to pick up next: validate candidates, rank by unblocking, value,
+  effort and risk, pull out quick wins. Load for "what should I pick up", "what
+  should I work on", "re-prioritise", or when whats-next finds nothing in
+  flight. Do NOT load for work in flight (whats-next).
 trigger: /prioritise
 ---
 

@@ -2,13 +2,10 @@
 name: ops-scripts
 tier: leaf
 description: >
-  Where one-off and maintenance scripts live and how they are labelled: written
-  to the `scripts` map key folder, committed, and opened with a header giving
-  purpose, steps, when to run, when not to run, created date and expiry date.
-  Includes the sweep for expired scripts. Load before writing any script that
-  is not part of the product code, and when cleaning up old scripts. Do NOT
-  load for product source (see backend-code), data audits (see
-  data-integrity), or repo and git conventions (see repo-infra).
+  Where one-off and maintenance scripts live (the `scripts` map key), the header
+  each carries (purpose, when to run, expiry), and the expired-script sweep.
+  Load before writing any non-product script. Do NOT load for product source
+  (backend-code), data audits (data-integrity) or git (repo-infra).
 trigger: /ops-scripts
 ---
 

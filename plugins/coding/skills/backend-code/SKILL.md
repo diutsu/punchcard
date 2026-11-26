@@ -2,13 +2,10 @@
 name: backend-code
 tier: reference
 description: >
-  Code-quality rules for backend and library source: module and third-party SDK
-  isolation, reuse before inventing, fail-fast errors, size caps, and code
-  comments that explain why. Load BEFORE writing or reviewing code, in
-  do-work, code-task or a direct edit. Do NOT load for prose docs (see
-  writing-style), view and UI state rules (see frontend-ui), the definition of
-  done (see validation-and-qa), or raw vs. derived data rules (see
-  data-integrity).
+  Code rules for backend and library source: SDK isolation, reuse, fail-fast
+  errors, size caps, why-comments. Load BEFORE writing or reviewing code. Do NOT
+  load for prose (writing-style), UI states (frontend-ui), definition of done
+  (validation-and-qa) or raw vs derived data (data-integrity).
 trigger: /backend-code
 ---
 

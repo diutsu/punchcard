@@ -2,12 +2,10 @@
 name: repo-infra
 tier: leaf
 description: >
-  Git and repository conventions: worktree location, explicit staging, scoped
-  commits, commit timing, pushing, branching off a default branch, and keeping
-  personal details out of config and metadata. Load before creating a worktree,
-  staging, committing, pushing or setting package metadata. Do NOT load for
-  where scripts live (see ops-scripts), the work loop (see do-work), or
-  changelog entries (see changelog).
+  Git and repo conventions: worktrees, explicit staging, scoped commits,
+  pushing, branching, no personal details in metadata. Load before creating a
+  worktree, staging, committing, pushing or setting package metadata. Do NOT
+  load for scripts (ops-scripts), the loop (do-work) or the changelog.
 trigger: /repo-infra
 ---
 

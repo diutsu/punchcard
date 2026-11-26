@@ -2,13 +2,10 @@
 name: backlog-review
 tier: leaf
 description: >
-  Find open tasks that should not be open (done, stale or duplicate) and close
-  them with evidence: a titles-first pass flags suspects, only suspects are
-  opened, and each verdict cites code, a commit or a task. Load when the user
-  asks to review, groom, prune or clean up the backlog, "what can we close",
-  after a large change landed, or when prioritise validates its candidates.
-  Do NOT load to rank work (see prioritise), to close the task you just
-  finished (see do-work), or to add tasks (see tracker).
+  Find open tasks that are done, stale or duplicate and close them with cited
+  evidence. Load to review, groom, prune or clean up the backlog, for "what can
+  we close", or after a large change. Do NOT load to rank work (prioritise),
+  close the task just finished (do-work) or add tasks (tracker).
 trigger: /backlog-review
 ---
 

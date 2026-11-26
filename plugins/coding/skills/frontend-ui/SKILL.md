@@ -2,13 +2,10 @@
 name: frontend-ui
 tier: reference
 description: >
-  Rules for any user-facing surface: a web view, dashboard panel or
-  interactive CLI output. Covers the five honest data states, no swallowed
-  fetch errors, no fabricated values, restrained visual treatment, reuse over
-  new components, and how to produce mockups. Load BEFORE touching view markup,
-  adding a panel or tab, or wiring a fetch into a screen. Do NOT load for pure
-  backend work (see backend-code) or for reviewing a running app (see
-  interactive-app-review).
+  Rules for any user-facing surface: honest data states, no swallowed errors or
+  fabricated values, reuse, mockups. Load BEFORE touching view markup, adding a
+  panel, wiring a fetch into a screen, or a mockup. Do NOT load for backend work
+  (backend-code) or a running-app review (interactive-app-review).
 trigger: /frontend-ui
 ---
 

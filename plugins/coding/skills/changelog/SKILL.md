@@ -2,12 +2,10 @@
 name: changelog
 tier: leaf
 description: >
-  Maintain the project changelog as part of the work loop: one line per
-  user-visible change or project milestone, written when it lands, in Keep a Changelog
-  shape under an Unreleased heading. Load when a step adds, changes, fixes or
-  removes something a user or integrator can see, and before closing such a
-  task. Do NOT load for the prose style of other docs (see writing-style),
-  doc layout (see docs-management), or release tagging and version bumps.
+  Keep the changelog: one Keep a Changelog line per user-visible change or
+  milestone, under Unreleased. Load when a step adds, changes, fixes or removes
+  something users see, and before closing such a task. Do NOT load for other
+  docs (writing-style, docs-management) or release tagging.
 trigger: /changelog
 ---
 

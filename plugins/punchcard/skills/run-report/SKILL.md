@@ -2,11 +2,10 @@
 name: run-report
 tier: leaf
 description: >
-  Report the outcome of a long-running or one-shot operation so it is easy to
-  digest: outcome first, then step sections, decisions taken, what was verified
-  and how, what is left or needs the user, and where things are. Load at the
-  end of a long run, a batch of work, or an `away-mode` session. Do NOT load for
-  a short answer, a code review verdict, or changelog entries.
+  Report a long-running or one-shot operation's outcome: outcome first, then
+  steps, decisions, what was verified, what is left, where things are. Load at
+  the end of a long run, a batch of work or an `away-mode` session. Do NOT load
+  for a short answer, a review verdict or changelog entries.
 trigger: /run-report
 ---
 

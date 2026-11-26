@@ -2,12 +2,10 @@
 name: doc-templates
 tier: leaf
 description: >
-  Starting skeletons for the doc types written often: vision, target
-  architecture, discovery, technical design, PRD, research doc, proof-of-concept brief, ADR. Load when
-  asked to write, start, restructure or convert one of these docs, or to decide
-  which horizon a planning doc belongs to. Do NOT load for folder placement and
-  frontmatter rules (see docs-management), for prose rules (see writing-style),
-  or for execution plans (see plan).
+  Skeletons for vision, target architecture, discovery, technical design, PRD,
+  research doc, proof-of-concept brief and ADR. Load to write, start,
+  restructure or convert one, or place a doc's horizon. Do NOT load for
+  placement (docs-management), prose (writing-style) or execution plans (plan).
 trigger: /doc-templates
 ---
 

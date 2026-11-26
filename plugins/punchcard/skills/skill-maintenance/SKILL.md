@@ -2,12 +2,10 @@
 name: skill-maintenance
 tier: leaf
 description: >
-  How the punchcard skill library is organised and kept free of drift: where a
-  rule belongs, the skill anatomy contract, split, merge and retire heuristics,
-  and promotion from `wip`. Load when authoring or editing a SKILL.md, auditing
-  skills for overlap or stale paths, deciding whether a rule belongs in the
-  session card, a skill or a project instructions file (`AGENTS.md`), or promoting a draft. Do NOT
-  load to run a task governed by another skill.
+  How the skill library stays drift-free: where a rule belongs, the skill
+  contract, split, merge and retire rules, promotion from `wip`. Load when
+  authoring or editing a SKILL.md, auditing skills, placing a rule, or promoting
+  a draft. Do NOT load to run another skill's task.
 trigger: /skill-maintenance
 ---
 
@@ -48,7 +46,7 @@ A rule that applies to every session and fits in two lines goes on the session c
 
 Every `SKILL.md` has:
 
-1. Frontmatter: `name` (equal to the folder), `tier: leaf | workflow | reference`, a `description` stating when to load and when not to, and `trigger: /<name>`.
+1. Frontmatter: `name` (equal to the folder), `tier: leaf | workflow | reference`, a `description` of 300 characters or fewer that gives the triggers and the Do NOT load pointers, never a method summary, and `trigger: /<name>`.
 2. `## When NOT to use this skill`, a table naming the sibling that owns adjacent work.
 3. An imperative body. Prefer tables and numbered steps. Wrap every `<placeholder>` in prose in backticks.
 4. `## Hard rules`, flat imperatives.
@@ -90,7 +88,7 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## Provenance and maintenance
 
-Updated: 2026-11-22.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

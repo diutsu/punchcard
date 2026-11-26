@@ -2,14 +2,10 @@
 name: codebase-search
 tier: leaf
 description: >
-  Read this repo's own code, docs, task history and git history to answer "how
-  does X work here", with file:line citations and fact-versus-inference marked
-  on every claim. Load for onboarding to a module, recovering architecture,
-  reconnaissance before planning or changing code, and "audit docs vs code".
-  Do NOT load to explain a specific failure (see forensics), to prove a change
-  made something better (see validation-and-qa), to judge a library outside
-  the repo (see external-research), or to assess a whole project for
-  maintainability (see project-evaluation, which uses this skill for reading).
+  Answer "how does X work here" from this repo's code, docs and git history,
+  with file:line citations. Load for onboarding, architecture recovery, recon
+  before planning, "audit docs vs code". Do NOT load for a failure (forensics),
+  outside libraries (external-research) or a full evaluation.
 trigger: /codebase-search
 ---
 

@@ -2,7 +2,7 @@
 type: reference
 state: done
 created: 2026-10-11
-updated: 2026-11-22
+updated: 2026-11-27
 cross-file-references: [plugins/punchcard/skills/skill-maintenance/SKILL.md, .claude-plugin/marketplace.json, .agents/plugins/marketplace.json, plugins/punchcard/skills/project-map/SKILL.md]
 ---
 
@@ -16,7 +16,7 @@ The structure every `plugins/<plugin>/skills/<name>/SKILL.md` must follow. The f
 |---|---|
 | `name` | Equal to the folder name |
 | `tier` | `leaf`, `workflow` or `reference` |
-| `description` | States when to load and when not to |
+| `description` | 300 characters or fewer: the triggers and the Do NOT load pointers, never a method summary |
 | `trigger` | `/<name>` |
 
 ## Sections

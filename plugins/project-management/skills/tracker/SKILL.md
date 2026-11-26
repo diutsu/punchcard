@@ -2,12 +2,10 @@
 name: tracker
 tier: leaf
 description: >
-  Read and file tasks in the project's configured tracker, which also holds
-  session handoffs, steps only the human can do and closed work, and
-  set up the project's task workflow once. Load before ANY task operation,
-  from any skill, or when work carries into another session. Do NOT load to decide what to do next (see whats-next and
-  prioritise), which tasks can close (see backlog-review) or to write a plan
-  (see plan).
+  Read and file tasks in the project's tracker, which also holds handoffs,
+  human-only steps and closed work. Load before ANY task operation, from any
+  skill, or when work carries into another session. Do NOT load to choose work
+  (whats-next, prioritise) or judge closes (backlog-review).
 trigger: /tracker
 ---
 

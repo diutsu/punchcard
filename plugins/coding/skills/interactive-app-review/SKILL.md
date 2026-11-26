@@ -2,15 +2,10 @@
 name: interactive-app-review
 tier: workflow
 description: >
-  Live, two-phase UX review of a running web or similar interactive app: an
-  automated Playwright exploration of a realistic user journey, then a
-  fresh-eyes design critique of what it found. Load when the user asks to
-  review the app, audit the UX, run the whole flow and say what is wrong, or
-  after a rough reaction to a live demo. Especially useful for wizards,
-  progressive-reveal flows and first-time vs. returning-visitor behaviour.
-  Produces a report and categorised findings; it fixes nothing. Do NOT load to
-  review UI code without running the app, to review a diff (see review-rubric),
-  or to implement the findings (see do-work).
+  Live UX review of a running app: a Playwright run through a real user journey,
+  then a fresh-eyes critique; fixes nothing. Load for "review the app", "audit
+  the UX", "run the whole flow", or after a rough demo. Do NOT load for UI code
+  without running it, a diff (review-rubric) or the fixes (do-work).
 trigger: /interactive-app-review
 ---
 

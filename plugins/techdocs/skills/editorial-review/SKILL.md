@@ -2,12 +2,10 @@
 name: editorial-review
 tier: workflow
 description: >
-  The final pass for any doc, report or essay: lint, critique, then edit with
-  editor notes and a reference check. Load when the author shares a draft or
-  rant and asks for a review, critique, fact check or edit, and before
-  delivering any doc. Do NOT load to draft from scratch (see writing-style and
-  doc-templates), to judge a planning doc's horizon (see horizon-review), or to
-  place and tag a doc (see docs-management).
+  The final pass for any doc, report or essay: lint, critique, edit with notes,
+  check references. Load when a draft is shared for review, critique, fact check
+  or edit, and before delivering any doc. Do NOT load to draft (writing-style,
+  doc-templates) or judge horizons (horizon-review).
 trigger: /editorial-review
 ---
 

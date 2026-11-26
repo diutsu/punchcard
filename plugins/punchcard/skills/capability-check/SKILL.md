@@ -2,14 +2,10 @@
 name: capability-check
 tier: workflow
 description: >
-  Task intake. Load at the first message of a session and whenever the user
-  starts a new task, before acting. Decides whether the input is enough, what
-  the output is (code, proof of concept, mockup, one-off script, artifact,
-  doc), whether an installed skill covers the craft, and whether this session,
-  model and effort fit. Then picks what happens first: straight to work, a
-  round of questions, design and plan, a plugin trial, or a clean session with
-  a starting prompt. Hands a missing craft to `watchlist`.
-  Do NOT load for a follow-up inside a task already under way.
+  Task intake: is the input enough, what is the output, does a skill cover it,
+  does the session fit; then pick the first move. Load at a session's first
+  message and whenever the user starts a new task, before acting. Hands gaps to
+  `watchlist`. Do NOT load for a follow-up inside a task under way.
 trigger: /capability-check
 ---
 

@@ -2,14 +2,10 @@
 name: operate-and-diagnose
 tier: leaf
 description: >
-  Run and measure a live system without eyeballing. Load when the user says
-  "run it", "why is it doing X", "check if it ran", "is it faster or bigger
-  now", "did the deploy take effect", or asks about a scheduler, daemon, queue
-  or server that is already running. Every answer comes from a direct query or
-  measurement script, never a guess or a UI glance. Do NOT load for executing
-  a planned change (see do-work), for the root cause of a code bug (see
-  forensics), for commands only the human can run (see tracker), or for
-  raw-versus-derived reconciliation (see data-integrity).
+  Run and measure a live system by query, never by eye. Load for "run it", "why
+  is it doing X", "check if it ran", "is it faster now", "did the deploy take
+  effect", or a running daemon, queue or server. Do NOT load for planned changes
+  (do-work), code bugs (forensics) or human-only steps (tracker).
 trigger: /operate-and-diagnose
 ---
 

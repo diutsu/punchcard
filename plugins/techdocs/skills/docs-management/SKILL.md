@@ -2,13 +2,10 @@
 name: docs-management
 tier: leaf
 description: >
-  Where a technical doc lives and what it must carry: the Diataxis layout
-  (tutorials, how-to, reference, explanation), the investigations, prd and design
-  folders, the YAML frontmatter contract, timeless in-place
-  edits, and the validation commands. Load when creating, editing, moving or
-  auditing any doc under the docs map key. Do NOT load for prose rules (see
-  writing-style), doc skeletons (see doc-templates), tasks or logs (see
-  project-management), execution plans (see plan), or for resolving the map keys (see project-map).
+  Where a doc lives and what it carries: Diataxis layout, investigations, prd
+  and design folders, frontmatter, timeless edits. Load when creating, editing,
+  moving or auditing any doc under the docs map key. Do NOT load for prose
+  (writing-style), skeletons (doc-templates) or tasks (tracker).
 trigger: /docs-management
 ---
 

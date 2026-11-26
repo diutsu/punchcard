@@ -2,16 +2,10 @@
 name: forensics
 tier: leaf
 description: >
-  Find why a failure, bug, wrong number or surprising behaviour happens, and
-  establish the root cause before any fix. Load BEFORE writing a fix or
-  forming a theory: "why is this wrong", "this used to work", "flaky test",
-  "debug this", "investigate why", and when the user asks for a written bug report document.
-  Covers reproduction, the was-this-closed-before check, hypotheses with one
-  discriminating experiment each, the root-cause acceptance bar, and bug
-  reports. Do NOT load for reading how code works with no failure in hand (see
-  codebase-search), for proving a change improved something (see
-  validation-and-qa), for external libraries (see external-research), or to
-  apply the fix (see do-work).
+  Find the root cause of a failure, bug, wrong number or surprise before any
+  fix. Load BEFORE a fix or theory: "why is this wrong", "this used to work",
+  "flaky test", "debug this", or a written bug report. Do NOT load with no
+  failure (codebase-search) or to fix it (do-work).
 trigger: /forensics
 ---
 

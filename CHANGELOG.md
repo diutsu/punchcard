@@ -13,6 +13,7 @@ One line per user-visible change or project milestone, newest first.
 
 ### Changed
 
+- Skill descriptions are capped at 300 characters and keep only triggers and Do NOT load pointers, which cuts the always-loaded description text from about 22k to 12k characters.
 - The `backlog` skill is now `tracker`; "backlog" names only the state.
 - `prioritise` ranks only to-do tasks, validates them through `backlog-review`, lists quick wins and no longer groups by module.
 - Closing a task leaves one short closing comment: `done, closing` (optional), `stale task, closing`, `duplicated task, closing` or `merged with <ID>, closing`.

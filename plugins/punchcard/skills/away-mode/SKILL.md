@@ -2,12 +2,10 @@
 name: away-mode
 tier: workflow
 description: >
-  Run without the user present. Load when the user says they will not be around
-  ("continue, don't wait for me", "I won't be around"). Never stop to ask: take
-  a reasonable default, record each decision in a decisions log, queue
-  irreversible or outward-facing actions via `tracker`, keep working
-  on everything else, and finish with a `run-report`. Do NOT load when the user
-  is present, or to skip a confirmation they have not waived.
+  Run without the user: take defaults, log decisions, queue irreversible or
+  outward-facing actions via `tracker`, end with a `run-report`. Load when the
+  user says they won't be around ("continue, don't wait for me"). Do NOT load
+  when the user is present, or to skip a confirmation they have not waived.
 trigger: /away-mode
 ---
 

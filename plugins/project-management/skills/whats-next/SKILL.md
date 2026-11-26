@@ -2,13 +2,10 @@
 name: whats-next
 tier: leaf
 description: >
-  Summarise the work in flight: the in-progress and in-review tasks assigned
-  to the user or to no one, what each one needs, and which ones are stuck;
-  with nothing left, pick from to do. Load when the user asks "what's next", "what needs
-  me", "what's waiting on me", "where are we", or at the start of a session
-  with no assigned task. Do NOT load to choose new work to pick up (see
-  prioritise), to close tasks (see backlog-review), or for raw task queries
-  (see tracker).
+  Summarise work in flight: in-progress and in-review tasks, what each needs,
+  which are stuck; else pick from to do. Load for "what's next", "what needs
+  me", "where are we", or a session start with no task. Do NOT load to choose
+  new work (prioritise) or close tasks (backlog-review).
 trigger: /whats-next
 ---
 

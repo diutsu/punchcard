@@ -2,14 +2,10 @@
 name: plan
 tier: leaf
 description: >
-  Write a short execution plan for one session: how the engineer starts on a
-  refined task and applies the code, with options when there is a real
-  choice, fenced-off wrong paths, and numbered steps with exact expected
-  results, at most 60 lines. Load in do-work once the task is in progress, or
-  before any multi-file change without a task. Do NOT load to settle the goal
-  or done-when (that is refinement, see tracker), for a one-file obvious edit
-  (use a 3-5 line inline plan), to execute a plan (see do-work), or for a
-  roadmap or a planning doc (see product-direction, doc-templates).
+  Write a short one-session execution plan: real options, wrong paths fenced
+  off, numbered steps with expected results. Load in do-work once a task is in
+  progress, or before a multi-file change. Do NOT load for refinement (tracker),
+  a one-file edit, execution (do-work) or a roadmap (doc-templates).
 trigger: /plan
 ---
 

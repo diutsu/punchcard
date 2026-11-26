@@ -2,14 +2,10 @@
 name: project-map
 tier: reference
 description: >
-  The single place a project declares where things live and which tools own
-  them: task tool, docs roots, scripts folder, changelog, verification
-  commands, worktree location. Consult BEFORE writing any file whose location
-  another skill describes as "per the project map", before any task
-  operation, when a repo has no map yet, and when a question may be answered
-  by an existing doc (find the doc, read the smallest section). Do NOT load to
-  learn how to write the doc or run the task tool itself (see the skill that
-  owns that work), or to mine code and git history (see codebase-search).
+  Where a project declares its locations and tools: task tool, docs, scripts,
+  changelog, verify commands, worktrees. Consult BEFORE writing a file "per the
+  project map", any task operation, or answering from an existing doc. Do NOT
+  load to mine code or git history (codebase-search).
 trigger: /project-map
 ---
 

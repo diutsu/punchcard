@@ -2,10 +2,9 @@
 name: skill-reviewer
 tier: workflow
 description: >
-  On-demand only. Read previous session transcripts for the current project,
-  find repeated corrections, repeated multi-step manual workflows and repeated
-  mechanical command sequences, and draft new skills for them in the `wip`
-  plugin. Load only when the user asks to mine sessions for skills. Do NOT load
+  On-demand only. Mine this project's past session transcripts for repeated
+  corrections and manual workflows, and draft skills for them in `wip`. Load
+  only when the user asks to mine sessions for skills. Do NOT load
   automatically, to edit installed skills, or to promote a draft without
   approval.
 trigger: /skill-reviewer

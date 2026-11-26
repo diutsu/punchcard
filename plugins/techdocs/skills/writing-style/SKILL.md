@@ -2,13 +2,10 @@
 name: writing-style
 tier: reference
 description: >
-  The one prose style for every doc, report and review written with this
-  marketplace: explain rather than rule, plain words, active voice, concrete
-  examples, checked sources, and no LLM tells. Load before drafting or
-  rewriting any text longer than a few paragraphs, and as the yardstick for
-  editorial-review. Do NOT load for doc placement, frontmatter or folder choice
-  (see docs-management), for code comments (see backend-code), or for the doc
-  skeletons themselves (see doc-templates).
+  The one prose style for every doc, report and review: plain words, active
+  voice, concrete examples, checked sources, no LLM tells. Load before drafting
+  or rewriting more than a few paragraphs. Do NOT load for doc placement
+  (docs-management), code comments (backend-code) or skeletons (doc-templates).
 trigger: /writing-style
 ---
 

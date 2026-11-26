@@ -2,12 +2,10 @@
 name: project-doctor
 tier: leaf
 description: >
-  Validate that a repo is set up for this marketplace in three checks: repo
-  (a Project map block whose paths exist, a scripts folder, a changelog), docs
-  (Diataxis folders and frontmatter) and task management (the task tool
-  responds). Reports pass or fail per check with the
-  fix. Load when onboarding a repo, after restructuring one, or when a skill
-  cannot resolve a location. Do NOT load to fix the docs or tasks themselves.
+  Check a repo is set up for this marketplace: project map paths, scripts
+  folder, changelog, docs layout and frontmatter, task tool; pass or fail with
+  the fix. Load when onboarding or restructuring a repo, or when a skill cannot
+  resolve a location. Do NOT load to fix the docs or tasks.
 trigger: /project-doctor
 ---
 
