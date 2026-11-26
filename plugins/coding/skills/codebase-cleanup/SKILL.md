@@ -41,7 +41,7 @@ Complexity is a cost paid for a purpose. This skill finds code whose purpose is 
 ## Procedure
 
 1. **Scope and baseline.** Name the project or module and the commit (`git rev-parse HEAD`). Take the baseline as `do-work` defines it. On a red baseline, report and stop: a cleanup on a failing suite cannot show it preserved behaviour.
-2. **Read the direction.** Open and blocked tasks via `tracker`, active plans via `plan`, and the vision, requirements, design and architecture docs via `find-docs`. Ask nothing the repo answers.
+2. **Read the direction.** Open, in-progress and blocked tasks via `tracker`, and the vision, requirements, design and architecture docs via `find-docs`. Ask nothing the repo answers.
 3. **Write the complexity budget.** One line per area: the complexity it carries, and the future task or target-architecture element that pays for it, or "none". An area with a named payer keeps its seams, extension points and abstractions. An area with none is held to what the code does today.
 4. **Sweep.** Run the lenses below, reading per `codebase-search`. Start from the findings of a current `project-evaluation` report when the `investigations` key holds one; do not re-measure what it measured.
 5. **Give each candidate a verdict.** `remove`, `simplify`, `update`, `complete` or `keep`. `keep` names its payer from the budget. A candidate with no evidence is dropped, not softened.

@@ -10,8 +10,7 @@ The only owner of task management in this marketplace. Once enabled, every other
 
 ## What it owns
 
-- The backlog: priorities, blockers, modules, open and closed tasks.
-- Plans, one per task, kept on the task.
+- Tasks: priorities, blockers, labels, open and closed.
 - Task, handoff, review request and workflow templates, and the gates between states.
 - The project's task workflow: state names, close reasons, priority scale, labels and milestones, set up once and kept at the `tasks-workflow` map key.
 
@@ -23,10 +22,8 @@ The only owner of task management in this marketplace. Once enabled, every other
 | `whats-next` | Show the in-progress and in-review tasks: the ones that need the user first, then the rest, then the stuck ones |
 | `prioritise` | Pick what to start next: validate through `backlog-review`, rank by unblock, value, effort and risk, and list quick wins |
 | `backlog-review` | Find done, stale and duplicate open tasks, titles first, and close them with evidence |
-| `plan` | Turn accepted research into a plan of 150 lines or fewer with phase roll-forward |
 | `product-direction` | Run a session that brings requirements, PRDs and vision in line with what the user now wants, settles conflicts and blockers, decides when each change is built, then files the agreed tasks |
 | `bug-report` | File a defect as a task, with its expected behaviour settled and the docs that must change |
-| `close-task` | Before closing a task, keep in-scope leftovers in the task and file separate concerns as new tasks |
 
 ## Trackers
 

@@ -7,8 +7,8 @@ description: >
   folders, the YAML frontmatter contract, timeless in-place
   edits, and the validation commands. Load when creating, editing, moving or
   auditing any doc under the docs map key. Do NOT load for prose rules (see
-  writing-style), doc skeletons (see doc-templates), tasks, plans or logs (see
-  project-management), or for resolving the map keys (see project-map).
+  writing-style), doc skeletons (see doc-templates), tasks or logs (see
+  project-management), execution plans (see plan), or for resolving the map keys (see project-map).
 trigger: /docs-management
 ---
 
@@ -22,7 +22,8 @@ Docs follow [Diataxis](https://diataxis.fr): four kinds, each serving a differen
 |---|---|
 | Sentence-level style, LLM tells | `writing-style` |
 | Starting a doc from a skeleton | `doc-templates` |
-| Tasks and plans | `project-management` |
+| Tasks | `project-management` |
+| Execution plans | `plan` |
 | Milestones | `changelog` |
 | Session handoffs, review requests and open questions | `tracker`, or the installed task skill |
 | Resolving `[COMMENT]` markers | `handle-comments` |

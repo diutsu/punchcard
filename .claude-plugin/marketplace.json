@@ -30,9 +30,9 @@
     {
       "name": "project-management",
       "source": "./plugins/project-management",
-      "description": "Own the backlog: prioritise, triage, plan and close tasks in the project's configured tracker.",
+      "description": "Own the tasks: track, prioritise, review and close them in the project's configured tracker.",
       "category": "productivity",
-      "keywords": ["tasks", "backlog", "planning"]
+      "keywords": ["tasks", "backlog", "prioritisation"]
     },
     {
       "name": "wip",

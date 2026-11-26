@@ -2,7 +2,7 @@
 type: explanation
 state: done
 created: 2026-10-11
-updated: 2026-11-22
+updated: 2026-11-26
 cross-file-references: [.claude-plugin/marketplace.json, .agents/plugins/marketplace.json, .agents/plugins.json, plugins/punchcard/session-card.md, plugins/punchcard/hooks.json, plugins/punchcard/rules/AGENTS.md, plugins/punchcard/skills/project-map/SKILL.md, plugins/coding/skills/do-work/SKILL.md, plugins/punchcard/skills/capability-check/SKILL.md, plugins/punchcard/skills/skill-maintenance/SKILL.md]
 ---
 
@@ -19,14 +19,14 @@ The marketplace ships five plugins. Each owns a territory, so a rule has one hom
 | `punchcard` | How the agent works with this user in every session: style, house rules, asking, briefing, queues, away runs, reports, skill upkeep |
 | `coding` | Doing and reviewing code work, tests, scripts, operations, data and experiment discipline |
 | `techdocs` | Writing, structuring and reviewing technical documents |
-| `project-management` | Tasks, plans, priorities, closing and progress |
+| `project-management` | Tasks, priorities, closing and progress |
 | `wip` | Drafts only, never relied on |
 
 Plugins declare no dependencies on each other. Cross-plugin dependency behaviour is untested on a real install, so skills refer to siblings by name.
 
 ## How and what in `coding`
 
-`do-work` is the how: a loop of baseline, scope, plan, plan check, execute, verify, one review, docs and close. It carries no rules about any kind of code. The what lives in leaf skills, which `do-work` loads by the files a step touches: `backend-code` for source, `frontend-ui` for views, `changelog` for user-visible changes, `ops-scripts` for scripts, `device-qa` for Android builds.
+`do-work` is the how: a loop of baseline, scope, plan, plan check, execute, verify, one review, docs and close. Its plan (`plan`) covers one session and is reviewed by the user. Before verify, `intent-check` decides which leftovers belong to the task; before the close, the done-when check in `validation-and-qa` cross-checks the result against the task. Both are deciders: `do-work` files and closes tasks through `tracker`. It carries no rules about any kind of code. The what lives in leaf skills, which `do-work` loads by the files a step touches: `backend-code` for source, `frontend-ui` for views, `changelog` for user-visible changes, `ops-scripts` for scripts, `device-qa` for Android builds.
 
 The split keeps each skill small and lets the leaf rules apply outside the loop, for example when the user edits a file directly. A new kind of work then adds a leaf skill and one line in `do-work`, with no change to the loop.
 

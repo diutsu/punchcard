@@ -11,7 +11,7 @@ Repository: `https://github.com/diutsu/punchcard`
 | `punchcard` | The always-on base: output style, session card, project map, questions, briefing, skill upkeep |
 | `coding` | The work loop and the per-work-type skills for writing, reviewing, investigating and operating code, plus two agents |
 | `techdocs` | Writing technical docs: one prose style, doc templates, the Diataxis layout, sourced research |
-| `project-management` | The backlog and plans, in the project's configured tracker, and the product-direction session |
+| `project-management` | Tasks in the project's configured tracker, what's next, prioritisation, backlog review, bug reports, and the product-direction session |
 | `wip` | Draft skills proposed by `skill-reviewer` and draft agents, held until promoted |
 
 ## Skills
@@ -37,6 +37,8 @@ Repository: `https://github.com/diutsu/punchcard`
 |---|---|
 | `do-work` | The work loop from baseline to close, with a plan check and one review |
 | `code-task` | Executor contract for one scoped step |
+| `plan` | A short execution plan for this session's work, reviewed by the user before it runs |
+| `intent-check` | Decide whether the work matches its intention and classify each leftover: do now, follow-up, defect, nit or needs the human |
 | `backend-code` | Code-quality rules for backend and library source |
 | `frontend-ui` | Rules for any user-facing surface |
 | `data-integrity` | Raw-versus-derived data discipline |
@@ -77,10 +79,8 @@ Agents: `reviewer` (clean-context scoring of a plan or diff) and `suite-runner` 
 | `whats-next` | Show work in flight, what needs the user first |
 | `prioritise` | Pick what to start next, with quick wins |
 | `backlog-review` | Find done, stale and duplicate open tasks, titles first, and close them with evidence |
-| `plan` | Turn accepted research into an execution plan |
 | `product-direction` | Bring requirements, PRDs and vision in line with what the user now wants, settle conflicts, decide when each change is built |
 | `bug-report` | File a new issue reported outside the current task: settle the expected behaviour with the user and name the docs that change |
-| `close-task` | Before closing a task, decide which leftovers belong to its intention (do now) and which are separate concerns (new task), without asking the user |
 
 ## Install
 

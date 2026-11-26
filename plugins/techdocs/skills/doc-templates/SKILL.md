@@ -7,7 +7,7 @@ description: >
   asked to write, start, restructure or convert one of these docs, or to decide
   which horizon a planning doc belongs to. Do NOT load for folder placement and
   frontmatter rules (see docs-management), for prose rules (see writing-style),
-  or for execution plans (owned by project-management).
+  or for execution plans (see plan).
 trigger: /doc-templates
 ---
 
@@ -23,7 +23,7 @@ Templates save tokens: copy the skeleton, fill it, delete the guidance. Read `./
 | Prose rules and LLM tells | `writing-style` |
 | Critiquing a finished doc against the horizon model | `horizon-review` |
 | Sourcing a research doc from external material | `external-research` |
-| Execution plans, tasks, changelogs | `project-management`, `changelog` |
+| Execution plans, tasks, changelogs | `plan`, `project-management`, `changelog` |
 
 ## Templates
 
@@ -40,7 +40,7 @@ All live in `./references/templates/`. Destination keys resolve through `project
 | Proof-of-concept brief | none | `poc.md` | `investigations` key |
 | ADR | none | `adr.md` | `docs` key, `explanation/` |
 
-The model has a Plan horizon (H4: initiatives, order, owners, dates). It has no template here, because quarter-level plans are owned by `project-management`.
+The model has a Plan horizon (H4: initiatives, order, owners, dates). It has no template here, because order and timing across sessions live in the task tracker (`project-management`).
 
 ## Choosing the horizon
 

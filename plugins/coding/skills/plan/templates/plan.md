@@ -1,6 +1,6 @@
 ## Plan
 
-Serves the task's goal and done-when; never restate them here.
+Serves: `<task id, or the request>`; goal and done-when as written there.
 
 ### Context
 `<problem and evidence, each claim cited>`
@@ -16,18 +16,13 @@ Serves the task's goal and done-when; never restate them here.
 - `<path>` — `<what changes>`
 
 ### Steps
-
-#### Completed phases
-- [x] Phase 1: `<one-line summary>` (`<commit>`)
-
-#### Active phase
 1. **`<what>`**
    - Run: `<exact command>`
    - Expect: `<exact number, string or exit code>`
    - If different: `<branch, or stop and re-plan>`
 
-#### Later phases
-- [ ] Phase 3: `<goal>` (detail after the active phase lands)
+### Not this session
+- `<one-line follow-up, or "none">`
 
 ### Risks and rollback
 - `<per-step commit; rollback by reset>`

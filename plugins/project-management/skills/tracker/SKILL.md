@@ -3,7 +3,7 @@ name: tracker
 tier: leaf
 description: >
   Read and file tasks in the project's configured tracker, which also holds
-  plans, session handoffs, steps only the human can do and closed work, and
+  session handoffs, steps only the human can do and closed work, and
   set up the project's task workflow once. Load before ANY task operation,
   from any skill, when something needs the user, or when work carries into
   another session. Do NOT load to decide what to do next (see whats-next and
@@ -73,7 +73,7 @@ A milestone is a measurable project state: a task or group of tasks in done plus
 | A review request comment | `./templates/review-request.md` |
 | The project's workflow file | `./templates/workflow.md` |
 
-A plan lives on its task (`plan`). Write the task as it stands now; history stays in the tracker's comments.
+Plans are not kept on tasks; `plan` covers one session. Write the task as it stands now; history stays in the tracker's comments.
 
 ## Gates
 
@@ -83,9 +83,9 @@ A task moves only when every check for that move passes. Check each one against 
 |---|---|
 | new to backlog | No open or closed task covers it. Title and goal are filled. Unknowns are listed as open questions. |
 | backlog to to do | The user refined it, or said in this session that it is ready as written. The goal is one verifiable outcome. Every done-when item can be checked against code, command output or the running app. Priority is set. No open question is left. |
-| to do to in progress | Nothing blocks it. A plan sized per `plan` exists. The code and docs it names still exist. |
+| to do to in progress | Nothing blocks it. A plan for this session, sized per `plan`, exists. The code and docs it names still exist. |
 | in progress to in review | All the work is implemented and committed; partial work stays in progress. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
-| in progress or in review to done | Every done-when item has evidence. Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. Leftovers are filed in backlog (`close-task`). |
+| in progress or in review to done | Every done-when item has evidence. Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. Each done-when item passed the done-when check (`validation-and-qa`). Follow-ups are filed in backlog. |
 | any state to done through `backlog-review` | The task is done, stale or a duplicate, with cited evidence, in a batch the user confirmed. |
 | in review to in progress | The review asks for changes, and each is recorded on the task. |
 
@@ -130,7 +130,7 @@ When partly done work needs the user to continue, comment on the task and leave 
 - Never move a task without passing the gate for that move.
 - Never file a task into any state but backlog. Move it on only on the user's explicit word in this session.
 - Never move a task to in review unless it is in progress and its work is complete.
-- Never keep tasks, plans, handoffs, review requests or open questions in local files.
+- Never keep tasks, handoffs, review requests or open questions in local files.
 - Never hand the human a step the agent can run, and never keep working a task that waits on the human.
 - Never delete a task, or change tasks in bulk, without the user's confirmation. A tracker may be shared.
 - Never invent a command, state, label or priority value; take it from the tracker's skill, its help or the workflow file.

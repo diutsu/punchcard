@@ -8,7 +8,7 @@ description: >
   asks to review, groom, prune or clean up the backlog, "what can we close",
   after a large change landed, or when prioritise validates its candidates.
   Do NOT load to rank work (see prioritise), to close the task you just
-  finished (see close-task), or to add tasks (see tracker).
+  finished (see do-work), or to add tasks (see tracker).
 trigger: /backlog-review
 ---
 
@@ -21,7 +21,7 @@ Close open tasks only with evidence, spending as little reading as possible. Tit
 | Situation | Use instead |
 |---|---|
 | Ranking what to do next | `prioritise` |
-| Closing the one task a work session just finished | `close-task` |
+| Closing the one task a work session just finished | `do-work` |
 | Adding or refining a task | `tracker` |
 | Recording a milestone for a closed task | `changelog` |
 

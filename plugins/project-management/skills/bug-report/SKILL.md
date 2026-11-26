@@ -8,7 +8,7 @@ description: >
   or when work turns up a defect. Do NOT load to find the root cause or write
   a root-cause document (see forensics), to fix it (see do-work), to change
   what the product should do (see product-direction), or for a leftover of the
-  task being closed (see close-task).
+  task being closed (see intent-check).
 trigger: /bug-report
 ---
 
@@ -23,7 +23,7 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
 | Explaining why it fails, or writing the report document | `forensics` |
 | Fixing it now | `do-work` |
 | The user wants different behaviour, not a repair | `product-direction` |
-| A gap left by the task being finished | `close-task` |
+| A gap left by the task being finished | `intent-check` |
 
 ## Procedure
 
@@ -60,6 +60,6 @@ Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash
-for s in forensics tracker find-docs docs-management doc-templates product-direction close-task; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in forensics tracker find-docs docs-management doc-templates product-direction intent-check; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'bug-report' plugins/punchcard/skills/capability-check/SKILL.md README.md
 ```

@@ -41,7 +41,7 @@ A rule that applies to every session and fits in two lines goes on the session c
 - `punchcard`: how the agent works with this user in every session: style, house rules, asking, briefing, queues, away runs, reports and skill upkeep.
 - `coding`: doing and reviewing code work, tests, scripts, ops, data and experiment discipline.
 - `techdocs`: writing, structuring and reviewing technical documents.
-- `project-management`: tasks, plans, priorities, closing and progress, and the session that sets product direction.
+- `project-management`: tasks, priorities, closing and progress, and the session that sets product direction.
 - `wip`: drafts only, never relied on.
 
 ## 3. Skill anatomy
