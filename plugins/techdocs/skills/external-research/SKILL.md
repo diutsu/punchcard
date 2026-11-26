@@ -27,7 +27,7 @@ Every external dependency is a liability until evidence says otherwise. Collect 
 
 Apply before any query, API call, request body or tracker search.
 
-1. No real personal or financial data, no real name or email (including the user's), leaves the machine. Describe the technical shape of the need and use fabricated sample inputs.
+1. Describe the technical shape of the need and use fabricated sample inputs.
 2. Never create an external account or key for the user. If a proof of concept needs one, evaluate public docs first, then record the signup as an open question via `tracker`.
 3. Never paste project docs into an external service to justify a request.
 
@@ -66,15 +66,11 @@ Run `writing-style` and `editorial-review` on the doc. Re-open every link and co
 
 ## Hard rules
 
-- Never send real personal, account or proprietary data to an external service.
-- Never create accounts on the user's behalf.
-- Never recommend from a single source or call "documented" "tested".
-- Never keep a quote not checked against its source, and never cite a link you have not opened.
-- Never write raw web research into `reference/` or `explanation/`; it goes to the `investigations` key.
+- Never send real personal, account or proprietary data, or a real name or email (including the user's), to an external service.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

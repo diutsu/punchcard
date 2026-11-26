@@ -61,14 +61,11 @@ Write none of these; the catalogue gives the pattern and the rewrite for each.
 
 ## Hard rules
 
-- Never ship a doc that has not passed the lint script and the verification step.
-- Never keep a quotation that was not checked against the original; turn it into a marked paraphrase.
 - Never scrub tells from a claim you cannot support; cut or source the claim.
-- Never state a cause, effect or significance the source does not state.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Source for the LLM-tells rules: Wikipedia, "Signs of AI writing" (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
+Updated: 2026-11-27. Source for the LLM-tells rules: Wikipedia, "Signs of AI writing" (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
 
 Re-verification commands:
 ```bash

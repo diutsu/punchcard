@@ -52,18 +52,11 @@ Updated or new docs, and the tasks the user agreed to. No decision log and no op
 ## Hard rules
 
 - Never write code in this session. In a repo whose product is its docs or skills, the doc edit is the change itself: make it in step 9, and file a task for anything that has to be run or built.
-- Never file a task before the requirements round is closed and the user agrees.
-- Never change a requirement without showing the user its current text first.
-- Never hide a conflict to keep the conversation moving.
-- Never ask the user for a fact the repo holds.
-- Never write a doc edit before the user agrees to its placement.
-- Never close the session with a conflict undecided or a blocker without a timing decision.
-- Never leave a note in a doc about what a requirement used to say.
 - Never write a roadmap doc. Order and timing live in the tasks.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `watchlist`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
+Updated: 2026-11-27. Techniques adapted from skills read on 2026-11-14 and listed in the plugin watchlist held by `watchlist`: checking the user's statements against the code (`domain-modeling`, mattpocock/skills), challenging only what a decision depends on and saying what holds (`strategy-red-team`, phuryn/pm-skills), testable conditions in place of vague words (`prd`, github/awesome-copilot), naming what a new item displaces (`write-spec`, anthropics/knowledge-work-plugins).
 
 Re-verification commands:
 ```bash

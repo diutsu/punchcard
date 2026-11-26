@@ -65,17 +65,11 @@ Do not stop at green tests.
 
 ## Hard rules
 
-- Never answer "why didn't it run" from application code alone; check the trigger layer first.
-- Never answer "is it faster or bigger" without a number measured this session.
-- Never trust a UI rendering of state over a direct store query.
-- Never print, log or transmit a value from a gitignored config or env file.
-- Never call an operational change verified until the real flow ran and was observed.
-- Long-running loops you write or touch handle `SIGINT` and `SIGTERM` explicitly.
 - Park live-session status in the task handoff (see `tracker`), and reusable runbooks in the docs (see `docs-management`).
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Check commands:
+Updated: 2026-11-27. Check commands:
 
 ```bash
 grep -n "private layer" plugins/coding/skills/operate-and-diagnose/SKILL.md

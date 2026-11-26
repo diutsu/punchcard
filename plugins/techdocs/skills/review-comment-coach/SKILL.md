@@ -50,11 +50,10 @@ Draft the replies in the author's voice: short, direct, no defensiveness. Follow
 ## Hard rules
 
 - Never use the model to shut down a valid concern. If a "how" question reveals that a constraint can't hold, that's a finding for the document, not an off-horizon comment.
-- Never draft a comment that names a mechanism on a vision or target architecture without tying it to a constraint.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

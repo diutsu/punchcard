@@ -64,14 +64,11 @@ Findings, not lectures. Each finding names the statement, says why it's at the w
 
 ## Hard rules
 
-- Never judge a statement without naming the horizon it belongs to and the test it fails.
 - Never move content to another horizon silently; propose the split.
-- Never invent the upper or lower documents; list the ones you would need and stop.
-- Never restate the model to the author; give findings.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Source: the Planning Horizons paper.
+Updated: 2026-11-27. Source: the Planning Horizons paper.
 
 Re-verification commands:
 ```bash

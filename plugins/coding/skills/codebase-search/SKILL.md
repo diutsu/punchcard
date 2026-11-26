@@ -11,7 +11,7 @@ trigger: /codebase-search
 
 # /codebase-search
 
-Establish what exists before anyone writes code or a plan. This skill reads and reports. It never edits code or docs.
+Establish what exists before anyone writes code or a plan. This skill reads and reports.
 
 ## When NOT to use this skill
 
@@ -96,15 +96,11 @@ WHAT I DID NOT CHECK: <scope boundaries, unread areas, unverifiable items>
 
 ## Hard rules
 
-- Cite `file:line` for every claim; cite both sides of every drift verdict.
-- Tag every claim fact, inference or guess. Never present an inference as a fact.
-- Read task history before the code for any module.
 - Never modify code or docs. Report, then hand off to `plan`, `do-work` or `docs-management`.
-- Always end with what you did not check.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Check commands:
+Updated: 2026-11-27. Check commands:
 
 ```bash
 git log --oneline -1

@@ -67,16 +67,11 @@ Ask the user through the question interface before writing any change: one quest
 
 ## Hard rules
 
-- Never change a priority without confirmation.
-- Never rank a task whose blocker is open and outside the user's control above work that can start now.
-- Never rank a task without passing it through `backlog-review` first.
-- Never gather tasks any other way than through `tracker`.
 - Never pad a list; fewer items is fine.
-- Always give a reason per item, in one line.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

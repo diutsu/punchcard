@@ -59,8 +59,6 @@ Start when the author says the rant is done. Produce the edited version in the a
 
 ## Reference check
 
-Run on every pass that touches sources:
-
 - Each reference links to the record of the work, not to a blog or summary about it, and not to a loose PDF copy when a DOI or publisher page exists.
 - Each quote matches the original word for word. If it can't be checked, turn it into a paraphrase.
 - Each figure is attributed to the paper that produced it.
@@ -80,13 +78,10 @@ End each pass with what changed and what is still open, in a few lines. Do not r
 ## Hard rules
 
 - Never finish a doc pass without the lint script and the reference check.
-- Never keep a quotation that was not checked against the original.
-- Never rewrite in pass 1; critique only.
-- Never replace the author's working words with your own phrasing.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

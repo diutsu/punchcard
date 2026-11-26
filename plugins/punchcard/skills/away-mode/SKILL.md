@@ -35,7 +35,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
    REVERSE: <how to undo or switch>
    ```
 
-4. **Queue gated actions.** Never do these without prior approval: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `tracker` with the exact command (a review request when the work is complete, otherwise a comment or open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
+4. **Queue gated actions.** Gated actions: push, publish, delete data, send messages, spend money, change shared infrastructure or accounts. Record each via `tracker` with the exact command (a review request when the work is complete, otherwise a comment or open question), then keep working on everything else. If the whole remaining plan is gated, finish the safe parts and stop.
 5. **Keep the other rules.** The gate before done, the privacy wall and raw-data rules do not relax while away.
 6. **Finish with a `run-report`.** Include the decisions log in it and list the tasks in review and the open questions that need the user.
 
@@ -48,15 +48,11 @@ The user is away and expects progress, not questions. Decide, log, continue.
 
 ## Hard rules
 
-- Never stop to ask a question while away mode is active.
 - Never take an irreversible or outward-facing action without prior approval. Queue it.
-- Never skip logging a decision.
-- Never loosen a verification gate to finish faster.
-- Never end without a `run-report`.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

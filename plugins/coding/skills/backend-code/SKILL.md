@@ -11,7 +11,7 @@ trigger: /backend-code
 
 # /backend-code
 
-Agents write weak code in four ways: they import across module boundaries, invent a helper that already exists, wrap logic in defensive fallbacks that hide bugs, and narrate the code in comments. Check every diff against the five rules below.
+Agents write weak code in four ways: they import across module boundaries, invent a helper that already exists, wrap logic in defensive fallbacks that hide bugs, and narrate the code in comments. Check every diff against the six rules below.
 
 ## When NOT to use this skill
 
@@ -62,7 +62,6 @@ A comment explains why, never what.
 
 Code outlives the tasks, plans and docs that produced it. Those get closed, renamed and deleted, and the reference left in the code then points at nothing.
 
-- Never name a task or ticket ID, a plan, an investigation, a design or requirement doc, a doc path, or a plan step or phase number in code. This covers comments, docstrings, identifiers, test names, log and error messages.
 - When the reason matters, write the reason itself: "retry three times because the provider drops the first connection after idle", not "see the retry investigation".
 - The link runs the other way. Docs name the modules they describe (see `docs-management`), and tasks name the files they touch (via `tracker`).
 - A URL to an external spec or upstream bug is allowed: it is not project work and it does not move.
@@ -78,16 +77,11 @@ Review each hit; an external standard such as `RFC-9110` or `UTF-8` is not a fin
 
 ## Hard rules
 
-- Never import a third-party library outside its owning module.
-- Never swallow an exception or invent an undocumented default.
-- Never write a helper without searching the module for an existing one.
-- Never leave a history note in a comment.
-- Never reference a task, plan, doc or step number anywhere in code.
-- Never add a single-implementation abstraction.
+- Never name a task or ticket ID, a plan, an investigation, a design or requirement doc, a doc path, or a plan step or phase number in code. This covers comments, docstrings, identifiers, test names, log and error messages.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

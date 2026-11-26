@@ -46,7 +46,7 @@ Check these classes first: stale values (who invalidates this store, and did tha
 
 ## Write the result back
 
-- Fix now: hand the confirmed cause to `do-work`. The root cause and discriminating evidence go in the commit message.
+- Fix now: the root cause and discriminating evidence go in the commit message.
 - Fix later: file a task via `tracker` with the hypothesis table and discriminating observation in the details.
 - Report or dead ends worth keeping: write to the `investigations` key.
 
@@ -56,16 +56,11 @@ When the user asks for a written bug report document with the root cause, write 
 
 ## Hard rules
 
-- Never propose a fix before a reproduction exists.
-- Never skip the closed-before check.
-- Every hypothesis predicts a value before its experiment runs.
-- Never declare a root cause without explaining the passing cases.
-- Never leave a confirmed bug unrecorded: fix it or file it.
 - Fixing goes through `do-work`; this skill stops at a written root cause.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Check commands:
+Updated: 2026-11-27. Check commands:
 
 ```bash
 ls plugins/coding/skills/forensics/templates/bug-report.md

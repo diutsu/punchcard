@@ -134,19 +134,12 @@ When partly done work needs the user to continue, comment on the task and leave 
 
 ## Hard rules
 
-- Never add a task that an open task already covers; extend that one. A regression of a closed task is a new task that links it.
-- Never close a task without evidence in the closing comment or the confirmed batch.
-- Never move a task without passing the gate for that move.
-- Never file a task into any state but backlog. Move it on only on the user's explicit word in this session.
-- Never move a task to in review unless it is in progress and its work is complete.
-- Never keep tasks, handoffs, review requests or open questions in local files.
 - Never hand the human a step the agent can run, and never keep working a task that waits on the human.
 - Never delete a task, or change tasks in bulk, without the user's confirmation. A tracker may be shared.
-- Never invent a command, state, label or priority value; take it from the tracker's skill, its help or the workflow file.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

@@ -36,7 +36,7 @@ Answer three questions in the plan before writing view code:
 Every data-driven surface handles and distinguishes:
 
 - **loading:** the request is in flight, visibly.
-- **error:** the fetch failed, shown clearly and never swallowed into an empty state.
+- **error:** the fetch failed, shown clearly.
 - **empty:** the query succeeded and returned nothing.
 - **data-unavailable:** a required input is missing or not computed. The value is unknown, not zero.
 - **real-data:** the verified values.
@@ -67,15 +67,11 @@ Produce a mockup as HTML or SVG. Iterate with the user until the layout and the 
 
 ## Hard rules
 
-- Enumerate all five states before implementing a data-driven view.
 - Never swallow a fetch error into an empty or zero state.
-- Never render fabricated or placeholder numbers on a shipped surface.
-- Never add a mutating control without a requirement for it.
-- Never add a view without searching for one to reuse or retire.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

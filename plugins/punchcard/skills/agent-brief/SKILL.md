@@ -60,7 +60,6 @@ Raise a reviewer a tier only when the change crosses module boundaries.
 ## Hard rules
 
 - Never put real personal or financial data, or the user's name or email, in a brief that leads to an external call.
-- Never brief a reviewer with the author's reasoning, only the artifact and the acceptance criteria.
 - Never let an executor expand scope. Out-of-scope findings go in its issues list.
 - Never accept a report that lacks the template's fields; send it back once, then do the check yourself.
 - Never name an agent type in a brief beyond the `reviewer` and `suite-runner` this marketplace ships.

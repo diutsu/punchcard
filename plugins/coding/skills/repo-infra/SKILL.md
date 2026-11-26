@@ -44,19 +44,15 @@ Never create a worktree inside the repo or under a tool-managed folder.
 
 ## Personal details
 
-Never put the user's real name or email in git config, a User-Agent string, package metadata or a generated file. Use generic placeholders such as `maintainer@example.com` and a neutral client name.
+Where a name or email is needed in git config, a User-Agent string, package metadata or a generated file, use generic placeholders such as `maintainer@example.com` and a neutral client name.
 
 ## Hard rules
 
-- Never use `git add -A`, `git add .` or `git commit -a`.
-- Never commit files that belong to a different task.
-- Never push without being asked.
-- Never create a worktree inside the repo.
 - Never write the user's real name or email into config or metadata.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

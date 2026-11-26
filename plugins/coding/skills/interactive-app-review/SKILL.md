@@ -65,19 +65,15 @@ Each finding states what is wrong (naming the screenshot and element), why it ma
 
 ## Handing off
 
-File each finding via `tracker` and offer `do-work` for the fixes. Do not change code in this skill's run.
+File each finding via `tracker` and offer `do-work` for the fixes.
 
 ## Hard rules
 
-- Never skip Phase 2 because Phase 1 was clean.
-- Never review against a dev server; use the production build.
-- Never brief the Phase 2 reviewer with source code or prior decisions.
-- Never report an ambiguous finding before reproducing it.
 - Never fix anything during the review.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

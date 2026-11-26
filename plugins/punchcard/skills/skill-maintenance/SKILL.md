@@ -49,7 +49,7 @@ Every `SKILL.md` has:
 1. Frontmatter: `name` (equal to the folder), `tier: leaf | workflow | reference`, a `description` of 300 characters or fewer that gives the triggers and the Do NOT load pointers, never a method summary, and `trigger: /<name>`.
 2. `## When NOT to use this skill`, a table naming the sibling that owns adjacent work.
 3. An imperative body. Prefer tables and numbered steps. Wrap every `<placeholder>` in prose in backticks.
-4. `## Hard rules`, flat imperatives.
+4. `## Hard rules`, at most 5 flat imperatives, none restating the body.
 5. `## Provenance and maintenance`: the date, any external source, and runnable check commands. No history.
 
 Tiers: a **leaf** runs one intent and loads no sibling to orchestrate. A **workflow** composes leaves and agents by name and never restates their mechanics. A **reference** is consulted, not stepped through.
@@ -80,9 +80,6 @@ Aim for 60-110 lines. Move long lists and templates to `references/` or `templat
 
 ## Hard rules
 
-- Never restate another skill's mechanics. Cross-reference by name.
-- Never embed an unquoted `<placeholder>` in prose outside code fences and frontmatter.
-- Never hardcode a project path or tool in a marketplace skill.
 - Never edit an installed copy of a skill. Edit the source in the repo.
 - Never add a skill without checking that no sibling already owns the territory.
 

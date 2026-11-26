@@ -55,14 +55,11 @@ For each marker: `file:line`, classification, and the action taken or the open q
 
 ## Hard rules
 
-- Never act on a question before validating its premise against code, docs or sources.
-- Never leave a marker or an unanswered reply inside a doc; route it through `tracker`.
-- Never edit task state directly; go through `tracker`.
 - Finish only when the scan command returns nothing.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

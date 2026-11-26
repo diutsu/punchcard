@@ -58,15 +58,11 @@ ISSUES SPOTTED:
 
 ## Hard rules
 
-- Never claim tests pass without running the command in this session and seeing exit 0.
-- Never change files outside the brief's scope.
 - Never edit docs or the changelog unless the brief says so; report the need under `ISSUES SPOTTED`.
-- Never mark tasks done; the orchestrator closes them.
-- Never improvise around a broken plan assumption; report `PLAN-INVALID`.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

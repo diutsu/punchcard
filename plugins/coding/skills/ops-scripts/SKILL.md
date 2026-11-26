@@ -50,15 +50,11 @@ Pick an expiry that matches the need: a migration script expires when the migrat
 
 ## Hard rules
 
-- Never write a script outside the `scripts` folder.
-- Never leave a script uncommitted.
-- Never omit the header or any of its fields.
-- Never delete an expired script without the user's confirmation.
 - Never edit a script's logic during a sweep.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

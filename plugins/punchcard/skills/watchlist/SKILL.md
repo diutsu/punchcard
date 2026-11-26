@@ -74,16 +74,12 @@ For entries this marketplace adapts, check the upstream repo for changes when re
 
 ## Hard rules
 
-- Never copy or vendor a third-party plugin's files into this marketplace.
-- Never install or uninstall without the user's confirmation unless they asked.
-- Never mark `required` or `dropped` without evidence from real use.
 - Never suggest a plugin again in a session after a no.
-- Every Repo cell is a link to the source.
 - Never send private data to a plugin's service. The privacy wall applies.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-15. Split out of `capability-check`, which now only hands plugin gaps here.
+Updated: 2026-11-27. Split out of `capability-check`, which now only hands plugin gaps here.
 
 Re-verification commands:
 ```bash

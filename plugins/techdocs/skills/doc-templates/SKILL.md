@@ -62,14 +62,12 @@ If a draft mixes horizons (a vision that names a broker, a discovery that "decid
 
 ## Hard rules
 
-- Never leave template guidance, placeholder text or example content in a delivered doc.
 - Never invent a constraint, source or number to fill a section; write "not known" and list it as an open question.
-- Never mix horizons in one document.
 - Never keep a template's section that has nothing to say after a real attempt; delete it.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-14. Source for the horizon templates and `model.md`: the Planning Horizons paper; the paper wins on disagreement.
+Updated: 2026-11-27. Source for the horizon templates and `model.md`: the Planning Horizons paper; the paper wins on disagreement.
 
 Re-verification commands:
 ```bash

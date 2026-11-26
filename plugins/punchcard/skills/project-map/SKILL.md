@@ -88,15 +88,11 @@ Find the one doc that answers a question and read only the part that answers it.
 
 ## Hard rules
 
-- Never write a file to a location a skill guessed. Resolve the map key first.
 - Never read or change tasks directly. Go through `tracker`.
-- Never restate a map default inside another skill. Name the key.
-- Never search outside the resolved roots for a doc answer, and never present a doc's claim about code as fact without reading the code when the answer matters.
-- Never create a second map. One block, in the repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`).
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

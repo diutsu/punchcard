@@ -74,17 +74,11 @@ Show the plan to the user. Wait for approval only when it carries a real choice 
 
 ## Hard rules
 
-- Never write a step gate without an exact expected result.
-- Never anchor more than about one reference per step or claim.
-- Never exceed 60 lines or plan beyond this session's work.
-- Never list a fenced-off path that is a hypothesis; each traces to an incident or finding.
-- Never execute, score or commit the plan; that is `do-work`.
 - Never restate review or gate mechanics in the plan; cite `review-rubric` and `validation-and-qa`.
-- Never save a plan on a task, commit it, or leave its file behind after the task closes or is handed off.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

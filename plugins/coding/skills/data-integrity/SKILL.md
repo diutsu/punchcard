@@ -50,7 +50,7 @@ A failed fetch, missing value or unimplemented path renders as unavailable, neve
 Use this when a computed number is suspect, before trusting a new calculation or migration, or after an importer runs. An audit reports; it never fixes.
 
 1. Identify the raw source and the derived output for the claim. If no independent raw source exists, say so: a number cannot be audited against itself.
-2. Read both with read-only queries (`sqlite3`, `duckdb`, checksums, `grep` or `wc -l` on exports, direct file reads). Open stores in read-only mode. Make no external call; real personal and financial data stays on the machine.
+2. Read both with read-only queries (`sqlite3`, `duckdb`, checksums, `grep` or `wc -l` on exports, direct file reads). Open stores in read-only mode.
 3. Reconcile the specific claim and its neighbours (adjacent rows, same instrument, same date range) field by field.
 4. Report every discrepancy with the record, the expected value, the actual value and the exact query. Report "reconciled clean" only after seeing the values this session.
 5. Treat a failed read or parse as a failure, never as a pass.
@@ -77,17 +77,11 @@ A repeatable audit is a standalone script that exits non-zero on any discrepancy
 
 ## Hard rules
 
-- Never overwrite, delete or edit in place a `RAW` store.
-- Never patch `DERIVED` rows for new logic; wipe and recompute.
-- Always create `<store>.bak-<reason>` before a destructive migration or correction.
-- Never fix during an audit.
-- Never let an importer or audit exit 0 when inputs fail to parse or records drop.
-- Never show invented data.
 - Never send real financial or personal data to an external API, MCP service or AI service.
 
 ## Provenance and maintenance
 
-Updated 2026-11-13. Check commands:
+Updated 2026-11-27. Check commands:
 
 ```bash
 grep -n "bak-<reason>" plugins/coding/skills/data-integrity/SKILL.md

@@ -73,18 +73,11 @@ Anything else is filed. Code with no test around it is filed with a characterisa
 
 ## Hard rules
 
-- No finding without evidence: `file:line`, a command with its output, or a count.
-- Never remove complexity the budget shows a payer for; never keep it on "might need it later" with no task or doc behind it.
-- Never change behaviour in a fix. A cleanup that needs a behaviour change is a task.
-- Never fix on a red baseline or without tests that would catch a regression.
-- Never fold a cleanup into lines an open task or plan is about to change; note it on that task via `tracker`.
-- Never run the verdicts or the fix-or-file sort on a cheaper model, and never apply fixes outside `do-work`.
 - Never decide direction here. A conflict between code and target architecture goes to `product-direction`.
-- Always end the report with what was not examined.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

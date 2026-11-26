@@ -59,16 +59,11 @@ Order the refactors so each step leaves the suite green and makes the next one c
 
 ## Hard rules
 
-- No finding without evidence.
-- Every finding has a severity, payoff and risk.
-- Mark each claim fact, inference or guess, as in `codebase-search`.
-- Never edit code or start a refactor during the evaluation.
 - Always end the report with what was not examined.
-- Tool output quoted as evidence includes the command that produced it.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Check commands:
+Updated: 2026-11-27. Check commands:
 
 ```bash
 ls plugins/coding/skills/project-evaluation/templates/evaluation-report.md plugins/coding/skills/project-evaluation/references/commands.md

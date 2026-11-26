@@ -43,15 +43,11 @@ A project milestone is also a changelog line: a major product decision, a featur
 
 ## Hard rules
 
-- Never edit a released section.
 - Never put a task ID, commit hash or file path in an entry.
-- Never batch entries at the end of a release; write each when its change lands.
-- Never log internal-only changes, routine task progress or commits.
-- Never close a task with a visible change and no entry.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

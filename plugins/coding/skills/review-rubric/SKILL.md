@@ -104,15 +104,11 @@ The self-score uses the same verdict format and the same pass bar. A self-score 
 
 ## Hard rules
 
-- Never average dimension scores.
-- Never pass with an unresolved blocking issue.
 - Never show a reviewer or grader the author's reasoning before it scores.
-- Never apply a quick fix that changes behaviour, design or more than about 20 lines.
-- Never grade the same lines twice.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

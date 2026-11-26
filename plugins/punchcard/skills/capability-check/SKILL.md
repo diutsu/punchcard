@@ -11,7 +11,7 @@ trigger: /capability-check
 
 # /capability-check
 
-Starting in the wrong mode costs more than the check: code written before the design is known, a design round for a throwaway script, a long task begun in a full context. Decide the mode first, in one short pass.
+Starting in the wrong mode costs more than the check: code written before the design is known, a design round for a throwaway script, a long task begun in a full context. Decide the mode first.
 
 ## When NOT to use this skill
 
@@ -76,14 +76,10 @@ When no installed skill covers the craft, load `watchlist`: it matches the gap t
 ## Hard rules
 
 - Never exceed one short pass. This is a gate, not a project.
-- Never announce the check for a trivial request.
-- Never start a multi-module change without a plan.
-- Never start a proof of concept without its brief.
-- Never ask the user for a fact the repo holds.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

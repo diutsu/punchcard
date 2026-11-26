@@ -52,14 +52,11 @@ Drop a group with no rows. More than ten tasks in progress and in review togethe
 
 ## Hard rules
 
-- Never pick new work here; that is `prioritise`.
 - Never change a task's state in this skill.
-- Never open tasks outside in progress and in review.
-- Never paraphrase a command the user must run; copy it from the task.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

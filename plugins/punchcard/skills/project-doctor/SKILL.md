@@ -11,7 +11,7 @@ trigger: /project-doctor
 
 # /project-doctor
 
-Run three checks, report each as pass or fail with the one-line fix, and change nothing unless the user asks.
+Three checks, each reported as pass or fail with the one-line fix. Change nothing unless the user asks.
 
 ## When NOT to use this skill
 
@@ -54,14 +54,11 @@ Offer the fixes as a batch through the question interface, recommended option fi
 
 ## Hard rules
 
-- Never modify the repo while diagnosing. Report first.
-- Never guess a path. Resolve it through the map.
-- Never restate the docs criteria or the task rules. Defer to `docs-management` and `tracker`.
 - Never report a check as passed without running it.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

@@ -65,9 +65,6 @@ Then the suspects that stayed unproven, with what is missing, and the counts: ta
 
 ## Hard rules
 
-- Never give a verdict from a title; a title only makes a suspect.
-- Never open a task that no pass flagged, unless the user named it.
-- Never close a task without a cited `file:line`, commit or surviving task.
 - Never infer done from a finished plan.
 - Never close or merge without the batch confirmation, unless the user named the exact tasks to close.
 - Never edit a task's goal to match the code; record partial progress in details.
@@ -75,7 +72,7 @@ Then the suspects that stayed unproven, with what is missing, and the counts: ta
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

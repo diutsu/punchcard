@@ -55,7 +55,7 @@ Work without a task ID follows the same loop and must fit one session. Skip only
    - a user-visible change: `changelog`
    - one-off or maintenance scripts: `ops-scripts`
    - an Android build: `device-qa`
-6. **Execute.** Launch independent steps in parallel and dependent steps in order, from the briefs already written. Each executor follows `code-task`, runs its targeted tests and commits its step. Worktrees follow `repo-infra`.
+6. **Execute.** Launch independent steps in parallel and dependent steps in order, from the briefs already written. Each executor follows `code-task`, runs its targeted tests and commits its step. A step is done only when its command ran and its exit code was seen. Worktrees follow `repo-infra`.
    - Executors may edit docs and the changelog when their step says so.
    - **Plan invalidation.** An executor that hits a false assumption stops. Return to step 4.
    - **Leftovers.** After the last step, judge them per **Leftovers** below. In-scope items become plan steps in this loop, so the one verify and the one review cover them.
@@ -106,21 +106,12 @@ Use it when the user names several tasks.
 
 ## Hard rules
 
-- Never mark a step done without running its command and seeing the exit code.
-- Never let an author review its own lines, and never review the same lines twice.
-- Never run the full suite more than once per task, plus the baseline when no recent green record exists.
 - Never write a path or tool name for plans or tasks here; go through `plan` and `tracker`.
-- Never keep working on a task that needs a human; hand it over via `tracker` and stop.
-- Never defer part of a task's intention because it touches other files, and never ask the user to classify a leftover.
-- Never file a task to defer or hand off the work in hand; a handoff stays on the in-progress task.
-- Never leave the plan file behind after the task closes or is handed off.
-- Never push unless asked.
-- Never merge proof-of-concept code, and never end a proof of concept without its result and cleanup.
-- Never end a session mid-task without a handoff (`tracker`) when the task needs another session.
+- Never file a task to defer or hand off the work in hand, and never end a session mid-task without a handoff (`tracker`) when the task needs another session; a handoff stays on the in-progress task.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

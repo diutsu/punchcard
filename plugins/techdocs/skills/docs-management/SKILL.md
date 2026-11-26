@@ -111,16 +111,11 @@ A doc is valid when frontmatter is the first thing in the file, all five fields 
 
 ## Hard rules
 
-- Never put two Diataxis kinds in one doc.
-- Never omit a frontmatter field or leave `updated` stale after an edit.
-- Never add dated or historical narrative to `reference/` or `explanation/`.
 - Never cite a task ID in a doc. State the behaviour, gap or open question itself.
-- Never create a doc kind or folder outside this layout without asking the user.
-- Never invent a `cross-file-references` entry.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26. Source: Diataxis, https://diataxis.fr.
+Updated: 2026-11-27. Source: Diataxis, https://diataxis.fr.
 
 Re-verification commands:
 ```bash

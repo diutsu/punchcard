@@ -116,18 +116,11 @@ When a clean run hits the falsifying condition or shows no real effect, record i
 
 ## Hard rules
 
-- Never write "should work" or "looks correct" as a completion claim.
-- Never ship a mock or fabricated value silently.
 - Never set a numeric acceptance threshold after seeing the result.
-- Never touch a real raw data source to make a test pass.
-- Never summarise a failure away.
-- Never close a task with a done-when item marked `missed` or without evidence.
-- No prediction before the run means no credit for the result; never loop on a null result.
-- No instrument is trusted before it reproduces a known answer.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

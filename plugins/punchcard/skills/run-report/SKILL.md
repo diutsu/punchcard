@@ -45,15 +45,12 @@ Use `./templates/run-report.md`. Sections in order:
 
 ## Hard rules
 
-- Never bury the outcome. It is the first thing on the page.
-- Never claim verification without the command and result.
-- Never present an assumption as a verified fact.
 - Never include credentials or private data.
 - Never pad with a recap of obvious steps. Each step section earns its place by what it explains.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-13.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

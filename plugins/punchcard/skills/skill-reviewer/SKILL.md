@@ -43,14 +43,10 @@ Turn repeated friction in past sessions into draft skills. The user reviews ever
 ## Hard rules
 
 - Never run automatically. The user asks.
-- Never read or record credentials, keys, tokens or personal data from transcripts.
-- Never write outside `plugins/wip/` and never edit installed skills.
-- Never create a draft with fewer than two sessions of evidence.
-- Never promote a draft without the user's approval.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-22.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash

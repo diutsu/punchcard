@@ -46,14 +46,11 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
 ## Hard rules
 
 - Never put a cause in the report unless `forensics` established it.
-- Never omit the doc impact line, even when it says "none".
-- Never drop a defect because its expected behaviour is unconfirmed; file it marked so.
 - Never start the fix in the same step as the report.
-- Never ask the user for a fact the repo holds.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-26.
+Updated: 2026-11-27.
 
 Re-verification commands:
 ```bash
