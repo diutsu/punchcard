@@ -48,7 +48,7 @@ Run the passes in order. Each pass reads only what the one before flagged.
    |---|---|---|
    | done | Every done-when item is met | close as done |
    | stale | The goal no longer applies | close as stale |
-   | duplicate | Another task covers it | move anything only this task holds onto the survivor, close as duplicate |
+   | duplicate | Another task covers it | close as duplicate; when this task holds something the survivor lacks, move it there and close as merged |
    | partial | Some items are met | edit details to record what is left |
    | open | Nothing met, or unclear | leave alone |
 

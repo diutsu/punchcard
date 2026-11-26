@@ -28,12 +28,12 @@ The reader was not watching. Let them learn the result in ten seconds and the re
 Use `./templates/run-report.md`. Sections in order:
 
 1. **Outcome.** Two or three sentences: what was asked, what happened, whether it is done. State failure plainly.
-2. **Needs you.** Items only the user can do, each with the file or queue entry. Leave the section out only if there are none, and say so in the outcome.
+2. **Needs you.** Items only the user can do, each with the file or task comment. Leave the section out only if there are none, and say so in the outcome.
 3. **Steps.** One short section per step: what was done, and why. Name the files touched.
 4. **Decisions taken.** From the decisions log if `away-mode` was used: question, option taken, why, alternative, how to reverse.
 5. **Verified.** What was checked and how: the command, its exit code, the signal. Separate what was verified from what was assumed.
 6. **Left over.** Unfinished work, filed tasks, known gaps.
-7. **Where things are.** Paths to changed files, branches, logs and the queue.
+7. **Where things are.** Paths to changed files, branches, logs and the tasks touched.
 
 ## Procedure
 

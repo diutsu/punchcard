@@ -23,7 +23,7 @@
 | `.agents/plugins/marketplace.json` | Codex marketplace manifest | When adding, renaming or removing a plugin |
 | `.agents/plugins.json` | Antigravity workspace plugin discovery | When changing plugin roots or exclusions |
 | `plugins/punchcard/` | Always-on base: output style (`output-styles/punchcard.md` synced to `rules/AGENTS.md`), session card + SessionStart hooks (`hooks/hooks.json` and `hooks.json`), task intake, question, briefing and skill-upkeep skills | When changing how the agent behaves in every session |
-| `plugins/coding/` | The work loop (`do-work`), its execution `plan` and `intent-check`, its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
+| `plugins/coding/` | The work loop (`do-work`), its execution `plan`, its leaf skills per work type, investigation skills, and the `reviewer` and `suite-runner` agents | When changing how code is written, reviewed, investigated or operated |
 | `plugins/techdocs/` | Writing style, doc templates, Diataxis layout, sourced research | When changing how docs are written or laid out |
 | `plugins/project-management/` | Tasks in the tracker, what's next, prioritisation, backlog review, bug reports, and the product-direction session; names no tracker | When changing task handling |
 | `plugins/wip/` | Draft skills from `skill-reviewer` and draft agents, awaiting promotion | Drafts only |

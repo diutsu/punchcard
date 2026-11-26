@@ -8,7 +8,6 @@ One line per user-visible change or project milestone, newest first.
 
 - `backlog-review` in `project-management`: finds done, stale and duplicate open tasks, starting from titles and opening only the suspects, and closes them with cited evidence after one confirmation.
 - `whats-next` in `project-management`: shows the in-progress and in-review tasks, the ones that need the user first, and flags stuck work.
-- `intent-check` in `coding`: decides whether the work matches its intention and classifies each leftover; it changes no task. `do-work` acts on its table.
 - The done-when check in `validation-and-qa`: before a task closes, every done-when item gets evidence or is marked missed.
 - `tasks-workflow` map key: a task workflow file, set up once by `tracker`, holds the state names, close reasons, priority scale, labels and milestones. It may be user-level and shared by all projects.
 
@@ -17,7 +16,11 @@ One line per user-visible change or project milestone, newest first.
 - The `backlog` skill is now `tracker`; "backlog" names only the state.
 - `prioritise` ranks only to-do tasks, validates them through `backlog-review`, lists quick wins and no longer groups by module.
 - Closing a task leaves one short closing comment: `done, closing` (optional), `stale task, closing`, `duplicated task, closing` or `merged with <ID>, closing`.
-- `plan` moved to `coding`: a short execution plan, at most 60 lines, for one session's work, reviewed by the user before it runs. Plans are no longer kept on tasks.
+- `plan` moved to `coding`: a short execution plan, at most 60 lines, for how the engineer applies the code in one session. It sits in a scratch file outside the repo that briefs point to and `do-work` deletes at close or handoff. It waits for approval only when it carries a real choice, a risk or crosses modules.
+- `do-work` starts by moving the task to in progress, judges leftovers itself, and moves completed work that needs a human check to in review.
+- `tracker`: a regression of a closed task is a new task that links it; something found while working is a comment when it blocks or is due soon, and a backlog task when it can wait, with a mitigation comment when one was applied.
+- `whats-next` includes unassigned tasks and picks from to do when nothing is in flight.
+- `validate-run-results` is now section 7 of `validation-and-qa`; `find-docs` is now the "Finding a doc" section of `project-map`.
 - `tracker` reads and files tasks in whatever tracker the project map names. All task state lives there: handoffs on in-progress tasks, closed work in done.
 - New tasks go to backlog and move to to do only on the user's explicit word: they refine it, or say it is ready. In review holds only completed work that needs a human check; partly done work that needs the user gets a comment and stays in progress; anything new for the user is an open question on a task.
 - `tracker` has task, handoff and review request templates, and a checklist gate for each move between states.
@@ -26,7 +29,9 @@ One line per user-visible change or project milestone, newest first.
 ### Removed
 
 - `triage-close`, merged into `backlog-review`.
-- `close-task`: its leftover judgement is `intent-check`, its done-when pass is in `validation-and-qa`, and the close is in `do-work`.
+- `close-task`: its leftover judgement and the close are in `do-work`, its done-when pass is in `validation-and-qa`.
+- `validate-run-results` and `find-docs`, merged into `validation-and-qa` and `project-map`.
+- `ops/local/` is no longer ignored by git; move or delete any local task files there before committing.
 - `ctask` support, the `operator-queue` skill and the `operator-queue` and `handoff` map keys.
 
 ### Added

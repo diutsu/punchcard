@@ -21,6 +21,7 @@ User account: `<the user's account name in the tracker>`
 | done | `<status, resolution, label, or closing comment only>` |
 | stale | `<status, resolution, label, or closing comment only>` |
 | duplicate | `<status, resolution, label or link, or closing comment only>` |
+| merged | `<status, resolution, label or link, or closing comment only>` |
 
 ## Priority
 

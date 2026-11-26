@@ -23,7 +23,7 @@ cross-file-references: []
 
 ## 4. Evaluation
 
-> How the result is judged, fixed before the run: the measure, the instrument, and the pass and fail thresholds for each goal. Rules for the bar: `validate-run-results`.
+> How the result is judged, fixed before the run: the measure, the instrument, and the pass and fail thresholds for each goal. Rules for the bar: `validation-and-qa`.
 
 | Goal | Measure | Pass | Fail |
 | --- | --- | --- | --- |

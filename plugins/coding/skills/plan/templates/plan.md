@@ -2,8 +2,8 @@
 
 Serves: `<task id, or the request>`; goal and done-when as written there.
 
-### Context
-`<problem and evidence, each claim cited>`
+### Starting point
+`<what the code looks like now and where the change goes in>`
 
 ### Solution menu (only if a real decision exists)
 1. `<option>` — must be true: `<premise>` — verified by: `<concrete check>`
@@ -22,7 +22,7 @@ Serves: `<task id, or the request>`; goal and done-when as written there.
    - If different: `<branch, or stop and re-plan>`
 
 ### Not this session
-- `<one-line follow-up, or "none">`
+- `<one-line note for the handoff, or "none">`
 
 ### Risks and rollback
 - `<per-step commit; rollback by reset>`

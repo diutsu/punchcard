@@ -3,7 +3,7 @@
   "name": "punchcard",
   "interface": {
     "displayName": "punchcard",
-    "description": "diutsu's personal agent plugin marketplace: always-on rules, coding loop, technical docs, and backlog skills."
+    "description": "diutsu's personal agent plugin marketplace: always-on rules, coding loop, technical docs, and task management."
   },
   "plugins": [
     {

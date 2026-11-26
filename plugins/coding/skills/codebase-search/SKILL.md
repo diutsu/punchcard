@@ -7,7 +7,7 @@ description: >
   on every claim. Load for onboarding to a module, recovering architecture,
   reconnaissance before planning or changing code, and "audit docs vs code".
   Do NOT load to explain a specific failure (see forensics), to prove a change
-  made something better (see validate-run-results), to judge a library outside
+  made something better (see validation-and-qa), to judge a library outside
   the repo (see external-research), or to assess a whole project for
   maintainability (see project-evaluation, which uses this skill for reading).
 trigger: /codebase-search
@@ -22,7 +22,7 @@ Establish what exists before anyone writes code or a plan. This skill reads and 
 | Situation | Use instead |
 |---|---|
 | A failure, bug or surprising behaviour needs a cause | `forensics` |
-| A change must be shown to improve something | `validate-run-results` |
+| A change must be shown to improve something | `validation-and-qa` |
 | Judging a library, API or vendor outside the repo | `external-research` |
 | Whole-project maintainability assessment | `project-evaluation` |
 | Turning findings into a plan | `plan` |
@@ -34,7 +34,7 @@ Stop as soon as the evidence answers the question.
 
 1. The project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`): stage, gate commands, non-negotiables, and the project map (`project-map`).
 2. Task history through `tracker`: open and closed tasks for the module. Known gaps live there, so the code may carry no hint of them.
-3. Docs located through `find-docs`: architecture, reference, explanation, and the `investigations` key (verdict section first).
+3. Docs located through `project-map`: architecture, reference, explanation, and the `investigations` key (verdict section first).
 4. The code, last, compared against what steps 2 and 3 claim.
 
 Discover test and build commands from the manifest (`package.json`, `pyproject.toml`, `Makefile`). Never reuse another project's commands.

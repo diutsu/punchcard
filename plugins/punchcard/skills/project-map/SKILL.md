@@ -6,8 +6,10 @@ description: >
   them: task tool, docs roots, scripts folder, changelog, verification
   commands, worktree location. Consult BEFORE writing any file whose location
   another skill describes as "per the project map", before any task
-  operation, and when a repo has no map yet. Do NOT load to learn how to write
-  the doc or run the task tool itself (see the skill that owns that work).
+  operation, when a repo has no map yet, and when a question may be answered
+  by an existing doc (find the doc, read the smallest section). Do NOT load to
+  learn how to write the doc or run the task tool itself (see the skill that
+  owns that work), or to mine code and git history (see codebase-search).
 trigger: /project-map
 ---
 
@@ -22,6 +24,8 @@ Skills in this marketplace never hardcode a path or a tool. They name a map key,
 | Deciding which Diataxis folder a doc belongs in | `docs-management` |
 | Listing, prioritising or closing tasks | the `project-management` plugin |
 | Checking that a repo is set up correctly | `project-doctor` |
+| Writing, moving or validating docs | `docs-management` |
+| Mining code and git history | `codebase-search` |
 
 ## The block
 
@@ -30,7 +34,7 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 ```markdown
 ## Project map
 
-- tasks:: <tracker and project, such as jira (project KEY)>
+- tasks:: <tracker and project or board>
 - tasks-workflow:: <path to the task workflow file, in the repo or user-level>
 - docs:: docs/
 - investigations:: docs/investigations/
@@ -64,11 +68,34 @@ A value may be a path outside the repo, such as a vault folder. Files under such
 3. If the key has no default and no value, ask the user through the question interface, then add the line to the map.
 4. Write the file, or run the tool, at the resolved location only.
 
+## Finding a doc
+
+Find the one doc that answers a question and read only the part that answers it.
+
+1. **Resolve roots.** Read the `docs`, `investigations`, `prd` and `design` keys through `project-map`. Search only under those roots.
+2. **Pick the folder by question type.** The `docs` root is laid out as Diataxis.
+
+   | Question | Look in |
+   |---|---|
+   | How do I do X | `how-to/` under `docs` |
+   | What exactly does X do, accept or return | `reference/` under `docs` |
+   | Why is it built this way | `explanation/` under `docs` |
+   | How do I learn this from zero | `tutorials/` under `docs` |
+   | What was tried or found out | the `investigations` root |
+   | What must it do, for whom | the `prd` root |
+
+3. **Search metadata before content.** List filenames in the chosen folder first. Then grep the frontmatter (`type`, `state`, `cross-file-references`, title) for the topic. Search body text only when both come up empty.
+4. **Follow cross-file references** one hop from the best match before widening the search.
+5. **Read the smallest section.** Grep for headings, then read from the matching heading to the next one. Read a whole file only when it is short.
+6. **Check freshness.** Compare the doc's `updated` value with recent changes to the code it describes. Report a doc that contradicts the code instead of picking a side.
+7. **Report** the path, the heading, and the answer. If no doc answers it, say so and name the folder where one belongs.
+
 ## Hard rules
 
 - Never write a file to a location a skill guessed. Resolve the map key first.
 - Never read or change tasks directly. Go through `tracker`.
 - Never restate a map default inside another skill. Name the key.
+- Never search outside the resolved roots for a doc answer, and never present a doc's claim about code as fact without reading the code when the answer matters.
 - Never create a second map. One block, in the repo instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`).
 
 ## Provenance and maintenance

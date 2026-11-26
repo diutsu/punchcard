@@ -8,9 +8,13 @@ description: >
   closing a task (the done-when check), and when deciding whether a stub or
   placeholder may ship. Covers the verify gate, the done-when check,
   no-stubs-as-done, test-writing discipline, honest failure reporting and the
-  triage of unexpected failures. Do NOT load for the work loop (see do-work),
-  code style (see backend-code), or experiment and benchmark thresholds (see
-  validate-run-results).
+  triage of unexpected failures, and the evidence bar for any claim that a
+  change made something better: prediction before the run, a validated
+  instrument, the acceptance bar, regime honesty and null results. Also load
+  BEFORE running an experiment, tuning a parameter, comparing two approaches,
+  or answering "is this faster/better/more accurate". Do NOT load for the work
+  loop (see do-work), code style (see backend-code), or judging external
+  libraries (see external-research).
 trigger: /validation-and-qa
 ---
 
@@ -23,9 +27,9 @@ Done means the project's gate commands ran in this session and their output is v
 | Situation | Use instead |
 |---|---|
 | Driving a task through plan, execute and review | `do-work` |
-| Deciding whether a leftover belongs to the task | `intent-check` |
+| Deciding whether a leftover belongs to the task | `do-work` leftovers |
 | Code quality and comment rules | `backend-code` |
-| Acceptance thresholds for experiments and benchmarks | `validate-run-results` |
+| Explaining why a failure happens | `forensics` (which applies the prediction rules in section 7) |
 | Raw vs. derived data audits | `data-integrity` |
 | Evaluating an external library or API | `external-research` |
 
@@ -74,6 +78,51 @@ Fails everywhere: a real failure. Fails only in the full suite: order or shared-
 - Report partial completion as partial, with what remains.
 - Treat a sub-agent's "tests pass" as a claim. Rerun the gate, or check the literal command and exit code in its report block.
 
+## 7. Claims of improvement
+
+An unfalsifiable claim, an eyeballed "looks better", or a number from an unchecked instrument is noise.
+
+### a. Predict before running
+
+Record this before the run, in the task, through `tracker`:
+
+```text
+Hypothesis:   <mechanism: why this should change the outcome>
+Predicts:     <direction> by <numeric band>        e.g. "p95 latency -20% to -35%"
+Falsified if: <specific result that kills the claim>   e.g. "reduction under 10%"
+```
+
+Direction alone is not a prediction. If you cannot state a falsifying result, you have a hope, not a hypothesis.
+
+### b. Validate the instrument first
+
+Before trusting a new metric, evaluator, benchmark or audit script:
+
+1. Run it on a known-answer case whose output you computed by hand, and confirm it reproduces that output.
+2. Run it on a trivial case small enough to check by eye.
+3. Only then run the real experiment. If either check fails, fix the instrument and the experiment waits.
+
+### c. Acceptance bar
+
+A claim is accepted only when all three hold. Otherwise label it unproven.
+
+1. One mechanism explains every observation, including the negatives. Narrow the claimed scope until it does.
+2. It survives a refutation pass by a reviewer with no stake in the result, instructed to look for confounds, leaks, cherry-picked windows and mismatched denominators. Brief that reviewer with `agent-brief`.
+3. It was measured with exact numbers and units.
+
+### d. Regime honesty
+
+State the regime, the sample size and the conditions where the result was measured, in the write-up that carries it forward. Never extend it to a different cohort without measuring again.
+
+### e. Null results are valid completions
+
+When a clean run hits the falsifying condition or shows no real effect, record it and stop. Never re-run with tweaked parameters to force a win.
+
+- Record the prediction and outcome on the task, through `tracker`.
+- Record dead ends in the `investigations` key so no one repeats them.
+- Hand a human judgment call over through `tracker`.
+- Treat the user's distrust of a number as a research trigger.
+
 ## Hard rules
 
 - Never write "should work" or "looks correct" as a completion claim.
@@ -82,6 +131,8 @@ Fails everywhere: a real failure. Fails only in the full suite: order or shared-
 - Never touch a real raw data source to make a test pass.
 - Never summarise a failure away.
 - Never close a task with a done-when item marked `missed` or without evidence.
+- No prediction before the run means no credit for the result; never loop on a null result.
+- No instrument is trusted before it reproduces a known answer.
 
 ## Provenance and maintenance
 
@@ -90,6 +141,6 @@ Updated: 2026-11-26.
 Re-verification commands:
 ```bash
 grep -n "verify" plugins/punchcard/skills/project-map/SKILL.md
-ls plugins/coding/skills/validate-run-results/SKILL.md
+grep -n 'Falsified if' plugins/coding/skills/validation-and-qa/SKILL.md
 grep -n '^## Done when' plugins/project-management/skills/tracker/templates/task.md
 ```

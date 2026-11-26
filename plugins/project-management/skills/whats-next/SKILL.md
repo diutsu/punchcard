@@ -3,8 +3,8 @@ name: whats-next
 tier: leaf
 description: >
   Summarise the work in flight: the in-progress and in-review tasks assigned
-  to the user or waiting on an answer from them, what each one needs, and
-  which ones are stuck. Load when the user asks "what's next", "what needs
+  to the user or to no one, what each one needs, and which ones are stuck;
+  with nothing left, pick from to do. Load when the user asks "what's next", "what needs
   me", "what's waiting on me", "where are we", or at the start of a session
   with no assigned task. Do NOT load to choose new work to pick up (see
   prioritise), to close tasks (see backlog-review), or for raw task queries
@@ -14,7 +14,7 @@ trigger: /whats-next
 
 # /whats-next
 
-Work in flight finishes before new work starts. This skill shows the small set of tasks that are in progress or in review, puts the ones that need the user first, and hands over to `prioritise` only when nothing is waiting.
+Work in flight finishes before new work starts. This skill shows the small set of tasks that are in progress or in review, puts the ones that need the user first, and picks from to do through `prioritise` only when nothing is left.
 
 ## When NOT to use this skill
 
@@ -26,7 +26,7 @@ Work in flight finishes before new work starts. This skill shows the small set o
 
 ## Procedure
 
-1. **Gather** via `tracker`, using the states and the user account in the project's workflow file: tasks in progress and in review that are assigned to the user, or whose newest comment is a review request, open question or command for the user. Read only the newest comment and the open questions of each.
+1. **Gather** via `tracker`, using the states and the user account in the project's workflow file: tasks in progress and in review that are assigned to the user or to no one, plus any whose newest comment is a review request, open question or command for the user. Read only the newest comment and the open questions of each.
 2. **Sort** each task into one group:
 
    | Group | Holds |
@@ -36,7 +36,7 @@ Work in flight finishes before new work starts. This skill shows the small set o
    | Stuck | In progress with no update for longer than the workflow file's stuck-work threshold |
 
 3. **Report** per the output below. For each "Needs you" item, put the literal command or question first.
-4. **Hand over.** When "Needs you" and "In flight" are both empty, say so and run `prioritise`.
+4. **Pick from to do.** When "Needs you", "In flight" and "Stuck" are all empty, say so and run `prioritise` to pick from to do.
 
 ## Output
 

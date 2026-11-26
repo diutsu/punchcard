@@ -20,11 +20,10 @@ Repository: `https://github.com/diutsu/punchcard`
 
 | Skill | Purpose |
 |---|---|
-| `project-map` | Declare where things live and which tools own them |
+| `project-map` | Declare where things live and which tools own them, and find the doc that answers a question |
 | `grilling` | Interview the user until a plan is fully specified |
 | `capability-check` | Task intake: enough input, output type, skills, session fit, and what happens first; holds the plugins under trial |
 | `agent-brief` | Decide whether to spawn an agent and write its brief |
-| `find-docs` | Locate the right project document for a question |
 | `project-doctor` | Validate a repo's setup: map, docs, task tracker |
 | `away-mode` | Run without the user present, logging decisions |
 | `run-report` | Report the outcome of a long operation |
@@ -38,15 +37,13 @@ Repository: `https://github.com/diutsu/punchcard`
 | `do-work` | The work loop from baseline to close, with a plan check and one review |
 | `code-task` | Executor contract for one scoped step |
 | `plan` | A short execution plan for this session's work, reviewed by the user before it runs |
-| `intent-check` | Decide whether the work matches its intention and classify each leftover: do now, follow-up, defect, nit or needs the human |
 | `backend-code` | Code-quality rules for backend and library source |
 | `frontend-ui` | Rules for any user-facing surface |
 | `data-integrity` | Raw-versus-derived data discipline |
-| `validation-and-qa` | What counts as evidence and as done |
+| `validation-and-qa` | What counts as evidence and as done, and the bar for claiming a change made something better |
 | `review-rubric` | Scoring rubric for plans and implementations |
 | `forensics` | Find a root cause before fixing |
 | `codebase-search` | Answer "how does X work here" from the repo itself |
-| `validate-run-results` | The bar for claiming a change made something better |
 | `operate-and-diagnose` | Run and measure a live system |
 | `project-evaluation` | Deep maintainability review of a project or module |
 | `codebase-cleanup` | Find what to remove, simplify or update given where the project is going; fix the small cases, file the rest |

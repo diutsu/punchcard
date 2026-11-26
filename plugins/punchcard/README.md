@@ -12,7 +12,7 @@ How the agent works with this user in every session.
   - `watchlist`: the third-party plugins under trial; add, install, record a verdict, uninstall.
   - `grilling`: close gaps in an underspecified request.
   - `agent-brief`: when and how to brief sub-agents, with templates.
-  - `find-docs`: locate the right doc.
+  - `project-map`: locate the right doc.
   - `project-doctor`: validate a repo's setup.
   - `away-mode`, `run-report`: run unattended, then report the result.
   - `skill-reviewer`, `skill-maintenance`: keep the skill library healthy.

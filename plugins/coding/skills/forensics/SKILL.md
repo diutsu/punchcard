@@ -10,21 +10,21 @@ description: >
   discriminating experiment each, the root-cause acceptance bar, and bug
   reports. Do NOT load for reading how code works with no failure in hand (see
   codebase-search), for proving a change improved something (see
-  validate-run-results), for external libraries (see external-research), or to
+  validation-and-qa), for external libraries (see external-research), or to
   apply the fix (see do-work).
 trigger: /forensics
 ---
 
 # /forensics
 
-An investigation is an experiment-design problem. Reproduce, check history, enumerate hypotheses, and run the cheapest experiment that splits them. The prediction and falsification rules live in `validate-run-results`; apply them to every hypothesis here.
+An investigation is an experiment-design problem. Reproduce, check history, enumerate hypotheses, and run the cheapest experiment that splits them. The prediction and falsification rules live in `validation-and-qa`; apply them to every hypothesis here.
 
 ## When NOT to use this skill
 
 | Situation | Use instead |
 |---|---|
 | No failure in hand, only "how does X work" | `codebase-search` |
-| Proving a change made something better | `validate-run-results` |
+| Proving a change made something better | `validation-and-qa` |
 | Deciding whether to replace or report a third-party library | `external-research` |
 | Fixing the confirmed cause | `do-work` |
 | Filing a newly reported defect with its expected behaviour | `bug-report` |
@@ -33,7 +33,7 @@ An investigation is an experiment-design problem. Reproduce, check history, enum
 ## Procedure
 
 1. **Reproduce first.** Get the exact input, command, expected output and actual output. Reduce to the smallest case: one record, one date, one request. Run the project's real command (from the project instructions file `AGENTS.md`/`CLAUDE.md` or manifest). If it does not reproduce, say so; the task is then "build a reproduction". Re-ask vague reports for specifics.
-2. **Was this investigated and closed before?** Search task history through `tracker` and past reports in the `investigations` key (locate with `find-docs`). An open item: extend it, do not duplicate it. A closed item or report: read what was tried. If the failure returned, treat it as a regression against that specific fix and name the fix. If the project has no such records, check commit history for the affected file.
+2. **Was this investigated and closed before?** Search task history through `tracker` and past reports in the `investigations` key (locate with `project-map`). An open item: extend it, do not duplicate it. A closed item or report: read what was tried. If the failure returned, treat it as a regression against that specific fix and name the fix. If the project has no such records, check commit history for the affected file.
 3. **Enumerate hypotheses.** Fill the table below before touching code. Each row needs a predicted value and one observation that only that hypothesis explains. Two hypotheses that predict the same observation are one hypothesis until sharpened.
 4. **Run the cheapest discriminating experiment**, read-only where possible (log a value, query the store, grep the config). Pick the experiment that splits the remaining space, not the one that confirms the favourite.
 5. **Apply the acceptance bar** and write the result back.
@@ -75,5 +75,5 @@ Updated: 2026-11-26. Check commands:
 
 ```bash
 ls plugins/coding/skills/forensics/templates/bug-report.md
-grep -n "validate-run-results" plugins/coding/skills/forensics/SKILL.md
+grep -n "validation-and-qa" plugins/coding/skills/forensics/SKILL.md
 ```

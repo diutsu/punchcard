@@ -7,8 +7,8 @@ description: >
   route unresolved follow-ups to the tracker. Load when the user says
   "handle the comments", "process my comments" or points at annotated docs.
   Do NOT load for review threads on a planning doc (see review-comment-coach),
-  for frontmatter audits (see docs-management), or for queue upkeep (see
-  backlog).
+  for frontmatter audits (see docs-management), or for task upkeep (see
+  tracker).
 trigger: /handle-comments
 ---
 
@@ -42,7 +42,7 @@ grep -rn "\[COMMENT\]" <docs-root> <investigations-root> <prd-root>
 |---|---|---|
 | Directive | "do it", "rename X", "drop this section" | Trivial edit: make it now. Larger change: create or edit the task via `tracker`. |
 | Perspective | "feels like this couples two modules" | Weigh it on its technical merits, then reconcile the doc or file a task via `tracker`. |
-| Question | "can the API even give us this?", "is this right?" | Validate against the code, the docs and, if needed, `external-research`. If the evidence settles it, update the doc and report the evidence. If it is a real trade-off, queue a decision. |
+| Question | "can the API even give us this?", "is this right?" | Validate against the code, the docs and, if needed, `external-research`. If the evidence settles it, update the doc and report the evidence. If it is a real trade-off, record an open question per `tracker`. |
 
 When unsure between types, treat the comment as a question and validate first.
 
@@ -54,7 +54,7 @@ When unsure between types, treat the comment as a question and validate first.
 
 ## Report
 
-For each marker: `file:line`, classification, and the action taken or the queue item created.
+For each marker: `file:line`, classification, and the action taken or the open question recorded.
 
 ## Hard rules
 

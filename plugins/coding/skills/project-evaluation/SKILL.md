@@ -33,7 +33,7 @@ Assess a project or module for maintainability and refactorability, with evidenc
 ## Procedure
 
 1. **Scope.** Name the project or module, the commit evaluated (`git rev-parse HEAD`), and the question driving the evaluation. Ask the user through the question interface only if scope is ambiguous, in one batch.
-2. **Read.** Use `codebase-search` for every reading step: project map, task history via `tracker`, docs via `find-docs`, then code. Keep its fact and inference tags.
+2. **Read.** Use `codebase-search` for every reading step: project map, task history via `tracker`, docs via `project-map`, then code. Keep its fact and inference tags.
 3. **Measure.** Run the lenses below. Prefer commands that give counts.
 4. **Write.** Fill `./templates/evaluation-report.md` and save it to the `investigations` key. Frontmatter follows `docs-management`.
 5. **File follow-ups** via `tracker`, one task per recommended refactor step. Do not start them here.

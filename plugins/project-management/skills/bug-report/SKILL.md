@@ -8,7 +8,7 @@ description: >
   or when work turns up a defect. Do NOT load to find the root cause or write
   a root-cause document (see forensics), to fix it (see do-work), to change
   what the product should do (see product-direction), or for a leftover of the
-  task being closed (see intent-check).
+  task being worked (see do-work).
 trigger: /bug-report
 ---
 
@@ -23,13 +23,13 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
 | Explaining why it fails, or writing the report document | `forensics` |
 | Fixing it now | `do-work` |
 | The user wants different behaviour, not a repair | `product-direction` |
-| A gap left by the task being finished | `intent-check` |
+| A gap left by the task being worked | `do-work` leftovers |
 
 ## Procedure
 
 1. **Check history.** Run the closed-before check from `forensics`. A match is handled per `tracker`.
 2. **Capture what the repo can show.** Reproduce it per `forensics` (reproduce first). Ask the user only for what only they know.
-3. **Settle the expected behaviour.** Look it up first: the `prd`, `design` and reference docs (per `find-docs`) and the tests.
+3. **Settle the expected behaviour.** Look it up first: the `prd`, `design` and reference docs (per `project-map`) and the tests.
 
    | Finding | Action |
    |---|---|
@@ -44,7 +44,7 @@ A report is filed once, complete enough that whoever fixes it never has to ask w
    - details: observed behaviour, reproduction steps someone else can run verbatim, scope and frequency, the doc impact
    - done-when: the reproduction passes, a test pins the behaviour, each doc change is made, and, if unconfirmed, the expected behaviour is confirmed
    - refs: the files and docs involved
-6. **Place it** per the session card. If it blocks the task in hand, `block` that task on the new one via `tracker`, queue the priority call for the end-of-work batch, and move to the next unblocked item.
+6. **Place it** per the session card. If it blocks the task in hand, `block` that task on the new one via `tracker`, put the priority call in the end-of-work batch, and move to the next unblocked item.
 
 ## Hard rules
 
@@ -60,6 +60,6 @@ Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash
-for s in forensics tracker find-docs docs-management doc-templates product-direction intent-check; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in forensics tracker docs-management doc-templates product-direction do-work; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'bug-report' plugins/punchcard/skills/capability-check/SKILL.md README.md
 ```

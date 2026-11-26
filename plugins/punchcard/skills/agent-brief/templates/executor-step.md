@@ -8,7 +8,8 @@ DONE WHEN: <concrete acceptance criteria>
 TEST COMMAND: <the exact command to run>
 OUT OF SCOPE: <what not to touch>
 READ FIRST: <paths: the files to modify and their direct dependencies>
-TASK ID: <optional, its plan is for reference only>
+PLAN: <plan file path and step number>
+TASK ID: <optional, for context only>
 ```
 
 ## Rules for the agent

@@ -4,7 +4,7 @@ Tier: mid-tier; one tier up when the change crosses module boundaries. Use the `
 
 ```
 REVIEW: plan | implementation
-ARTIFACT: <task id with the plan> | <git diff range, e.g. <base>..HEAD>
+ARTIFACT: <plan file path> | <git diff range, e.g. <base>..HEAD>
 ACCEPTANCE CRITERIA: <path or list>
 CONVENTIONS: <paths to the project AGENTS.md (or CLAUDE.md) and architecture docs>
 TEST EVIDENCE: <command, exit code, and report path, or "none provided">
@@ -12,7 +12,7 @@ TEST EVIDENCE: <command, exit code, and report path, or "none provided">
 
 ## Rules for the brief
 
-- Pass paths and a diff range. Do not paste file contents and do not include the author's reasoning or summary.
+- Pass the plan file path or a diff range. Do not paste file contents and do not include the author's reasoning or summary.
 - The reviewer must not be the author of the artifact. If you cannot confirm that, the review has not happened.
 - Judge the tests from the evidence provided. The reviewer reruns targeted tests only when no evidence was given, when it does not match the diff, or when something looks wrong. If a result cannot be verified, the reviewer says so and never assumes clean.
 - Re-reviews after fixes go to the same reviewer as a delta review over the changed parts only.

@@ -29,7 +29,7 @@ Operate a system by querying and measuring it. Every claim in the output is a nu
 
 ## 1. Find the entry point before running anything
 
-Never guess a command. Look, in order, at: the project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md` — invocation and environment rules, such as "call the venv binary directly"), the manifest (`package.json` scripts, `pyproject.toml` console scripts, `Makefile`), the project's usage docs found through `find-docs`, then the README. Do not invent structure a project lacks, and do not carry one project's layout to another.
+Never guess a command. Look, in order, at: the project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md` — invocation and environment rules, such as "call the venv binary directly"), the manifest (`package.json` scripts, `pyproject.toml` console scripts, `Makefile`), the project's usage docs found through `project-map`, then the README. Do not invent structure a project lacks, and do not carry one project's layout to another.
 
 ## 2. Check the trigger layer before the code
 

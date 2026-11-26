@@ -29,7 +29,7 @@ The user says where the product should go; the docs say where it was going; the 
 
 ## Procedure
 
-1. **Read first.** Before any question, read what exists: the docs under the `prd` and `design` keys, the vision, the reference docs (per `find-docs`), the open tasks (via `tracker`), and the app itself where the docs are silent (per `codebase-search`). Where the `prd` and `design` keys hold nothing, the requirements are what the repo treats as its contract: the explanation and reference docs and the project instructions. Say which docs you are treating as the requirements before the first round. List the topics the session covers: the user's input, plus what the reading shows is unclear, contradictory or missing.
+1. **Read first.** Before any question, read what exists: the docs under the `prd` and `design` keys, the vision, the reference docs (per `project-map`), the open tasks (via `tracker`), and the app itself where the docs are silent (per `codebase-search`). Where the `prd` and `design` keys hold nothing, the requirements are what the repo treats as its contract: the explanation and reference docs and the project instructions. Say which docs you are treating as the requirements before the first round. List the topics the session covers: the user's input, plus what the reading shows is unclear, contradictory or missing.
 2. **Confirm, topic by topic.** For each topic, state what the docs and the app say today, quoting the requirement, then ask the user to confirm or correct it. Run the rounds per `grilling`. A topic takes at least three rounds: confirm and challenge, then place, then decide when. Placement and timing wait for the conflict decision they depend on.
 3. **Complement.** Offer what the user did not mention and the app implies: behaviour that exists and no doc states, a gap between two requirements, the requirement next to the one under discussion. Each is a question, never an edit.
 4. **Challenge.** When the user's input conflicts with a requirement, a priority or something they said earlier, show both texts side by side and name the conflict. Check what the user says about the app against the app. Challenge only what a decision depends on, and say which parts hold. The user decides and may overrule the docs.
@@ -71,6 +71,6 @@ Updated: 2026-11-26. Techniques adapted from skills read on 2026-11-14 and liste
 Re-verification commands:
 ```bash
 ls plugins/*/skills/product-direction/templates/read-back.md
-for s in grilling horizon-review docs-management doc-templates writing-style find-docs codebase-search tracker prioritise; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
+for s in grilling horizon-review docs-management doc-templates writing-style codebase-search tracker prioritise; do ls -d plugins/*/skills/$s >/dev/null || echo "missing $s"; done
 grep -n 'product-direction' plugins/punchcard/skills/capability-check/SKILL.md README.md
 ```

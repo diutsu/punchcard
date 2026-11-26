@@ -5,8 +5,7 @@ description: >
   Read and file tasks in the project's configured tracker, which also holds
   session handoffs, steps only the human can do and closed work, and
   set up the project's task workflow once. Load before ANY task operation,
-  from any skill, when something needs the user, or when work carries into
-  another session. Do NOT load to decide what to do next (see whats-next and
+  from any skill, or when work carries into another session. Do NOT load to decide what to do next (see whats-next and
   prioritise), which tasks can close (see backlog-review) or to write a plan
   (see plan).
 trigger: /tracker
@@ -81,11 +80,11 @@ A task moves only when every check for that move passes. Check each one against 
 
 | Move | Checks |
 |---|---|
-| new to backlog | No open or closed task covers it. Title and goal are filled. Unknowns are listed as open questions. |
+| new to backlog | No open task covers it. A regression of a closed task links that task. Title and goal are filled. Unknowns are listed as open questions. |
 | backlog to to do | The user refined it, or said in this session that it is ready as written. The goal is one verifiable outcome. Every done-when item can be checked against code, command output or the running app. Priority is set. No open question is left. |
-| to do to in progress | Nothing blocks it. A plan for this session, sized per `plan`, exists. The code and docs it names still exist. |
+| to do to in progress | Nothing blocks it. The code and docs it names still exist. |
 | in progress to in review | All the work is implemented and committed; partial work stays in progress. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
-| in progress or in review to done | Every done-when item has evidence. Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. Each done-when item passed the done-when check (`validation-and-qa`). Follow-ups are filed in backlog. |
+| in progress or in review to done | Every done-when item passed the done-when check (`validation-and-qa`). Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. |
 | any state to done through `backlog-review` | The task is done, stale or a duplicate, with cited evidence, in a batch the user confirmed. |
 | in review to in progress | The review asks for changes, and each is recorded on the task. |
 
@@ -112,6 +111,18 @@ One short line. Add a second line only when it carries something useful: the evi
 
 When work will carry into another session, comment on the in-progress task with the handoff template. The newest handoff comment is the current one.
 
+## Comment or task
+
+Something found while working a task is a comment on that task, or a backlog task:
+
+| It is | Record it as |
+|---|---|
+| Blocking current progress, or due soon | A comment on the task in hand |
+| Able to wait, or a bigger change | A backlog task |
+| A bigger change, mitigated for now | A backlog task for the full fix, plus a comment on the task in hand: `mitigation <what> applied; full fix in <ID>` |
+
+Never file a task to avoid the work in hand, or ahead of a need.
+
 ## Open questions
 
 Anything new that needs the user's input or review is an open question, never a task in review.
@@ -125,7 +136,7 @@ When partly done work needs the user to continue, comment on the task and leave 
 
 ## Hard rules
 
-- Never add a task that an open or closed task already covers; extend that one.
+- Never add a task that an open task already covers; extend that one. A regression of a closed task is a new task that links it.
 - Never close a task without evidence in the closing comment or the confirmed batch.
 - Never move a task without passing the gate for that move.
 - Never file a task into any state but backlog. Move it on only on the user's explicit word in this session.

@@ -46,7 +46,7 @@ The user is away and expects progress, not questions. Decide, log, continue.
 - Prefer reversible over irreversible, small over large, existing convention over new.
 - When two options are equal, take the one the project docs or repo already favour.
 - Do not widen scope to fill time. File extra ideas as tasks via `tracker`.
-- A blocked task is parked in the queue, not guessed at. Move to the next one.
+- A blocked task gets a comment per `tracker`, not a guess. Move to the next one.
 
 ## Hard rules
 
@@ -62,6 +62,6 @@ Updated: 2026-11-26.
 
 Re-verification commands:
 ```bash
-grep -n 'backlog\|run-report' plugins/punchcard/skills/away-mode/SKILL.md
+grep -n 'tracker\|run-report' plugins/punchcard/skills/away-mode/SKILL.md
 ls plugins/punchcard/skills/run-report/templates
 ```

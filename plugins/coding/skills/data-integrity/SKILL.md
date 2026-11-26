@@ -30,7 +30,7 @@ Raw data is a fossil record. Derived data is a cache you may burn down and rebui
 
 ## 1. Classify before touching anything
 
-Look for an existing classification in the project's architecture or reference docs (`find-docs`) and map it onto these classes. If none exists, classify each store and write it down. A doc may assert a guard ("storage refuses writes that violate the class") that the code does not enforce, so verify the guard exists.
+Look for an existing classification in the project's architecture or reference docs (`project-map`) and map it onto these classes. If none exists, classify each store and write it down. A doc may assert a guard ("storage refuses writes that violate the class") that the code does not enforce, so verify the guard exists.
 
 | Class | Definition | Legal | Illegal |
 |---|---|---|---|
