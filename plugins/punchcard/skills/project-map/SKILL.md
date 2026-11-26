@@ -49,7 +49,7 @@ Each project carries one `## Project map` section of `key:: value` lines in its 
 | Key | Meaning | Default | Owner |
 |---|---|---|---|
 | `tasks` | Task tracker, with the project or board in it. All task state lives there. | none; ask the user | `project-management` |
-| `tasks-workflow` | The task workflow file: state names, close reasons, priority scale, labels, milestones. May be a user-level file shared by all projects. | none; `tracker` sets it up | `project-management` |
+| `tasks-workflow` | The task workflow file: state names, close reasons, priority scale, labels, milestones. A user-level file shared by all projects is named in the user's global instructions instead of the map. | the user's global instructions; else `tracker` sets it up | `project-management` |
 | `docs` | Root of committed technical docs, laid out as `tutorials/`, `how-to/`, `reference/`, `explanation/`. | `docs/` | `docs-management` |
 | `investigations` | Forward-looking research and forensic reports. | `docs/investigations/` | `techdocs`, `coding` |
 | `prd` | Product and logic requirements. | `docs/prd/` | `techdocs` |

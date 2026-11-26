@@ -41,7 +41,7 @@ Run three checks, report each as pass or fail with the one-line fix, and change 
 
 1. The `tasks` key is set.
 2. Listing open tasks via `tracker` succeeds.
-3. The `tasks-workflow` key is set and its file exists.
+3. The `tasks-workflow` key is set, in the project map or the user's global instructions, and its file exists.
 4. The tracker has the status the workflow file maps to each state `tracker` names.
 
 ## Report

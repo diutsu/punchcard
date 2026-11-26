@@ -27,7 +27,7 @@ Use the project's configured tracker to read and file tasks. All task state live
 
 ## Resolve the tracker
 
-1. Read the `tasks` and `tasks-workflow` keys of the project map (see `project-map`). If `tasks` is missing, ask the user which tracker holds the tasks, then write the line to the map. If `tasks-workflow` is missing, run **Set up the workflow** first.
+1. Read the `tasks` and `tasks-workflow` keys of the project map (see `project-map`); when the map has no `tasks-workflow`, use the one the user's global instructions name. If `tasks` is missing, ask the user which tracker holds the tasks, then write the line to the map. If `tasks-workflow` is missing, run **Set up the workflow** first.
 2. If an installed skill covers that tracker, load it and follow it. Otherwise use the tracker's own CLI or connected tools, and read their help before the first command.
 3. If nothing can reach the tracker, tell the user what is missing and stop. Never keep a substitute task list.
 
@@ -37,8 +37,8 @@ Run once per project, or once per user when every project shares the same tracke
 
 1. Read from the tracker what it offers: statuses, labels, priority values, close or resolution fields, and the user's own account.
 2. Fill `./templates/workflow.md` with a proposed mapping for each section. Ask the user to confirm or correct it in one batch through the question interface.
-3. Ask where it lives: in the project (recommended when only this project uses the workflow) or in one user-level file shared by all projects. A user-level file stays outside the repo. A public repo keeps the account name out of committed files.
-4. Write the file and set the `tasks-workflow` map key to its path.
+3. Ask where it lives: in the project (when only this project uses the workflow) or in one user-level file shared by all projects. A user-level file stays outside the repo and keeps the account name out of committed files.
+4. Write the file. For a project file, set the `tasks-workflow` map key to its path. For a user-level file, add one line to the user's global instructions naming its path, and leave the committed project map without the key.
 
 Read the workflow file before the first task operation of a session. Use its state names, close reasons, priority scale and labels, never guessed ones.
 
