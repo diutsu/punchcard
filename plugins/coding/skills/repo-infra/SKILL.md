@@ -18,6 +18,7 @@ trigger: /repo-infra
 | Script placement and headers | `ops-scripts` |
 | The work loop and its gates | `do-work` |
 | Changelog entries | `changelog` |
+| When a task may close after a merge | `tracker` (Landing) |
 | Where docs and other files live | `project-map` |
 
 ## Worktrees
@@ -42,6 +43,11 @@ Never create a worktree inside the repo or under a tool-managed folder.
 - On a default branch (`main`, `master`), create a branch before working, unless the project instructions file (`AGENTS.md`, `CLAUDE.md` or `GEMINI.md`) says otherwise.
 - Push only when the user asks. Never force-push a shared branch.
 
+## Landing a branch
+
+- Merge a branch into the integration branch (defined in `tracker`) only when the project instructions file or the user allows it, the same as pushing. Without that, leave the branch unmerged and report its name and commit range.
+- Check that a commit is on the integration branch with `git merge-base --is-ancestor <commit> <integration-branch>` (exit 0 means it is).
+
 ## Personal details
 
 Where a name or email is needed in git config, a User-Agent string, package metadata or a generated file, use generic placeholders such as `maintainer@example.com` and a neutral client name.
@@ -52,7 +58,7 @@ Where a name or email is needed in git config, a User-Agent string, package meta
 
 ## Provenance and maintenance
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 Re-verification commands:
 ```bash

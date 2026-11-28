@@ -6,7 +6,7 @@ Use when another coding tool builds in batches and you validate each batch, then
 
 ```
 BATCH: <batch id>
-BUILDER OUTPUT: <diff range or file paths>
+BUILDER OUTPUT: <branch and commit range>
 BATCH BRIEF: <path to the brief you gave the builder>
 VERIFY COMMAND: <the project's verify command, resolved through project-map>
 ```
@@ -23,11 +23,14 @@ Validation report (exact):
 BATCH: <id>
 GATE: <command> -> exit <N>
 CRITERIA: <each criterion: met | not met | unverified - evidence>
+LANDED: <on the integration branch | not merged: branch and commit range>
 DEFECTS: <location - what - required fix; or none>
 STUBS OR FABRICATED VALUES: <list, or none>
 OUT OF SCOPE EDITS: <list, or none>
 VERDICT: ACCEPT | ACCEPT WITH FIXES | REJECT
 ```
+
+After the report, move each task in the batch through the `tracker` gates, landing check included. ACCEPT is a verdict on the batch, not a task state. Merge only as `repo-infra` allows.
 
 ## Part 2: write the next batch
 
@@ -41,6 +44,8 @@ WHAT TO CHANGE: <files, functions, behaviour>
 DONE WHEN: <concrete acceptance criteria>
 TEST COMMAND: <exact command>
 READ FIRST: <paths>
+BRANCH: <branch the builder commits to>
+TASKS: <task ids>; report on them, never change their state
 OUT OF SCOPE: <what not to touch>
 REPORT FORMAT: FILES CHANGED / TESTS RUN / SUMMARY / ISSUES SPOTTED
 ```
@@ -51,3 +56,4 @@ REPORT FORMAT: FILES CHANGED / TESTS RUN / SUMMARY / ISSUES SPOTTED
 - Never carry the previous batch's reasoning into the next brief. State only the current state of the code and the goal.
 - Never write a brief that depends on the builder remembering an earlier batch.
 - Pass paths, never pasted contents.
+- The validator owns task state. The builder never moves a task, whatever its own installed skills say.

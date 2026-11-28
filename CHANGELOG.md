@@ -13,6 +13,7 @@ One line per user-visible change or project milestone, newest first.
 
 ### Changed
 
+- A task that changed code reaches done only once its commits are on the integration branch and `verify` passed on a tree containing them; finished work on another branch waits in review with its branch and commit range, and an external builder never moves tasks.
 - The `punchcard` output style folds its "What ADHD changes" and "Pre-send check" sections into the tone, honesty and rule lines, from 4.6k to 4.0k characters.
 - Each skill has at most 5 hard rules, and none of them restates its own body: 233 rules went down to 56, with each instruction kept in one place.
 - Skill descriptions are capped at 300 characters and keep only triggers and Do NOT load pointers, which cuts the always-loaded description text from about 22k to 12k characters.

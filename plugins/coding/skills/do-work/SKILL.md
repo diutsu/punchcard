@@ -65,7 +65,7 @@ Work without a task ID follows the same loop and must fit one session. Skip only
    - The reviewer applies quick fixes itself. If it changed code, one fresh `reviewer` instance grades only that fix diff.
    - Executor fixes made after review get a delta review from the original reviewer. Allow at most 3 iterations; then report to the user.
 9. **Docs.** Update docs in the same pass, per `docs-management`: in place, timeless, `updated` bumped. Docs are committed. Add the changelog line per `changelog`; a milestone goes there too.
-10. **Close.** Run the done-when check per `validation-and-qa`. A `missed` item gets its targeted test and a delta review, no second full suite; if it still cannot be met, leave the task in progress with a comment saying why. When a human must check or run something, move the task to in review with a review request; otherwise close it through `tracker`, naming any follow-ups filed. Delete the plan file. Commit per `repo-infra`; push only when asked.
+10. **Close.** Commit any remaining changes, then merge and push only as `repo-infra` allows. Run the done-when check per `validation-and-qa`. A `missed` item gets its targeted test and a delta review, no second full suite; if it still cannot be met, leave the task in progress with a comment saying why. Move the task through the `tracker` gate it passes: in review when a human must check or run something, or when its code has not landed; done otherwise, naming any follow-ups filed. A task left in review for a merge goes through the done gate again once the merge happens. Delete the plan file.
 
 ## Leftovers
 
@@ -111,7 +111,7 @@ Use it when the user names several tasks.
 
 ## Provenance and maintenance
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 Re-verification commands:
 ```bash

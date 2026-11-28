@@ -30,7 +30,7 @@ The gate commands come from the `verify` key of the project map (see `project-ma
 
 ## 2. The done-when check
 
-Run it once, before a task closes, after verify, review and docs. Cross-check the output against the task's goal, every done-when item and any expected outcome the plan named.
+Run it once, before a task closes, after verify, review and docs. Cross-check the output against the task's goal, every done-when item and any expected outcome the plan named. Name the branch and commit each piece of evidence comes from; which branch may close a task is the landing check in `tracker`.
 
 | Item | Evidence |
 |---|---|
@@ -120,7 +120,7 @@ When a clean run hits the falsifying condition or shows no real effect, record i
 
 ## Provenance and maintenance
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 Re-verification commands:
 ```bash

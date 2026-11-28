@@ -35,7 +35,7 @@ Run the passes in order. Each pass reads only what the one before flagged.
    - **done or stale suspect:** a commit, changelog line or closed task suggests the outcome already exists, or the title names something the repo no longer has
    - **refs suspect:** the files a task names changed in recent commits
 2. **Task bodies.** Show only the suspects. Compare goal and done-when. Drop a duplicate suspect whose goal differs.
-3. **Evidence.** For each survivor, test every done-when item:
+3. **Evidence.** For each survivor, test every done-when item on the integration branch (defined in `tracker`). Code found only on another branch or in a worktree makes the item unmet; name that branch in the task's details.
    - Search the code for the behaviour, test or file named; read the lines.
    - Run `git log` on the task's refs and on its id; read the commits.
    - Run the cheapest command that proves an item when one exists (a test, a grep, a query).
@@ -72,7 +72,7 @@ Then the suspects that stayed unproven, with what is missing, and the counts: ta
 
 ## Provenance and maintenance
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 Re-verification commands:
 ```bash

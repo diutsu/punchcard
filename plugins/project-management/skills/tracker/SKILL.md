@@ -56,7 +56,7 @@ Map each state to the tracker status named in the workflow file.
 | backlog | Unrefined tasks | Every new task starts here |
 | to do | Refined tasks, ready to start | The user refined the task, or explicitly said it is ready |
 | in progress | Work in flight and its handoff | Implementation of a to-do task starts |
-| in review | Completed work that needs a human check before it can close | An in-progress task passes the review gate |
+| in review | Completed work waiting on a human check, or on a merge into the integration branch | An in-progress task passes the review gate |
 | done | Closed work, with its close reason | The task closes |
 
 A milestone is a measurable project state: a task or group of tasks in done plus a release, or another state the project can check. The workflow file says how one is marked.
@@ -81,12 +81,23 @@ A task moves only when every check for that move passes. Check each one against 
 | new to backlog | No open task covers it. A regression of a closed task links that task. Title and goal are filled. Unknowns are listed as open questions. |
 | backlog to to do | The user refined it, or said in this session that it is ready as written. The goal is one verifiable outcome. Every done-when item can be checked against code, command output or the running app. Priority is set. No open question is left. |
 | to do to in progress | Nothing blocks it. The code and docs it names still exist. |
-| in progress to in review | All the work is implemented and committed; partial work stays in progress. The `verify` commands pass, with output. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs. |
-| in progress or in review to done | Every done-when item passed the done-when check (`validation-and-qa`). Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. |
-| any state to done through `backlog-review` | The task is done, stale or a duplicate, with cited evidence, in a batch the user confirmed. |
+| in progress to in review | All the work is implemented and committed; partial work stays in progress. The `verify` commands pass, with output, on the tree that holds the work. Each done-when item the agent can check has evidence. The review request says exactly what the human checks or runs, and, for work not yet landed, names the branch and the commit range to merge. |
+| in progress or in review to done | The work has landed (see **Landing**). Every done-when item passed the done-when check (`validation-and-qa`). Any requested review is answered. Shipped behaviour is in the docs (`docs-management`). No open question is left. |
+| any state to done through `backlog-review` | The task is done, stale or a duplicate, with cited evidence, in a batch the user confirmed. Done evidence comes from the integration branch. |
 | in review to in progress | The review asks for changes, and each is recorded on the task. |
 
-A task needs in review only when its work is complete and a human must check or run something before it can close.
+A task needs in review only when its work is complete and something must still happen before it can close: a human check or run, or a merge into the integration branch.
+
+## Landing
+
+The integration branch is the project's default branch, `main` or `master`. A task that changed code has landed when both hold:
+
+1. Every commit of the task is on the integration branch.
+2. The `verify` commands passed, with output, on a tree that contains those commits. When that tree differs from the one reviewed or verified (the integration branch moved, or conflicts were resolved), `verify` runs again on it.
+
+A task that changed no code, docs-only work included, needs no landing check.
+
+Work on any other branch moves a task at most to in review. The agent that validates the work closes the task after the merge. Merging and pushing follow `repo-infra`; when they are not allowed, the task stays in review and its review request names the merge.
 
 ## Procedures
 
@@ -139,7 +150,7 @@ When partly done work needs the user to continue, comment on the task and leave 
 
 ## Provenance and maintenance
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 Re-verification commands:
 ```bash
